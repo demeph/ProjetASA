@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/eclipse.emf.cosa1/src-gen" creationIcons="false"
+    editDirectory="/eclipse.emf.cosa1.edit/src-gen" editorDirectory="/eclipse.emf.cosa1.editor/src-gen"
+    modelPluginID="eclipse.emf.cosa1" modelName="Cosa1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" copyrightFields="false"
+    importOrganizing="true">
+  <foreignModel>cosa1.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Cosa1" basePackage="eclipse.emf" disposableProviderFactory="true"
+      ecorePackage="cosa1.ecore#/">
+    <genClasses ecoreClass="cosa1.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Component/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Component/services"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa1.ecore#//Connector">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Connector/roles"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa1.ecore#//Port"/>
+    <genClasses ecoreClass="cosa1.ecore#//Role"/>
+    <genClasses ecoreClass="cosa1.ecore#//Service"/>
+    <genClasses ecoreClass="cosa1.ecore#//Configuration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Configuration/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Configuration/connectors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Configuration/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Configuration/bindings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Configuration/attachements"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa1.ecore#//RequiredPort"/>
+    <genClasses ecoreClass="cosa1.ecore#//ProvidedPort"/>
+    <genClasses ecoreClass="cosa1.ecore#//RequiredRole"/>
+    <genClasses ecoreClass="cosa1.ecore#//ProvidedRole"/>
+    <genClasses ecoreClass="cosa1.ecore#//RequiredService"/>
+    <genClasses ecoreClass="cosa1.ecore#//ProvidedService"/>
+    <genClasses ecoreClass="cosa1.ecore#//Attachement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Attachement/role"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Attachement/port"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa1.ecore#//Binding">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Binding/portProvided"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//Binding/portRequired"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa1.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa1.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="cosa1.ecore#//SimpleConfiguration"/>
+    <genClasses ecoreClass="cosa1.ecore#//CompositeConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa1.ecore#//CompositeConfiguration/configurations"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

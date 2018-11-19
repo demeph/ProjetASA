@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cosa1:CompositeConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cosa1="http://www.example.org/cosa1" name="Simple_CS">
+  <components name="Client">
+    <ports xsi:type="cosa1:RequiredPort" name="Send_Request_In"/>
+    <ports xsi:type="cosa1:ProvidedPort" name="Send_Request_Out"/>
+    <services xsi:type="cosa1:ProvidedService" name="Send_Request"/>
+  </components>
+  <components name="Serveur">
+    <ports xsi:type="cosa1:RequiredPort" name="Receive_request_In"/>
+    <ports xsi:type="cosa1:ProvidedPort" name="Recieve_request_Out"/>
+    <services xsi:type="cosa1:RequiredService" name="Receive_Request"/>
+  </components>
+  <configurations xsi:type="cosa1:SimpleConfiguration" name="ServeurDetail">
+    <components name="ConnectionManager">
+      <ports xsi:type="cosa1:RequiredPort" name="ExternalSocket_In"/>
+      <ports xsi:type="cosa1:ProvidedPort" name="ExternalSocket_Out"/>
+      <ports xsi:type="cosa1:ProvidedPort" name="DBQuery_Out"/>
+      <ports xsi:type="cosa1:RequiredPort" name="DBQuery_In"/>
+      <ports xsi:type="cosa1:ProvidedPort" name="SecurityCheck_Out"/>
+      <ports xsi:type="cosa1:RequiredPort" name="SecurityCheck_In"/>
+      <services xsi:type="cosa1:ProvidedService" name="DBQuery"/>
+      <services xsi:type="cosa1:ProvidedService" name="SecurityCheck"/>
+    </components>
+    <components name="SecurityManager">
+      <ports xsi:type="cosa1:RequiredPort" name="SecurityCheck_In"/>
+      <ports xsi:type="cosa1:ProvidedPort" name="SecurityCheck_Out"/>
+      <ports xsi:type="cosa1:RequiredPort" name="SecurityQuery_In"/>
+      <ports xsi:type="cosa1:ProvidedPort" name="SecurityQuery_Out"/>
+      <services xsi:type="cosa1:RequiredService" name="SecurityCheck"/>
+      <services xsi:type="cosa1:ProvidedService" name="SecurityQuery"/>
+    </components>
+    <components name="DataBase">
+      <ports xsi:type="cosa1:RequiredPort" name="SecurityQuery_In"/>
+      <ports xsi:type="cosa1:ProvidedPort" name="SecurityQuery_Out"/>
+      <ports xsi:type="cosa1:ProvidedPort" name="DBQuery_Out"/>
+      <ports xsi:type="cosa1:RequiredPort" name="DBQuery_In"/>
+      <services xsi:type="cosa1:RequiredService" name="DBQuery"/>
+      <services xsi:type="cosa1:RequiredService" name="SecurityQuery"/>
+    </components>
+    <ports xsi:type="cosa1:RequiredPort" name="ExternalSocket_In"/>
+    <ports xsi:type="cosa1:ProvidedPort" name="ExternalSocket_Out"/>
+  </configurations>
+</cosa1:CompositeConfiguration>

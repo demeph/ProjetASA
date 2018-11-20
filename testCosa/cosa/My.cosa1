@@ -10,6 +10,11 @@
     <ports xsi:type="cosa1:ProvidedPort" name="Recieve_request_Out"/>
     <services xsi:type="cosa1:RequiredService" name="Receive_Request"/>
   </components>
+  <connectors name="RPC">
+    <roles xsi:type="cosa1:ProvidedRole" name="Caller"/>
+    <roles xsi:type="cosa1:RequiredRole" name="Called"/>
+  </connectors>
+  <attachements/>
   <configurations xsi:type="cosa1:SimpleConfiguration" name="ServeurDetail">
     <components name="ConnectionManager">
       <ports xsi:type="cosa1:RequiredPort" name="ExternalSocket_In"/>

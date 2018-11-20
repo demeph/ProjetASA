@@ -68,3 +68,11 @@ local.properties
 
 .sts4-cache/
 
+
+eclipse\.emf\.cosa1\.edit/
+
+eclipse\.emf\.cosa1\.editor/
+
+eclipse\.emf\.cosa1/src-gen/eclipse/emf/cosa1/
+
+eclipse\.emf\.cosa1/

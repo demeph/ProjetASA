@@ -1,14 +1,14 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: org.xtext.example.cosaadsl.ui
+Automatic-Module-Name: fr.univnantes.asa.xtext.cosadsl.ui
 Bundle-ManifestVersion: 2
-Bundle-Name: org.xtext.example.cosaadsl.ui
+Bundle-Name: fr.univnantes.asa.xtext.cosadsl.ui
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: org.xtext.example.cosaadsl.ui; singleton:=true
+Bundle-SymbolicName: fr.univnantes.asa.xtext.cosadsl.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.xtext.example.cosaadsl,
- org.xtext.example.cosaadsl.ide,
- COSA,
+Require-Bundle: fr.univnantes.asa.xtext.cosadsl,
+ fr.univnantes.asa.xtext.cosadsl.ide,
+ fr.univnantes.asa.cosa,
  org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,

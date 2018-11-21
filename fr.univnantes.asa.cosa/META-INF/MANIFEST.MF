@@ -1,7 +1,8 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: cosa
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: COSA;singleton:=true
+Bundle-SymbolicName: fr.univnantes.asa.cosa;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName

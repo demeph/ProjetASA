@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: org.xtext.example.cosaadsl.tests
+Automatic-Module-Name: fr.univnantes.asa.xtext.cosadsl.tests
 Bundle-ManifestVersion: 2
-Bundle-Name: org.xtext.example.cosaadsl.tests
+Bundle-Name: fr.univnantes.asa.xtext.cosadsl.tests
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: org.xtext.example.cosaadsl.tests; singleton:=true
+Bundle-SymbolicName: fr.univnantes.asa.xtext.cosadsl.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.xtext.example.cosaadsl,
- COSA,
+Require-Bundle: fr.univnantes.asa.xtext.cosadsl,
+ fr.univnantes.asa.cosa,
  org.junit.jupiter.api;bundle-version="[5.0.0,6.0.0)",
  org.eclipse.xtext.testing,
  org.eclipse.xtext.xbase.testing

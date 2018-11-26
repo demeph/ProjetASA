@@ -1,0 +1,43 @@
+CompositeConfiguration Simple_CS ={
+	Component Client ={
+		RequiredPort Send_Request_In,
+		ProvidedPort Send_Request_out
+		ProvidedService Send_Request	
+	},
+	Component Serveur ={
+		RequiredPort Receive_Request_In,
+		ProvidedPort Recieve_request_Out
+		RequiredService Receive_Request
+	}
+	Connector RPC ={
+		Roles{ 
+			Role caller,
+			Role called
+		}
+	}
+	Configuration ServeurDetails ={
+		Component ConnectionManager ={
+			RequiredPort ExternalSocket_In,
+			ProvidedPort ExternalSocket_Out,
+			RequiredPort DBQuery_In,
+			ProvidedPort DBQuery_Out,
+			RequiredPort SecurityCheck_In,
+			ProvidedPort SecurityCheck_Out
+			ProvidedService DBQuery,
+			ProvidedService SecurityCheck	
+		},
+		Component SecurityManager ={
+			RequiredPort SecurityCheck_In,
+			ProvidedPort SecurityCheck_Out,
+			RequiredPort SecurityQuery_In,
+			ProvidedPort SecurityQuery_Out
+			RequiredService SecurityCheck,
+			ProvidedService SecurityQuery			
+		}
+		RequiredPort ExternalSocket_In,
+		ProvidedPort ExternalSocket_Out
+		
+	}	
+	
+	
+}

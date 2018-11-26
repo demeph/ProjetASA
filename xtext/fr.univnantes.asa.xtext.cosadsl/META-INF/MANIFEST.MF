@@ -9,5 +9,19 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: fr.univnantes.asa.cosa,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.5.0"
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.univnantes.asa.xtext.formatting2,
+ fr.univnantes.asa.xtext.parser.antlr.internal,
+ fr.univnantes.asa.xtext.services,
+ fr.univnantes.asa.xtext.serializer,
+ fr.univnantes.asa.xtext,
+ fr.univnantes.asa.xtext.validation,
+ fr.univnantes.asa.xtext.scoping,
+ fr.univnantes.asa.xtext.generator,
+ fr.univnantes.asa.xtext.parser.antlr
+Import-Package: org.apache.log4j

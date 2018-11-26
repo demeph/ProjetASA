@@ -9,5 +9,9 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: fr.univnantes.asa.xtext.cosadsl,
  fr.univnantes.asa.cosa,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.univnantes.asa.xtext.ide.contentassist.antlr,
+ fr.univnantes.asa.xtext.ide.contentassist.antlr.internal
+

@@ -35,12 +35,16 @@
     <genClasses ecoreClass="cosa.ecore#//RequiredService"/>
     <genClasses ecoreClass="cosa.ecore#//ProvidedService"/>
     <genClasses ecoreClass="cosa.ecore#//Attachement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachement/role"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachement/port"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachement/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachement/port"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachement/connector"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachement/component"/>
     </genClasses>
     <genClasses ecoreClass="cosa.ecore#//Binding">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/portProvided"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/portRequired"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/portRequired"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/portProvided"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/configurationProvider"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/componentSubscriber"/>
     </genClasses>
     <genClasses ecoreClass="cosa.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//NamedElement/name"/>

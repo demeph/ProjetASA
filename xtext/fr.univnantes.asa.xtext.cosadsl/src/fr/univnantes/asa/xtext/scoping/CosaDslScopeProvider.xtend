@@ -3,6 +3,12 @@
  */
 package fr.univnantes.asa.xtext.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import fr.univnantes.asa.cosa.Binding
+import org.eclipse.xtext.scoping.Scopes
+import org.eclipse.xtext.scoping.IScope
+import fr.univnantes.asa.cosa.Attachement
 
 /**
  * This class contains custom scoping description.
@@ -11,5 +17,36 @@ package fr.univnantes.asa.xtext.scoping
  * on how and when to use it.
  */
 class CosaDslScopeProvider extends AbstractCosaDslScopeProvider {
-
+	
+	override getScope(EObject context, EReference reference){
+		if (context instanceof Binding){
+			binding(context,reference)
+		} else if (context instanceof Attachement){
+			attachement(context,reference)
+		}
+		return super.getScope(context,reference)
+	}
+	
+	def IScope binding(Binding context, EReference reference){
+		if (reference.name == "portProvided") {
+				val availablePorts = context.configurationProvider.ports
+				return Scopes.scopeFor(availablePorts)
+			} else if (reference.name == "portRequired") {
+				val availablePorts = context.componentSubscriber.ports
+				return Scopes.scopeFor(availablePorts)
+			}
+	}
+	
+	
+	def IScope attachement(Attachement context, EReference reference){
+		if (reference.name == "port") {
+			val availablePorts = context.component.ports
+			System.out.println(availablePorts)
+			return Scopes.scopeFor(availablePorts)
+		} else if (reference.name == "role") {
+			val availableRoles = context.connector.roles
+			System.out.println(availableRoles)
+			return Scopes.scopeFor(availableRoles)
+		}
+	}
 }

@@ -23,11 +23,11 @@ CompositeConfiguration returns CompositeConfiguration:
 	name=EString
 	'{'
 		(components+=Component ( "," components+=Component)*)
-		(connectors+=Connector ( "," connectors+=Connector)*)
-		(ports+=Port ( "," ports+=Port)*)
-		(bindings+=Binding ( "," bindings+=Binding)*)
-		(attachements+=Attachement ( "," attachements+=Attachement)* )
-		(configurations+=Configuration ( "," configurations+=Configuration)*)
+		(connectors+=Connector ( "," connectors+=Connector)*)*
+		(ports+=Port ( "," ports+=Port)*)*
+		(bindings+=Binding ( "," bindings+=Binding)*)*
+		(attachements+=Attachement ( "," attachements+=Attachement)* )*
+		(configurations+=Configuration ( "," configurations+=Configuration)*)*
 	'}';
 
 EString returns ecore::EString:
@@ -45,7 +45,7 @@ Connector returns Connector:
 	'Connector'
 	name=EString
 	'{'
-		'Roles' '{' roles+=Role "," roles+=Role '}' 
+		roles+=Role ("," roles+=Role)* 
 		('glue' glue=Glue)?
 	'}';
 
@@ -57,15 +57,13 @@ Port_Impl returns Port:
 Binding returns Binding:
 	'Binding'
 	'('
-		portProvided=Port ','
-		portRequired=Port
+		configurationProvider=[Configuration]'.'portProvided=[Port]','componentSubscriber=[Component]'.'portRequired=[Port]
 	')';
 
 Attachement returns Attachement:
 	'Attachement'
 	'{'
-		(port=Port 'to' role=Role) ',' (port=Port 'to' role=Role)
-		
+		component=[Component]'.'port=[Port] 'to' connector=[Connector]'.'role=[Role]
 	'}';
 
 Configuration_Impl returns Configuration:
@@ -74,9 +72,9 @@ Configuration_Impl returns Configuration:
 	'{'
 		components+=Component ( "," components+=Component)*
 		(connectors+=Connector ( "," connectors+=Connector)*) 
-		(ports+=Port ( "," ports+=Port)*)
-		(bindings+=Binding ( "," bindings+=Binding)*)
-		(attachements+=Attachement ( "," attachements+=Attachement)* )
+		(ports+=Port ( "," ports+=Port)*)*
+		(bindings+=Binding ( "," bindings+=Binding)*)*
+		//(attachements+=Attachement ( "," attachements+=Attachement)* )
 	'}';
 
 Service_Impl returns Service:
@@ -99,11 +97,6 @@ Role_Impl returns Role:
 	'Role'
 	name=EString;
 
-Glue returns Glue:
-	{Glue}
-	'Glue'
-	;
-
 RequiredRole returns RequiredRole:
 	{RequiredRole}
 	'RequiredRole'
@@ -113,6 +106,11 @@ ProvidedRole returns ProvidedRole:
 	{ProvidedRole}
 	'ProvidedRole'
 	name=EString;
+
+Glue returns Glue:
+	{Glue}
+	'Glue'
+	;
 
 RequiredPort returns RequiredPort:
 	{RequiredPort}
@@ -129,8 +127,8 @@ SimpleConfiguration returns SimpleConfiguration:
 	name=EString
 	'{'
 		components+=Component ( "," components+=Component)*
-		(connectors+=Connector ( "," connectors+=Connector)*)
-		(ports+=Port ( "," ports+=Port)*)
-		(bindings+=Binding ( "," bindings+=Binding)*)
-		(attachements+=Attachement ( "," attachements+=Attachement)* )
+		(connectors+=Connector ( "," connectors+=Connector)*)*
+		(ports+=Port ( "," ports+=Port)*)*
+		(bindings+=Binding ( "," bindings+=Binding)*)*
+		//(attachements+=Attachement ( "," attachements+=Attachement)* )
 	'}';

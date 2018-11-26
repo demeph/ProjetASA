@@ -109,10 +109,25 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Attachement returns Attachement
 	 *
 	 * Constraint:
-	 *     (port=Port role=Role port=Port role=Role)
+	 *     (connector=[Connector|ID] role=[Role|ID] component=[Component|ID] port=[Port|ID])
 	 */
 	protected void sequence_Attachement(ISerializationContext context, Attachement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__CONNECTOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__CONNECTOR));
+			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__ROLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__ROLE));
+			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__COMPONENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__COMPONENT));
+			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__PORT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__PORT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAttachementAccess().getConnectorConnectorIDTerminalRuleCall_2_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__CONNECTOR, false));
+		feeder.accept(grammarAccess.getAttachementAccess().getRoleRoleIDTerminalRuleCall_4_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__ROLE, false));
+		feeder.accept(grammarAccess.getAttachementAccess().getComponentComponentIDTerminalRuleCall_6_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__COMPONENT, false));
+		feeder.accept(grammarAccess.getAttachementAccess().getPortPortIDTerminalRuleCall_8_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__PORT, false));
+		feeder.finish();
 	}
 	
 	
@@ -121,18 +136,24 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Binding returns Binding
 	 *
 	 * Constraint:
-	 *     (portProvided=Port portRequired=Port)
+	 *     (configurationProvider=[Configuration|ID] portProvided=[Port|ID] componentSubscriber=[Component|ID] portRequired=[Port|ID])
 	 */
 	protected void sequence_Binding(ISerializationContext context, Binding semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.BINDING__CONFIGURATION_PROVIDER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.BINDING__CONFIGURATION_PROVIDER));
 			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.BINDING__PORT_PROVIDED) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.BINDING__PORT_PROVIDED));
+			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.BINDING__COMPONENT_SUBSCRIBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.BINDING__COMPONENT_SUBSCRIBER));
 			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.BINDING__PORT_REQUIRED) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.BINDING__PORT_REQUIRED));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBindingAccess().getPortProvidedPortParserRuleCall_2_0(), semanticObject.getPortProvided());
-		feeder.accept(grammarAccess.getBindingAccess().getPortRequiredPortParserRuleCall_4_0(), semanticObject.getPortRequired());
+		feeder.accept(grammarAccess.getBindingAccess().getConfigurationProviderConfigurationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(CosaPackage.Literals.BINDING__CONFIGURATION_PROVIDER, false));
+		feeder.accept(grammarAccess.getBindingAccess().getPortProvidedPortIDTerminalRuleCall_4_0_1(), semanticObject.eGet(CosaPackage.Literals.BINDING__PORT_PROVIDED, false));
+		feeder.accept(grammarAccess.getBindingAccess().getComponentSubscriberComponentIDTerminalRuleCall_6_0_1(), semanticObject.eGet(CosaPackage.Literals.BINDING__COMPONENT_SUBSCRIBER, false));
+		feeder.accept(grammarAccess.getBindingAccess().getPortRequiredPortIDTerminalRuleCall_8_0_1(), semanticObject.eGet(CosaPackage.Literals.BINDING__PORT_REQUIRED, false));
 		feeder.finish();
 	}
 	
@@ -159,16 +180,11 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=EString 
 	 *         components+=Component 
 	 *         components+=Component* 
-	 *         connectors+=Connector 
-	 *         connectors+=Connector* 
-	 *         ports+=Port 
-	 *         ports+=Port* 
-	 *         bindings+=Binding 
-	 *         bindings+=Binding* 
-	 *         attachements+=Attachement 
-	 *         attachements+=Attachement* 
-	 *         configurations+=Configuration 
-	 *         configurations+=Configuration*
+	 *         (connectors+=Connector connectors+=Connector*)* 
+	 *         (ports+=Port ports+=Port*)* 
+	 *         (bindings+=Binding bindings+=Binding*)* 
+	 *         (attachements+=Attachement attachements+=Attachement*)* 
+	 *         (configurations+=Configuration configurations+=Configuration*)*
 	 *     )
 	 */
 	protected void sequence_CompositeConfiguration(ISerializationContext context, CompositeConfiguration semanticObject) {
@@ -188,12 +204,8 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         components+=Component* 
 	 *         connectors+=Connector 
 	 *         connectors+=Connector* 
-	 *         ports+=Port 
-	 *         ports+=Port* 
-	 *         bindings+=Binding 
-	 *         bindings+=Binding* 
-	 *         attachements+=Attachement 
-	 *         attachements+=Attachement*
+	 *         (ports+=Port ports+=Port*)* 
+	 *         (bindings+=Binding bindings+=Binding*)*
 	 *     )
 	 */
 	protected void sequence_Configuration_Impl(ISerializationContext context, Configuration semanticObject) {
@@ -206,7 +218,7 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Connector returns Connector
 	 *
 	 * Constraint:
-	 *     (name=EString roles+=Role roles+=Role glue=Glue?)
+	 *     (name=EString roles+=Role roles+=Role* glue=Glue?)
 	 */
 	protected void sequence_Connector(ISerializationContext context, Connector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -406,14 +418,9 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=EString 
 	 *         components+=Component 
 	 *         components+=Component* 
-	 *         connectors+=Connector 
-	 *         connectors+=Connector* 
-	 *         ports+=Port 
-	 *         ports+=Port* 
-	 *         bindings+=Binding 
-	 *         bindings+=Binding* 
-	 *         attachements+=Attachement 
-	 *         attachements+=Attachement*
+	 *         (connectors+=Connector connectors+=Connector*)* 
+	 *         (ports+=Port ports+=Port*)* 
+	 *         (bindings+=Binding bindings+=Binding*)*
 	 *     )
 	 */
 	protected void sequence_SimpleConfiguration(ISerializationContext context, SimpleConfiguration semanticObject) {

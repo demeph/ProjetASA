@@ -3,11 +3,12 @@
 package fr.univnantes.asa.cosa.impl;
 
 import fr.univnantes.asa.cosa.Binding;
+import fr.univnantes.asa.cosa.Component;
+import fr.univnantes.asa.cosa.Configuration;
 import fr.univnantes.asa.cosa.CosaPackage;
 import fr.univnantes.asa.cosa.Port;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -23,15 +24,27 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.univnantes.asa.cosa.impl.BindingImpl#getPortProvided <em>Port Provided</em>}</li>
  *   <li>{@link fr.univnantes.asa.cosa.impl.BindingImpl#getPortRequired <em>Port Required</em>}</li>
+ *   <li>{@link fr.univnantes.asa.cosa.impl.BindingImpl#getPortProvided <em>Port Provided</em>}</li>
+ *   <li>{@link fr.univnantes.asa.cosa.impl.BindingImpl#getConfigurationProvider <em>Configuration Provider</em>}</li>
+ *   <li>{@link fr.univnantes.asa.cosa.impl.BindingImpl#getComponentSubscriber <em>Component Subscriber</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BindingImpl extends MinimalEObjectImpl.Container implements Binding {
 	/**
-	 * The cached value of the '{@link #getPortProvided() <em>Port Provided</em>}' containment reference.
+	 * The cached value of the '{@link #getPortRequired() <em>Port Required</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortRequired()
+	 * @generated
+	 * @ordered
+	 */
+	protected Port portRequired;
+
+	/**
+	 * The cached value of the '{@link #getPortProvided() <em>Port Provided</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPortProvided()
@@ -41,14 +54,24 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	protected Port portProvided;
 
 	/**
-	 * The cached value of the '{@link #getPortRequired() <em>Port Required</em>}' containment reference.
+	 * The cached value of the '{@link #getConfigurationProvider() <em>Configuration Provider</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPortRequired()
+	 * @see #getConfigurationProvider()
 	 * @generated
 	 * @ordered
 	 */
-	protected Port portRequired;
+	protected Configuration configurationProvider;
+
+	/**
+	 * The cached value of the '{@link #getComponentSubscriber() <em>Component Subscriber</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentSubscriber()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component componentSubscriber;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,57 +97,16 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port getPortProvided() {
-		return portProvided;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPortProvided(Port newPortProvided, NotificationChain msgs) {
-		Port oldPortProvided = portProvided;
-		portProvided = newPortProvided;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					CosaPackage.BINDING__PORT_PROVIDED, oldPortProvided, newPortProvided);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPortProvided(Port newPortProvided) {
-		if (newPortProvided != portProvided) {
-			NotificationChain msgs = null;
-			if (portProvided != null)
-				msgs = ((InternalEObject) portProvided).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - CosaPackage.BINDING__PORT_PROVIDED, null, msgs);
-			if (newPortProvided != null)
-				msgs = ((InternalEObject) newPortProvided).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - CosaPackage.BINDING__PORT_PROVIDED, null, msgs);
-			msgs = basicSetPortProvided(newPortProvided, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CosaPackage.BINDING__PORT_PROVIDED, newPortProvided,
-					newPortProvided));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Port getPortRequired() {
+		if (portRequired != null && portRequired.eIsProxy()) {
+			InternalEObject oldPortRequired = (InternalEObject) portRequired;
+			portRequired = (Port) eResolveProxy(oldPortRequired);
+			if (portRequired != oldPortRequired) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CosaPackage.BINDING__PORT_REQUIRED,
+							oldPortRequired, portRequired));
+			}
+		}
 		return portRequired;
 	}
 
@@ -133,18 +115,8 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPortRequired(Port newPortRequired, NotificationChain msgs) {
-		Port oldPortRequired = portRequired;
-		portRequired = newPortRequired;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					CosaPackage.BINDING__PORT_REQUIRED, oldPortRequired, newPortRequired);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public Port basicGetPortRequired() {
+		return portRequired;
 	}
 
 	/**
@@ -153,20 +125,11 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	 * @generated
 	 */
 	public void setPortRequired(Port newPortRequired) {
-		if (newPortRequired != portRequired) {
-			NotificationChain msgs = null;
-			if (portRequired != null)
-				msgs = ((InternalEObject) portRequired).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - CosaPackage.BINDING__PORT_REQUIRED, null, msgs);
-			if (newPortRequired != null)
-				msgs = ((InternalEObject) newPortRequired).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - CosaPackage.BINDING__PORT_REQUIRED, null, msgs);
-			msgs = basicSetPortRequired(newPortRequired, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CosaPackage.BINDING__PORT_REQUIRED, newPortRequired,
-					newPortRequired));
+		Port oldPortRequired = portRequired;
+		portRequired = newPortRequired;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CosaPackage.BINDING__PORT_REQUIRED, oldPortRequired,
+					portRequired));
 	}
 
 	/**
@@ -174,15 +137,120 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case CosaPackage.BINDING__PORT_PROVIDED:
-			return basicSetPortProvided(null, msgs);
-		case CosaPackage.BINDING__PORT_REQUIRED:
-			return basicSetPortRequired(null, msgs);
+	public Port getPortProvided() {
+		if (portProvided != null && portProvided.eIsProxy()) {
+			InternalEObject oldPortProvided = (InternalEObject) portProvided;
+			portProvided = (Port) eResolveProxy(oldPortProvided);
+			if (portProvided != oldPortProvided) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CosaPackage.BINDING__PORT_PROVIDED,
+							oldPortProvided, portProvided));
+			}
 		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		return portProvided;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Port basicGetPortProvided() {
+		return portProvided;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPortProvided(Port newPortProvided) {
+		Port oldPortProvided = portProvided;
+		portProvided = newPortProvided;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CosaPackage.BINDING__PORT_PROVIDED, oldPortProvided,
+					portProvided));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Configuration getConfigurationProvider() {
+		if (configurationProvider != null && configurationProvider.eIsProxy()) {
+			InternalEObject oldConfigurationProvider = (InternalEObject) configurationProvider;
+			configurationProvider = (Configuration) eResolveProxy(oldConfigurationProvider);
+			if (configurationProvider != oldConfigurationProvider) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							CosaPackage.BINDING__CONFIGURATION_PROVIDER, oldConfigurationProvider,
+							configurationProvider));
+			}
+		}
+		return configurationProvider;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Configuration basicGetConfigurationProvider() {
+		return configurationProvider;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConfigurationProvider(Configuration newConfigurationProvider) {
+		Configuration oldConfigurationProvider = configurationProvider;
+		configurationProvider = newConfigurationProvider;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CosaPackage.BINDING__CONFIGURATION_PROVIDER,
+					oldConfigurationProvider, configurationProvider));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component getComponentSubscriber() {
+		if (componentSubscriber != null && componentSubscriber.eIsProxy()) {
+			InternalEObject oldComponentSubscriber = (InternalEObject) componentSubscriber;
+			componentSubscriber = (Component) eResolveProxy(oldComponentSubscriber);
+			if (componentSubscriber != oldComponentSubscriber) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CosaPackage.BINDING__COMPONENT_SUBSCRIBER,
+							oldComponentSubscriber, componentSubscriber));
+			}
+		}
+		return componentSubscriber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetComponentSubscriber() {
+		return componentSubscriber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComponentSubscriber(Component newComponentSubscriber) {
+		Component oldComponentSubscriber = componentSubscriber;
+		componentSubscriber = newComponentSubscriber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CosaPackage.BINDING__COMPONENT_SUBSCRIBER,
+					oldComponentSubscriber, componentSubscriber));
 	}
 
 	/**
@@ -193,10 +261,22 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case CosaPackage.BINDING__PORT_PROVIDED:
-			return getPortProvided();
 		case CosaPackage.BINDING__PORT_REQUIRED:
-			return getPortRequired();
+			if (resolve)
+				return getPortRequired();
+			return basicGetPortRequired();
+		case CosaPackage.BINDING__PORT_PROVIDED:
+			if (resolve)
+				return getPortProvided();
+			return basicGetPortProvided();
+		case CosaPackage.BINDING__CONFIGURATION_PROVIDER:
+			if (resolve)
+				return getConfigurationProvider();
+			return basicGetConfigurationProvider();
+		case CosaPackage.BINDING__COMPONENT_SUBSCRIBER:
+			if (resolve)
+				return getComponentSubscriber();
+			return basicGetComponentSubscriber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,11 +289,17 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case CosaPackage.BINDING__PORT_REQUIRED:
+			setPortRequired((Port) newValue);
+			return;
 		case CosaPackage.BINDING__PORT_PROVIDED:
 			setPortProvided((Port) newValue);
 			return;
-		case CosaPackage.BINDING__PORT_REQUIRED:
-			setPortRequired((Port) newValue);
+		case CosaPackage.BINDING__CONFIGURATION_PROVIDER:
+			setConfigurationProvider((Configuration) newValue);
+			return;
+		case CosaPackage.BINDING__COMPONENT_SUBSCRIBER:
+			setComponentSubscriber((Component) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,11 +313,17 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case CosaPackage.BINDING__PORT_REQUIRED:
+			setPortRequired((Port) null);
+			return;
 		case CosaPackage.BINDING__PORT_PROVIDED:
 			setPortProvided((Port) null);
 			return;
-		case CosaPackage.BINDING__PORT_REQUIRED:
-			setPortRequired((Port) null);
+		case CosaPackage.BINDING__CONFIGURATION_PROVIDER:
+			setConfigurationProvider((Configuration) null);
+			return;
+		case CosaPackage.BINDING__COMPONENT_SUBSCRIBER:
+			setComponentSubscriber((Component) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -245,10 +337,14 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case CosaPackage.BINDING__PORT_PROVIDED:
-			return portProvided != null;
 		case CosaPackage.BINDING__PORT_REQUIRED:
 			return portRequired != null;
+		case CosaPackage.BINDING__PORT_PROVIDED:
+			return portProvided != null;
+		case CosaPackage.BINDING__CONFIGURATION_PROVIDER:
+			return configurationProvider != null;
+		case CosaPackage.BINDING__COMPONENT_SUBSCRIBER:
+			return componentSubscriber != null;
 		}
 		return super.eIsSet(featureID);
 	}

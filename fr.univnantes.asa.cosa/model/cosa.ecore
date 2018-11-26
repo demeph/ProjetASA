@@ -34,16 +34,22 @@
   <eClassifiers xsi:type="ecore:EClass" name="RequiredService" eSuperTypes="#//Service"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedService" eSuperTypes="#//Service"/>
   <eClassifiers xsi:type="ecore:EClass" name="Attachement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1" eType="#//Role"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="#//Port"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1" eType="#//Role"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" lowerBound="1"
+        eType="#//Connector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
+        eType="#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Binding">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portProvided" lowerBound="1"
-        eType="#//Port" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="portRequired" lowerBound="1"
-        eType="#//Port" containment="true"/>
+        eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portProvided" lowerBound="1"
+        eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configurationProvider"
+        lowerBound="1" eType="#//Configuration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentSubscriber" lowerBound="1"
+        eType="#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

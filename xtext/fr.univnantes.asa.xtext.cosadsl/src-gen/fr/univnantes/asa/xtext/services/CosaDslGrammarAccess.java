@@ -9,6 +9,7 @@ import java.util.List;
 import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -169,16 +170,16 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//CompositeConfiguration:
 		//	'CompositeConfiguration'
 		//	name=EString
-		//	'{' (components+=Component ("," components+=Component)*) (connectors+=Connector ("," connectors+=Connector)*)
-		//	(ports+=Port ("," ports+=Port)*) (bindings+=Binding ("," bindings+=Binding)*) (attachements+=Attachement (","
-		//	attachements+=Attachement)*) (configurations+=Configuration ("," configurations+=Configuration)*)
+		//	'{' (components+=Component ("," components+=Component)*) (connectors+=Connector ("," connectors+=Connector)*)*
+		//	(ports+=Port ("," ports+=Port)*)* (bindings+=Binding ("," bindings+=Binding)*)* (attachements+=Attachement (","
+		//	attachements+=Attachement)*)* (configurations+=Configuration ("," configurations+=Configuration)*)*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'CompositeConfiguration' name=EString '{' (components+=Component ("," components+=Component)*) (connectors+=Connector
-		//("," connectors+=Connector)*) (ports+=Port ("," ports+=Port)*) (bindings+=Binding ("," bindings+=Binding)*)
-		//(attachements+=Attachement ("," attachements+=Attachement)*) (configurations+=Configuration (","
-		//configurations+=Configuration)*) '}'
+		//("," connectors+=Connector)*)* (ports+=Port ("," ports+=Port)*)* (bindings+=Binding ("," bindings+=Binding)*)*
+		//(attachements+=Attachement ("," attachements+=Attachement)*)* (configurations+=Configuration (","
+		//configurations+=Configuration)*)* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'CompositeConfiguration'
@@ -214,7 +215,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Component
 		public RuleCall getComponentsComponentParserRuleCall_3_1_1_0() { return cComponentsComponentParserRuleCall_3_1_1_0; }
 		
-		//connectors+=Connector ("," connectors+=Connector)*
+		//(connectors+=Connector ("," connectors+=Connector)*)*
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//connectors+=Connector
@@ -235,7 +236,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Connector
 		public RuleCall getConnectorsConnectorParserRuleCall_4_1_1_0() { return cConnectorsConnectorParserRuleCall_4_1_1_0; }
 		
-		//ports+=Port ("," ports+=Port)*
+		//(ports+=Port ("," ports+=Port)*)*
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//ports+=Port
@@ -256,7 +257,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Port
 		public RuleCall getPortsPortParserRuleCall_5_1_1_0() { return cPortsPortParserRuleCall_5_1_1_0; }
 		
-		//bindings+=Binding ("," bindings+=Binding)*
+		//(bindings+=Binding ("," bindings+=Binding)*)*
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//bindings+=Binding
@@ -277,7 +278,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Binding
 		public RuleCall getBindingsBindingParserRuleCall_6_1_1_0() { return cBindingsBindingParserRuleCall_6_1_1_0; }
 		
-		//attachements+=Attachement ("," attachements+=Attachement)*
+		//(attachements+=Attachement ("," attachements+=Attachement)*)*
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//attachements+=Attachement
@@ -298,7 +299,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Attachement
 		public RuleCall getAttachementsAttachementParserRuleCall_7_1_1_0() { return cAttachementsAttachementParserRuleCall_7_1_1_0; }
 		
-		//configurations+=Configuration ("," configurations+=Configuration)*
+		//(configurations+=Configuration ("," configurations+=Configuration)*)*
 		public Group getGroup_8() { return cGroup_8; }
 		
 		//configurations+=Configuration
@@ -432,29 +433,27 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cRolesKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cRolesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cRolesRoleParserRuleCall_5_0 = (RuleCall)cRolesAssignment_5.eContents().get(0);
-		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cRolesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cRolesRoleParserRuleCall_7_0 = (RuleCall)cRolesAssignment_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cGlueKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Assignment cGlueAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final RuleCall cGlueGlueParserRuleCall_9_1_0 = (RuleCall)cGlueAssignment_9_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cRolesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cRolesRoleParserRuleCall_3_0 = (RuleCall)cRolesAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cRolesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cRolesRoleParserRuleCall_4_1_0 = (RuleCall)cRolesAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cGlueKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cGlueAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cGlueGlueParserRuleCall_5_1_0 = (RuleCall)cGlueAssignment_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Connector:
 		//	'Connector'
 		//	name=EString
 		//	'{'
-		//	'Roles' '{' roles+=Role "," roles+=Role '}' ('glue' glue=Glue)?
+		//	roles+=Role ("," roles+=Role)* ('glue' glue=Glue)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Connector' name=EString '{' 'Roles' '{' roles+=Role "," roles+=Role '}' ('glue' glue=Glue)? '}'
+		//'Connector' name=EString '{' roles+=Role ("," roles+=Role)* ('glue' glue=Glue)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Connector'
@@ -469,44 +468,38 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//'Roles'
-		public Keyword getRolesKeyword_3() { return cRolesKeyword_3; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
-		
 		//roles+=Role
-		public Assignment getRolesAssignment_5() { return cRolesAssignment_5; }
+		public Assignment getRolesAssignment_3() { return cRolesAssignment_3; }
 		
 		//Role
-		public RuleCall getRolesRoleParserRuleCall_5_0() { return cRolesRoleParserRuleCall_5_0; }
+		public RuleCall getRolesRoleParserRuleCall_3_0() { return cRolesRoleParserRuleCall_3_0; }
+		
+		//("," roles+=Role)*
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//","
-		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 		
 		//roles+=Role
-		public Assignment getRolesAssignment_7() { return cRolesAssignment_7; }
+		public Assignment getRolesAssignment_4_1() { return cRolesAssignment_4_1; }
 		
 		//Role
-		public RuleCall getRolesRoleParserRuleCall_7_0() { return cRolesRoleParserRuleCall_7_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public RuleCall getRolesRoleParserRuleCall_4_1_0() { return cRolesRoleParserRuleCall_4_1_0; }
 		
 		//('glue' glue=Glue)?
-		public Group getGroup_9() { return cGroup_9; }
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//'glue'
-		public Keyword getGlueKeyword_9_0() { return cGlueKeyword_9_0; }
+		public Keyword getGlueKeyword_5_0() { return cGlueKeyword_5_0; }
 		
 		//glue=Glue
-		public Assignment getGlueAssignment_9_1() { return cGlueAssignment_9_1; }
+		public Assignment getGlueAssignment_5_1() { return cGlueAssignment_5_1; }
 		
 		//Glue
-		public RuleCall getGlueGlueParserRuleCall_9_1_0() { return cGlueGlueParserRuleCall_9_1_0; }
+		public RuleCall getGlueGlueParserRuleCall_5_1_0() { return cGlueGlueParserRuleCall_5_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class Port_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univnantes.asa.xtext.CosaDsl.Port_Impl");
@@ -542,22 +535,33 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBindingKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cPortProvidedAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPortProvidedPortParserRuleCall_2_0 = (RuleCall)cPortProvidedAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cPortRequiredAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cPortRequiredPortParserRuleCall_4_0 = (RuleCall)cPortRequiredAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cConfigurationProviderAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cConfigurationProviderConfigurationCrossReference_2_0 = (CrossReference)cConfigurationProviderAssignment_2.eContents().get(0);
+		private final RuleCall cConfigurationProviderConfigurationIDTerminalRuleCall_2_0_1 = (RuleCall)cConfigurationProviderConfigurationCrossReference_2_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cPortProvidedAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cPortProvidedPortCrossReference_4_0 = (CrossReference)cPortProvidedAssignment_4.eContents().get(0);
+		private final RuleCall cPortProvidedPortIDTerminalRuleCall_4_0_1 = (RuleCall)cPortProvidedPortCrossReference_4_0.eContents().get(1);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cComponentSubscriberAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cComponentSubscriberComponentCrossReference_6_0 = (CrossReference)cComponentSubscriberAssignment_6.eContents().get(0);
+		private final RuleCall cComponentSubscriberComponentIDTerminalRuleCall_6_0_1 = (RuleCall)cComponentSubscriberComponentCrossReference_6_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cPortRequiredAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cPortRequiredPortCrossReference_8_0 = (CrossReference)cPortRequiredAssignment_8.eContents().get(0);
+		private final RuleCall cPortRequiredPortIDTerminalRuleCall_8_0_1 = (RuleCall)cPortRequiredPortCrossReference_8_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Binding:
 		//	'Binding'
 		//	'('
-		//	portProvided=Port ','
-		//	portRequired=Port
+		//	configurationProvider=[Configuration] '.' portProvided=[Port] ',' componentSubscriber=[Component] '.'
+		//	portRequired=[Port]
 		//	')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Binding' '(' portProvided=Port ',' portRequired=Port ')'
+		//'Binding' '(' configurationProvider=[Configuration] '.' portProvided=[Port] ',' componentSubscriber=[Component] '.'
+		//portRequired=[Port] ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'Binding'
@@ -566,51 +570,84 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//portProvided=Port
-		public Assignment getPortProvidedAssignment_2() { return cPortProvidedAssignment_2; }
+		//configurationProvider=[Configuration]
+		public Assignment getConfigurationProviderAssignment_2() { return cConfigurationProviderAssignment_2; }
 		
-		//Port
-		public RuleCall getPortProvidedPortParserRuleCall_2_0() { return cPortProvidedPortParserRuleCall_2_0; }
+		//[Configuration]
+		public CrossReference getConfigurationProviderConfigurationCrossReference_2_0() { return cConfigurationProviderConfigurationCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getConfigurationProviderConfigurationIDTerminalRuleCall_2_0_1() { return cConfigurationProviderConfigurationIDTerminalRuleCall_2_0_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_3() { return cFullStopKeyword_3; }
+		
+		//portProvided=[Port]
+		public Assignment getPortProvidedAssignment_4() { return cPortProvidedAssignment_4; }
+		
+		//[Port]
+		public CrossReference getPortProvidedPortCrossReference_4_0() { return cPortProvidedPortCrossReference_4_0; }
+		
+		//ID
+		public RuleCall getPortProvidedPortIDTerminalRuleCall_4_0_1() { return cPortProvidedPortIDTerminalRuleCall_4_0_1; }
 		
 		//','
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
-		//portRequired=Port
-		public Assignment getPortRequiredAssignment_4() { return cPortRequiredAssignment_4; }
+		//componentSubscriber=[Component]
+		public Assignment getComponentSubscriberAssignment_6() { return cComponentSubscriberAssignment_6; }
 		
-		//Port
-		public RuleCall getPortRequiredPortParserRuleCall_4_0() { return cPortRequiredPortParserRuleCall_4_0; }
+		//[Component]
+		public CrossReference getComponentSubscriberComponentCrossReference_6_0() { return cComponentSubscriberComponentCrossReference_6_0; }
+		
+		//ID
+		public RuleCall getComponentSubscriberComponentIDTerminalRuleCall_6_0_1() { return cComponentSubscriberComponentIDTerminalRuleCall_6_0_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_7() { return cFullStopKeyword_7; }
+		
+		//portRequired=[Port]
+		public Assignment getPortRequiredAssignment_8() { return cPortRequiredAssignment_8; }
+		
+		//[Port]
+		public CrossReference getPortRequiredPortCrossReference_8_0() { return cPortRequiredPortCrossReference_8_0; }
+		
+		//ID
+		public RuleCall getPortRequiredPortIDTerminalRuleCall_8_0_1() { return cPortRequiredPortIDTerminalRuleCall_8_0_1; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
 	}
 	public class AttachementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univnantes.asa.xtext.CosaDsl.Attachement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAttachementKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cPortAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cPortPortParserRuleCall_2_0_0 = (RuleCall)cPortAssignment_2_0.eContents().get(0);
-		private final Keyword cToKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cRoleAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cRoleRoleParserRuleCall_2_2_0 = (RuleCall)cRoleAssignment_2_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cPortAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cPortPortParserRuleCall_4_0_0 = (RuleCall)cPortAssignment_4_0.eContents().get(0);
-		private final Keyword cToKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cRoleAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cRoleRoleParserRuleCall_4_2_0 = (RuleCall)cRoleAssignment_4_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cConnectorAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cConnectorConnectorCrossReference_2_0 = (CrossReference)cConnectorAssignment_2.eContents().get(0);
+		private final RuleCall cConnectorConnectorIDTerminalRuleCall_2_0_1 = (RuleCall)cConnectorConnectorCrossReference_2_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRoleAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cRoleRoleCrossReference_4_0 = (CrossReference)cRoleAssignment_4.eContents().get(0);
+		private final RuleCall cRoleRoleIDTerminalRuleCall_4_0_1 = (RuleCall)cRoleRoleCrossReference_4_0.eContents().get(1);
+		private final Keyword cToKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cComponentAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cComponentComponentCrossReference_6_0 = (CrossReference)cComponentAssignment_6.eContents().get(0);
+		private final RuleCall cComponentComponentIDTerminalRuleCall_6_0_1 = (RuleCall)cComponentComponentCrossReference_6_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cPortAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cPortPortCrossReference_8_0 = (CrossReference)cPortAssignment_8.eContents().get(0);
+		private final RuleCall cPortPortIDTerminalRuleCall_8_0_1 = (RuleCall)cPortPortCrossReference_8_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Attachement:
 		//	'Attachement'
-		//	'{' (port=Port 'to' role=Role) ',' (port=Port 'to' role=Role)
+		//	'{'
+		//	connector=[Connector] '.' role=[Role] 'to' component=[Component] '.' port=[Port]
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Attachement' '{' (port=Port 'to' role=Role) ',' (port=Port 'to' role=Role) '}'
+		//'Attachement' '{' connector=[Connector] '.' role=[Role] 'to' component=[Component] '.' port=[Port] '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Attachement'
@@ -619,47 +656,53 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//port=Port 'to' role=Role
-		public Group getGroup_2() { return cGroup_2; }
+		//connector=[Connector]
+		public Assignment getConnectorAssignment_2() { return cConnectorAssignment_2; }
 		
-		//port=Port
-		public Assignment getPortAssignment_2_0() { return cPortAssignment_2_0; }
+		//[Connector]
+		public CrossReference getConnectorConnectorCrossReference_2_0() { return cConnectorConnectorCrossReference_2_0; }
 		
-		//Port
-		public RuleCall getPortPortParserRuleCall_2_0_0() { return cPortPortParserRuleCall_2_0_0; }
+		//ID
+		public RuleCall getConnectorConnectorIDTerminalRuleCall_2_0_1() { return cConnectorConnectorIDTerminalRuleCall_2_0_1; }
 		
-		//'to'
-		public Keyword getToKeyword_2_1() { return cToKeyword_2_1; }
+		//'.'
+		public Keyword getFullStopKeyword_3() { return cFullStopKeyword_3; }
 		
-		//role=Role
-		public Assignment getRoleAssignment_2_2() { return cRoleAssignment_2_2; }
+		//role=[Role]
+		public Assignment getRoleAssignment_4() { return cRoleAssignment_4; }
 		
-		//Role
-		public RuleCall getRoleRoleParserRuleCall_2_2_0() { return cRoleRoleParserRuleCall_2_2_0; }
+		//[Role]
+		public CrossReference getRoleRoleCrossReference_4_0() { return cRoleRoleCrossReference_4_0; }
 		
-		//','
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-		
-		//port=Port 'to' role=Role
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//port=Port
-		public Assignment getPortAssignment_4_0() { return cPortAssignment_4_0; }
-		
-		//Port
-		public RuleCall getPortPortParserRuleCall_4_0_0() { return cPortPortParserRuleCall_4_0_0; }
+		//ID
+		public RuleCall getRoleRoleIDTerminalRuleCall_4_0_1() { return cRoleRoleIDTerminalRuleCall_4_0_1; }
 		
 		//'to'
-		public Keyword getToKeyword_4_1() { return cToKeyword_4_1; }
+		public Keyword getToKeyword_5() { return cToKeyword_5; }
 		
-		//role=Role
-		public Assignment getRoleAssignment_4_2() { return cRoleAssignment_4_2; }
+		//component=[Component]
+		public Assignment getComponentAssignment_6() { return cComponentAssignment_6; }
 		
-		//Role
-		public RuleCall getRoleRoleParserRuleCall_4_2_0() { return cRoleRoleParserRuleCall_4_2_0; }
+		//[Component]
+		public CrossReference getComponentComponentCrossReference_6_0() { return cComponentComponentCrossReference_6_0; }
+		
+		//ID
+		public RuleCall getComponentComponentIDTerminalRuleCall_6_0_1() { return cComponentComponentIDTerminalRuleCall_6_0_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_7() { return cFullStopKeyword_7; }
+		
+		//port=[Port]
+		public Assignment getPortAssignment_8() { return cPortAssignment_8; }
+		
+		//[Port]
+		public CrossReference getPortPortCrossReference_8_0() { return cPortPortCrossReference_8_0; }
+		
+		//ID
+		public RuleCall getPortPortIDTerminalRuleCall_8_0_1() { return cPortPortIDTerminalRuleCall_8_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class Configuration_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univnantes.asa.xtext.CosaDsl.Configuration_Impl");
@@ -695,28 +738,21 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_7_1_0 = (Keyword)cGroup_7_1.eContents().get(0);
 		private final Assignment cBindingsAssignment_7_1_1 = (Assignment)cGroup_7_1.eContents().get(1);
 		private final RuleCall cBindingsBindingParserRuleCall_7_1_1_0 = (RuleCall)cBindingsAssignment_7_1_1.eContents().get(0);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Assignment cAttachementsAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
-		private final RuleCall cAttachementsAttachementParserRuleCall_8_0_0 = (RuleCall)cAttachementsAssignment_8_0.eContents().get(0);
-		private final Group cGroup_8_1 = (Group)cGroup_8.eContents().get(1);
-		private final Keyword cCommaKeyword_8_1_0 = (Keyword)cGroup_8_1.eContents().get(0);
-		private final Assignment cAttachementsAssignment_8_1_1 = (Assignment)cGroup_8_1.eContents().get(1);
-		private final RuleCall cAttachementsAttachementParserRuleCall_8_1_1_0 = (RuleCall)cAttachementsAssignment_8_1_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Configuration_Impl Configuration:
 		//	'Configuration'
 		//	name=EString
 		//	'{'
 		//	components+=Component ("," components+=Component)* (connectors+=Connector ("," connectors+=Connector)*) (ports+=Port
-		//	("," ports+=Port)*) (bindings+=Binding ("," bindings+=Binding)*) (attachements+=Attachement (","
-		//	attachements+=Attachement)*)
+		//	("," ports+=Port)*)* (bindings+=Binding ("," bindings+=Binding)*)*
+		//	//(attachements+=Attachement ( "," attachements+=Attachement)* )
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Configuration' name=EString '{' components+=Component ("," components+=Component)* (connectors+=Connector (","
-		//connectors+=Connector)*) (ports+=Port ("," ports+=Port)*) (bindings+=Binding ("," bindings+=Binding)*)
-		//(attachements+=Attachement ("," attachements+=Attachement)*) '}'
+		//connectors+=Connector)*) (ports+=Port ("," ports+=Port)*)* (bindings+=Binding ("," bindings+=Binding)*)* //(attachements+=Attachement ( "," attachements+=Attachement)* )
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Configuration'
@@ -770,7 +806,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Connector
 		public RuleCall getConnectorsConnectorParserRuleCall_5_1_1_0() { return cConnectorsConnectorParserRuleCall_5_1_1_0; }
 		
-		//ports+=Port ("," ports+=Port)*
+		//(ports+=Port ("," ports+=Port)*)*
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//ports+=Port
@@ -791,7 +827,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Port
 		public RuleCall getPortsPortParserRuleCall_6_1_1_0() { return cPortsPortParserRuleCall_6_1_1_0; }
 		
-		//bindings+=Binding ("," bindings+=Binding)*
+		//(bindings+=Binding ("," bindings+=Binding)*)*
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//bindings+=Binding
@@ -812,29 +848,9 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Binding
 		public RuleCall getBindingsBindingParserRuleCall_7_1_1_0() { return cBindingsBindingParserRuleCall_7_1_1_0; }
 		
-		//attachements+=Attachement ("," attachements+=Attachement)*
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//attachements+=Attachement
-		public Assignment getAttachementsAssignment_8_0() { return cAttachementsAssignment_8_0; }
-		
-		//Attachement
-		public RuleCall getAttachementsAttachementParserRuleCall_8_0_0() { return cAttachementsAttachementParserRuleCall_8_0_0; }
-		
-		//("," attachements+=Attachement)*
-		public Group getGroup_8_1() { return cGroup_8_1; }
-		
-		//","
-		public Keyword getCommaKeyword_8_1_0() { return cCommaKeyword_8_1_0; }
-		
-		//attachements+=Attachement
-		public Assignment getAttachementsAssignment_8_1_1() { return cAttachementsAssignment_8_1_1; }
-		
-		//Attachement
-		public RuleCall getAttachementsAttachementParserRuleCall_8_1_1_0() { return cAttachementsAttachementParserRuleCall_8_1_1_0; }
-		
+		////(attachements+=Attachement ( "," attachements+=Attachement)* )
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class Service_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univnantes.asa.xtext.CosaDsl.Service_Impl");
@@ -1122,28 +1138,21 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_7_1_0 = (Keyword)cGroup_7_1.eContents().get(0);
 		private final Assignment cBindingsAssignment_7_1_1 = (Assignment)cGroup_7_1.eContents().get(1);
 		private final RuleCall cBindingsBindingParserRuleCall_7_1_1_0 = (RuleCall)cBindingsAssignment_7_1_1.eContents().get(0);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Assignment cAttachementsAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
-		private final RuleCall cAttachementsAttachementParserRuleCall_8_0_0 = (RuleCall)cAttachementsAssignment_8_0.eContents().get(0);
-		private final Group cGroup_8_1 = (Group)cGroup_8.eContents().get(1);
-		private final Keyword cCommaKeyword_8_1_0 = (Keyword)cGroup_8_1.eContents().get(0);
-		private final Assignment cAttachementsAssignment_8_1_1 = (Assignment)cGroup_8_1.eContents().get(1);
-		private final RuleCall cAttachementsAttachementParserRuleCall_8_1_1_0 = (RuleCall)cAttachementsAssignment_8_1_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//SimpleConfiguration:
 		//	'SimpleConfiguration'
 		//	name=EString
 		//	'{'
-		//	components+=Component ("," components+=Component)* (connectors+=Connector ("," connectors+=Connector)*) (ports+=Port
-		//	("," ports+=Port)*) (bindings+=Binding ("," bindings+=Binding)*) (attachements+=Attachement (","
-		//	attachements+=Attachement)*)
+		//	components+=Component ("," components+=Component)* (connectors+=Connector ("," connectors+=Connector)*)* (ports+=Port
+		//	("," ports+=Port)*)* (bindings+=Binding ("," bindings+=Binding)*)*
+		//	//(attachements+=Attachement ( "," attachements+=Attachement)* )
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'SimpleConfiguration' name=EString '{' components+=Component ("," components+=Component)* (connectors+=Connector (","
-		//connectors+=Connector)*) (ports+=Port ("," ports+=Port)*) (bindings+=Binding ("," bindings+=Binding)*)
-		//(attachements+=Attachement ("," attachements+=Attachement)*) '}'
+		//connectors+=Connector)*)* (ports+=Port ("," ports+=Port)*)* (bindings+=Binding ("," bindings+=Binding)*)* //(attachements+=Attachement ( "," attachements+=Attachement)* )
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'SimpleConfiguration'
@@ -1176,7 +1185,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Component
 		public RuleCall getComponentsComponentParserRuleCall_4_1_0() { return cComponentsComponentParserRuleCall_4_1_0; }
 		
-		//connectors+=Connector ("," connectors+=Connector)*
+		//(connectors+=Connector ("," connectors+=Connector)*)*
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//connectors+=Connector
@@ -1197,7 +1206,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Connector
 		public RuleCall getConnectorsConnectorParserRuleCall_5_1_1_0() { return cConnectorsConnectorParserRuleCall_5_1_1_0; }
 		
-		//ports+=Port ("," ports+=Port)*
+		//(ports+=Port ("," ports+=Port)*)*
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//ports+=Port
@@ -1218,7 +1227,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Port
 		public RuleCall getPortsPortParserRuleCall_6_1_1_0() { return cPortsPortParserRuleCall_6_1_1_0; }
 		
-		//bindings+=Binding ("," bindings+=Binding)*
+		//(bindings+=Binding ("," bindings+=Binding)*)*
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//bindings+=Binding
@@ -1239,29 +1248,9 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Binding
 		public RuleCall getBindingsBindingParserRuleCall_7_1_1_0() { return cBindingsBindingParserRuleCall_7_1_1_0; }
 		
-		//attachements+=Attachement ("," attachements+=Attachement)*
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//attachements+=Attachement
-		public Assignment getAttachementsAssignment_8_0() { return cAttachementsAssignment_8_0; }
-		
-		//Attachement
-		public RuleCall getAttachementsAttachementParserRuleCall_8_0_0() { return cAttachementsAttachementParserRuleCall_8_0_0; }
-		
-		//("," attachements+=Attachement)*
-		public Group getGroup_8_1() { return cGroup_8_1; }
-		
-		//","
-		public Keyword getCommaKeyword_8_1_0() { return cCommaKeyword_8_1_0; }
-		
-		//attachements+=Attachement
-		public Assignment getAttachementsAssignment_8_1_1() { return cAttachementsAssignment_8_1_1; }
-		
-		//Attachement
-		public RuleCall getAttachementsAttachementParserRuleCall_8_1_1_0() { return cAttachementsAttachementParserRuleCall_8_1_1_0; }
-		
+		////(attachements+=Attachement ( "," attachements+=Attachement)* )
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	
 	
@@ -1391,9 +1380,9 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 	//CompositeConfiguration:
 	//	'CompositeConfiguration'
 	//	name=EString
-	//	'{' (components+=Component ("," components+=Component)*) (connectors+=Connector ("," connectors+=Connector)*)
-	//	(ports+=Port ("," ports+=Port)*) (bindings+=Binding ("," bindings+=Binding)*) (attachements+=Attachement (","
-	//	attachements+=Attachement)*) (configurations+=Configuration ("," configurations+=Configuration)*)
+	//	'{' (components+=Component ("," components+=Component)*) (connectors+=Connector ("," connectors+=Connector)*)*
+	//	(ports+=Port ("," ports+=Port)*)* (bindings+=Binding ("," bindings+=Binding)*)* (attachements+=Attachement (","
+	//	attachements+=Attachement)*)* (configurations+=Configuration ("," configurations+=Configuration)*)*
 	//	'}';
 	public CompositeConfigurationElements getCompositeConfigurationAccess() {
 		return pCompositeConfiguration;
@@ -1432,7 +1421,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'Connector'
 	//	name=EString
 	//	'{'
-	//	'Roles' '{' roles+=Role "," roles+=Role '}' ('glue' glue=Glue)?
+	//	roles+=Role ("," roles+=Role)* ('glue' glue=Glue)?
 	//	'}';
 	public ConnectorElements getConnectorAccess() {
 		return pConnector;
@@ -1457,8 +1446,8 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Binding:
 	//	'Binding'
 	//	'('
-	//	portProvided=Port ','
-	//	portRequired=Port
+	//	configurationProvider=[Configuration] '.' portProvided=[Port] ',' componentSubscriber=[Component] '.'
+	//	portRequired=[Port]
 	//	')';
 	public BindingElements getBindingAccess() {
 		return pBinding;
@@ -1470,7 +1459,8 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Attachement:
 	//	'Attachement'
-	//	'{' (port=Port 'to' role=Role) ',' (port=Port 'to' role=Role)
+	//	'{'
+	//	connector=[Connector] '.' role=[Role] 'to' component=[Component] '.' port=[Port]
 	//	'}';
 	public AttachementElements getAttachementAccess() {
 		return pAttachement;
@@ -1485,8 +1475,8 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=EString
 	//	'{'
 	//	components+=Component ("," components+=Component)* (connectors+=Connector ("," connectors+=Connector)*) (ports+=Port
-	//	("," ports+=Port)*) (bindings+=Binding ("," bindings+=Binding)*) (attachements+=Attachement (","
-	//	attachements+=Attachement)*)
+	//	("," ports+=Port)*)* (bindings+=Binding ("," bindings+=Binding)*)*
+	//	//(attachements+=Attachement ( "," attachements+=Attachement)* )
 	//	'}';
 	public Configuration_ImplElements getConfiguration_ImplAccess() {
 		return pConfiguration_Impl;
@@ -1607,9 +1597,9 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'SimpleConfiguration'
 	//	name=EString
 	//	'{'
-	//	components+=Component ("," components+=Component)* (connectors+=Connector ("," connectors+=Connector)*) (ports+=Port
-	//	("," ports+=Port)*) (bindings+=Binding ("," bindings+=Binding)*) (attachements+=Attachement (","
-	//	attachements+=Attachement)*)
+	//	components+=Component ("," components+=Component)* (connectors+=Connector ("," connectors+=Connector)*)* (ports+=Port
+	//	("," ports+=Port)*)* (bindings+=Binding ("," bindings+=Binding)*)*
+	//	//(attachements+=Attachement ( "," attachements+=Attachement)* )
 	//	'}';
 	public SimpleConfigurationElements getSimpleConfigurationAccess() {
 		return pSimpleConfiguration;

@@ -447,6 +447,24 @@ public class CosaPackageImpl extends EPackageImpl implements CosaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAttachement_Connector() {
+		return (EReference) attachementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAttachement_Component() {
+		return (EReference) attachementEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBinding() {
 		return bindingEClass;
 	}
@@ -456,7 +474,7 @@ public class CosaPackageImpl extends EPackageImpl implements CosaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBinding_PortProvided() {
+	public EReference getBinding_PortRequired() {
 		return (EReference) bindingEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -465,8 +483,26 @@ public class CosaPackageImpl extends EPackageImpl implements CosaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBinding_PortRequired() {
+	public EReference getBinding_PortProvided() {
 		return (EReference) bindingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinding_ConfigurationProvider() {
+		return (EReference) bindingEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinding_ComponentSubscriber() {
+		return (EReference) bindingEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -588,10 +624,14 @@ public class CosaPackageImpl extends EPackageImpl implements CosaPackage {
 		attachementEClass = createEClass(ATTACHEMENT);
 		createEReference(attachementEClass, ATTACHEMENT__ROLE);
 		createEReference(attachementEClass, ATTACHEMENT__PORT);
+		createEReference(attachementEClass, ATTACHEMENT__CONNECTOR);
+		createEReference(attachementEClass, ATTACHEMENT__COMPONENT);
 
 		bindingEClass = createEClass(BINDING);
-		createEReference(bindingEClass, BINDING__PORT_PROVIDED);
 		createEReference(bindingEClass, BINDING__PORT_REQUIRED);
+		createEReference(bindingEClass, BINDING__PORT_PROVIDED);
+		createEReference(bindingEClass, BINDING__CONFIGURATION_PROVIDER);
+		createEReference(bindingEClass, BINDING__COMPONENT_SUBSCRIBER);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -712,19 +752,31 @@ public class CosaPackageImpl extends EPackageImpl implements CosaPackage {
 		initEClass(attachementEClass, Attachement.class, "Attachement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttachement_Role(), this.getRole(), null, "role", null, 1, 1, Attachement.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAttachement_Port(), this.getPort(), null, "port", null, 1, 1, Attachement.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttachement_Connector(), this.getConnector(), null, "connector", null, 1, 1,
+				Attachement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttachement_Component(), this.getComponent(), null, "component", null, 1, 1,
+				Attachement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bindingEClass, Binding.class, "Binding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBinding_PortProvided(), this.getPort(), null, "portProvided", null, 1, 1, Binding.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBinding_PortRequired(), this.getPort(), null, "portRequired", null, 1, 1, Binding.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinding_PortProvided(), this.getPort(), null, "portProvided", null, 1, 1, Binding.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinding_ConfigurationProvider(), this.getConfiguration(), null, "configurationProvider", null,
+				1, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinding_ComponentSubscriber(), this.getComponent(), null, "componentSubscriber", null, 1, 1,
+				Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

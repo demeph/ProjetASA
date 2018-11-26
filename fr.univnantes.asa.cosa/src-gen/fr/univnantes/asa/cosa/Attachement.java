@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fr.univnantes.asa.cosa.Attachement#getRole <em>Role</em>}</li>
  *   <li>{@link fr.univnantes.asa.cosa.Attachement#getPort <em>Port</em>}</li>
+ *   <li>{@link fr.univnantes.asa.cosa.Attachement#getConnector <em>Connector</em>}</li>
+ *   <li>{@link fr.univnantes.asa.cosa.Attachement#getComponent <em>Component</em>}</li>
  * </ul>
  *
  * @see fr.univnantes.asa.cosa.CosaPackage#getAttachement()
@@ -23,55 +25,107 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Attachement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Role</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Role</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Role</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role</em>' containment reference.
+	 * @return the value of the '<em>Role</em>' reference.
 	 * @see #setRole(Role)
 	 * @see fr.univnantes.asa.cosa.CosaPackage#getAttachement_Role()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Role getRole();
 
 	/**
-	 * Sets the value of the '{@link fr.univnantes.asa.cosa.Attachement#getRole <em>Role</em>}' containment reference.
+	 * Sets the value of the '{@link fr.univnantes.asa.cosa.Attachement#getRole <em>Role</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role</em>' containment reference.
+	 * @param value the new value of the '<em>Role</em>' reference.
 	 * @see #getRole()
 	 * @generated
 	 */
 	void setRole(Role value);
 
 	/**
-	 * Returns the value of the '<em><b>Port</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Port</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Port</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Port</em>' containment reference.
+	 * @return the value of the '<em>Port</em>' reference.
 	 * @see #setPort(Port)
 	 * @see fr.univnantes.asa.cosa.CosaPackage#getAttachement_Port()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Port getPort();
 
 	/**
-	 * Sets the value of the '{@link fr.univnantes.asa.cosa.Attachement#getPort <em>Port</em>}' containment reference.
+	 * Sets the value of the '{@link fr.univnantes.asa.cosa.Attachement#getPort <em>Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port</em>' containment reference.
+	 * @param value the new value of the '<em>Port</em>' reference.
 	 * @see #getPort()
 	 * @generated
 	 */
 	void setPort(Port value);
+
+	/**
+	 * Returns the value of the '<em><b>Connector</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connector</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connector</em>' reference.
+	 * @see #setConnector(Connector)
+	 * @see fr.univnantes.asa.cosa.CosaPackage#getAttachement_Connector()
+	 * @model required="true"
+	 * @generated
+	 */
+	Connector getConnector();
+
+	/**
+	 * Sets the value of the '{@link fr.univnantes.asa.cosa.Attachement#getConnector <em>Connector</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Connector</em>' reference.
+	 * @see #getConnector()
+	 * @generated
+	 */
+	void setConnector(Connector value);
+
+	/**
+	 * Returns the value of the '<em><b>Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Component</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component</em>' reference.
+	 * @see #setComponent(Component)
+	 * @see fr.univnantes.asa.cosa.CosaPackage#getAttachement_Component()
+	 * @model required="true"
+	 * @generated
+	 */
+	Component getComponent();
+
+	/**
+	 * Sets the value of the '{@link fr.univnantes.asa.cosa.Attachement#getComponent <em>Component</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component</em>' reference.
+	 * @see #getComponent()
+	 * @generated
+	 */
+	void setComponent(Component value);
 
 } // Attachement

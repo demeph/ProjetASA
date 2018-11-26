@@ -629,7 +629,7 @@ public interface CosaPackage extends EPackage {
 	int ATTACHEMENT = 12;
 
 	/**
-	 * The feature id for the '<em><b>Role</b></em>' containment reference.
+	 * The feature id for the '<em><b>Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -638,7 +638,7 @@ public interface CosaPackage extends EPackage {
 	int ATTACHEMENT__ROLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Port</b></em>' containment reference.
+	 * The feature id for the '<em><b>Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -647,13 +647,31 @@ public interface CosaPackage extends EPackage {
 	int ATTACHEMENT__PORT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Connector</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACHEMENT__CONNECTOR = 2;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTACHEMENT__COMPONENT = 3;
+
+	/**
 	 * The number of structural features of the '<em>Attachement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACHEMENT_FEATURE_COUNT = 2;
+	int ATTACHEMENT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Attachement</em>' class.
@@ -675,22 +693,40 @@ public interface CosaPackage extends EPackage {
 	int BINDING = 13;
 
 	/**
-	 * The feature id for the '<em><b>Port Provided</b></em>' containment reference.
+	 * The feature id for the '<em><b>Port Required</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINDING__PORT_PROVIDED = 0;
+	int BINDING__PORT_REQUIRED = 0;
 
 	/**
-	 * The feature id for the '<em><b>Port Required</b></em>' containment reference.
+	 * The feature id for the '<em><b>Port Provided</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINDING__PORT_REQUIRED = 1;
+	int BINDING__PORT_PROVIDED = 1;
+
+	/**
+	 * The feature id for the '<em><b>Configuration Provider</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINDING__CONFIGURATION_PROVIDER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Component Subscriber</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINDING__COMPONENT_SUBSCRIBER = 3;
 
 	/**
 	 * The number of structural features of the '<em>Binding</em>' class.
@@ -699,7 +735,7 @@ public interface CosaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINDING_FEATURE_COUNT = 2;
+	int BINDING_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Binding</em>' class.
@@ -1141,10 +1177,10 @@ public interface CosaPackage extends EPackage {
 	EClass getAttachement();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link fr.univnantes.asa.cosa.Attachement#getRole <em>Role</em>}'.
+	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Attachement#getRole <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Role</em>'.
+	 * @return the meta object for the reference '<em>Role</em>'.
 	 * @see fr.univnantes.asa.cosa.Attachement#getRole()
 	 * @see #getAttachement()
 	 * @generated
@@ -1152,15 +1188,37 @@ public interface CosaPackage extends EPackage {
 	EReference getAttachement_Role();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link fr.univnantes.asa.cosa.Attachement#getPort <em>Port</em>}'.
+	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Attachement#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Port</em>'.
+	 * @return the meta object for the reference '<em>Port</em>'.
 	 * @see fr.univnantes.asa.cosa.Attachement#getPort()
 	 * @see #getAttachement()
 	 * @generated
 	 */
 	EReference getAttachement_Port();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Attachement#getConnector <em>Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Connector</em>'.
+	 * @see fr.univnantes.asa.cosa.Attachement#getConnector()
+	 * @see #getAttachement()
+	 * @generated
+	 */
+	EReference getAttachement_Connector();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Attachement#getComponent <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Component</em>'.
+	 * @see fr.univnantes.asa.cosa.Attachement#getComponent()
+	 * @see #getAttachement()
+	 * @generated
+	 */
+	EReference getAttachement_Component();
 
 	/**
 	 * Returns the meta object for class '{@link fr.univnantes.asa.cosa.Binding <em>Binding</em>}'.
@@ -1173,10 +1231,21 @@ public interface CosaPackage extends EPackage {
 	EClass getBinding();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link fr.univnantes.asa.cosa.Binding#getPortProvided <em>Port Provided</em>}'.
+	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Binding#getPortRequired <em>Port Required</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Port Provided</em>'.
+	 * @return the meta object for the reference '<em>Port Required</em>'.
+	 * @see fr.univnantes.asa.cosa.Binding#getPortRequired()
+	 * @see #getBinding()
+	 * @generated
+	 */
+	EReference getBinding_PortRequired();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Binding#getPortProvided <em>Port Provided</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Port Provided</em>'.
 	 * @see fr.univnantes.asa.cosa.Binding#getPortProvided()
 	 * @see #getBinding()
 	 * @generated
@@ -1184,15 +1253,26 @@ public interface CosaPackage extends EPackage {
 	EReference getBinding_PortProvided();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link fr.univnantes.asa.cosa.Binding#getPortRequired <em>Port Required</em>}'.
+	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Binding#getConfigurationProvider <em>Configuration Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Port Required</em>'.
-	 * @see fr.univnantes.asa.cosa.Binding#getPortRequired()
+	 * @return the meta object for the reference '<em>Configuration Provider</em>'.
+	 * @see fr.univnantes.asa.cosa.Binding#getConfigurationProvider()
 	 * @see #getBinding()
 	 * @generated
 	 */
-	EReference getBinding_PortRequired();
+	EReference getBinding_ConfigurationProvider();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Binding#getComponentSubscriber <em>Component Subscriber</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Component Subscriber</em>'.
+	 * @see fr.univnantes.asa.cosa.Binding#getComponentSubscriber()
+	 * @see #getBinding()
+	 * @generated
+	 */
+	EReference getBinding_ComponentSubscriber();
 
 	/**
 	 * Returns the meta object for class '{@link fr.univnantes.asa.cosa.NamedElement <em>Named Element</em>}'.
@@ -1482,7 +1562,7 @@ public interface CosaPackage extends EPackage {
 		EClass ATTACHEMENT = eINSTANCE.getAttachement();
 
 		/**
-		 * The meta object literal for the '<em><b>Role</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Role</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1490,12 +1570,28 @@ public interface CosaPackage extends EPackage {
 		EReference ATTACHEMENT__ROLE = eINSTANCE.getAttachement_Role();
 
 		/**
-		 * The meta object literal for the '<em><b>Port</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Port</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ATTACHEMENT__PORT = eINSTANCE.getAttachement_Port();
+
+		/**
+		 * The meta object literal for the '<em><b>Connector</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTACHEMENT__CONNECTOR = eINSTANCE.getAttachement_Connector();
+
+		/**
+		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTACHEMENT__COMPONENT = eINSTANCE.getAttachement_Component();
 
 		/**
 		 * The meta object literal for the '{@link fr.univnantes.asa.cosa.impl.BindingImpl <em>Binding</em>}' class.
@@ -1508,7 +1604,15 @@ public interface CosaPackage extends EPackage {
 		EClass BINDING = eINSTANCE.getBinding();
 
 		/**
-		 * The meta object literal for the '<em><b>Port Provided</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Port Required</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINDING__PORT_REQUIRED = eINSTANCE.getBinding_PortRequired();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Provided</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1516,12 +1620,20 @@ public interface CosaPackage extends EPackage {
 		EReference BINDING__PORT_PROVIDED = eINSTANCE.getBinding_PortProvided();
 
 		/**
-		 * The meta object literal for the '<em><b>Port Required</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Configuration Provider</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINDING__PORT_REQUIRED = eINSTANCE.getBinding_PortRequired();
+		EReference BINDING__CONFIGURATION_PROVIDER = eINSTANCE.getBinding_ConfigurationProvider();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Subscriber</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINDING__COMPONENT_SUBSCRIBER = eINSTANCE.getBinding_ComponentSubscriber();
 
 		/**
 		 * The meta object literal for the '{@link fr.univnantes.asa.cosa.impl.NamedElementImpl <em>Named Element</em>}' class.

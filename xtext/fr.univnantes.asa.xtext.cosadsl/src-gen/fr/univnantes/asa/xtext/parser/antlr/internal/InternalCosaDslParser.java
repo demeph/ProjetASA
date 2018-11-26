@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalCosaDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'CompositeConfiguration'", "'{'", "','", "'}'", "'Component'", "'Connector'", "'Roles'", "'glue'", "'Port'", "'Binding'", "'('", "')'", "'Attachement'", "'to'", "'Configuration'", "'Service'", "'RequiredService'", "'ProvidedService'", "'Role'", "'Glue'", "'RequiredRole'", "'ProvidedRole'", "'RequiredPort'", "'ProvidedPort'", "'SimpleConfiguration'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'CompositeConfiguration'", "'{'", "','", "'}'", "'Component'", "'Connector'", "'glue'", "'Port'", "'Binding'", "'('", "'.'", "')'", "'Attachement'", "'to'", "'Configuration'", "'Service'", "'RequiredService'", "'ProvidedService'", "'Role'", "'Glue'", "'RequiredRole'", "'ProvidedRole'", "'RequiredPort'", "'ProvidedPort'", "'SimpleConfiguration'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -311,7 +311,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             // InternalCosaDsl.g:123:2: (this_Port_Impl_0= rulePort_Impl | this_RequiredPort_1= ruleRequiredPort | this_ProvidedPort_2= ruleProvidedPort )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 19:
+            case 18:
                 {
                 alt2=1;
                 }
@@ -761,7 +761,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompositeConfiguration"
-    // InternalCosaDsl.g:251:1: ruleCompositeConfiguration returns [EObject current=null] : (otherlv_0= 'CompositeConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ) ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* ) otherlv_21= '}' ) ;
+    // InternalCosaDsl.g:251:1: ruleCompositeConfiguration returns [EObject current=null] : (otherlv_0= 'CompositeConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ) ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )* ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* )* ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* )* otherlv_21= '}' ) ;
     public final EObject ruleCompositeConfiguration() throws RecognitionException {
         EObject current = null;
 
@@ -805,11 +805,11 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:257:2: ( (otherlv_0= 'CompositeConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ) ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* ) otherlv_21= '}' ) )
-            // InternalCosaDsl.g:258:2: (otherlv_0= 'CompositeConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ) ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* ) otherlv_21= '}' )
+            // InternalCosaDsl.g:257:2: ( (otherlv_0= 'CompositeConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ) ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )* ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* )* ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* )* otherlv_21= '}' ) )
+            // InternalCosaDsl.g:258:2: (otherlv_0= 'CompositeConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ) ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )* ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* )* ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* )* otherlv_21= '}' )
             {
-            // InternalCosaDsl.g:258:2: (otherlv_0= 'CompositeConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ) ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* ) otherlv_21= '}' )
-            // InternalCosaDsl.g:259:3: otherlv_0= 'CompositeConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ) ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* ) otherlv_21= '}'
+            // InternalCosaDsl.g:258:2: (otherlv_0= 'CompositeConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ) ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )* ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* )* ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* )* otherlv_21= '}' )
+            // InternalCosaDsl.g:259:3: otherlv_0= 'CompositeConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ) ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )* ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* )* ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* )* otherlv_21= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
@@ -946,185 +946,110 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCosaDsl.g:332:3: ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )
-            // InternalCosaDsl.g:333:4: ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
-            {
-            // InternalCosaDsl.g:333:4: ( (lv_connectors_6_0= ruleConnector ) )
-            // InternalCosaDsl.g:334:5: (lv_connectors_6_0= ruleConnector )
-            {
-            // InternalCosaDsl.g:334:5: (lv_connectors_6_0= ruleConnector )
-            // InternalCosaDsl.g:335:6: lv_connectors_6_0= ruleConnector
-            {
-
-            						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConnectorsConnectorParserRuleCall_4_0_0());
-            					
-            pushFollow(FOLLOW_7);
-            lv_connectors_6_0=ruleConnector();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-            						}
-            						add(
-            							current,
-            							"connectors",
-            							lv_connectors_6_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Connector");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:352:4: (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
-
-                if ( (LA6_0==13) ) {
-                    alt6=1;
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // InternalCosaDsl.g:353:5: otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) )
-            	    {
-            	    otherlv_7=(Token)match(input,13,FOLLOW_6); 
-
-            	    					newLeafNode(otherlv_7, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_4_1_0());
-            	    				
-            	    // InternalCosaDsl.g:357:5: ( (lv_connectors_8_0= ruleConnector ) )
-            	    // InternalCosaDsl.g:358:6: (lv_connectors_8_0= ruleConnector )
-            	    {
-            	    // InternalCosaDsl.g:358:6: (lv_connectors_8_0= ruleConnector )
-            	    // InternalCosaDsl.g:359:7: lv_connectors_8_0= ruleConnector
-            	    {
-
-            	    							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConnectorsConnectorParserRuleCall_4_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_7);
-            	    lv_connectors_8_0=ruleConnector();
-
-            	    state._fsp--;
-
-
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"connectors",
-            	    								lv_connectors_8_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Connector");
-            	    							afterParserOrEnumRuleCall();
-            	    						
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop6;
-                }
-            } while (true);
-
-
-            }
-
-            // InternalCosaDsl.g:378:3: ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )
-            // InternalCosaDsl.g:379:4: ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
-            {
-            // InternalCosaDsl.g:379:4: ( (lv_ports_9_0= rulePort ) )
-            // InternalCosaDsl.g:380:5: (lv_ports_9_0= rulePort )
-            {
-            // InternalCosaDsl.g:380:5: (lv_ports_9_0= rulePort )
-            // InternalCosaDsl.g:381:6: lv_ports_9_0= rulePort
-            {
-
-            						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getPortsPortParserRuleCall_5_0_0());
-            					
-            pushFollow(FOLLOW_8);
-            lv_ports_9_0=rulePort();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-            						}
-            						add(
-            							current,
-            							"ports",
-            							lv_ports_9_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Port");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:398:4: (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
+            // InternalCosaDsl.g:332:3: ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )*
             loop7:
             do {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( (LA7_0==13) ) {
+                if ( (LA7_0==16) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalCosaDsl.g:399:5: otherlv_10= ',' ( (lv_ports_11_0= rulePort ) )
+            	    // InternalCosaDsl.g:333:4: ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
             	    {
-            	    otherlv_10=(Token)match(input,13,FOLLOW_7); 
-
-            	    					newLeafNode(otherlv_10, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_5_1_0());
-            	    				
-            	    // InternalCosaDsl.g:403:5: ( (lv_ports_11_0= rulePort ) )
-            	    // InternalCosaDsl.g:404:6: (lv_ports_11_0= rulePort )
+            	    // InternalCosaDsl.g:333:4: ( (lv_connectors_6_0= ruleConnector ) )
+            	    // InternalCosaDsl.g:334:5: (lv_connectors_6_0= ruleConnector )
             	    {
-            	    // InternalCosaDsl.g:404:6: (lv_ports_11_0= rulePort )
-            	    // InternalCosaDsl.g:405:7: lv_ports_11_0= rulePort
+            	    // InternalCosaDsl.g:334:5: (lv_connectors_6_0= ruleConnector )
+            	    // InternalCosaDsl.g:335:6: lv_connectors_6_0= ruleConnector
             	    {
 
-            	    							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getPortsPortParserRuleCall_5_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_8);
-            	    lv_ports_11_0=rulePort();
+            	    						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConnectorsConnectorParserRuleCall_4_0_0());
+            	    					
+            	    pushFollow(FOLLOW_6);
+            	    lv_connectors_6_0=ruleConnector();
 
             	    state._fsp--;
 
 
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"ports",
-            	    								lv_ports_11_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Port");
-            	    							afterParserOrEnumRuleCall();
-            	    						
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"connectors",
+            	    							lv_connectors_6_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Connector");
+            	    						afterParserOrEnumRuleCall();
+            	    					
 
             	    }
 
 
             	    }
+
+            	    // InternalCosaDsl.g:352:4: (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
+            	    loop6:
+            	    do {
+            	        int alt6=2;
+            	        int LA6_0 = input.LA(1);
+
+            	        if ( (LA6_0==13) ) {
+            	            alt6=1;
+            	        }
+
+
+            	        switch (alt6) {
+            	    	case 1 :
+            	    	    // InternalCosaDsl.g:353:5: otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) )
+            	    	    {
+            	    	    otherlv_7=(Token)match(input,13,FOLLOW_7); 
+
+            	    	    					newLeafNode(otherlv_7, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_4_1_0());
+            	    	    				
+            	    	    // InternalCosaDsl.g:357:5: ( (lv_connectors_8_0= ruleConnector ) )
+            	    	    // InternalCosaDsl.g:358:6: (lv_connectors_8_0= ruleConnector )
+            	    	    {
+            	    	    // InternalCosaDsl.g:358:6: (lv_connectors_8_0= ruleConnector )
+            	    	    // InternalCosaDsl.g:359:7: lv_connectors_8_0= ruleConnector
+            	    	    {
+
+            	    	    							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConnectorsConnectorParserRuleCall_4_1_1_0());
+            	    	    						
+            	    	    pushFollow(FOLLOW_6);
+            	    	    lv_connectors_8_0=ruleConnector();
+
+            	    	    state._fsp--;
+
+
+            	    	    							if (current==null) {
+            	    	    								current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+            	    	    							}
+            	    	    							add(
+            	    	    								current,
+            	    	    								"connectors",
+            	    	    								lv_connectors_8_0,
+            	    	    								"fr.univnantes.asa.xtext.CosaDsl.Connector");
+            	    	    							afterParserOrEnumRuleCall();
+            	    	    						
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop6;
+            	        }
+            	    } while (true);
 
 
             	    }
@@ -1135,188 +1060,110 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-
-            }
-
-            // InternalCosaDsl.g:424:3: ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )
-            // InternalCosaDsl.g:425:4: ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
-            {
-            // InternalCosaDsl.g:425:4: ( (lv_bindings_12_0= ruleBinding ) )
-            // InternalCosaDsl.g:426:5: (lv_bindings_12_0= ruleBinding )
-            {
-            // InternalCosaDsl.g:426:5: (lv_bindings_12_0= ruleBinding )
-            // InternalCosaDsl.g:427:6: lv_bindings_12_0= ruleBinding
-            {
-
-            						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getBindingsBindingParserRuleCall_6_0_0());
-            					
-            pushFollow(FOLLOW_9);
-            lv_bindings_12_0=ruleBinding();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-            						}
-            						add(
-            							current,
-            							"bindings",
-            							lv_bindings_12_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Binding");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:444:4: (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
-            loop8:
-            do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
-
-                if ( (LA8_0==13) ) {
-                    alt8=1;
-                }
-
-
-                switch (alt8) {
-            	case 1 :
-            	    // InternalCosaDsl.g:445:5: otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) )
-            	    {
-            	    otherlv_13=(Token)match(input,13,FOLLOW_8); 
-
-            	    					newLeafNode(otherlv_13, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_6_1_0());
-            	    				
-            	    // InternalCosaDsl.g:449:5: ( (lv_bindings_14_0= ruleBinding ) )
-            	    // InternalCosaDsl.g:450:6: (lv_bindings_14_0= ruleBinding )
-            	    {
-            	    // InternalCosaDsl.g:450:6: (lv_bindings_14_0= ruleBinding )
-            	    // InternalCosaDsl.g:451:7: lv_bindings_14_0= ruleBinding
-            	    {
-
-            	    							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getBindingsBindingParserRuleCall_6_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_9);
-            	    lv_bindings_14_0=ruleBinding();
-
-            	    state._fsp--;
-
-
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"bindings",
-            	    								lv_bindings_14_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Binding");
-            	    							afterParserOrEnumRuleCall();
-            	    						
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop8;
-                }
-            } while (true);
-
-
-            }
-
-            // InternalCosaDsl.g:470:3: ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* )
-            // InternalCosaDsl.g:471:4: ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )*
-            {
-            // InternalCosaDsl.g:471:4: ( (lv_attachements_15_0= ruleAttachement ) )
-            // InternalCosaDsl.g:472:5: (lv_attachements_15_0= ruleAttachement )
-            {
-            // InternalCosaDsl.g:472:5: (lv_attachements_15_0= ruleAttachement )
-            // InternalCosaDsl.g:473:6: lv_attachements_15_0= ruleAttachement
-            {
-
-            						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getAttachementsAttachementParserRuleCall_7_0_0());
-            					
-            pushFollow(FOLLOW_10);
-            lv_attachements_15_0=ruleAttachement();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-            						}
-            						add(
-            							current,
-            							"attachements",
-            							lv_attachements_15_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Attachement");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:490:4: (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )*
+            // InternalCosaDsl.g:378:3: ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )*
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==13) ) {
+                if ( (LA9_0==18||(LA9_0>=33 && LA9_0<=34)) ) {
                     alt9=1;
                 }
 
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalCosaDsl.g:491:5: otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) )
+            	    // InternalCosaDsl.g:379:4: ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
             	    {
-            	    otherlv_16=(Token)match(input,13,FOLLOW_9); 
-
-            	    					newLeafNode(otherlv_16, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_7_1_0());
-            	    				
-            	    // InternalCosaDsl.g:495:5: ( (lv_attachements_17_0= ruleAttachement ) )
-            	    // InternalCosaDsl.g:496:6: (lv_attachements_17_0= ruleAttachement )
+            	    // InternalCosaDsl.g:379:4: ( (lv_ports_9_0= rulePort ) )
+            	    // InternalCosaDsl.g:380:5: (lv_ports_9_0= rulePort )
             	    {
-            	    // InternalCosaDsl.g:496:6: (lv_attachements_17_0= ruleAttachement )
-            	    // InternalCosaDsl.g:497:7: lv_attachements_17_0= ruleAttachement
+            	    // InternalCosaDsl.g:380:5: (lv_ports_9_0= rulePort )
+            	    // InternalCosaDsl.g:381:6: lv_ports_9_0= rulePort
             	    {
 
-            	    							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getAttachementsAttachementParserRuleCall_7_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_10);
-            	    lv_attachements_17_0=ruleAttachement();
+            	    						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getPortsPortParserRuleCall_5_0_0());
+            	    					
+            	    pushFollow(FOLLOW_8);
+            	    lv_ports_9_0=rulePort();
 
             	    state._fsp--;
 
 
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"attachements",
-            	    								lv_attachements_17_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Attachement");
-            	    							afterParserOrEnumRuleCall();
-            	    						
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"ports",
+            	    							lv_ports_9_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Port");
+            	    						afterParserOrEnumRuleCall();
+            	    					
 
             	    }
 
 
             	    }
+
+            	    // InternalCosaDsl.g:398:4: (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
+            	    loop8:
+            	    do {
+            	        int alt8=2;
+            	        int LA8_0 = input.LA(1);
+
+            	        if ( (LA8_0==13) ) {
+            	            alt8=1;
+            	        }
+
+
+            	        switch (alt8) {
+            	    	case 1 :
+            	    	    // InternalCosaDsl.g:399:5: otherlv_10= ',' ( (lv_ports_11_0= rulePort ) )
+            	    	    {
+            	    	    otherlv_10=(Token)match(input,13,FOLLOW_9); 
+
+            	    	    					newLeafNode(otherlv_10, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_5_1_0());
+            	    	    				
+            	    	    // InternalCosaDsl.g:403:5: ( (lv_ports_11_0= rulePort ) )
+            	    	    // InternalCosaDsl.g:404:6: (lv_ports_11_0= rulePort )
+            	    	    {
+            	    	    // InternalCosaDsl.g:404:6: (lv_ports_11_0= rulePort )
+            	    	    // InternalCosaDsl.g:405:7: lv_ports_11_0= rulePort
+            	    	    {
+
+            	    	    							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getPortsPortParserRuleCall_5_1_1_0());
+            	    	    						
+            	    	    pushFollow(FOLLOW_8);
+            	    	    lv_ports_11_0=rulePort();
+
+            	    	    state._fsp--;
+
+
+            	    	    							if (current==null) {
+            	    	    								current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+            	    	    							}
+            	    	    							add(
+            	    	    								current,
+            	    	    								"ports",
+            	    	    								lv_ports_11_0,
+            	    	    								"fr.univnantes.asa.xtext.CosaDsl.Port");
+            	    	    							afterParserOrEnumRuleCall();
+            	    	    						
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop8;
+            	        }
+            	    } while (true);
 
 
             	    }
@@ -1327,104 +1174,347 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-
-            }
-
-            // InternalCosaDsl.g:516:3: ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* )
-            // InternalCosaDsl.g:517:4: ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )*
-            {
-            // InternalCosaDsl.g:517:4: ( (lv_configurations_18_0= ruleConfiguration ) )
-            // InternalCosaDsl.g:518:5: (lv_configurations_18_0= ruleConfiguration )
-            {
-            // InternalCosaDsl.g:518:5: (lv_configurations_18_0= ruleConfiguration )
-            // InternalCosaDsl.g:519:6: lv_configurations_18_0= ruleConfiguration
-            {
-
-            						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConfigurationsConfigurationParserRuleCall_8_0_0());
-            					
-            pushFollow(FOLLOW_11);
-            lv_configurations_18_0=ruleConfiguration();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-            						}
-            						add(
-            							current,
-            							"configurations",
-            							lv_configurations_18_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Configuration");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:536:4: (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )*
-            loop10:
+            // InternalCosaDsl.g:424:3: ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )*
+            loop11:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA10_0==13) ) {
-                    alt10=1;
+                if ( (LA11_0==19) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt11) {
             	case 1 :
-            	    // InternalCosaDsl.g:537:5: otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) )
+            	    // InternalCosaDsl.g:425:4: ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
             	    {
-            	    otherlv_19=(Token)match(input,13,FOLLOW_10); 
-
-            	    					newLeafNode(otherlv_19, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_8_1_0());
-            	    				
-            	    // InternalCosaDsl.g:541:5: ( (lv_configurations_20_0= ruleConfiguration ) )
-            	    // InternalCosaDsl.g:542:6: (lv_configurations_20_0= ruleConfiguration )
+            	    // InternalCosaDsl.g:425:4: ( (lv_bindings_12_0= ruleBinding ) )
+            	    // InternalCosaDsl.g:426:5: (lv_bindings_12_0= ruleBinding )
             	    {
-            	    // InternalCosaDsl.g:542:6: (lv_configurations_20_0= ruleConfiguration )
-            	    // InternalCosaDsl.g:543:7: lv_configurations_20_0= ruleConfiguration
+            	    // InternalCosaDsl.g:426:5: (lv_bindings_12_0= ruleBinding )
+            	    // InternalCosaDsl.g:427:6: lv_bindings_12_0= ruleBinding
             	    {
 
-            	    							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConfigurationsConfigurationParserRuleCall_8_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_11);
-            	    lv_configurations_20_0=ruleConfiguration();
+            	    						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getBindingsBindingParserRuleCall_6_0_0());
+            	    					
+            	    pushFollow(FOLLOW_10);
+            	    lv_bindings_12_0=ruleBinding();
 
             	    state._fsp--;
 
 
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"configurations",
-            	    								lv_configurations_20_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Configuration");
-            	    							afterParserOrEnumRuleCall();
-            	    						
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"bindings",
+            	    							lv_bindings_12_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Binding");
+            	    						afterParserOrEnumRuleCall();
+            	    					
 
             	    }
 
 
             	    }
+
+            	    // InternalCosaDsl.g:444:4: (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
+            	    loop10:
+            	    do {
+            	        int alt10=2;
+            	        int LA10_0 = input.LA(1);
+
+            	        if ( (LA10_0==13) ) {
+            	            alt10=1;
+            	        }
+
+
+            	        switch (alt10) {
+            	    	case 1 :
+            	    	    // InternalCosaDsl.g:445:5: otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) )
+            	    	    {
+            	    	    otherlv_13=(Token)match(input,13,FOLLOW_11); 
+
+            	    	    					newLeafNode(otherlv_13, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_6_1_0());
+            	    	    				
+            	    	    // InternalCosaDsl.g:449:5: ( (lv_bindings_14_0= ruleBinding ) )
+            	    	    // InternalCosaDsl.g:450:6: (lv_bindings_14_0= ruleBinding )
+            	    	    {
+            	    	    // InternalCosaDsl.g:450:6: (lv_bindings_14_0= ruleBinding )
+            	    	    // InternalCosaDsl.g:451:7: lv_bindings_14_0= ruleBinding
+            	    	    {
+
+            	    	    							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getBindingsBindingParserRuleCall_6_1_1_0());
+            	    	    						
+            	    	    pushFollow(FOLLOW_10);
+            	    	    lv_bindings_14_0=ruleBinding();
+
+            	    	    state._fsp--;
+
+
+            	    	    							if (current==null) {
+            	    	    								current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+            	    	    							}
+            	    	    							add(
+            	    	    								current,
+            	    	    								"bindings",
+            	    	    								lv_bindings_14_0,
+            	    	    								"fr.univnantes.asa.xtext.CosaDsl.Binding");
+            	    	    							afterParserOrEnumRuleCall();
+            	    	    						
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop10;
+            	        }
+            	    } while (true);
 
 
             	    }
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop11;
                 }
             } while (true);
 
+            // InternalCosaDsl.g:470:3: ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* )*
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-            }
+                if ( (LA13_0==23) ) {
+                    alt13=1;
+                }
+
+
+                switch (alt13) {
+            	case 1 :
+            	    // InternalCosaDsl.g:471:4: ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )*
+            	    {
+            	    // InternalCosaDsl.g:471:4: ( (lv_attachements_15_0= ruleAttachement ) )
+            	    // InternalCosaDsl.g:472:5: (lv_attachements_15_0= ruleAttachement )
+            	    {
+            	    // InternalCosaDsl.g:472:5: (lv_attachements_15_0= ruleAttachement )
+            	    // InternalCosaDsl.g:473:6: lv_attachements_15_0= ruleAttachement
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getAttachementsAttachementParserRuleCall_7_0_0());
+            	    					
+            	    pushFollow(FOLLOW_12);
+            	    lv_attachements_15_0=ruleAttachement();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"attachements",
+            	    							lv_attachements_15_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Attachement");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+            	    // InternalCosaDsl.g:490:4: (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )*
+            	    loop12:
+            	    do {
+            	        int alt12=2;
+            	        int LA12_0 = input.LA(1);
+
+            	        if ( (LA12_0==13) ) {
+            	            alt12=1;
+            	        }
+
+
+            	        switch (alt12) {
+            	    	case 1 :
+            	    	    // InternalCosaDsl.g:491:5: otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) )
+            	    	    {
+            	    	    otherlv_16=(Token)match(input,13,FOLLOW_13); 
+
+            	    	    					newLeafNode(otherlv_16, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_7_1_0());
+            	    	    				
+            	    	    // InternalCosaDsl.g:495:5: ( (lv_attachements_17_0= ruleAttachement ) )
+            	    	    // InternalCosaDsl.g:496:6: (lv_attachements_17_0= ruleAttachement )
+            	    	    {
+            	    	    // InternalCosaDsl.g:496:6: (lv_attachements_17_0= ruleAttachement )
+            	    	    // InternalCosaDsl.g:497:7: lv_attachements_17_0= ruleAttachement
+            	    	    {
+
+            	    	    							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getAttachementsAttachementParserRuleCall_7_1_1_0());
+            	    	    						
+            	    	    pushFollow(FOLLOW_12);
+            	    	    lv_attachements_17_0=ruleAttachement();
+
+            	    	    state._fsp--;
+
+
+            	    	    							if (current==null) {
+            	    	    								current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+            	    	    							}
+            	    	    							add(
+            	    	    								current,
+            	    	    								"attachements",
+            	    	    								lv_attachements_17_0,
+            	    	    								"fr.univnantes.asa.xtext.CosaDsl.Attachement");
+            	    	    							afterParserOrEnumRuleCall();
+            	    	    						
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop12;
+            	        }
+            	    } while (true);
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop13;
+                }
+            } while (true);
+
+            // InternalCosaDsl.g:516:3: ( ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )* )*
+            loop15:
+            do {
+                int alt15=2;
+                int LA15_0 = input.LA(1);
+
+                if ( (LA15_0==11||LA15_0==25||LA15_0==35) ) {
+                    alt15=1;
+                }
+
+
+                switch (alt15) {
+            	case 1 :
+            	    // InternalCosaDsl.g:517:4: ( (lv_configurations_18_0= ruleConfiguration ) ) (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )*
+            	    {
+            	    // InternalCosaDsl.g:517:4: ( (lv_configurations_18_0= ruleConfiguration ) )
+            	    // InternalCosaDsl.g:518:5: (lv_configurations_18_0= ruleConfiguration )
+            	    {
+            	    // InternalCosaDsl.g:518:5: (lv_configurations_18_0= ruleConfiguration )
+            	    // InternalCosaDsl.g:519:6: lv_configurations_18_0= ruleConfiguration
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConfigurationsConfigurationParserRuleCall_8_0_0());
+            	    					
+            	    pushFollow(FOLLOW_14);
+            	    lv_configurations_18_0=ruleConfiguration();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"configurations",
+            	    							lv_configurations_18_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Configuration");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+            	    // InternalCosaDsl.g:536:4: (otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) ) )*
+            	    loop14:
+            	    do {
+            	        int alt14=2;
+            	        int LA14_0 = input.LA(1);
+
+            	        if ( (LA14_0==13) ) {
+            	            alt14=1;
+            	        }
+
+
+            	        switch (alt14) {
+            	    	case 1 :
+            	    	    // InternalCosaDsl.g:537:5: otherlv_19= ',' ( (lv_configurations_20_0= ruleConfiguration ) )
+            	    	    {
+            	    	    otherlv_19=(Token)match(input,13,FOLLOW_15); 
+
+            	    	    					newLeafNode(otherlv_19, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_8_1_0());
+            	    	    				
+            	    	    // InternalCosaDsl.g:541:5: ( (lv_configurations_20_0= ruleConfiguration ) )
+            	    	    // InternalCosaDsl.g:542:6: (lv_configurations_20_0= ruleConfiguration )
+            	    	    {
+            	    	    // InternalCosaDsl.g:542:6: (lv_configurations_20_0= ruleConfiguration )
+            	    	    // InternalCosaDsl.g:543:7: lv_configurations_20_0= ruleConfiguration
+            	    	    {
+
+            	    	    							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConfigurationsConfigurationParserRuleCall_8_1_1_0());
+            	    	    						
+            	    	    pushFollow(FOLLOW_14);
+            	    	    lv_configurations_20_0=ruleConfiguration();
+
+            	    	    state._fsp--;
+
+
+            	    	    							if (current==null) {
+            	    	    								current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+            	    	    							}
+            	    	    							add(
+            	    	    								current,
+            	    	    								"configurations",
+            	    	    								lv_configurations_20_0,
+            	    	    								"fr.univnantes.asa.xtext.CosaDsl.Configuration");
+            	    	    							afterParserOrEnumRuleCall();
+            	    	    						
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop14;
+            	        }
+            	    } while (true);
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop15;
+                }
+            } while (true);
 
             otherlv_21=(Token)match(input,14,FOLLOW_2); 
 
@@ -1504,22 +1594,22 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             // InternalCosaDsl.g:584:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
             // InternalCosaDsl.g:584:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA11_0==RULE_STRING) ) {
-                alt11=1;
+            if ( (LA16_0==RULE_STRING) ) {
+                alt16=1;
             }
-            else if ( (LA11_0==RULE_ID) ) {
-                alt11=2;
+            else if ( (LA16_0==RULE_ID) ) {
+                alt16=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
-            switch (alt11) {
+            switch (alt16) {
                 case 1 :
                     // InternalCosaDsl.g:585:3: this_STRING_0= RULE_STRING
                     {
@@ -1670,7 +1760,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_7); 
+            otherlv_2=(Token)match(input,12,FOLLOW_9); 
 
             			newLeafNode(otherlv_2, grammarAccess.getComponentAccess().getLeftCurlyBracketKeyword_2());
             		
@@ -1683,7 +1773,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getComponentAccess().getPortsPortParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_16);
             lv_ports_3_0=rulePort();
 
             state._fsp--;
@@ -1706,21 +1796,21 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             }
 
             // InternalCosaDsl.g:665:3: (otherlv_4= ',' ( (lv_ports_5_0= rulePort ) ) )*
-            loop12:
+            loop17:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA12_0==13) ) {
-                    alt12=1;
+                if ( (LA17_0==13) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt17) {
             	case 1 :
             	    // InternalCosaDsl.g:666:4: otherlv_4= ',' ( (lv_ports_5_0= rulePort ) )
             	    {
-            	    otherlv_4=(Token)match(input,13,FOLLOW_7); 
+            	    otherlv_4=(Token)match(input,13,FOLLOW_9); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getComponentAccess().getCommaKeyword_4_0());
             	    			
@@ -1733,7 +1823,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             	    						newCompositeNode(grammarAccess.getComponentAccess().getPortsPortParserRuleCall_4_1_0());
             	    					
-            	    pushFollow(FOLLOW_12);
+            	    pushFollow(FOLLOW_16);
             	    lv_ports_5_0=rulePort();
 
             	    state._fsp--;
@@ -1760,7 +1850,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop17;
                 }
             } while (true);
 
@@ -1773,7 +1863,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getComponentAccess().getServicesServiceParserRuleCall_5_0());
             				
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_17);
             lv_services_6_0=ruleService();
 
             state._fsp--;
@@ -1796,21 +1886,21 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             }
 
             // InternalCosaDsl.g:709:3: (otherlv_7= ',' ( (lv_services_8_0= ruleService ) ) )*
-            loop13:
+            loop18:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA13_0==13) ) {
-                    alt13=1;
+                if ( (LA18_0==13) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt18) {
             	case 1 :
             	    // InternalCosaDsl.g:710:4: otherlv_7= ',' ( (lv_services_8_0= ruleService ) )
             	    {
-            	    otherlv_7=(Token)match(input,13,FOLLOW_12); 
+            	    otherlv_7=(Token)match(input,13,FOLLOW_16); 
 
             	    				newLeafNode(otherlv_7, grammarAccess.getComponentAccess().getCommaKeyword_6_0());
             	    			
@@ -1823,7 +1913,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             	    						newCompositeNode(grammarAccess.getComponentAccess().getServicesServiceParserRuleCall_6_1_0());
             	    					
-            	    pushFollow(FOLLOW_11);
+            	    pushFollow(FOLLOW_17);
             	    lv_services_8_0=ruleService();
 
             	    state._fsp--;
@@ -1850,7 +1940,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop18;
                 }
             } while (true);
 
@@ -1917,36 +2007,33 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConnector"
-    // InternalCosaDsl.g:749:1: ruleConnector returns [EObject current=null] : (otherlv_0= 'Connector' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'Roles' otherlv_4= '{' ( (lv_roles_5_0= ruleRole ) ) otherlv_6= ',' ( (lv_roles_7_0= ruleRole ) ) otherlv_8= '}' (otherlv_9= 'glue' ( (lv_glue_10_0= ruleGlue ) ) )? otherlv_11= '}' ) ;
+    // InternalCosaDsl.g:749:1: ruleConnector returns [EObject current=null] : (otherlv_0= 'Connector' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_roles_3_0= ruleRole ) ) (otherlv_4= ',' ( (lv_roles_5_0= ruleRole ) ) )* (otherlv_6= 'glue' ( (lv_glue_7_0= ruleGlue ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleConnector() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
         Token otherlv_4=null;
         Token otherlv_6=null;
         Token otherlv_8=null;
-        Token otherlv_9=null;
-        Token otherlv_11=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+        EObject lv_roles_3_0 = null;
 
         EObject lv_roles_5_0 = null;
 
-        EObject lv_roles_7_0 = null;
-
-        EObject lv_glue_10_0 = null;
+        EObject lv_glue_7_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:755:2: ( (otherlv_0= 'Connector' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'Roles' otherlv_4= '{' ( (lv_roles_5_0= ruleRole ) ) otherlv_6= ',' ( (lv_roles_7_0= ruleRole ) ) otherlv_8= '}' (otherlv_9= 'glue' ( (lv_glue_10_0= ruleGlue ) ) )? otherlv_11= '}' ) )
-            // InternalCosaDsl.g:756:2: (otherlv_0= 'Connector' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'Roles' otherlv_4= '{' ( (lv_roles_5_0= ruleRole ) ) otherlv_6= ',' ( (lv_roles_7_0= ruleRole ) ) otherlv_8= '}' (otherlv_9= 'glue' ( (lv_glue_10_0= ruleGlue ) ) )? otherlv_11= '}' )
+            // InternalCosaDsl.g:755:2: ( (otherlv_0= 'Connector' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_roles_3_0= ruleRole ) ) (otherlv_4= ',' ( (lv_roles_5_0= ruleRole ) ) )* (otherlv_6= 'glue' ( (lv_glue_7_0= ruleGlue ) ) )? otherlv_8= '}' ) )
+            // InternalCosaDsl.g:756:2: (otherlv_0= 'Connector' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_roles_3_0= ruleRole ) ) (otherlv_4= ',' ( (lv_roles_5_0= ruleRole ) ) )* (otherlv_6= 'glue' ( (lv_glue_7_0= ruleGlue ) ) )? otherlv_8= '}' )
             {
-            // InternalCosaDsl.g:756:2: (otherlv_0= 'Connector' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'Roles' otherlv_4= '{' ( (lv_roles_5_0= ruleRole ) ) otherlv_6= ',' ( (lv_roles_7_0= ruleRole ) ) otherlv_8= '}' (otherlv_9= 'glue' ( (lv_glue_10_0= ruleGlue ) ) )? otherlv_11= '}' )
-            // InternalCosaDsl.g:757:3: otherlv_0= 'Connector' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'Roles' otherlv_4= '{' ( (lv_roles_5_0= ruleRole ) ) otherlv_6= ',' ( (lv_roles_7_0= ruleRole ) ) otherlv_8= '}' (otherlv_9= 'glue' ( (lv_glue_10_0= ruleGlue ) ) )? otherlv_11= '}'
+            // InternalCosaDsl.g:756:2: (otherlv_0= 'Connector' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_roles_3_0= ruleRole ) ) (otherlv_4= ',' ( (lv_roles_5_0= ruleRole ) ) )* (otherlv_6= 'glue' ( (lv_glue_7_0= ruleGlue ) ) )? otherlv_8= '}' )
+            // InternalCosaDsl.g:757:3: otherlv_0= 'Connector' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_roles_3_0= ruleRole ) ) (otherlv_4= ',' ( (lv_roles_5_0= ruleRole ) ) )* (otherlv_6= 'glue' ( (lv_glue_7_0= ruleGlue ) ) )? otherlv_8= '}'
             {
             otherlv_0=(Token)match(input,16,FOLLOW_3); 
 
@@ -1983,29 +2070,21 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_13); 
+            otherlv_2=(Token)match(input,12,FOLLOW_18); 
 
             			newLeafNode(otherlv_2, grammarAccess.getConnectorAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,17,FOLLOW_4); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getConnectorAccess().getRolesKeyword_3());
-            		
-            otherlv_4=(Token)match(input,12,FOLLOW_14); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getConnectorAccess().getLeftCurlyBracketKeyword_4());
-            		
-            // InternalCosaDsl.g:792:3: ( (lv_roles_5_0= ruleRole ) )
-            // InternalCosaDsl.g:793:4: (lv_roles_5_0= ruleRole )
+            // InternalCosaDsl.g:784:3: ( (lv_roles_3_0= ruleRole ) )
+            // InternalCosaDsl.g:785:4: (lv_roles_3_0= ruleRole )
             {
-            // InternalCosaDsl.g:793:4: (lv_roles_5_0= ruleRole )
-            // InternalCosaDsl.g:794:5: lv_roles_5_0= ruleRole
+            // InternalCosaDsl.g:785:4: (lv_roles_3_0= ruleRole )
+            // InternalCosaDsl.g:786:5: lv_roles_3_0= ruleRole
             {
 
-            					newCompositeNode(grammarAccess.getConnectorAccess().getRolesRoleParserRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getConnectorAccess().getRolesRoleParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_15);
-            lv_roles_5_0=ruleRole();
+            pushFollow(FOLLOW_19);
+            lv_roles_3_0=ruleRole();
 
             state._fsp--;
 
@@ -2016,7 +2095,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"roles",
-            						lv_roles_5_0,
+            						lv_roles_3_0,
             						"fr.univnantes.asa.xtext.CosaDsl.Role");
             					afterParserOrEnumRuleCall();
             				
@@ -2026,71 +2105,91 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,13,FOLLOW_14); 
+            // InternalCosaDsl.g:803:3: (otherlv_4= ',' ( (lv_roles_5_0= ruleRole ) ) )*
+            loop19:
+            do {
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-            			newLeafNode(otherlv_6, grammarAccess.getConnectorAccess().getCommaKeyword_6());
-            		
-            // InternalCosaDsl.g:815:3: ( (lv_roles_7_0= ruleRole ) )
-            // InternalCosaDsl.g:816:4: (lv_roles_7_0= ruleRole )
-            {
-            // InternalCosaDsl.g:816:4: (lv_roles_7_0= ruleRole )
-            // InternalCosaDsl.g:817:5: lv_roles_7_0= ruleRole
-            {
-
-            					newCompositeNode(grammarAccess.getConnectorAccess().getRolesRoleParserRuleCall_7_0());
-            				
-            pushFollow(FOLLOW_16);
-            lv_roles_7_0=ruleRole();
-
-            state._fsp--;
+                if ( (LA19_0==13) ) {
+                    alt19=1;
+                }
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getConnectorRule());
-            					}
-            					add(
-            						current,
-            						"roles",
-            						lv_roles_7_0,
-            						"fr.univnantes.asa.xtext.CosaDsl.Role");
-            					afterParserOrEnumRuleCall();
-            				
+                switch (alt19) {
+            	case 1 :
+            	    // InternalCosaDsl.g:804:4: otherlv_4= ',' ( (lv_roles_5_0= ruleRole ) )
+            	    {
+            	    otherlv_4=(Token)match(input,13,FOLLOW_18); 
 
+            	    				newLeafNode(otherlv_4, grammarAccess.getConnectorAccess().getCommaKeyword_4_0());
+            	    			
+            	    // InternalCosaDsl.g:808:4: ( (lv_roles_5_0= ruleRole ) )
+            	    // InternalCosaDsl.g:809:5: (lv_roles_5_0= ruleRole )
+            	    {
+            	    // InternalCosaDsl.g:809:5: (lv_roles_5_0= ruleRole )
+            	    // InternalCosaDsl.g:810:6: lv_roles_5_0= ruleRole
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getConnectorAccess().getRolesRoleParserRuleCall_4_1_0());
+            	    					
+            	    pushFollow(FOLLOW_19);
+            	    lv_roles_5_0=ruleRole();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getConnectorRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"roles",
+            	    							lv_roles_5_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Role");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop19;
+                }
+            } while (true);
+
+            // InternalCosaDsl.g:828:3: (otherlv_6= 'glue' ( (lv_glue_7_0= ruleGlue ) ) )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
+
+            if ( (LA20_0==17) ) {
+                alt20=1;
             }
-
-
-            }
-
-            otherlv_8=(Token)match(input,14,FOLLOW_17); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getConnectorAccess().getRightCurlyBracketKeyword_8());
-            		
-            // InternalCosaDsl.g:838:3: (otherlv_9= 'glue' ( (lv_glue_10_0= ruleGlue ) ) )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
-
-            if ( (LA14_0==18) ) {
-                alt14=1;
-            }
-            switch (alt14) {
+            switch (alt20) {
                 case 1 :
-                    // InternalCosaDsl.g:839:4: otherlv_9= 'glue' ( (lv_glue_10_0= ruleGlue ) )
+                    // InternalCosaDsl.g:829:4: otherlv_6= 'glue' ( (lv_glue_7_0= ruleGlue ) )
                     {
-                    otherlv_9=(Token)match(input,18,FOLLOW_18); 
+                    otherlv_6=(Token)match(input,17,FOLLOW_20); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getConnectorAccess().getGlueKeyword_9_0());
+                    				newLeafNode(otherlv_6, grammarAccess.getConnectorAccess().getGlueKeyword_5_0());
                     			
-                    // InternalCosaDsl.g:843:4: ( (lv_glue_10_0= ruleGlue ) )
-                    // InternalCosaDsl.g:844:5: (lv_glue_10_0= ruleGlue )
+                    // InternalCosaDsl.g:833:4: ( (lv_glue_7_0= ruleGlue ) )
+                    // InternalCosaDsl.g:834:5: (lv_glue_7_0= ruleGlue )
                     {
-                    // InternalCosaDsl.g:844:5: (lv_glue_10_0= ruleGlue )
-                    // InternalCosaDsl.g:845:6: lv_glue_10_0= ruleGlue
+                    // InternalCosaDsl.g:834:5: (lv_glue_7_0= ruleGlue )
+                    // InternalCosaDsl.g:835:6: lv_glue_7_0= ruleGlue
                     {
 
-                    						newCompositeNode(grammarAccess.getConnectorAccess().getGlueGlueParserRuleCall_9_1_0());
+                    						newCompositeNode(grammarAccess.getConnectorAccess().getGlueGlueParserRuleCall_5_1_0());
                     					
-                    pushFollow(FOLLOW_16);
-                    lv_glue_10_0=ruleGlue();
+                    pushFollow(FOLLOW_21);
+                    lv_glue_7_0=ruleGlue();
 
                     state._fsp--;
 
@@ -2101,7 +2200,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"glue",
-                    							lv_glue_10_0,
+                    							lv_glue_7_0,
                     							"fr.univnantes.asa.xtext.CosaDsl.Glue");
                     						afterParserOrEnumRuleCall();
                     					
@@ -2117,9 +2216,9 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,14,FOLLOW_2); 
+            otherlv_8=(Token)match(input,14,FOLLOW_2); 
 
-            			newLeafNode(otherlv_11, grammarAccess.getConnectorAccess().getRightCurlyBracketKeyword_10());
+            			newLeafNode(otherlv_8, grammarAccess.getConnectorAccess().getRightCurlyBracketKeyword_6());
             		
 
             }
@@ -2144,7 +2243,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePort_Impl"
-    // InternalCosaDsl.g:871:1: entryRulePort_Impl returns [EObject current=null] : iv_rulePort_Impl= rulePort_Impl EOF ;
+    // InternalCosaDsl.g:861:1: entryRulePort_Impl returns [EObject current=null] : iv_rulePort_Impl= rulePort_Impl EOF ;
     public final EObject entryRulePort_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -2152,8 +2251,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:871:50: (iv_rulePort_Impl= rulePort_Impl EOF )
-            // InternalCosaDsl.g:872:2: iv_rulePort_Impl= rulePort_Impl EOF
+            // InternalCosaDsl.g:861:50: (iv_rulePort_Impl= rulePort_Impl EOF )
+            // InternalCosaDsl.g:862:2: iv_rulePort_Impl= rulePort_Impl EOF
             {
              newCompositeNode(grammarAccess.getPort_ImplRule()); 
             pushFollow(FOLLOW_1);
@@ -2180,7 +2279,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePort_Impl"
-    // InternalCosaDsl.g:878:1: rulePort_Impl returns [EObject current=null] : ( () otherlv_1= 'Port' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:868:1: rulePort_Impl returns [EObject current=null] : ( () otherlv_1= 'Port' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject rulePort_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -2192,14 +2291,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:884:2: ( ( () otherlv_1= 'Port' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:885:2: ( () otherlv_1= 'Port' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:874:2: ( ( () otherlv_1= 'Port' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:875:2: ( () otherlv_1= 'Port' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:885:2: ( () otherlv_1= 'Port' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:886:3: () otherlv_1= 'Port' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:875:2: ( () otherlv_1= 'Port' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:876:3: () otherlv_1= 'Port' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:886:3: ()
-            // InternalCosaDsl.g:887:4: 
+            // InternalCosaDsl.g:876:3: ()
+            // InternalCosaDsl.g:877:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2209,15 +2308,15 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,19,FOLLOW_3); 
+            otherlv_1=(Token)match(input,18,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPort_ImplAccess().getPortKeyword_1());
             		
-            // InternalCosaDsl.g:897:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:898:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:887:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:888:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:898:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:899:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:888:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:889:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getPort_ImplAccess().getNameEStringParserRuleCall_2_0());
@@ -2267,7 +2366,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBinding"
-    // InternalCosaDsl.g:920:1: entryRuleBinding returns [EObject current=null] : iv_ruleBinding= ruleBinding EOF ;
+    // InternalCosaDsl.g:910:1: entryRuleBinding returns [EObject current=null] : iv_ruleBinding= ruleBinding EOF ;
     public final EObject entryRuleBinding() throws RecognitionException {
         EObject current = null;
 
@@ -2275,8 +2374,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:920:48: (iv_ruleBinding= ruleBinding EOF )
-            // InternalCosaDsl.g:921:2: iv_ruleBinding= ruleBinding EOF
+            // InternalCosaDsl.g:910:48: (iv_ruleBinding= ruleBinding EOF )
+            // InternalCosaDsl.g:911:2: iv_ruleBinding= ruleBinding EOF
             {
              newCompositeNode(grammarAccess.getBindingRule()); 
             pushFollow(FOLLOW_1);
@@ -2303,61 +2402,53 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBinding"
-    // InternalCosaDsl.g:927:1: ruleBinding returns [EObject current=null] : (otherlv_0= 'Binding' otherlv_1= '(' ( (lv_portProvided_2_0= rulePort ) ) otherlv_3= ',' ( (lv_portRequired_4_0= rulePort ) ) otherlv_5= ')' ) ;
+    // InternalCosaDsl.g:917:1: ruleBinding returns [EObject current=null] : (otherlv_0= 'Binding' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= '.' ( (otherlv_4= RULE_ID ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= '.' ( (otherlv_8= RULE_ID ) ) otherlv_9= ')' ) ;
     public final EObject ruleBinding() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
+        Token otherlv_2=null;
         Token otherlv_3=null;
+        Token otherlv_4=null;
         Token otherlv_5=null;
-        EObject lv_portProvided_2_0 = null;
-
-        EObject lv_portRequired_4_0 = null;
-
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token otherlv_8=null;
+        Token otherlv_9=null;
 
 
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:933:2: ( (otherlv_0= 'Binding' otherlv_1= '(' ( (lv_portProvided_2_0= rulePort ) ) otherlv_3= ',' ( (lv_portRequired_4_0= rulePort ) ) otherlv_5= ')' ) )
-            // InternalCosaDsl.g:934:2: (otherlv_0= 'Binding' otherlv_1= '(' ( (lv_portProvided_2_0= rulePort ) ) otherlv_3= ',' ( (lv_portRequired_4_0= rulePort ) ) otherlv_5= ')' )
+            // InternalCosaDsl.g:923:2: ( (otherlv_0= 'Binding' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= '.' ( (otherlv_4= RULE_ID ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= '.' ( (otherlv_8= RULE_ID ) ) otherlv_9= ')' ) )
+            // InternalCosaDsl.g:924:2: (otherlv_0= 'Binding' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= '.' ( (otherlv_4= RULE_ID ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= '.' ( (otherlv_8= RULE_ID ) ) otherlv_9= ')' )
             {
-            // InternalCosaDsl.g:934:2: (otherlv_0= 'Binding' otherlv_1= '(' ( (lv_portProvided_2_0= rulePort ) ) otherlv_3= ',' ( (lv_portRequired_4_0= rulePort ) ) otherlv_5= ')' )
-            // InternalCosaDsl.g:935:3: otherlv_0= 'Binding' otherlv_1= '(' ( (lv_portProvided_2_0= rulePort ) ) otherlv_3= ',' ( (lv_portRequired_4_0= rulePort ) ) otherlv_5= ')'
+            // InternalCosaDsl.g:924:2: (otherlv_0= 'Binding' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= '.' ( (otherlv_4= RULE_ID ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= '.' ( (otherlv_8= RULE_ID ) ) otherlv_9= ')' )
+            // InternalCosaDsl.g:925:3: otherlv_0= 'Binding' otherlv_1= '(' ( (otherlv_2= RULE_ID ) ) otherlv_3= '.' ( (otherlv_4= RULE_ID ) ) otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) otherlv_7= '.' ( (otherlv_8= RULE_ID ) ) otherlv_9= ')'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_19); 
+            otherlv_0=(Token)match(input,19,FOLLOW_22); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBindingAccess().getBindingKeyword_0());
             		
-            otherlv_1=(Token)match(input,21,FOLLOW_7); 
+            otherlv_1=(Token)match(input,20,FOLLOW_23); 
 
             			newLeafNode(otherlv_1, grammarAccess.getBindingAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalCosaDsl.g:943:3: ( (lv_portProvided_2_0= rulePort ) )
-            // InternalCosaDsl.g:944:4: (lv_portProvided_2_0= rulePort )
+            // InternalCosaDsl.g:933:3: ( (otherlv_2= RULE_ID ) )
+            // InternalCosaDsl.g:934:4: (otherlv_2= RULE_ID )
             {
-            // InternalCosaDsl.g:944:4: (lv_portProvided_2_0= rulePort )
-            // InternalCosaDsl.g:945:5: lv_portProvided_2_0= rulePort
+            // InternalCosaDsl.g:934:4: (otherlv_2= RULE_ID )
+            // InternalCosaDsl.g:935:5: otherlv_2= RULE_ID
             {
-
-            					newCompositeNode(grammarAccess.getBindingAccess().getPortProvidedPortParserRuleCall_2_0());
-            				
-            pushFollow(FOLLOW_15);
-            lv_portProvided_2_0=rulePort();
-
-            state._fsp--;
-
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getBindingRule());
+            						current = createModelElement(grammarAccess.getBindingRule());
             					}
-            					set(
-            						current,
-            						"portProvided",
-            						lv_portProvided_2_0,
-            						"fr.univnantes.asa.xtext.CosaDsl.Port");
-            					afterParserOrEnumRuleCall();
+            				
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_24); 
+
+            					newLeafNode(otherlv_2, grammarAccess.getBindingAccess().getConfigurationProviderConfigurationCrossReference_2_0());
             				
 
             }
@@ -2365,34 +2456,24 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,13,FOLLOW_7); 
+            otherlv_3=(Token)match(input,21,FOLLOW_23); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getBindingAccess().getCommaKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getBindingAccess().getFullStopKeyword_3());
             		
-            // InternalCosaDsl.g:966:3: ( (lv_portRequired_4_0= rulePort ) )
-            // InternalCosaDsl.g:967:4: (lv_portRequired_4_0= rulePort )
+            // InternalCosaDsl.g:950:3: ( (otherlv_4= RULE_ID ) )
+            // InternalCosaDsl.g:951:4: (otherlv_4= RULE_ID )
             {
-            // InternalCosaDsl.g:967:4: (lv_portRequired_4_0= rulePort )
-            // InternalCosaDsl.g:968:5: lv_portRequired_4_0= rulePort
+            // InternalCosaDsl.g:951:4: (otherlv_4= RULE_ID )
+            // InternalCosaDsl.g:952:5: otherlv_4= RULE_ID
             {
-
-            					newCompositeNode(grammarAccess.getBindingAccess().getPortRequiredPortParserRuleCall_4_0());
-            				
-            pushFollow(FOLLOW_20);
-            lv_portRequired_4_0=rulePort();
-
-            state._fsp--;
-
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getBindingRule());
+            						current = createModelElement(grammarAccess.getBindingRule());
             					}
-            					set(
-            						current,
-            						"portRequired",
-            						lv_portRequired_4_0,
-            						"fr.univnantes.asa.xtext.CosaDsl.Port");
-            					afterParserOrEnumRuleCall();
+            				
+            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_25); 
+
+            					newLeafNode(otherlv_4, grammarAccess.getBindingAccess().getPortProvidedPortCrossReference_4_0());
             				
 
             }
@@ -2400,9 +2481,59 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_2); 
+            otherlv_5=(Token)match(input,13,FOLLOW_23); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getBindingAccess().getRightParenthesisKeyword_5());
+            			newLeafNode(otherlv_5, grammarAccess.getBindingAccess().getCommaKeyword_5());
+            		
+            // InternalCosaDsl.g:967:3: ( (otherlv_6= RULE_ID ) )
+            // InternalCosaDsl.g:968:4: (otherlv_6= RULE_ID )
+            {
+            // InternalCosaDsl.g:968:4: (otherlv_6= RULE_ID )
+            // InternalCosaDsl.g:969:5: otherlv_6= RULE_ID
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getBindingRule());
+            					}
+            				
+            otherlv_6=(Token)match(input,RULE_ID,FOLLOW_24); 
+
+            					newLeafNode(otherlv_6, grammarAccess.getBindingAccess().getComponentSubscriberComponentCrossReference_6_0());
+            				
+
+            }
+
+
+            }
+
+            otherlv_7=(Token)match(input,21,FOLLOW_23); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getBindingAccess().getFullStopKeyword_7());
+            		
+            // InternalCosaDsl.g:984:3: ( (otherlv_8= RULE_ID ) )
+            // InternalCosaDsl.g:985:4: (otherlv_8= RULE_ID )
+            {
+            // InternalCosaDsl.g:985:4: (otherlv_8= RULE_ID )
+            // InternalCosaDsl.g:986:5: otherlv_8= RULE_ID
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getBindingRule());
+            					}
+            				
+            otherlv_8=(Token)match(input,RULE_ID,FOLLOW_26); 
+
+            					newLeafNode(otherlv_8, grammarAccess.getBindingAccess().getPortRequiredPortCrossReference_8_0());
+            				
+
+            }
+
+
+            }
+
+            otherlv_9=(Token)match(input,22,FOLLOW_2); 
+
+            			newLeafNode(otherlv_9, grammarAccess.getBindingAccess().getRightParenthesisKeyword_9());
             		
 
             }
@@ -2427,7 +2558,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttachement"
-    // InternalCosaDsl.g:993:1: entryRuleAttachement returns [EObject current=null] : iv_ruleAttachement= ruleAttachement EOF ;
+    // InternalCosaDsl.g:1005:1: entryRuleAttachement returns [EObject current=null] : iv_ruleAttachement= ruleAttachement EOF ;
     public final EObject entryRuleAttachement() throws RecognitionException {
         EObject current = null;
 
@@ -2435,8 +2566,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:993:52: (iv_ruleAttachement= ruleAttachement EOF )
-            // InternalCosaDsl.g:994:2: iv_ruleAttachement= ruleAttachement EOF
+            // InternalCosaDsl.g:1005:52: (iv_ruleAttachement= ruleAttachement EOF )
+            // InternalCosaDsl.g:1006:2: iv_ruleAttachement= ruleAttachement EOF
             {
              newCompositeNode(grammarAccess.getAttachementRule()); 
             pushFollow(FOLLOW_1);
@@ -2463,185 +2594,129 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttachement"
-    // InternalCosaDsl.g:1000:1: ruleAttachement returns [EObject current=null] : (otherlv_0= 'Attachement' otherlv_1= '{' ( ( (lv_port_2_0= rulePort ) ) otherlv_3= 'to' ( (lv_role_4_0= ruleRole ) ) ) otherlv_5= ',' ( ( (lv_port_6_0= rulePort ) ) otherlv_7= 'to' ( (lv_role_8_0= ruleRole ) ) ) otherlv_9= '}' ) ;
+    // InternalCosaDsl.g:1012:1: ruleAttachement returns [EObject current=null] : (otherlv_0= 'Attachement' otherlv_1= '{' ( (otherlv_2= RULE_ID ) ) otherlv_3= '.' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= '.' ( (otherlv_8= RULE_ID ) ) otherlv_9= '}' ) ;
     public final EObject ruleAttachement() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
+        Token otherlv_2=null;
         Token otherlv_3=null;
+        Token otherlv_4=null;
         Token otherlv_5=null;
+        Token otherlv_6=null;
         Token otherlv_7=null;
+        Token otherlv_8=null;
         Token otherlv_9=null;
-        EObject lv_port_2_0 = null;
-
-        EObject lv_role_4_0 = null;
-
-        EObject lv_port_6_0 = null;
-
-        EObject lv_role_8_0 = null;
-
 
 
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1006:2: ( (otherlv_0= 'Attachement' otherlv_1= '{' ( ( (lv_port_2_0= rulePort ) ) otherlv_3= 'to' ( (lv_role_4_0= ruleRole ) ) ) otherlv_5= ',' ( ( (lv_port_6_0= rulePort ) ) otherlv_7= 'to' ( (lv_role_8_0= ruleRole ) ) ) otherlv_9= '}' ) )
-            // InternalCosaDsl.g:1007:2: (otherlv_0= 'Attachement' otherlv_1= '{' ( ( (lv_port_2_0= rulePort ) ) otherlv_3= 'to' ( (lv_role_4_0= ruleRole ) ) ) otherlv_5= ',' ( ( (lv_port_6_0= rulePort ) ) otherlv_7= 'to' ( (lv_role_8_0= ruleRole ) ) ) otherlv_9= '}' )
+            // InternalCosaDsl.g:1018:2: ( (otherlv_0= 'Attachement' otherlv_1= '{' ( (otherlv_2= RULE_ID ) ) otherlv_3= '.' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= '.' ( (otherlv_8= RULE_ID ) ) otherlv_9= '}' ) )
+            // InternalCosaDsl.g:1019:2: (otherlv_0= 'Attachement' otherlv_1= '{' ( (otherlv_2= RULE_ID ) ) otherlv_3= '.' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= '.' ( (otherlv_8= RULE_ID ) ) otherlv_9= '}' )
             {
-            // InternalCosaDsl.g:1007:2: (otherlv_0= 'Attachement' otherlv_1= '{' ( ( (lv_port_2_0= rulePort ) ) otherlv_3= 'to' ( (lv_role_4_0= ruleRole ) ) ) otherlv_5= ',' ( ( (lv_port_6_0= rulePort ) ) otherlv_7= 'to' ( (lv_role_8_0= ruleRole ) ) ) otherlv_9= '}' )
-            // InternalCosaDsl.g:1008:3: otherlv_0= 'Attachement' otherlv_1= '{' ( ( (lv_port_2_0= rulePort ) ) otherlv_3= 'to' ( (lv_role_4_0= ruleRole ) ) ) otherlv_5= ',' ( ( (lv_port_6_0= rulePort ) ) otherlv_7= 'to' ( (lv_role_8_0= ruleRole ) ) ) otherlv_9= '}'
+            // InternalCosaDsl.g:1019:2: (otherlv_0= 'Attachement' otherlv_1= '{' ( (otherlv_2= RULE_ID ) ) otherlv_3= '.' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= '.' ( (otherlv_8= RULE_ID ) ) otherlv_9= '}' )
+            // InternalCosaDsl.g:1020:3: otherlv_0= 'Attachement' otherlv_1= '{' ( (otherlv_2= RULE_ID ) ) otherlv_3= '.' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= '.' ( (otherlv_8= RULE_ID ) ) otherlv_9= '}'
             {
             otherlv_0=(Token)match(input,23,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAttachementAccess().getAttachementKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_7); 
+            otherlv_1=(Token)match(input,12,FOLLOW_23); 
 
             			newLeafNode(otherlv_1, grammarAccess.getAttachementAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalCosaDsl.g:1016:3: ( ( (lv_port_2_0= rulePort ) ) otherlv_3= 'to' ( (lv_role_4_0= ruleRole ) ) )
-            // InternalCosaDsl.g:1017:4: ( (lv_port_2_0= rulePort ) ) otherlv_3= 'to' ( (lv_role_4_0= ruleRole ) )
+            // InternalCosaDsl.g:1028:3: ( (otherlv_2= RULE_ID ) )
+            // InternalCosaDsl.g:1029:4: (otherlv_2= RULE_ID )
             {
-            // InternalCosaDsl.g:1017:4: ( (lv_port_2_0= rulePort ) )
-            // InternalCosaDsl.g:1018:5: (lv_port_2_0= rulePort )
-            {
-            // InternalCosaDsl.g:1018:5: (lv_port_2_0= rulePort )
-            // InternalCosaDsl.g:1019:6: lv_port_2_0= rulePort
+            // InternalCosaDsl.g:1029:4: (otherlv_2= RULE_ID )
+            // InternalCosaDsl.g:1030:5: otherlv_2= RULE_ID
             {
 
-            						newCompositeNode(grammarAccess.getAttachementAccess().getPortPortParserRuleCall_2_0_0());
-            					
-            pushFollow(FOLLOW_21);
-            lv_port_2_0=rulePort();
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getAttachementRule());
+            					}
+            				
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_24); 
 
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getAttachementRule());
-            						}
-            						set(
-            							current,
-            							"port",
-            							lv_port_2_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Port");
-            						afterParserOrEnumRuleCall();
-            					
+            					newLeafNode(otherlv_2, grammarAccess.getAttachementAccess().getConnectorConnectorCrossReference_2_0());
+            				
 
             }
 
 
             }
 
-            otherlv_3=(Token)match(input,24,FOLLOW_14); 
+            otherlv_3=(Token)match(input,21,FOLLOW_23); 
 
-            				newLeafNode(otherlv_3, grammarAccess.getAttachementAccess().getToKeyword_2_1());
-            			
-            // InternalCosaDsl.g:1040:4: ( (lv_role_4_0= ruleRole ) )
-            // InternalCosaDsl.g:1041:5: (lv_role_4_0= ruleRole )
-            {
-            // InternalCosaDsl.g:1041:5: (lv_role_4_0= ruleRole )
-            // InternalCosaDsl.g:1042:6: lv_role_4_0= ruleRole
-            {
-
-            						newCompositeNode(grammarAccess.getAttachementAccess().getRoleRoleParserRuleCall_2_2_0());
-            					
-            pushFollow(FOLLOW_15);
-            lv_role_4_0=ruleRole();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getAttachementRule());
-            						}
-            						set(
-            							current,
-            							"role",
-            							lv_role_4_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Role");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-
-            }
-
-            otherlv_5=(Token)match(input,13,FOLLOW_7); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getAttachementAccess().getCommaKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getAttachementAccess().getFullStopKeyword_3());
             		
-            // InternalCosaDsl.g:1064:3: ( ( (lv_port_6_0= rulePort ) ) otherlv_7= 'to' ( (lv_role_8_0= ruleRole ) ) )
-            // InternalCosaDsl.g:1065:4: ( (lv_port_6_0= rulePort ) ) otherlv_7= 'to' ( (lv_role_8_0= ruleRole ) )
+            // InternalCosaDsl.g:1045:3: ( (otherlv_4= RULE_ID ) )
+            // InternalCosaDsl.g:1046:4: (otherlv_4= RULE_ID )
             {
-            // InternalCosaDsl.g:1065:4: ( (lv_port_6_0= rulePort ) )
-            // InternalCosaDsl.g:1066:5: (lv_port_6_0= rulePort )
-            {
-            // InternalCosaDsl.g:1066:5: (lv_port_6_0= rulePort )
-            // InternalCosaDsl.g:1067:6: lv_port_6_0= rulePort
+            // InternalCosaDsl.g:1046:4: (otherlv_4= RULE_ID )
+            // InternalCosaDsl.g:1047:5: otherlv_4= RULE_ID
             {
 
-            						newCompositeNode(grammarAccess.getAttachementAccess().getPortPortParserRuleCall_4_0_0());
-            					
-            pushFollow(FOLLOW_21);
-            lv_port_6_0=rulePort();
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getAttachementRule());
+            					}
+            				
+            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_27); 
 
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getAttachementRule());
-            						}
-            						set(
-            							current,
-            							"port",
-            							lv_port_6_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Port");
-            						afterParserOrEnumRuleCall();
-            					
+            					newLeafNode(otherlv_4, grammarAccess.getAttachementAccess().getRoleRoleCrossReference_4_0());
+            				
 
             }
 
 
             }
 
-            otherlv_7=(Token)match(input,24,FOLLOW_14); 
+            otherlv_5=(Token)match(input,24,FOLLOW_23); 
 
-            				newLeafNode(otherlv_7, grammarAccess.getAttachementAccess().getToKeyword_4_1());
-            			
-            // InternalCosaDsl.g:1088:4: ( (lv_role_8_0= ruleRole ) )
-            // InternalCosaDsl.g:1089:5: (lv_role_8_0= ruleRole )
+            			newLeafNode(otherlv_5, grammarAccess.getAttachementAccess().getToKeyword_5());
+            		
+            // InternalCosaDsl.g:1062:3: ( (otherlv_6= RULE_ID ) )
+            // InternalCosaDsl.g:1063:4: (otherlv_6= RULE_ID )
             {
-            // InternalCosaDsl.g:1089:5: (lv_role_8_0= ruleRole )
-            // InternalCosaDsl.g:1090:6: lv_role_8_0= ruleRole
+            // InternalCosaDsl.g:1063:4: (otherlv_6= RULE_ID )
+            // InternalCosaDsl.g:1064:5: otherlv_6= RULE_ID
             {
 
-            						newCompositeNode(grammarAccess.getAttachementAccess().getRoleRoleParserRuleCall_4_2_0());
-            					
-            pushFollow(FOLLOW_16);
-            lv_role_8_0=ruleRole();
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getAttachementRule());
+            					}
+            				
+            otherlv_6=(Token)match(input,RULE_ID,FOLLOW_24); 
 
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getAttachementRule());
-            						}
-            						set(
-            							current,
-            							"role",
-            							lv_role_8_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Role");
-            						afterParserOrEnumRuleCall();
-            					
+            					newLeafNode(otherlv_6, grammarAccess.getAttachementAccess().getComponentComponentCrossReference_6_0());
+            				
 
             }
 
+
+            }
+
+            otherlv_7=(Token)match(input,21,FOLLOW_23); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getAttachementAccess().getFullStopKeyword_7());
+            		
+            // InternalCosaDsl.g:1079:3: ( (otherlv_8= RULE_ID ) )
+            // InternalCosaDsl.g:1080:4: (otherlv_8= RULE_ID )
+            {
+            // InternalCosaDsl.g:1080:4: (otherlv_8= RULE_ID )
+            // InternalCosaDsl.g:1081:5: otherlv_8= RULE_ID
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getAttachementRule());
+            					}
+            				
+            otherlv_8=(Token)match(input,RULE_ID,FOLLOW_21); 
+
+            					newLeafNode(otherlv_8, grammarAccess.getAttachementAccess().getPortPortCrossReference_8_0());
+            				
 
             }
 
@@ -2650,7 +2725,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             otherlv_9=(Token)match(input,14,FOLLOW_2); 
 
-            			newLeafNode(otherlv_9, grammarAccess.getAttachementAccess().getRightCurlyBracketKeyword_5());
+            			newLeafNode(otherlv_9, grammarAccess.getAttachementAccess().getRightCurlyBracketKeyword_9());
             		
 
             }
@@ -2675,7 +2750,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConfiguration_Impl"
-    // InternalCosaDsl.g:1116:1: entryRuleConfiguration_Impl returns [EObject current=null] : iv_ruleConfiguration_Impl= ruleConfiguration_Impl EOF ;
+    // InternalCosaDsl.g:1100:1: entryRuleConfiguration_Impl returns [EObject current=null] : iv_ruleConfiguration_Impl= ruleConfiguration_Impl EOF ;
     public final EObject entryRuleConfiguration_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -2683,8 +2758,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1116:59: (iv_ruleConfiguration_Impl= ruleConfiguration_Impl EOF )
-            // InternalCosaDsl.g:1117:2: iv_ruleConfiguration_Impl= ruleConfiguration_Impl EOF
+            // InternalCosaDsl.g:1100:59: (iv_ruleConfiguration_Impl= ruleConfiguration_Impl EOF )
+            // InternalCosaDsl.g:1101:2: iv_ruleConfiguration_Impl= ruleConfiguration_Impl EOF
             {
              newCompositeNode(grammarAccess.getConfiguration_ImplRule()); 
             pushFollow(FOLLOW_1);
@@ -2711,7 +2786,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfiguration_Impl"
-    // InternalCosaDsl.g:1123:1: ruleConfiguration_Impl returns [EObject current=null] : (otherlv_0= 'Configuration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) otherlv_18= '}' ) ;
+    // InternalCosaDsl.g:1107:1: ruleConfiguration_Impl returns [EObject current=null] : (otherlv_0= 'Configuration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* otherlv_15= '}' ) ;
     public final EObject ruleConfiguration_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -2721,8 +2796,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         Token otherlv_7=null;
         Token otherlv_10=null;
         Token otherlv_13=null;
-        Token otherlv_16=null;
-        Token otherlv_18=null;
+        Token otherlv_15=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
 
         EObject lv_components_3_0 = null;
@@ -2741,30 +2815,26 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
         EObject lv_bindings_14_0 = null;
 
-        EObject lv_attachements_15_0 = null;
-
-        EObject lv_attachements_17_0 = null;
-
 
 
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1129:2: ( (otherlv_0= 'Configuration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) otherlv_18= '}' ) )
-            // InternalCosaDsl.g:1130:2: (otherlv_0= 'Configuration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) otherlv_18= '}' )
+            // InternalCosaDsl.g:1113:2: ( (otherlv_0= 'Configuration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* otherlv_15= '}' ) )
+            // InternalCosaDsl.g:1114:2: (otherlv_0= 'Configuration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* otherlv_15= '}' )
             {
-            // InternalCosaDsl.g:1130:2: (otherlv_0= 'Configuration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) otherlv_18= '}' )
-            // InternalCosaDsl.g:1131:3: otherlv_0= 'Configuration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) otherlv_18= '}'
+            // InternalCosaDsl.g:1114:2: (otherlv_0= 'Configuration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* otherlv_15= '}' )
+            // InternalCosaDsl.g:1115:3: otherlv_0= 'Configuration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* otherlv_15= '}'
             {
             otherlv_0=(Token)match(input,25,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getConfiguration_ImplAccess().getConfigurationKeyword_0());
             		
-            // InternalCosaDsl.g:1135:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalCosaDsl.g:1136:4: (lv_name_1_0= ruleEString )
+            // InternalCosaDsl.g:1119:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalCosaDsl.g:1120:4: (lv_name_1_0= ruleEString )
             {
-            // InternalCosaDsl.g:1136:4: (lv_name_1_0= ruleEString )
-            // InternalCosaDsl.g:1137:5: lv_name_1_0= ruleEString
+            // InternalCosaDsl.g:1120:4: (lv_name_1_0= ruleEString )
+            // InternalCosaDsl.g:1121:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getNameEStringParserRuleCall_1_0());
@@ -2795,16 +2865,16 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getConfiguration_ImplAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalCosaDsl.g:1158:3: ( (lv_components_3_0= ruleComponent ) )
-            // InternalCosaDsl.g:1159:4: (lv_components_3_0= ruleComponent )
+            // InternalCosaDsl.g:1142:3: ( (lv_components_3_0= ruleComponent ) )
+            // InternalCosaDsl.g:1143:4: (lv_components_3_0= ruleComponent )
             {
-            // InternalCosaDsl.g:1159:4: (lv_components_3_0= ruleComponent )
-            // InternalCosaDsl.g:1160:5: lv_components_3_0= ruleComponent
+            // InternalCosaDsl.g:1143:4: (lv_components_3_0= ruleComponent )
+            // InternalCosaDsl.g:1144:5: lv_components_3_0= ruleComponent
             {
 
             					newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getComponentsComponentParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_28);
             lv_components_3_0=ruleComponent();
 
             state._fsp--;
@@ -2826,35 +2896,35 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCosaDsl.g:1177:3: (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )*
-            loop15:
+            // InternalCosaDsl.g:1161:3: (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )*
+            loop21:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( (LA15_0==13) ) {
-                    alt15=1;
+                if ( (LA21_0==13) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt21) {
             	case 1 :
-            	    // InternalCosaDsl.g:1178:4: otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) )
+            	    // InternalCosaDsl.g:1162:4: otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) )
             	    {
             	    otherlv_4=(Token)match(input,13,FOLLOW_5); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_4_0());
             	    			
-            	    // InternalCosaDsl.g:1182:4: ( (lv_components_5_0= ruleComponent ) )
-            	    // InternalCosaDsl.g:1183:5: (lv_components_5_0= ruleComponent )
+            	    // InternalCosaDsl.g:1166:4: ( (lv_components_5_0= ruleComponent ) )
+            	    // InternalCosaDsl.g:1167:5: (lv_components_5_0= ruleComponent )
             	    {
-            	    // InternalCosaDsl.g:1183:5: (lv_components_5_0= ruleComponent )
-            	    // InternalCosaDsl.g:1184:6: lv_components_5_0= ruleComponent
+            	    // InternalCosaDsl.g:1167:5: (lv_components_5_0= ruleComponent )
+            	    // InternalCosaDsl.g:1168:6: lv_components_5_0= ruleComponent
             	    {
 
             	    						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getComponentsComponentParserRuleCall_4_1_0());
             	    					
-            	    pushFollow(FOLLOW_6);
+            	    pushFollow(FOLLOW_28);
             	    lv_components_5_0=ruleComponent();
 
             	    state._fsp--;
@@ -2881,23 +2951,23 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop21;
                 }
             } while (true);
 
-            // InternalCosaDsl.g:1202:3: ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )
-            // InternalCosaDsl.g:1203:4: ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
+            // InternalCosaDsl.g:1186:3: ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )
+            // InternalCosaDsl.g:1187:4: ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
             {
-            // InternalCosaDsl.g:1203:4: ( (lv_connectors_6_0= ruleConnector ) )
-            // InternalCosaDsl.g:1204:5: (lv_connectors_6_0= ruleConnector )
+            // InternalCosaDsl.g:1187:4: ( (lv_connectors_6_0= ruleConnector ) )
+            // InternalCosaDsl.g:1188:5: (lv_connectors_6_0= ruleConnector )
             {
-            // InternalCosaDsl.g:1204:5: (lv_connectors_6_0= ruleConnector )
-            // InternalCosaDsl.g:1205:6: lv_connectors_6_0= ruleConnector
+            // InternalCosaDsl.g:1188:5: (lv_connectors_6_0= ruleConnector )
+            // InternalCosaDsl.g:1189:6: lv_connectors_6_0= ruleConnector
             {
 
             						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getConnectorsConnectorParserRuleCall_5_0_0());
             					
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_29);
             lv_connectors_6_0=ruleConnector();
 
             state._fsp--;
@@ -2919,35 +2989,35 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCosaDsl.g:1222:4: (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
-            loop16:
+            // InternalCosaDsl.g:1206:4: (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
+            loop22:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( (LA16_0==13) ) {
-                    alt16=1;
+                if ( (LA22_0==13) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt22) {
             	case 1 :
-            	    // InternalCosaDsl.g:1223:5: otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) )
+            	    // InternalCosaDsl.g:1207:5: otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) )
             	    {
-            	    otherlv_7=(Token)match(input,13,FOLLOW_6); 
+            	    otherlv_7=(Token)match(input,13,FOLLOW_7); 
 
             	    					newLeafNode(otherlv_7, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_5_1_0());
             	    				
-            	    // InternalCosaDsl.g:1227:5: ( (lv_connectors_8_0= ruleConnector ) )
-            	    // InternalCosaDsl.g:1228:6: (lv_connectors_8_0= ruleConnector )
+            	    // InternalCosaDsl.g:1211:5: ( (lv_connectors_8_0= ruleConnector ) )
+            	    // InternalCosaDsl.g:1212:6: (lv_connectors_8_0= ruleConnector )
             	    {
-            	    // InternalCosaDsl.g:1228:6: (lv_connectors_8_0= ruleConnector )
-            	    // InternalCosaDsl.g:1229:7: lv_connectors_8_0= ruleConnector
+            	    // InternalCosaDsl.g:1212:6: (lv_connectors_8_0= ruleConnector )
+            	    // InternalCosaDsl.g:1213:7: lv_connectors_8_0= ruleConnector
             	    {
 
             	    							newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getConnectorsConnectorParserRuleCall_5_1_1_0());
             	    						
-            	    pushFollow(FOLLOW_7);
+            	    pushFollow(FOLLOW_29);
             	    lv_connectors_8_0=ruleConnector();
 
             	    state._fsp--;
@@ -2974,304 +3044,244 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop16;
+            	    break loop22;
                 }
             } while (true);
 
 
             }
 
-            // InternalCosaDsl.g:1248:3: ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )
-            // InternalCosaDsl.g:1249:4: ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
-            {
-            // InternalCosaDsl.g:1249:4: ( (lv_ports_9_0= rulePort ) )
-            // InternalCosaDsl.g:1250:5: (lv_ports_9_0= rulePort )
-            {
-            // InternalCosaDsl.g:1250:5: (lv_ports_9_0= rulePort )
-            // InternalCosaDsl.g:1251:6: lv_ports_9_0= rulePort
-            {
-
-            						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getPortsPortParserRuleCall_6_0_0());
-            					
-            pushFollow(FOLLOW_8);
-            lv_ports_9_0=rulePort();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
-            						}
-            						add(
-            							current,
-            							"ports",
-            							lv_ports_9_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Port");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:1268:4: (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
-            loop17:
+            // InternalCosaDsl.g:1232:3: ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )*
+            loop24:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA17_0==13) ) {
-                    alt17=1;
+                if ( (LA24_0==18||(LA24_0>=33 && LA24_0<=34)) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt24) {
             	case 1 :
-            	    // InternalCosaDsl.g:1269:5: otherlv_10= ',' ( (lv_ports_11_0= rulePort ) )
+            	    // InternalCosaDsl.g:1233:4: ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
             	    {
-            	    otherlv_10=(Token)match(input,13,FOLLOW_7); 
-
-            	    					newLeafNode(otherlv_10, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_6_1_0());
-            	    				
-            	    // InternalCosaDsl.g:1273:5: ( (lv_ports_11_0= rulePort ) )
-            	    // InternalCosaDsl.g:1274:6: (lv_ports_11_0= rulePort )
+            	    // InternalCosaDsl.g:1233:4: ( (lv_ports_9_0= rulePort ) )
+            	    // InternalCosaDsl.g:1234:5: (lv_ports_9_0= rulePort )
             	    {
-            	    // InternalCosaDsl.g:1274:6: (lv_ports_11_0= rulePort )
-            	    // InternalCosaDsl.g:1275:7: lv_ports_11_0= rulePort
+            	    // InternalCosaDsl.g:1234:5: (lv_ports_9_0= rulePort )
+            	    // InternalCosaDsl.g:1235:6: lv_ports_9_0= rulePort
             	    {
 
-            	    							newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getPortsPortParserRuleCall_6_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_8);
-            	    lv_ports_11_0=rulePort();
+            	    						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getPortsPortParserRuleCall_6_0_0());
+            	    					
+            	    pushFollow(FOLLOW_29);
+            	    lv_ports_9_0=rulePort();
 
             	    state._fsp--;
 
 
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"ports",
-            	    								lv_ports_11_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Port");
-            	    							afterParserOrEnumRuleCall();
-            	    						
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"ports",
+            	    							lv_ports_9_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Port");
+            	    						afterParserOrEnumRuleCall();
+            	    					
 
             	    }
 
 
             	    }
+
+            	    // InternalCosaDsl.g:1252:4: (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
+            	    loop23:
+            	    do {
+            	        int alt23=2;
+            	        int LA23_0 = input.LA(1);
+
+            	        if ( (LA23_0==13) ) {
+            	            alt23=1;
+            	        }
+
+
+            	        switch (alt23) {
+            	    	case 1 :
+            	    	    // InternalCosaDsl.g:1253:5: otherlv_10= ',' ( (lv_ports_11_0= rulePort ) )
+            	    	    {
+            	    	    otherlv_10=(Token)match(input,13,FOLLOW_9); 
+
+            	    	    					newLeafNode(otherlv_10, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_6_1_0());
+            	    	    				
+            	    	    // InternalCosaDsl.g:1257:5: ( (lv_ports_11_0= rulePort ) )
+            	    	    // InternalCosaDsl.g:1258:6: (lv_ports_11_0= rulePort )
+            	    	    {
+            	    	    // InternalCosaDsl.g:1258:6: (lv_ports_11_0= rulePort )
+            	    	    // InternalCosaDsl.g:1259:7: lv_ports_11_0= rulePort
+            	    	    {
+
+            	    	    							newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getPortsPortParserRuleCall_6_1_1_0());
+            	    	    						
+            	    	    pushFollow(FOLLOW_29);
+            	    	    lv_ports_11_0=rulePort();
+
+            	    	    state._fsp--;
+
+
+            	    	    							if (current==null) {
+            	    	    								current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+            	    	    							}
+            	    	    							add(
+            	    	    								current,
+            	    	    								"ports",
+            	    	    								lv_ports_11_0,
+            	    	    								"fr.univnantes.asa.xtext.CosaDsl.Port");
+            	    	    							afterParserOrEnumRuleCall();
+            	    	    						
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop23;
+            	        }
+            	    } while (true);
 
 
             	    }
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop24;
                 }
             } while (true);
 
-
-            }
-
-            // InternalCosaDsl.g:1294:3: ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )
-            // InternalCosaDsl.g:1295:4: ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
-            {
-            // InternalCosaDsl.g:1295:4: ( (lv_bindings_12_0= ruleBinding ) )
-            // InternalCosaDsl.g:1296:5: (lv_bindings_12_0= ruleBinding )
-            {
-            // InternalCosaDsl.g:1296:5: (lv_bindings_12_0= ruleBinding )
-            // InternalCosaDsl.g:1297:6: lv_bindings_12_0= ruleBinding
-            {
-
-            						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getBindingsBindingParserRuleCall_7_0_0());
-            					
-            pushFollow(FOLLOW_9);
-            lv_bindings_12_0=ruleBinding();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
-            						}
-            						add(
-            							current,
-            							"bindings",
-            							lv_bindings_12_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Binding");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:1314:4: (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
-            loop18:
+            // InternalCosaDsl.g:1278:3: ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )*
+            loop26:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( (LA18_0==13) ) {
-                    alt18=1;
+                if ( (LA26_0==19) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt26) {
             	case 1 :
-            	    // InternalCosaDsl.g:1315:5: otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) )
+            	    // InternalCosaDsl.g:1279:4: ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
             	    {
-            	    otherlv_13=(Token)match(input,13,FOLLOW_8); 
-
-            	    					newLeafNode(otherlv_13, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_7_1_0());
-            	    				
-            	    // InternalCosaDsl.g:1319:5: ( (lv_bindings_14_0= ruleBinding ) )
-            	    // InternalCosaDsl.g:1320:6: (lv_bindings_14_0= ruleBinding )
+            	    // InternalCosaDsl.g:1279:4: ( (lv_bindings_12_0= ruleBinding ) )
+            	    // InternalCosaDsl.g:1280:5: (lv_bindings_12_0= ruleBinding )
             	    {
-            	    // InternalCosaDsl.g:1320:6: (lv_bindings_14_0= ruleBinding )
-            	    // InternalCosaDsl.g:1321:7: lv_bindings_14_0= ruleBinding
+            	    // InternalCosaDsl.g:1280:5: (lv_bindings_12_0= ruleBinding )
+            	    // InternalCosaDsl.g:1281:6: lv_bindings_12_0= ruleBinding
             	    {
 
-            	    							newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getBindingsBindingParserRuleCall_7_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_9);
-            	    lv_bindings_14_0=ruleBinding();
+            	    						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getBindingsBindingParserRuleCall_7_0_0());
+            	    					
+            	    pushFollow(FOLLOW_30);
+            	    lv_bindings_12_0=ruleBinding();
 
             	    state._fsp--;
 
 
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"bindings",
-            	    								lv_bindings_14_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Binding");
-            	    							afterParserOrEnumRuleCall();
-            	    						
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"bindings",
+            	    							lv_bindings_12_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Binding");
+            	    						afterParserOrEnumRuleCall();
+            	    					
 
             	    }
 
 
             	    }
+
+            	    // InternalCosaDsl.g:1298:4: (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
+            	    loop25:
+            	    do {
+            	        int alt25=2;
+            	        int LA25_0 = input.LA(1);
+
+            	        if ( (LA25_0==13) ) {
+            	            alt25=1;
+            	        }
+
+
+            	        switch (alt25) {
+            	    	case 1 :
+            	    	    // InternalCosaDsl.g:1299:5: otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) )
+            	    	    {
+            	    	    otherlv_13=(Token)match(input,13,FOLLOW_11); 
+
+            	    	    					newLeafNode(otherlv_13, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_7_1_0());
+            	    	    				
+            	    	    // InternalCosaDsl.g:1303:5: ( (lv_bindings_14_0= ruleBinding ) )
+            	    	    // InternalCosaDsl.g:1304:6: (lv_bindings_14_0= ruleBinding )
+            	    	    {
+            	    	    // InternalCosaDsl.g:1304:6: (lv_bindings_14_0= ruleBinding )
+            	    	    // InternalCosaDsl.g:1305:7: lv_bindings_14_0= ruleBinding
+            	    	    {
+
+            	    	    							newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getBindingsBindingParserRuleCall_7_1_1_0());
+            	    	    						
+            	    	    pushFollow(FOLLOW_30);
+            	    	    lv_bindings_14_0=ruleBinding();
+
+            	    	    state._fsp--;
+
+
+            	    	    							if (current==null) {
+            	    	    								current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+            	    	    							}
+            	    	    							add(
+            	    	    								current,
+            	    	    								"bindings",
+            	    	    								lv_bindings_14_0,
+            	    	    								"fr.univnantes.asa.xtext.CosaDsl.Binding");
+            	    	    							afterParserOrEnumRuleCall();
+            	    	    						
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop25;
+            	        }
+            	    } while (true);
 
 
             	    }
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop26;
                 }
             } while (true);
 
+            otherlv_15=(Token)match(input,14,FOLLOW_2); 
 
-            }
-
-            // InternalCosaDsl.g:1340:3: ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* )
-            // InternalCosaDsl.g:1341:4: ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )*
-            {
-            // InternalCosaDsl.g:1341:4: ( (lv_attachements_15_0= ruleAttachement ) )
-            // InternalCosaDsl.g:1342:5: (lv_attachements_15_0= ruleAttachement )
-            {
-            // InternalCosaDsl.g:1342:5: (lv_attachements_15_0= ruleAttachement )
-            // InternalCosaDsl.g:1343:6: lv_attachements_15_0= ruleAttachement
-            {
-
-            						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getAttachementsAttachementParserRuleCall_8_0_0());
-            					
-            pushFollow(FOLLOW_11);
-            lv_attachements_15_0=ruleAttachement();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
-            						}
-            						add(
-            							current,
-            							"attachements",
-            							lv_attachements_15_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Attachement");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:1360:4: (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )*
-            loop19:
-            do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
-
-                if ( (LA19_0==13) ) {
-                    alt19=1;
-                }
-
-
-                switch (alt19) {
-            	case 1 :
-            	    // InternalCosaDsl.g:1361:5: otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) )
-            	    {
-            	    otherlv_16=(Token)match(input,13,FOLLOW_9); 
-
-            	    					newLeafNode(otherlv_16, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_8_1_0());
-            	    				
-            	    // InternalCosaDsl.g:1365:5: ( (lv_attachements_17_0= ruleAttachement ) )
-            	    // InternalCosaDsl.g:1366:6: (lv_attachements_17_0= ruleAttachement )
-            	    {
-            	    // InternalCosaDsl.g:1366:6: (lv_attachements_17_0= ruleAttachement )
-            	    // InternalCosaDsl.g:1367:7: lv_attachements_17_0= ruleAttachement
-            	    {
-
-            	    							newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getAttachementsAttachementParserRuleCall_8_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_11);
-            	    lv_attachements_17_0=ruleAttachement();
-
-            	    state._fsp--;
-
-
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"attachements",
-            	    								lv_attachements_17_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Attachement");
-            	    							afterParserOrEnumRuleCall();
-            	    						
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop19;
-                }
-            } while (true);
-
-
-            }
-
-            otherlv_18=(Token)match(input,14,FOLLOW_2); 
-
-            			newLeafNode(otherlv_18, grammarAccess.getConfiguration_ImplAccess().getRightCurlyBracketKeyword_9());
+            			newLeafNode(otherlv_15, grammarAccess.getConfiguration_ImplAccess().getRightCurlyBracketKeyword_8());
             		
 
             }
@@ -3296,7 +3306,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleService_Impl"
-    // InternalCosaDsl.g:1394:1: entryRuleService_Impl returns [EObject current=null] : iv_ruleService_Impl= ruleService_Impl EOF ;
+    // InternalCosaDsl.g:1332:1: entryRuleService_Impl returns [EObject current=null] : iv_ruleService_Impl= ruleService_Impl EOF ;
     public final EObject entryRuleService_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -3304,8 +3314,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1394:53: (iv_ruleService_Impl= ruleService_Impl EOF )
-            // InternalCosaDsl.g:1395:2: iv_ruleService_Impl= ruleService_Impl EOF
+            // InternalCosaDsl.g:1332:53: (iv_ruleService_Impl= ruleService_Impl EOF )
+            // InternalCosaDsl.g:1333:2: iv_ruleService_Impl= ruleService_Impl EOF
             {
              newCompositeNode(grammarAccess.getService_ImplRule()); 
             pushFollow(FOLLOW_1);
@@ -3332,7 +3342,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleService_Impl"
-    // InternalCosaDsl.g:1401:1: ruleService_Impl returns [EObject current=null] : ( () otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:1339:1: ruleService_Impl returns [EObject current=null] : ( () otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleService_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -3344,14 +3354,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1407:2: ( ( () otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:1408:2: ( () otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1345:2: ( ( () otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:1346:2: ( () otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:1408:2: ( () otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:1409:3: () otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1346:2: ( () otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1347:3: () otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:1409:3: ()
-            // InternalCosaDsl.g:1410:4: 
+            // InternalCosaDsl.g:1347:3: ()
+            // InternalCosaDsl.g:1348:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3365,11 +3375,11 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getService_ImplAccess().getServiceKeyword_1());
             		
-            // InternalCosaDsl.g:1420:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:1421:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1358:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1359:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:1421:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:1422:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:1359:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1360:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getService_ImplAccess().getNameEStringParserRuleCall_2_0());
@@ -3419,7 +3429,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRequiredService"
-    // InternalCosaDsl.g:1443:1: entryRuleRequiredService returns [EObject current=null] : iv_ruleRequiredService= ruleRequiredService EOF ;
+    // InternalCosaDsl.g:1381:1: entryRuleRequiredService returns [EObject current=null] : iv_ruleRequiredService= ruleRequiredService EOF ;
     public final EObject entryRuleRequiredService() throws RecognitionException {
         EObject current = null;
 
@@ -3427,8 +3437,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1443:56: (iv_ruleRequiredService= ruleRequiredService EOF )
-            // InternalCosaDsl.g:1444:2: iv_ruleRequiredService= ruleRequiredService EOF
+            // InternalCosaDsl.g:1381:56: (iv_ruleRequiredService= ruleRequiredService EOF )
+            // InternalCosaDsl.g:1382:2: iv_ruleRequiredService= ruleRequiredService EOF
             {
              newCompositeNode(grammarAccess.getRequiredServiceRule()); 
             pushFollow(FOLLOW_1);
@@ -3455,7 +3465,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRequiredService"
-    // InternalCosaDsl.g:1450:1: ruleRequiredService returns [EObject current=null] : ( () otherlv_1= 'RequiredService' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:1388:1: ruleRequiredService returns [EObject current=null] : ( () otherlv_1= 'RequiredService' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleRequiredService() throws RecognitionException {
         EObject current = null;
 
@@ -3467,14 +3477,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1456:2: ( ( () otherlv_1= 'RequiredService' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:1457:2: ( () otherlv_1= 'RequiredService' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1394:2: ( ( () otherlv_1= 'RequiredService' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:1395:2: ( () otherlv_1= 'RequiredService' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:1457:2: ( () otherlv_1= 'RequiredService' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:1458:3: () otherlv_1= 'RequiredService' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1395:2: ( () otherlv_1= 'RequiredService' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1396:3: () otherlv_1= 'RequiredService' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:1458:3: ()
-            // InternalCosaDsl.g:1459:4: 
+            // InternalCosaDsl.g:1396:3: ()
+            // InternalCosaDsl.g:1397:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3488,11 +3498,11 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getRequiredServiceAccess().getRequiredServiceKeyword_1());
             		
-            // InternalCosaDsl.g:1469:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:1470:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1407:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1408:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:1470:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:1471:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:1408:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1409:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRequiredServiceAccess().getNameEStringParserRuleCall_2_0());
@@ -3542,7 +3552,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProvidedService"
-    // InternalCosaDsl.g:1492:1: entryRuleProvidedService returns [EObject current=null] : iv_ruleProvidedService= ruleProvidedService EOF ;
+    // InternalCosaDsl.g:1430:1: entryRuleProvidedService returns [EObject current=null] : iv_ruleProvidedService= ruleProvidedService EOF ;
     public final EObject entryRuleProvidedService() throws RecognitionException {
         EObject current = null;
 
@@ -3550,8 +3560,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1492:56: (iv_ruleProvidedService= ruleProvidedService EOF )
-            // InternalCosaDsl.g:1493:2: iv_ruleProvidedService= ruleProvidedService EOF
+            // InternalCosaDsl.g:1430:56: (iv_ruleProvidedService= ruleProvidedService EOF )
+            // InternalCosaDsl.g:1431:2: iv_ruleProvidedService= ruleProvidedService EOF
             {
              newCompositeNode(grammarAccess.getProvidedServiceRule()); 
             pushFollow(FOLLOW_1);
@@ -3578,7 +3588,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProvidedService"
-    // InternalCosaDsl.g:1499:1: ruleProvidedService returns [EObject current=null] : ( () otherlv_1= 'ProvidedService' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:1437:1: ruleProvidedService returns [EObject current=null] : ( () otherlv_1= 'ProvidedService' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleProvidedService() throws RecognitionException {
         EObject current = null;
 
@@ -3590,14 +3600,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1505:2: ( ( () otherlv_1= 'ProvidedService' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:1506:2: ( () otherlv_1= 'ProvidedService' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1443:2: ( ( () otherlv_1= 'ProvidedService' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:1444:2: ( () otherlv_1= 'ProvidedService' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:1506:2: ( () otherlv_1= 'ProvidedService' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:1507:3: () otherlv_1= 'ProvidedService' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1444:2: ( () otherlv_1= 'ProvidedService' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1445:3: () otherlv_1= 'ProvidedService' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:1507:3: ()
-            // InternalCosaDsl.g:1508:4: 
+            // InternalCosaDsl.g:1445:3: ()
+            // InternalCosaDsl.g:1446:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3611,11 +3621,11 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getProvidedServiceAccess().getProvidedServiceKeyword_1());
             		
-            // InternalCosaDsl.g:1518:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:1519:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1456:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1457:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:1519:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:1520:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:1457:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1458:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getProvidedServiceAccess().getNameEStringParserRuleCall_2_0());
@@ -3665,7 +3675,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRole_Impl"
-    // InternalCosaDsl.g:1541:1: entryRuleRole_Impl returns [EObject current=null] : iv_ruleRole_Impl= ruleRole_Impl EOF ;
+    // InternalCosaDsl.g:1479:1: entryRuleRole_Impl returns [EObject current=null] : iv_ruleRole_Impl= ruleRole_Impl EOF ;
     public final EObject entryRuleRole_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -3673,8 +3683,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1541:50: (iv_ruleRole_Impl= ruleRole_Impl EOF )
-            // InternalCosaDsl.g:1542:2: iv_ruleRole_Impl= ruleRole_Impl EOF
+            // InternalCosaDsl.g:1479:50: (iv_ruleRole_Impl= ruleRole_Impl EOF )
+            // InternalCosaDsl.g:1480:2: iv_ruleRole_Impl= ruleRole_Impl EOF
             {
              newCompositeNode(grammarAccess.getRole_ImplRule()); 
             pushFollow(FOLLOW_1);
@@ -3701,7 +3711,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRole_Impl"
-    // InternalCosaDsl.g:1548:1: ruleRole_Impl returns [EObject current=null] : ( () otherlv_1= 'Role' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:1486:1: ruleRole_Impl returns [EObject current=null] : ( () otherlv_1= 'Role' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleRole_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -3713,14 +3723,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1554:2: ( ( () otherlv_1= 'Role' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:1555:2: ( () otherlv_1= 'Role' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1492:2: ( ( () otherlv_1= 'Role' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:1493:2: ( () otherlv_1= 'Role' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:1555:2: ( () otherlv_1= 'Role' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:1556:3: () otherlv_1= 'Role' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1493:2: ( () otherlv_1= 'Role' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1494:3: () otherlv_1= 'Role' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:1556:3: ()
-            // InternalCosaDsl.g:1557:4: 
+            // InternalCosaDsl.g:1494:3: ()
+            // InternalCosaDsl.g:1495:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3734,11 +3744,11 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getRole_ImplAccess().getRoleKeyword_1());
             		
-            // InternalCosaDsl.g:1567:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:1568:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1505:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1506:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:1568:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:1569:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:1506:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1507:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRole_ImplAccess().getNameEStringParserRuleCall_2_0());
@@ -3788,7 +3798,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGlue"
-    // InternalCosaDsl.g:1590:1: entryRuleGlue returns [EObject current=null] : iv_ruleGlue= ruleGlue EOF ;
+    // InternalCosaDsl.g:1528:1: entryRuleGlue returns [EObject current=null] : iv_ruleGlue= ruleGlue EOF ;
     public final EObject entryRuleGlue() throws RecognitionException {
         EObject current = null;
 
@@ -3796,8 +3806,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1590:45: (iv_ruleGlue= ruleGlue EOF )
-            // InternalCosaDsl.g:1591:2: iv_ruleGlue= ruleGlue EOF
+            // InternalCosaDsl.g:1528:45: (iv_ruleGlue= ruleGlue EOF )
+            // InternalCosaDsl.g:1529:2: iv_ruleGlue= ruleGlue EOF
             {
              newCompositeNode(grammarAccess.getGlueRule()); 
             pushFollow(FOLLOW_1);
@@ -3824,7 +3834,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGlue"
-    // InternalCosaDsl.g:1597:1: ruleGlue returns [EObject current=null] : ( () otherlv_1= 'Glue' ) ;
+    // InternalCosaDsl.g:1535:1: ruleGlue returns [EObject current=null] : ( () otherlv_1= 'Glue' ) ;
     public final EObject ruleGlue() throws RecognitionException {
         EObject current = null;
 
@@ -3834,14 +3844,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1603:2: ( ( () otherlv_1= 'Glue' ) )
-            // InternalCosaDsl.g:1604:2: ( () otherlv_1= 'Glue' )
+            // InternalCosaDsl.g:1541:2: ( ( () otherlv_1= 'Glue' ) )
+            // InternalCosaDsl.g:1542:2: ( () otherlv_1= 'Glue' )
             {
-            // InternalCosaDsl.g:1604:2: ( () otherlv_1= 'Glue' )
-            // InternalCosaDsl.g:1605:3: () otherlv_1= 'Glue'
+            // InternalCosaDsl.g:1542:2: ( () otherlv_1= 'Glue' )
+            // InternalCosaDsl.g:1543:3: () otherlv_1= 'Glue'
             {
-            // InternalCosaDsl.g:1605:3: ()
-            // InternalCosaDsl.g:1606:4: 
+            // InternalCosaDsl.g:1543:3: ()
+            // InternalCosaDsl.g:1544:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3878,7 +3888,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRequiredRole"
-    // InternalCosaDsl.g:1620:1: entryRuleRequiredRole returns [EObject current=null] : iv_ruleRequiredRole= ruleRequiredRole EOF ;
+    // InternalCosaDsl.g:1558:1: entryRuleRequiredRole returns [EObject current=null] : iv_ruleRequiredRole= ruleRequiredRole EOF ;
     public final EObject entryRuleRequiredRole() throws RecognitionException {
         EObject current = null;
 
@@ -3886,8 +3896,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1620:53: (iv_ruleRequiredRole= ruleRequiredRole EOF )
-            // InternalCosaDsl.g:1621:2: iv_ruleRequiredRole= ruleRequiredRole EOF
+            // InternalCosaDsl.g:1558:53: (iv_ruleRequiredRole= ruleRequiredRole EOF )
+            // InternalCosaDsl.g:1559:2: iv_ruleRequiredRole= ruleRequiredRole EOF
             {
              newCompositeNode(grammarAccess.getRequiredRoleRule()); 
             pushFollow(FOLLOW_1);
@@ -3914,7 +3924,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRequiredRole"
-    // InternalCosaDsl.g:1627:1: ruleRequiredRole returns [EObject current=null] : ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:1565:1: ruleRequiredRole returns [EObject current=null] : ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleRequiredRole() throws RecognitionException {
         EObject current = null;
 
@@ -3926,14 +3936,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1633:2: ( ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:1634:2: ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1571:2: ( ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:1572:2: ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:1634:2: ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:1635:3: () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1572:2: ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1573:3: () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:1635:3: ()
-            // InternalCosaDsl.g:1636:4: 
+            // InternalCosaDsl.g:1573:3: ()
+            // InternalCosaDsl.g:1574:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3947,11 +3957,11 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getRequiredRoleAccess().getRequiredRoleKeyword_1());
             		
-            // InternalCosaDsl.g:1646:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:1647:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1584:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1585:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:1647:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:1648:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:1585:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1586:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRequiredRoleAccess().getNameEStringParserRuleCall_2_0());
@@ -4001,7 +4011,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProvidedRole"
-    // InternalCosaDsl.g:1669:1: entryRuleProvidedRole returns [EObject current=null] : iv_ruleProvidedRole= ruleProvidedRole EOF ;
+    // InternalCosaDsl.g:1607:1: entryRuleProvidedRole returns [EObject current=null] : iv_ruleProvidedRole= ruleProvidedRole EOF ;
     public final EObject entryRuleProvidedRole() throws RecognitionException {
         EObject current = null;
 
@@ -4009,8 +4019,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1669:53: (iv_ruleProvidedRole= ruleProvidedRole EOF )
-            // InternalCosaDsl.g:1670:2: iv_ruleProvidedRole= ruleProvidedRole EOF
+            // InternalCosaDsl.g:1607:53: (iv_ruleProvidedRole= ruleProvidedRole EOF )
+            // InternalCosaDsl.g:1608:2: iv_ruleProvidedRole= ruleProvidedRole EOF
             {
              newCompositeNode(grammarAccess.getProvidedRoleRule()); 
             pushFollow(FOLLOW_1);
@@ -4037,7 +4047,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProvidedRole"
-    // InternalCosaDsl.g:1676:1: ruleProvidedRole returns [EObject current=null] : ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:1614:1: ruleProvidedRole returns [EObject current=null] : ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleProvidedRole() throws RecognitionException {
         EObject current = null;
 
@@ -4049,14 +4059,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1682:2: ( ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:1683:2: ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1620:2: ( ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:1621:2: ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:1683:2: ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:1684:3: () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1621:2: ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1622:3: () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:1684:3: ()
-            // InternalCosaDsl.g:1685:4: 
+            // InternalCosaDsl.g:1622:3: ()
+            // InternalCosaDsl.g:1623:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4070,11 +4080,11 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getProvidedRoleAccess().getProvidedRoleKeyword_1());
             		
-            // InternalCosaDsl.g:1695:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:1696:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1633:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1634:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:1696:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:1697:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:1634:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1635:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getProvidedRoleAccess().getNameEStringParserRuleCall_2_0());
@@ -4124,7 +4134,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRequiredPort"
-    // InternalCosaDsl.g:1718:1: entryRuleRequiredPort returns [EObject current=null] : iv_ruleRequiredPort= ruleRequiredPort EOF ;
+    // InternalCosaDsl.g:1656:1: entryRuleRequiredPort returns [EObject current=null] : iv_ruleRequiredPort= ruleRequiredPort EOF ;
     public final EObject entryRuleRequiredPort() throws RecognitionException {
         EObject current = null;
 
@@ -4132,8 +4142,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1718:53: (iv_ruleRequiredPort= ruleRequiredPort EOF )
-            // InternalCosaDsl.g:1719:2: iv_ruleRequiredPort= ruleRequiredPort EOF
+            // InternalCosaDsl.g:1656:53: (iv_ruleRequiredPort= ruleRequiredPort EOF )
+            // InternalCosaDsl.g:1657:2: iv_ruleRequiredPort= ruleRequiredPort EOF
             {
              newCompositeNode(grammarAccess.getRequiredPortRule()); 
             pushFollow(FOLLOW_1);
@@ -4160,7 +4170,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRequiredPort"
-    // InternalCosaDsl.g:1725:1: ruleRequiredPort returns [EObject current=null] : ( () otherlv_1= 'RequiredPort' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:1663:1: ruleRequiredPort returns [EObject current=null] : ( () otherlv_1= 'RequiredPort' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleRequiredPort() throws RecognitionException {
         EObject current = null;
 
@@ -4172,14 +4182,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1731:2: ( ( () otherlv_1= 'RequiredPort' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:1732:2: ( () otherlv_1= 'RequiredPort' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1669:2: ( ( () otherlv_1= 'RequiredPort' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:1670:2: ( () otherlv_1= 'RequiredPort' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:1732:2: ( () otherlv_1= 'RequiredPort' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:1733:3: () otherlv_1= 'RequiredPort' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1670:2: ( () otherlv_1= 'RequiredPort' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1671:3: () otherlv_1= 'RequiredPort' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:1733:3: ()
-            // InternalCosaDsl.g:1734:4: 
+            // InternalCosaDsl.g:1671:3: ()
+            // InternalCosaDsl.g:1672:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4193,11 +4203,11 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getRequiredPortAccess().getRequiredPortKeyword_1());
             		
-            // InternalCosaDsl.g:1744:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:1745:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1682:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1683:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:1745:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:1746:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:1683:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1684:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRequiredPortAccess().getNameEStringParserRuleCall_2_0());
@@ -4247,7 +4257,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProvidedPort"
-    // InternalCosaDsl.g:1767:1: entryRuleProvidedPort returns [EObject current=null] : iv_ruleProvidedPort= ruleProvidedPort EOF ;
+    // InternalCosaDsl.g:1705:1: entryRuleProvidedPort returns [EObject current=null] : iv_ruleProvidedPort= ruleProvidedPort EOF ;
     public final EObject entryRuleProvidedPort() throws RecognitionException {
         EObject current = null;
 
@@ -4255,8 +4265,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1767:53: (iv_ruleProvidedPort= ruleProvidedPort EOF )
-            // InternalCosaDsl.g:1768:2: iv_ruleProvidedPort= ruleProvidedPort EOF
+            // InternalCosaDsl.g:1705:53: (iv_ruleProvidedPort= ruleProvidedPort EOF )
+            // InternalCosaDsl.g:1706:2: iv_ruleProvidedPort= ruleProvidedPort EOF
             {
              newCompositeNode(grammarAccess.getProvidedPortRule()); 
             pushFollow(FOLLOW_1);
@@ -4283,7 +4293,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProvidedPort"
-    // InternalCosaDsl.g:1774:1: ruleProvidedPort returns [EObject current=null] : ( () otherlv_1= 'ProvidedPort' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:1712:1: ruleProvidedPort returns [EObject current=null] : ( () otherlv_1= 'ProvidedPort' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleProvidedPort() throws RecognitionException {
         EObject current = null;
 
@@ -4295,14 +4305,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1780:2: ( ( () otherlv_1= 'ProvidedPort' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:1781:2: ( () otherlv_1= 'ProvidedPort' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1718:2: ( ( () otherlv_1= 'ProvidedPort' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:1719:2: ( () otherlv_1= 'ProvidedPort' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:1781:2: ( () otherlv_1= 'ProvidedPort' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:1782:3: () otherlv_1= 'ProvidedPort' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1719:2: ( () otherlv_1= 'ProvidedPort' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1720:3: () otherlv_1= 'ProvidedPort' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:1782:3: ()
-            // InternalCosaDsl.g:1783:4: 
+            // InternalCosaDsl.g:1720:3: ()
+            // InternalCosaDsl.g:1721:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4316,11 +4326,11 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getProvidedPortAccess().getProvidedPortKeyword_1());
             		
-            // InternalCosaDsl.g:1793:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:1794:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1731:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1732:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:1794:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:1795:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:1732:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1733:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getProvidedPortAccess().getNameEStringParserRuleCall_2_0());
@@ -4370,7 +4380,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSimpleConfiguration"
-    // InternalCosaDsl.g:1816:1: entryRuleSimpleConfiguration returns [EObject current=null] : iv_ruleSimpleConfiguration= ruleSimpleConfiguration EOF ;
+    // InternalCosaDsl.g:1754:1: entryRuleSimpleConfiguration returns [EObject current=null] : iv_ruleSimpleConfiguration= ruleSimpleConfiguration EOF ;
     public final EObject entryRuleSimpleConfiguration() throws RecognitionException {
         EObject current = null;
 
@@ -4378,8 +4388,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1816:60: (iv_ruleSimpleConfiguration= ruleSimpleConfiguration EOF )
-            // InternalCosaDsl.g:1817:2: iv_ruleSimpleConfiguration= ruleSimpleConfiguration EOF
+            // InternalCosaDsl.g:1754:60: (iv_ruleSimpleConfiguration= ruleSimpleConfiguration EOF )
+            // InternalCosaDsl.g:1755:2: iv_ruleSimpleConfiguration= ruleSimpleConfiguration EOF
             {
              newCompositeNode(grammarAccess.getSimpleConfigurationRule()); 
             pushFollow(FOLLOW_1);
@@ -4406,7 +4416,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSimpleConfiguration"
-    // InternalCosaDsl.g:1823:1: ruleSimpleConfiguration returns [EObject current=null] : (otherlv_0= 'SimpleConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) otherlv_18= '}' ) ;
+    // InternalCosaDsl.g:1761:1: ruleSimpleConfiguration returns [EObject current=null] : (otherlv_0= 'SimpleConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )* ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* otherlv_15= '}' ) ;
     public final EObject ruleSimpleConfiguration() throws RecognitionException {
         EObject current = null;
 
@@ -4416,8 +4426,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         Token otherlv_7=null;
         Token otherlv_10=null;
         Token otherlv_13=null;
-        Token otherlv_16=null;
-        Token otherlv_18=null;
+        Token otherlv_15=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
 
         EObject lv_components_3_0 = null;
@@ -4436,30 +4445,26 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
         EObject lv_bindings_14_0 = null;
 
-        EObject lv_attachements_15_0 = null;
-
-        EObject lv_attachements_17_0 = null;
-
 
 
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1829:2: ( (otherlv_0= 'SimpleConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) otherlv_18= '}' ) )
-            // InternalCosaDsl.g:1830:2: (otherlv_0= 'SimpleConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) otherlv_18= '}' )
+            // InternalCosaDsl.g:1767:2: ( (otherlv_0= 'SimpleConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )* ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* otherlv_15= '}' ) )
+            // InternalCosaDsl.g:1768:2: (otherlv_0= 'SimpleConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )* ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* otherlv_15= '}' )
             {
-            // InternalCosaDsl.g:1830:2: (otherlv_0= 'SimpleConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) otherlv_18= '}' )
-            // InternalCosaDsl.g:1831:3: otherlv_0= 'SimpleConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* ) ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* ) ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* ) ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* ) otherlv_18= '}'
+            // InternalCosaDsl.g:1768:2: (otherlv_0= 'SimpleConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )* ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* otherlv_15= '}' )
+            // InternalCosaDsl.g:1769:3: otherlv_0= 'SimpleConfiguration' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' ( (lv_components_3_0= ruleComponent ) ) (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )* ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )* ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )* ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )* otherlv_15= '}'
             {
             otherlv_0=(Token)match(input,35,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSimpleConfigurationAccess().getSimpleConfigurationKeyword_0());
             		
-            // InternalCosaDsl.g:1835:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalCosaDsl.g:1836:4: (lv_name_1_0= ruleEString )
+            // InternalCosaDsl.g:1773:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalCosaDsl.g:1774:4: (lv_name_1_0= ruleEString )
             {
-            // InternalCosaDsl.g:1836:4: (lv_name_1_0= ruleEString )
-            // InternalCosaDsl.g:1837:5: lv_name_1_0= ruleEString
+            // InternalCosaDsl.g:1774:4: (lv_name_1_0= ruleEString )
+            // InternalCosaDsl.g:1775:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getNameEStringParserRuleCall_1_0());
@@ -4490,16 +4495,16 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getSimpleConfigurationAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalCosaDsl.g:1858:3: ( (lv_components_3_0= ruleComponent ) )
-            // InternalCosaDsl.g:1859:4: (lv_components_3_0= ruleComponent )
+            // InternalCosaDsl.g:1796:3: ( (lv_components_3_0= ruleComponent ) )
+            // InternalCosaDsl.g:1797:4: (lv_components_3_0= ruleComponent )
             {
-            // InternalCosaDsl.g:1859:4: (lv_components_3_0= ruleComponent )
-            // InternalCosaDsl.g:1860:5: lv_components_3_0= ruleComponent
+            // InternalCosaDsl.g:1797:4: (lv_components_3_0= ruleComponent )
+            // InternalCosaDsl.g:1798:5: lv_components_3_0= ruleComponent
             {
 
             					newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getComponentsComponentParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_31);
             lv_components_3_0=ruleComponent();
 
             state._fsp--;
@@ -4521,35 +4526,35 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCosaDsl.g:1877:3: (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )*
-            loop20:
+            // InternalCosaDsl.g:1815:3: (otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) ) )*
+            loop27:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( (LA20_0==13) ) {
-                    alt20=1;
+                if ( (LA27_0==13) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt27) {
             	case 1 :
-            	    // InternalCosaDsl.g:1878:4: otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) )
+            	    // InternalCosaDsl.g:1816:4: otherlv_4= ',' ( (lv_components_5_0= ruleComponent ) )
             	    {
             	    otherlv_4=(Token)match(input,13,FOLLOW_5); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_4_0());
             	    			
-            	    // InternalCosaDsl.g:1882:4: ( (lv_components_5_0= ruleComponent ) )
-            	    // InternalCosaDsl.g:1883:5: (lv_components_5_0= ruleComponent )
+            	    // InternalCosaDsl.g:1820:4: ( (lv_components_5_0= ruleComponent ) )
+            	    // InternalCosaDsl.g:1821:5: (lv_components_5_0= ruleComponent )
             	    {
-            	    // InternalCosaDsl.g:1883:5: (lv_components_5_0= ruleComponent )
-            	    // InternalCosaDsl.g:1884:6: lv_components_5_0= ruleComponent
+            	    // InternalCosaDsl.g:1821:5: (lv_components_5_0= ruleComponent )
+            	    // InternalCosaDsl.g:1822:6: lv_components_5_0= ruleComponent
             	    {
 
             	    						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getComponentsComponentParserRuleCall_4_1_0());
             	    					
-            	    pushFollow(FOLLOW_6);
+            	    pushFollow(FOLLOW_31);
             	    lv_components_5_0=ruleComponent();
 
             	    state._fsp--;
@@ -4576,397 +4581,355 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop27;
                 }
             } while (true);
 
-            // InternalCosaDsl.g:1902:3: ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )
-            // InternalCosaDsl.g:1903:4: ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
-            {
-            // InternalCosaDsl.g:1903:4: ( (lv_connectors_6_0= ruleConnector ) )
-            // InternalCosaDsl.g:1904:5: (lv_connectors_6_0= ruleConnector )
-            {
-            // InternalCosaDsl.g:1904:5: (lv_connectors_6_0= ruleConnector )
-            // InternalCosaDsl.g:1905:6: lv_connectors_6_0= ruleConnector
-            {
-
-            						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getConnectorsConnectorParserRuleCall_5_0_0());
-            					
-            pushFollow(FOLLOW_7);
-            lv_connectors_6_0=ruleConnector();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
-            						}
-            						add(
-            							current,
-            							"connectors",
-            							lv_connectors_6_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Connector");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:1922:4: (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
-            loop21:
+            // InternalCosaDsl.g:1840:3: ( ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )* )*
+            loop29:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( (LA21_0==13) ) {
-                    alt21=1;
+                if ( (LA29_0==16) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt21) {
+                switch (alt29) {
             	case 1 :
-            	    // InternalCosaDsl.g:1923:5: otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) )
+            	    // InternalCosaDsl.g:1841:4: ( (lv_connectors_6_0= ruleConnector ) ) (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
             	    {
-            	    otherlv_7=(Token)match(input,13,FOLLOW_6); 
-
-            	    					newLeafNode(otherlv_7, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_5_1_0());
-            	    				
-            	    // InternalCosaDsl.g:1927:5: ( (lv_connectors_8_0= ruleConnector ) )
-            	    // InternalCosaDsl.g:1928:6: (lv_connectors_8_0= ruleConnector )
+            	    // InternalCosaDsl.g:1841:4: ( (lv_connectors_6_0= ruleConnector ) )
+            	    // InternalCosaDsl.g:1842:5: (lv_connectors_6_0= ruleConnector )
             	    {
-            	    // InternalCosaDsl.g:1928:6: (lv_connectors_8_0= ruleConnector )
-            	    // InternalCosaDsl.g:1929:7: lv_connectors_8_0= ruleConnector
+            	    // InternalCosaDsl.g:1842:5: (lv_connectors_6_0= ruleConnector )
+            	    // InternalCosaDsl.g:1843:6: lv_connectors_6_0= ruleConnector
             	    {
 
-            	    							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getConnectorsConnectorParserRuleCall_5_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_7);
-            	    lv_connectors_8_0=ruleConnector();
+            	    						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getConnectorsConnectorParserRuleCall_5_0_0());
+            	    					
+            	    pushFollow(FOLLOW_31);
+            	    lv_connectors_6_0=ruleConnector();
 
             	    state._fsp--;
 
 
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"connectors",
-            	    								lv_connectors_8_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Connector");
-            	    							afterParserOrEnumRuleCall();
-            	    						
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"connectors",
+            	    							lv_connectors_6_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Connector");
+            	    						afterParserOrEnumRuleCall();
+            	    					
 
             	    }
 
 
             	    }
+
+            	    // InternalCosaDsl.g:1860:4: (otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) ) )*
+            	    loop28:
+            	    do {
+            	        int alt28=2;
+            	        int LA28_0 = input.LA(1);
+
+            	        if ( (LA28_0==13) ) {
+            	            alt28=1;
+            	        }
+
+
+            	        switch (alt28) {
+            	    	case 1 :
+            	    	    // InternalCosaDsl.g:1861:5: otherlv_7= ',' ( (lv_connectors_8_0= ruleConnector ) )
+            	    	    {
+            	    	    otherlv_7=(Token)match(input,13,FOLLOW_7); 
+
+            	    	    					newLeafNode(otherlv_7, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_5_1_0());
+            	    	    				
+            	    	    // InternalCosaDsl.g:1865:5: ( (lv_connectors_8_0= ruleConnector ) )
+            	    	    // InternalCosaDsl.g:1866:6: (lv_connectors_8_0= ruleConnector )
+            	    	    {
+            	    	    // InternalCosaDsl.g:1866:6: (lv_connectors_8_0= ruleConnector )
+            	    	    // InternalCosaDsl.g:1867:7: lv_connectors_8_0= ruleConnector
+            	    	    {
+
+            	    	    							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getConnectorsConnectorParserRuleCall_5_1_1_0());
+            	    	    						
+            	    	    pushFollow(FOLLOW_31);
+            	    	    lv_connectors_8_0=ruleConnector();
+
+            	    	    state._fsp--;
+
+
+            	    	    							if (current==null) {
+            	    	    								current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+            	    	    							}
+            	    	    							add(
+            	    	    								current,
+            	    	    								"connectors",
+            	    	    								lv_connectors_8_0,
+            	    	    								"fr.univnantes.asa.xtext.CosaDsl.Connector");
+            	    	    							afterParserOrEnumRuleCall();
+            	    	    						
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop28;
+            	        }
+            	    } while (true);
 
 
             	    }
             	    break;
 
             	default :
-            	    break loop21;
+            	    break loop29;
                 }
             } while (true);
 
-
-            }
-
-            // InternalCosaDsl.g:1948:3: ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )
-            // InternalCosaDsl.g:1949:4: ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
-            {
-            // InternalCosaDsl.g:1949:4: ( (lv_ports_9_0= rulePort ) )
-            // InternalCosaDsl.g:1950:5: (lv_ports_9_0= rulePort )
-            {
-            // InternalCosaDsl.g:1950:5: (lv_ports_9_0= rulePort )
-            // InternalCosaDsl.g:1951:6: lv_ports_9_0= rulePort
-            {
-
-            						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getPortsPortParserRuleCall_6_0_0());
-            					
-            pushFollow(FOLLOW_8);
-            lv_ports_9_0=rulePort();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
-            						}
-            						add(
-            							current,
-            							"ports",
-            							lv_ports_9_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Port");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:1968:4: (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
-            loop22:
+            // InternalCosaDsl.g:1886:3: ( ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )* )*
+            loop31:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( (LA22_0==13) ) {
-                    alt22=1;
+                if ( (LA31_0==18||(LA31_0>=33 && LA31_0<=34)) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt31) {
             	case 1 :
-            	    // InternalCosaDsl.g:1969:5: otherlv_10= ',' ( (lv_ports_11_0= rulePort ) )
+            	    // InternalCosaDsl.g:1887:4: ( (lv_ports_9_0= rulePort ) ) (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
             	    {
-            	    otherlv_10=(Token)match(input,13,FOLLOW_7); 
-
-            	    					newLeafNode(otherlv_10, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_6_1_0());
-            	    				
-            	    // InternalCosaDsl.g:1973:5: ( (lv_ports_11_0= rulePort ) )
-            	    // InternalCosaDsl.g:1974:6: (lv_ports_11_0= rulePort )
+            	    // InternalCosaDsl.g:1887:4: ( (lv_ports_9_0= rulePort ) )
+            	    // InternalCosaDsl.g:1888:5: (lv_ports_9_0= rulePort )
             	    {
-            	    // InternalCosaDsl.g:1974:6: (lv_ports_11_0= rulePort )
-            	    // InternalCosaDsl.g:1975:7: lv_ports_11_0= rulePort
+            	    // InternalCosaDsl.g:1888:5: (lv_ports_9_0= rulePort )
+            	    // InternalCosaDsl.g:1889:6: lv_ports_9_0= rulePort
             	    {
 
-            	    							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getPortsPortParserRuleCall_6_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_8);
-            	    lv_ports_11_0=rulePort();
+            	    						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getPortsPortParserRuleCall_6_0_0());
+            	    					
+            	    pushFollow(FOLLOW_29);
+            	    lv_ports_9_0=rulePort();
 
             	    state._fsp--;
 
 
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"ports",
-            	    								lv_ports_11_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Port");
-            	    							afterParserOrEnumRuleCall();
-            	    						
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"ports",
+            	    							lv_ports_9_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Port");
+            	    						afterParserOrEnumRuleCall();
+            	    					
 
             	    }
 
 
             	    }
+
+            	    // InternalCosaDsl.g:1906:4: (otherlv_10= ',' ( (lv_ports_11_0= rulePort ) ) )*
+            	    loop30:
+            	    do {
+            	        int alt30=2;
+            	        int LA30_0 = input.LA(1);
+
+            	        if ( (LA30_0==13) ) {
+            	            alt30=1;
+            	        }
+
+
+            	        switch (alt30) {
+            	    	case 1 :
+            	    	    // InternalCosaDsl.g:1907:5: otherlv_10= ',' ( (lv_ports_11_0= rulePort ) )
+            	    	    {
+            	    	    otherlv_10=(Token)match(input,13,FOLLOW_9); 
+
+            	    	    					newLeafNode(otherlv_10, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_6_1_0());
+            	    	    				
+            	    	    // InternalCosaDsl.g:1911:5: ( (lv_ports_11_0= rulePort ) )
+            	    	    // InternalCosaDsl.g:1912:6: (lv_ports_11_0= rulePort )
+            	    	    {
+            	    	    // InternalCosaDsl.g:1912:6: (lv_ports_11_0= rulePort )
+            	    	    // InternalCosaDsl.g:1913:7: lv_ports_11_0= rulePort
+            	    	    {
+
+            	    	    							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getPortsPortParserRuleCall_6_1_1_0());
+            	    	    						
+            	    	    pushFollow(FOLLOW_29);
+            	    	    lv_ports_11_0=rulePort();
+
+            	    	    state._fsp--;
+
+
+            	    	    							if (current==null) {
+            	    	    								current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+            	    	    							}
+            	    	    							add(
+            	    	    								current,
+            	    	    								"ports",
+            	    	    								lv_ports_11_0,
+            	    	    								"fr.univnantes.asa.xtext.CosaDsl.Port");
+            	    	    							afterParserOrEnumRuleCall();
+            	    	    						
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop30;
+            	        }
+            	    } while (true);
 
 
             	    }
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop31;
                 }
             } while (true);
 
-
-            }
-
-            // InternalCosaDsl.g:1994:3: ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )
-            // InternalCosaDsl.g:1995:4: ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
-            {
-            // InternalCosaDsl.g:1995:4: ( (lv_bindings_12_0= ruleBinding ) )
-            // InternalCosaDsl.g:1996:5: (lv_bindings_12_0= ruleBinding )
-            {
-            // InternalCosaDsl.g:1996:5: (lv_bindings_12_0= ruleBinding )
-            // InternalCosaDsl.g:1997:6: lv_bindings_12_0= ruleBinding
-            {
-
-            						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getBindingsBindingParserRuleCall_7_0_0());
-            					
-            pushFollow(FOLLOW_9);
-            lv_bindings_12_0=ruleBinding();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
-            						}
-            						add(
-            							current,
-            							"bindings",
-            							lv_bindings_12_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Binding");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:2014:4: (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
-            loop23:
+            // InternalCosaDsl.g:1932:3: ( ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )* )*
+            loop33:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( (LA23_0==13) ) {
-                    alt23=1;
+                if ( (LA33_0==19) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt33) {
             	case 1 :
-            	    // InternalCosaDsl.g:2015:5: otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) )
+            	    // InternalCosaDsl.g:1933:4: ( (lv_bindings_12_0= ruleBinding ) ) (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
             	    {
-            	    otherlv_13=(Token)match(input,13,FOLLOW_8); 
-
-            	    					newLeafNode(otherlv_13, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_7_1_0());
-            	    				
-            	    // InternalCosaDsl.g:2019:5: ( (lv_bindings_14_0= ruleBinding ) )
-            	    // InternalCosaDsl.g:2020:6: (lv_bindings_14_0= ruleBinding )
+            	    // InternalCosaDsl.g:1933:4: ( (lv_bindings_12_0= ruleBinding ) )
+            	    // InternalCosaDsl.g:1934:5: (lv_bindings_12_0= ruleBinding )
             	    {
-            	    // InternalCosaDsl.g:2020:6: (lv_bindings_14_0= ruleBinding )
-            	    // InternalCosaDsl.g:2021:7: lv_bindings_14_0= ruleBinding
+            	    // InternalCosaDsl.g:1934:5: (lv_bindings_12_0= ruleBinding )
+            	    // InternalCosaDsl.g:1935:6: lv_bindings_12_0= ruleBinding
             	    {
 
-            	    							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getBindingsBindingParserRuleCall_7_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_9);
-            	    lv_bindings_14_0=ruleBinding();
+            	    						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getBindingsBindingParserRuleCall_7_0_0());
+            	    					
+            	    pushFollow(FOLLOW_30);
+            	    lv_bindings_12_0=ruleBinding();
 
             	    state._fsp--;
 
 
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"bindings",
-            	    								lv_bindings_14_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Binding");
-            	    							afterParserOrEnumRuleCall();
-            	    						
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"bindings",
+            	    							lv_bindings_12_0,
+            	    							"fr.univnantes.asa.xtext.CosaDsl.Binding");
+            	    						afterParserOrEnumRuleCall();
+            	    					
 
             	    }
 
 
             	    }
+
+            	    // InternalCosaDsl.g:1952:4: (otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) ) )*
+            	    loop32:
+            	    do {
+            	        int alt32=2;
+            	        int LA32_0 = input.LA(1);
+
+            	        if ( (LA32_0==13) ) {
+            	            alt32=1;
+            	        }
+
+
+            	        switch (alt32) {
+            	    	case 1 :
+            	    	    // InternalCosaDsl.g:1953:5: otherlv_13= ',' ( (lv_bindings_14_0= ruleBinding ) )
+            	    	    {
+            	    	    otherlv_13=(Token)match(input,13,FOLLOW_11); 
+
+            	    	    					newLeafNode(otherlv_13, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_7_1_0());
+            	    	    				
+            	    	    // InternalCosaDsl.g:1957:5: ( (lv_bindings_14_0= ruleBinding ) )
+            	    	    // InternalCosaDsl.g:1958:6: (lv_bindings_14_0= ruleBinding )
+            	    	    {
+            	    	    // InternalCosaDsl.g:1958:6: (lv_bindings_14_0= ruleBinding )
+            	    	    // InternalCosaDsl.g:1959:7: lv_bindings_14_0= ruleBinding
+            	    	    {
+
+            	    	    							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getBindingsBindingParserRuleCall_7_1_1_0());
+            	    	    						
+            	    	    pushFollow(FOLLOW_30);
+            	    	    lv_bindings_14_0=ruleBinding();
+
+            	    	    state._fsp--;
+
+
+            	    	    							if (current==null) {
+            	    	    								current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+            	    	    							}
+            	    	    							add(
+            	    	    								current,
+            	    	    								"bindings",
+            	    	    								lv_bindings_14_0,
+            	    	    								"fr.univnantes.asa.xtext.CosaDsl.Binding");
+            	    	    							afterParserOrEnumRuleCall();
+            	    	    						
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop32;
+            	        }
+            	    } while (true);
 
 
             	    }
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop33;
                 }
             } while (true);
 
+            otherlv_15=(Token)match(input,14,FOLLOW_2); 
 
-            }
-
-            // InternalCosaDsl.g:2040:3: ( ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )* )
-            // InternalCosaDsl.g:2041:4: ( (lv_attachements_15_0= ruleAttachement ) ) (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )*
-            {
-            // InternalCosaDsl.g:2041:4: ( (lv_attachements_15_0= ruleAttachement ) )
-            // InternalCosaDsl.g:2042:5: (lv_attachements_15_0= ruleAttachement )
-            {
-            // InternalCosaDsl.g:2042:5: (lv_attachements_15_0= ruleAttachement )
-            // InternalCosaDsl.g:2043:6: lv_attachements_15_0= ruleAttachement
-            {
-
-            						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getAttachementsAttachementParserRuleCall_8_0_0());
-            					
-            pushFollow(FOLLOW_11);
-            lv_attachements_15_0=ruleAttachement();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
-            						}
-            						add(
-            							current,
-            							"attachements",
-            							lv_attachements_15_0,
-            							"fr.univnantes.asa.xtext.CosaDsl.Attachement");
-            						afterParserOrEnumRuleCall();
-            					
-
-            }
-
-
-            }
-
-            // InternalCosaDsl.g:2060:4: (otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) ) )*
-            loop24:
-            do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
-
-                if ( (LA24_0==13) ) {
-                    alt24=1;
-                }
-
-
-                switch (alt24) {
-            	case 1 :
-            	    // InternalCosaDsl.g:2061:5: otherlv_16= ',' ( (lv_attachements_17_0= ruleAttachement ) )
-            	    {
-            	    otherlv_16=(Token)match(input,13,FOLLOW_9); 
-
-            	    					newLeafNode(otherlv_16, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_8_1_0());
-            	    				
-            	    // InternalCosaDsl.g:2065:5: ( (lv_attachements_17_0= ruleAttachement ) )
-            	    // InternalCosaDsl.g:2066:6: (lv_attachements_17_0= ruleAttachement )
-            	    {
-            	    // InternalCosaDsl.g:2066:6: (lv_attachements_17_0= ruleAttachement )
-            	    // InternalCosaDsl.g:2067:7: lv_attachements_17_0= ruleAttachement
-            	    {
-
-            	    							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getAttachementsAttachementParserRuleCall_8_1_1_0());
-            	    						
-            	    pushFollow(FOLLOW_11);
-            	    lv_attachements_17_0=ruleAttachement();
-
-            	    state._fsp--;
-
-
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
-            	    							}
-            	    							add(
-            	    								current,
-            	    								"attachements",
-            	    								lv_attachements_17_0,
-            	    								"fr.univnantes.asa.xtext.CosaDsl.Attachement");
-            	    							afterParserOrEnumRuleCall();
-            	    						
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop24;
-                }
-            } while (true);
-
-
-            }
-
-            otherlv_18=(Token)match(input,14,FOLLOW_2); 
-
-            			newLeafNode(otherlv_18, grammarAccess.getSimpleConfigurationAccess().getRightCurlyBracketKeyword_9());
+            			newLeafNode(otherlv_15, grammarAccess.getSimpleConfigurationAccess().getRightCurlyBracketKeyword_8());
             		
 
             }
@@ -4999,21 +4962,31 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000012000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000600082000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000102000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000802000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000802002800L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x000000001C002000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x00000001A0000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000044000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000E028D6800L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000E028C6800L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000600040000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000802886800L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000802806800L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000802006800L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000802000800L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x000000001C002000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00000001A0000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000026000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x00000006000C6000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000086000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x00000006000D6000L});
 
 }

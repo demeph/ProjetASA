@@ -43,7 +43,7 @@ import fr.univnantes.asa.xtext.services.CosaDslGrammarAccess;
 
     @Override
     protected String getFirstRuleName() {
-    	return "CompositeConfiguration";
+    	return "Configuration";
    	}
 
    	@Override
@@ -59,324 +59,6 @@ import fr.univnantes.asa.xtext.services.CosaDslGrammarAccess;
         appendSkippedTokens();
     }
 }
-
-// Entry rule entryRuleCompositeConfiguration
-entryRuleCompositeConfiguration returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getCompositeConfigurationRule()); }
-	iv_ruleCompositeConfiguration=ruleCompositeConfiguration
-	{ $current=$iv_ruleCompositeConfiguration.current; }
-	EOF;
-
-// Rule CompositeConfiguration
-ruleCompositeConfiguration returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='CompositeConfiguration'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getCompositeConfigurationAccess().getCompositeConfigurationKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"fr.univnantes.asa.xtext.CosaDsl.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='={'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getCompositeConfigurationAccess().getEqualsSignLeftCurlyBracketKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getComponentsComponentParserRuleCall_3_0());
-				}
-				lv_components_3_0=ruleComponent
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-					}
-					add(
-						$current,
-						"components",
-						lv_components_3_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Component");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_4=','
-			{
-				newLeafNode(otherlv_4, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getComponentsComponentParserRuleCall_4_1_0());
-					}
-					lv_components_5_0=ruleComponent
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-						}
-						add(
-							$current,
-							"components",
-							lv_components_5_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Component");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConnectorsConnectorParserRuleCall_5_0());
-				}
-				lv_connectors_6_0=ruleConnector
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-					}
-					add(
-						$current,
-						"connectors",
-						lv_connectors_6_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Connector");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_7=','
-			{
-				newLeafNode(otherlv_7, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_6_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConnectorsConnectorParserRuleCall_6_1_0());
-					}
-					lv_connectors_8_0=ruleConnector
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-						}
-						add(
-							$current,
-							"connectors",
-							lv_connectors_8_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Connector");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getPortsPortParserRuleCall_7_0());
-				}
-				lv_ports_9_0=rulePort
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-					}
-					add(
-						$current,
-						"ports",
-						lv_ports_9_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Port");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_10=','
-			{
-				newLeafNode(otherlv_10, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getPortsPortParserRuleCall_8_1_0());
-					}
-					lv_ports_11_0=rulePort
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-						}
-						add(
-							$current,
-							"ports",
-							lv_ports_11_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Port");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getBindingsBindingParserRuleCall_9_0_0());
-					}
-					lv_bindings_12_0=ruleBinding
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-						}
-						add(
-							$current,
-							"bindings",
-							lv_bindings_12_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Binding");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_13=','
-				{
-					newLeafNode(otherlv_13, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_9_1_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getBindingsBindingParserRuleCall_9_1_1_0());
-						}
-						lv_bindings_14_0=ruleBinding
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-							}
-							add(
-								$current,
-								"bindings",
-								lv_bindings_14_0,
-								"fr.univnantes.asa.xtext.CosaDsl.Binding");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getAttachementsAttachementParserRuleCall_10_0());
-				}
-				lv_attachements_15_0=ruleAttachement
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-					}
-					add(
-						$current,
-						"attachements",
-						lv_attachements_15_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Attachement");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_16=','
-			{
-				newLeafNode(otherlv_16, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_11_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getAttachementsAttachementParserRuleCall_11_1_0());
-					}
-					lv_attachements_17_0=ruleAttachement
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-						}
-						add(
-							$current,
-							"attachements",
-							lv_attachements_17_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Attachement");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConfigurationsConfigurationParserRuleCall_12_0_0());
-					}
-					lv_configurations_18_0=ruleConfiguration
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-						}
-						add(
-							$current,
-							"configurations",
-							lv_configurations_18_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Configuration");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_19=','
-				{
-					newLeafNode(otherlv_19, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_12_1_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConfigurationsConfigurationParserRuleCall_12_1_1_0());
-						}
-						lv_configurations_20_0=ruleConfiguration
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
-							}
-							add(
-								$current,
-								"configurations",
-								lv_configurations_20_0,
-								"fr.univnantes.asa.xtext.CosaDsl.Configuration");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)*
-		otherlv_21='}'
-		{
-			newLeafNode(otherlv_21, grammarAccess.getCompositeConfigurationAccess().getRightCurlyBracketKeyword_13());
-		}
-	)
-;
 
 // Entry rule entryRuleConfiguration
 entryRuleConfiguration returns [EObject current=null]:
@@ -394,496 +76,31 @@ ruleConfiguration returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Configuration'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getConfigurationAccess().getConfigurationKeyword_0());
+			newCompositeNode(grammarAccess.getConfigurationAccess().getConfiguration_ImplParserRuleCall_0());
 		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConfigurationAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"fr.univnantes.asa.xtext.CosaDsl.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='={'
+		this_Configuration_Impl_0=ruleConfiguration_Impl
 		{
-			newLeafNode(otherlv_2, grammarAccess.getConfigurationAccess().getEqualsSignLeftCurlyBracketKeyword_2());
+			$current = $this_Configuration_Impl_0.current;
+			afterParserOrEnumRuleCall();
 		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConfigurationAccess().getComponentsComponentParserRuleCall_3_0());
-				}
-				lv_components_3_0=ruleComponent
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-					}
-					add(
-						$current,
-						"components",
-						lv_components_3_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Component");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_4=','
-			{
-				newLeafNode(otherlv_4, grammarAccess.getConfigurationAccess().getCommaKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConfigurationAccess().getComponentsComponentParserRuleCall_4_1_0());
-					}
-					lv_components_5_0=ruleComponent
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-						}
-						add(
-							$current,
-							"components",
-							lv_components_5_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Component");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConfigurationAccess().getConnectorsConnectorParserRuleCall_5_0());
-				}
-				lv_connectors_6_0=ruleConnector
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-					}
-					add(
-						$current,
-						"connectors",
-						lv_connectors_6_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Connector");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_7=','
-			{
-				newLeafNode(otherlv_7, grammarAccess.getConfigurationAccess().getCommaKeyword_6_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConfigurationAccess().getConnectorsConnectorParserRuleCall_6_1_0());
-					}
-					lv_connectors_8_0=ruleConnector
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-						}
-						add(
-							$current,
-							"connectors",
-							lv_connectors_8_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Connector");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConfigurationAccess().getPortsPortParserRuleCall_7_0());
-				}
-				lv_ports_9_0=rulePort
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-					}
-					add(
-						$current,
-						"ports",
-						lv_ports_9_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Port");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_10=','
-			{
-				newLeafNode(otherlv_10, grammarAccess.getConfigurationAccess().getCommaKeyword_8_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConfigurationAccess().getPortsPortParserRuleCall_8_1_0());
-					}
-					lv_ports_11_0=rulePort
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-						}
-						add(
-							$current,
-							"ports",
-							lv_ports_11_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Port");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConfigurationAccess().getBindingsBindingParserRuleCall_9_0_0());
-					}
-					lv_bindings_12_0=ruleBinding
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-						}
-						add(
-							$current,
-							"bindings",
-							lv_bindings_12_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Binding");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_13=','
-				{
-					newLeafNode(otherlv_13, grammarAccess.getConfigurationAccess().getCommaKeyword_9_1_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getConfigurationAccess().getBindingsBindingParserRuleCall_9_1_1_0());
-						}
-						lv_bindings_14_0=ruleBinding
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-							}
-							add(
-								$current,
-								"bindings",
-								lv_bindings_14_0,
-								"fr.univnantes.asa.xtext.CosaDsl.Binding");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConfigurationAccess().getAttachementsAttachementParserRuleCall_10_0());
-				}
-				lv_attachements_15_0=ruleAttachement
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-					}
-					add(
-						$current,
-						"attachements",
-						lv_attachements_15_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Attachement");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_16=','
-			{
-				newLeafNode(otherlv_16, grammarAccess.getConfigurationAccess().getCommaKeyword_11_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConfigurationAccess().getAttachementsAttachementParserRuleCall_11_1_0());
-					}
-					lv_attachements_17_0=ruleAttachement
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConfigurationRule());
-						}
-						add(
-							$current,
-							"attachements",
-							lv_attachements_17_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Attachement");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		otherlv_18='}'
+		    |
 		{
-			newLeafNode(otherlv_18, grammarAccess.getConfigurationAccess().getRightCurlyBracketKeyword_12());
+			newCompositeNode(grammarAccess.getConfigurationAccess().getSimpleConfigurationParserRuleCall_1());
 		}
-	)
-;
-
-// Entry rule entryRuleComponent
-entryRuleComponent returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getComponentRule()); }
-	iv_ruleComponent=ruleComponent
-	{ $current=$iv_ruleComponent.current; }
-	EOF;
-
-// Rule Component
-ruleComponent returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Component'
+		this_SimpleConfiguration_1=ruleSimpleConfiguration
 		{
-			newLeafNode(otherlv_0, grammarAccess.getComponentAccess().getComponentKeyword_0());
+			$current = $this_SimpleConfiguration_1.current;
+			afterParserOrEnumRuleCall();
 		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComponentAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComponentRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"fr.univnantes.asa.xtext.CosaDsl.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='={'
+		    |
 		{
-			newLeafNode(otherlv_2, grammarAccess.getComponentAccess().getEqualsSignLeftCurlyBracketKeyword_2());
+			newCompositeNode(grammarAccess.getConfigurationAccess().getCompositeConfigurationParserRuleCall_2());
 		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComponentAccess().getPortsPortParserRuleCall_3_0());
-				}
-				lv_ports_3_0=rulePort
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComponentRule());
-					}
-					add(
-						$current,
-						"ports",
-						lv_ports_3_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Port");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_4=','
-			{
-				newLeafNode(otherlv_4, grammarAccess.getComponentAccess().getCommaKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getComponentAccess().getPortsPortParserRuleCall_4_1_0());
-					}
-					lv_ports_5_0=rulePort
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getComponentRule());
-						}
-						add(
-							$current,
-							"ports",
-							lv_ports_5_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Port");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComponentAccess().getServicesServiceParserRuleCall_5_0());
-				}
-				lv_services_6_0=ruleService
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComponentRule());
-					}
-					add(
-						$current,
-						"services",
-						lv_services_6_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Service");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_7=','
-			{
-				newLeafNode(otherlv_7, grammarAccess.getComponentAccess().getCommaKeyword_6_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getComponentAccess().getServicesServiceParserRuleCall_6_1_0());
-					}
-					lv_services_8_0=ruleService
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getComponentRule());
-						}
-						add(
-							$current,
-							"services",
-							lv_services_8_0,
-							"fr.univnantes.asa.xtext.CosaDsl.Service");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		otherlv_9='}'
+		this_CompositeConfiguration_2=ruleCompositeConfiguration
 		{
-			newLeafNode(otherlv_9, grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_7());
-		}
-	)
-;
-
-// Entry rule entryRuleConnector
-entryRuleConnector returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getConnectorRule()); }
-	iv_ruleConnector=ruleConnector
-	{ $current=$iv_ruleConnector.current; }
-	EOF;
-
-// Rule Connector
-ruleConnector returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Connector'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getConnectorAccess().getConnectorKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConnectorAccess().getNameEStringParserRuleCall_1_0());
-				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConnectorRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"fr.univnantes.asa.xtext.CosaDsl.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='={'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getConnectorAccess().getEqualsSignLeftCurlyBracketKeyword_2());
-		}
-		otherlv_3='Roles{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getConnectorAccess().getRolesKeyword_3());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConnectorAccess().getRolesRoleParserRuleCall_4_0());
-				}
-				lv_roles_4_0=ruleRole
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConnectorRule());
-					}
-					add(
-						$current,
-						"roles",
-						lv_roles_4_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Role");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_5=','
-		{
-			newLeafNode(otherlv_5, grammarAccess.getConnectorAccess().getCommaKeyword_5());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConnectorAccess().getRolesRoleParserRuleCall_6_0());
-				}
-				lv_roles_6_0=ruleRole
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConnectorRule());
-					}
-					add(
-						$current,
-						"roles",
-						lv_roles_6_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Role");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_7='}'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getConnectorAccess().getRightCurlyBracketKeyword_7());
-		}
-		otherlv_8='}'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getConnectorAccess().getRightCurlyBracketKeyword_8());
+			$current = $this_CompositeConfiguration_2.current;
+			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -1023,6 +240,332 @@ ruleRole returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleCompositeConfiguration
+entryRuleCompositeConfiguration returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCompositeConfigurationRule()); }
+	iv_ruleCompositeConfiguration=ruleCompositeConfiguration
+	{ $current=$iv_ruleCompositeConfiguration.current; }
+	EOF;
+
+// Rule CompositeConfiguration
+ruleCompositeConfiguration returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='CompositeConfiguration'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCompositeConfigurationAccess().getCompositeConfigurationKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.univnantes.asa.xtext.CosaDsl.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getCompositeConfigurationAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getComponentsComponentParserRuleCall_3_0_0());
+					}
+					lv_components_3_0=ruleComponent
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+						}
+						add(
+							$current,
+							"components",
+							lv_components_3_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Component");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_4=','
+				{
+					newLeafNode(otherlv_4, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_3_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getComponentsComponentParserRuleCall_3_1_1_0());
+						}
+						lv_components_5_0=ruleComponent
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+							}
+							add(
+								$current,
+								"components",
+								lv_components_5_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Component");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConnectorsConnectorParserRuleCall_4_0_0());
+					}
+					lv_connectors_6_0=ruleConnector
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+						}
+						add(
+							$current,
+							"connectors",
+							lv_connectors_6_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Connector");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_7=','
+				{
+					newLeafNode(otherlv_7, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_4_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConnectorsConnectorParserRuleCall_4_1_1_0());
+						}
+						lv_connectors_8_0=ruleConnector
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+							}
+							add(
+								$current,
+								"connectors",
+								lv_connectors_8_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Connector");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getPortsPortParserRuleCall_5_0_0());
+					}
+					lv_ports_9_0=rulePort
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+						}
+						add(
+							$current,
+							"ports",
+							lv_ports_9_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Port");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_10=','
+				{
+					newLeafNode(otherlv_10, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_5_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getPortsPortParserRuleCall_5_1_1_0());
+						}
+						lv_ports_11_0=rulePort
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+							}
+							add(
+								$current,
+								"ports",
+								lv_ports_11_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Port");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getBindingsBindingParserRuleCall_6_0_0());
+					}
+					lv_bindings_12_0=ruleBinding
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+						}
+						add(
+							$current,
+							"bindings",
+							lv_bindings_12_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Binding");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_13=','
+				{
+					newLeafNode(otherlv_13, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_6_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getBindingsBindingParserRuleCall_6_1_1_0());
+						}
+						lv_bindings_14_0=ruleBinding
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+							}
+							add(
+								$current,
+								"bindings",
+								lv_bindings_14_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Binding");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getAttachementsAttachementParserRuleCall_7_0_0());
+					}
+					lv_attachements_15_0=ruleAttachement
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+						}
+						add(
+							$current,
+							"attachements",
+							lv_attachements_15_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Attachement");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_16=','
+				{
+					newLeafNode(otherlv_16, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_7_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getAttachementsAttachementParserRuleCall_7_1_1_0());
+						}
+						lv_attachements_17_0=ruleAttachement
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+							}
+							add(
+								$current,
+								"attachements",
+								lv_attachements_17_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Attachement");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConfigurationsConfigurationParserRuleCall_8_0_0());
+					}
+					lv_configurations_18_0=ruleConfiguration
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+						}
+						add(
+							$current,
+							"configurations",
+							lv_configurations_18_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Configuration");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_19=','
+				{
+					newLeafNode(otherlv_19, grammarAccess.getCompositeConfigurationAccess().getCommaKeyword_8_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCompositeConfigurationAccess().getConfigurationsConfigurationParserRuleCall_8_1_1_0());
+						}
+						lv_configurations_20_0=ruleConfiguration
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCompositeConfigurationRule());
+							}
+							add(
+								$current,
+								"configurations",
+								lv_configurations_20_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Configuration");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		otherlv_21='}'
+		{
+			newLeafNode(otherlv_21, grammarAccess.getCompositeConfigurationAccess().getRightCurlyBracketKeyword_9());
+		}
+	)
+;
+
 // Entry rule entryRuleEString
 entryRuleEString returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getEStringRule()); }
@@ -1053,6 +596,273 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		}
 		{
 			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
+		}
+	)
+;
+
+// Entry rule entryRuleComponent
+entryRuleComponent returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getComponentRule()); }
+	iv_ruleComponent=ruleComponent
+	{ $current=$iv_ruleComponent.current; }
+	EOF;
+
+// Rule Component
+ruleComponent returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Component'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getComponentAccess().getComponentKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getComponentAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComponentRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.univnantes.asa.xtext.CosaDsl.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getComponentAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getComponentAccess().getPortsPortParserRuleCall_3_0());
+				}
+				lv_ports_3_0=rulePort
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComponentRule());
+					}
+					add(
+						$current,
+						"ports",
+						lv_ports_3_0,
+						"fr.univnantes.asa.xtext.CosaDsl.Port");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_4=','
+			{
+				newLeafNode(otherlv_4, grammarAccess.getComponentAccess().getCommaKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getComponentAccess().getPortsPortParserRuleCall_4_1_0());
+					}
+					lv_ports_5_0=rulePort
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getComponentRule());
+						}
+						add(
+							$current,
+							"ports",
+							lv_ports_5_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Port");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getComponentAccess().getServicesServiceParserRuleCall_5_0());
+				}
+				lv_services_6_0=ruleService
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComponentRule());
+					}
+					add(
+						$current,
+						"services",
+						lv_services_6_0,
+						"fr.univnantes.asa.xtext.CosaDsl.Service");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_7=','
+			{
+				newLeafNode(otherlv_7, grammarAccess.getComponentAccess().getCommaKeyword_6_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getComponentAccess().getServicesServiceParserRuleCall_6_1_0());
+					}
+					lv_services_8_0=ruleService
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getComponentRule());
+						}
+						add(
+							$current,
+							"services",
+							lv_services_8_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Service");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_9='}'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_7());
+		}
+	)
+;
+
+// Entry rule entryRuleConnector
+entryRuleConnector returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConnectorRule()); }
+	iv_ruleConnector=ruleConnector
+	{ $current=$iv_ruleConnector.current; }
+	EOF;
+
+// Rule Connector
+ruleConnector returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Connector'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getConnectorAccess().getConnectorKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConnectorAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConnectorRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.univnantes.asa.xtext.CosaDsl.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getConnectorAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='Roles'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getConnectorAccess().getRolesKeyword_3());
+		}
+		otherlv_4='{'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getConnectorAccess().getLeftCurlyBracketKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConnectorAccess().getRolesRoleParserRuleCall_5_0());
+				}
+				lv_roles_5_0=ruleRole
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConnectorRule());
+					}
+					add(
+						$current,
+						"roles",
+						lv_roles_5_0,
+						"fr.univnantes.asa.xtext.CosaDsl.Role");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_6=','
+		{
+			newLeafNode(otherlv_6, grammarAccess.getConnectorAccess().getCommaKeyword_6());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConnectorAccess().getRolesRoleParserRuleCall_7_0());
+				}
+				lv_roles_7_0=ruleRole
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConnectorRule());
+					}
+					add(
+						$current,
+						"roles",
+						lv_roles_7_0,
+						"fr.univnantes.asa.xtext.CosaDsl.Role");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_8='}'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getConnectorAccess().getRightCurlyBracketKeyword_8());
+		}
+		(
+			otherlv_9='glue'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getConnectorAccess().getGlueKeyword_9_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getConnectorAccess().getGlueGlueParserRuleCall_9_1_0());
+					}
+					lv_glue_10_0=ruleGlue
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getConnectorRule());
+						}
+						set(
+							$current,
+							"glue",
+							lv_glue_10_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Glue");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_11='}'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getConnectorAccess().getRightCurlyBracketKeyword_10());
 		}
 	)
 ;
@@ -1126,9 +936,9 @@ ruleBinding returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getBindingAccess().getBindingKeyword_0());
 		}
-		otherlv_1='{'
+		otherlv_1='('
 		{
-			newLeafNode(otherlv_1, grammarAccess.getBindingAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getBindingAccess().getLeftParenthesisKeyword_1());
 		}
 		(
 			(
@@ -1149,12 +959,16 @@ ruleBinding returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_3=','
+		{
+			newLeafNode(otherlv_3, grammarAccess.getBindingAccess().getCommaKeyword_3());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBindingAccess().getPortRequiredPortParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getBindingAccess().getPortRequiredPortParserRuleCall_4_0());
 				}
-				lv_portRequired_3_0=rulePort
+				lv_portRequired_4_0=rulePort
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBindingRule());
@@ -1162,15 +976,15 @@ ruleBinding returns [EObject current=null]
 					set(
 						$current,
 						"portRequired",
-						lv_portRequired_3_0,
+						lv_portRequired_4_0,
 						"fr.univnantes.asa.xtext.CosaDsl.Port");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='}'
+		otherlv_5=')'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getBindingAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getBindingAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;
@@ -1195,55 +1009,383 @@ ruleAttachement returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAttachementAccess().getAttachementKeyword_0());
 		}
-		otherlv_1=':{'
+		otherlv_1='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getAttachementAccess().getColonLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getAttachementAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAttachementAccess().getPortPortParserRuleCall_2_0_0());
+					}
+					lv_port_2_0=rulePort
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAttachementRule());
+						}
+						set(
+							$current,
+							"port",
+							lv_port_2_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Port");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_3='to'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getAttachementAccess().getToKeyword_2_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAttachementAccess().getRoleRoleParserRuleCall_2_2_0());
+					}
+					lv_role_4_0=ruleRole
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAttachementRule());
+						}
+						set(
+							$current,
+							"role",
+							lv_role_4_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Role");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		otherlv_5=','
+		{
+			newLeafNode(otherlv_5, grammarAccess.getAttachementAccess().getCommaKeyword_3());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAttachementAccess().getPortPortParserRuleCall_4_0_0());
+					}
+					lv_port_6_0=rulePort
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAttachementRule());
+						}
+						set(
+							$current,
+							"port",
+							lv_port_6_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Port");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_7='to'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getAttachementAccess().getToKeyword_4_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAttachementAccess().getRoleRoleParserRuleCall_4_2_0());
+					}
+					lv_role_8_0=ruleRole
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAttachementRule());
+						}
+						set(
+							$current,
+							"role",
+							lv_role_8_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Role");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		otherlv_9='}'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getAttachementAccess().getRightCurlyBracketKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleConfiguration_Impl
+entryRuleConfiguration_Impl returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConfiguration_ImplRule()); }
+	iv_ruleConfiguration_Impl=ruleConfiguration_Impl
+	{ $current=$iv_ruleConfiguration_Impl.current; }
+	EOF;
+
+// Rule Configuration_Impl
+ruleConfiguration_Impl returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Configuration'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getConfiguration_ImplAccess().getConfigurationKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAttachementAccess().getRoleRoleParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getNameEStringParserRuleCall_1_0());
 				}
-				lv_role_2_0=ruleRole
+				lv_name_1_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAttachementRule());
+						$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
 					}
 					set(
 						$current,
-						"role",
-						lv_role_2_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Role");
+						"name",
+						lv_name_1_0,
+						"fr.univnantes.asa.xtext.CosaDsl.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_3='to'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getAttachementAccess().getToKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getConfiguration_ImplAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAttachementAccess().getPortPortParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getComponentsComponentParserRuleCall_3_0());
 				}
-				lv_port_4_0=rulePort
+				lv_components_3_0=ruleComponent
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAttachementRule());
+						$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
 					}
-					set(
+					add(
 						$current,
-						"port",
-						lv_port_4_0,
-						"fr.univnantes.asa.xtext.CosaDsl.Port");
+						"components",
+						lv_components_3_0,
+						"fr.univnantes.asa.xtext.CosaDsl.Component");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5='}'
+		(
+			otherlv_4=','
+			{
+				newLeafNode(otherlv_4, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getComponentsComponentParserRuleCall_4_1_0());
+					}
+					lv_components_5_0=ruleComponent
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+						}
+						add(
+							$current,
+							"components",
+							lv_components_5_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Component");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getConnectorsConnectorParserRuleCall_5_0_0());
+					}
+					lv_connectors_6_0=ruleConnector
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+						}
+						add(
+							$current,
+							"connectors",
+							lv_connectors_6_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Connector");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_7=','
+				{
+					newLeafNode(otherlv_7, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_5_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getConnectorsConnectorParserRuleCall_5_1_1_0());
+						}
+						lv_connectors_8_0=ruleConnector
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+							}
+							add(
+								$current,
+								"connectors",
+								lv_connectors_8_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Connector");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getPortsPortParserRuleCall_6_0_0());
+					}
+					lv_ports_9_0=rulePort
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+						}
+						add(
+							$current,
+							"ports",
+							lv_ports_9_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Port");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_10=','
+				{
+					newLeafNode(otherlv_10, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_6_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getPortsPortParserRuleCall_6_1_1_0());
+						}
+						lv_ports_11_0=rulePort
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+							}
+							add(
+								$current,
+								"ports",
+								lv_ports_11_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Port");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getBindingsBindingParserRuleCall_7_0_0());
+					}
+					lv_bindings_12_0=ruleBinding
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+						}
+						add(
+							$current,
+							"bindings",
+							lv_bindings_12_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Binding");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_13=','
+				{
+					newLeafNode(otherlv_13, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_7_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getBindingsBindingParserRuleCall_7_1_1_0());
+						}
+						lv_bindings_14_0=ruleBinding
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+							}
+							add(
+								$current,
+								"bindings",
+								lv_bindings_14_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Binding");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getAttachementsAttachementParserRuleCall_8_0_0());
+					}
+					lv_attachements_15_0=ruleAttachement
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+						}
+						add(
+							$current,
+							"attachements",
+							lv_attachements_15_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Attachement");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_16=','
+				{
+					newLeafNode(otherlv_16, grammarAccess.getConfiguration_ImplAccess().getCommaKeyword_8_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getConfiguration_ImplAccess().getAttachementsAttachementParserRuleCall_8_1_1_0());
+						}
+						lv_attachements_17_0=ruleAttachement
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getConfiguration_ImplRule());
+							}
+							add(
+								$current,
+								"attachements",
+								lv_attachements_17_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Attachement");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		otherlv_18='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getAttachementAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_18, grammarAccess.getConfiguration_ImplAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;
@@ -1444,6 +1586,36 @@ ruleRole_Impl returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleGlue
+entryRuleGlue returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGlueRule()); }
+	iv_ruleGlue=ruleGlue
+	{ $current=$iv_ruleGlue.current; }
+	EOF;
+
+// Rule Glue
+ruleGlue returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getGlueAccess().getGlueAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='Glue'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGlueAccess().getGlueKeyword_1());
+		}
+	)
+;
+
 // Entry rule entryRuleRequiredRole
 entryRuleRequiredRole returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getRequiredRoleRule()); }
@@ -1637,6 +1809,284 @@ ruleProvidedPort returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleSimpleConfiguration
+entryRuleSimpleConfiguration returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSimpleConfigurationRule()); }
+	iv_ruleSimpleConfiguration=ruleSimpleConfiguration
+	{ $current=$iv_ruleSimpleConfiguration.current; }
+	EOF;
+
+// Rule SimpleConfiguration
+ruleSimpleConfiguration returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='SimpleConfiguration'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSimpleConfigurationAccess().getSimpleConfigurationKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.univnantes.asa.xtext.CosaDsl.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSimpleConfigurationAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getComponentsComponentParserRuleCall_3_0());
+				}
+				lv_components_3_0=ruleComponent
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+					}
+					add(
+						$current,
+						"components",
+						lv_components_3_0,
+						"fr.univnantes.asa.xtext.CosaDsl.Component");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_4=','
+			{
+				newLeafNode(otherlv_4, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getComponentsComponentParserRuleCall_4_1_0());
+					}
+					lv_components_5_0=ruleComponent
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+						}
+						add(
+							$current,
+							"components",
+							lv_components_5_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Component");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getConnectorsConnectorParserRuleCall_5_0_0());
+					}
+					lv_connectors_6_0=ruleConnector
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+						}
+						add(
+							$current,
+							"connectors",
+							lv_connectors_6_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Connector");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_7=','
+				{
+					newLeafNode(otherlv_7, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_5_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getConnectorsConnectorParserRuleCall_5_1_1_0());
+						}
+						lv_connectors_8_0=ruleConnector
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+							}
+							add(
+								$current,
+								"connectors",
+								lv_connectors_8_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Connector");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getPortsPortParserRuleCall_6_0_0());
+					}
+					lv_ports_9_0=rulePort
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+						}
+						add(
+							$current,
+							"ports",
+							lv_ports_9_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Port");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_10=','
+				{
+					newLeafNode(otherlv_10, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_6_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getPortsPortParserRuleCall_6_1_1_0());
+						}
+						lv_ports_11_0=rulePort
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+							}
+							add(
+								$current,
+								"ports",
+								lv_ports_11_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Port");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getBindingsBindingParserRuleCall_7_0_0());
+					}
+					lv_bindings_12_0=ruleBinding
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+						}
+						add(
+							$current,
+							"bindings",
+							lv_bindings_12_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Binding");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_13=','
+				{
+					newLeafNode(otherlv_13, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_7_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getBindingsBindingParserRuleCall_7_1_1_0());
+						}
+						lv_bindings_14_0=ruleBinding
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+							}
+							add(
+								$current,
+								"bindings",
+								lv_bindings_14_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Binding");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getAttachementsAttachementParserRuleCall_8_0_0());
+					}
+					lv_attachements_15_0=ruleAttachement
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+						}
+						add(
+							$current,
+							"attachements",
+							lv_attachements_15_0,
+							"fr.univnantes.asa.xtext.CosaDsl.Attachement");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_16=','
+				{
+					newLeafNode(otherlv_16, grammarAccess.getSimpleConfigurationAccess().getCommaKeyword_8_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getSimpleConfigurationAccess().getAttachementsAttachementParserRuleCall_8_1_1_0());
+						}
+						lv_attachements_17_0=ruleAttachement
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getSimpleConfigurationRule());
+							}
+							add(
+								$current,
+								"attachements",
+								lv_attachements_17_0,
+								"fr.univnantes.asa.xtext.CosaDsl.Attachement");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)
+		otherlv_18='}'
+		{
+			newLeafNode(otherlv_18, grammarAccess.getSimpleConfigurationAccess().getRightCurlyBracketKeyword_9());
+		}
 	)
 ;
 

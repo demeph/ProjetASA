@@ -4,13 +4,14 @@
 package fr.univnantes.asa.xtext.formatting2;
 
 import com.google.inject.Inject;
-import cosa.Attachement;
-import cosa.Binding;
-import cosa.Component;
-import cosa.Configuration;
-import cosa.Connector;
-import cosa.Port;
-import cosa.Service;
+import fr.univnantes.asa.cosa.Attachement;
+import fr.univnantes.asa.cosa.Binding;
+import fr.univnantes.asa.cosa.Component;
+import fr.univnantes.asa.cosa.CompositeConfiguration;
+import fr.univnantes.asa.cosa.Configuration;
+import fr.univnantes.asa.cosa.Connector;
+import fr.univnantes.asa.cosa.Port;
+import fr.univnantes.asa.cosa.Service;
 import fr.univnantes.asa.xtext.services.CosaDslGrammarAccess;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
@@ -26,26 +27,30 @@ public class CosaDslFormatter extends AbstractFormatter2 {
   @Extension
   private CosaDslGrammarAccess _cosaDslGrammarAccess;
   
-  protected void _format(final Configuration configuration, @Extension final IFormattableDocument document) {
-    EList<Component> _components = configuration.getComponents();
+  protected void _format(final CompositeConfiguration compositeConfiguration, @Extension final IFormattableDocument document) {
+    EList<Component> _components = compositeConfiguration.getComponents();
     for (final Component component : _components) {
       document.<Component>format(component);
     }
-    EList<Connector> _connectors = configuration.getConnectors();
+    EList<Connector> _connectors = compositeConfiguration.getConnectors();
     for (final Connector connector : _connectors) {
       document.<Connector>format(connector);
     }
-    EList<Port> _ports = configuration.getPorts();
+    EList<Port> _ports = compositeConfiguration.getPorts();
     for (final Port port : _ports) {
       document.<Port>format(port);
     }
-    EList<Binding> _bindings = configuration.getBindings();
+    EList<Binding> _bindings = compositeConfiguration.getBindings();
     for (final Binding binding : _bindings) {
       document.<Binding>format(binding);
     }
-    EList<Attachement> _attachements = configuration.getAttachements();
+    EList<Attachement> _attachements = compositeConfiguration.getAttachements();
     for (final Attachement attachement : _attachements) {
       document.<Attachement>format(attachement);
+    }
+    EList<Configuration> _configurations = compositeConfiguration.getConfigurations();
+    for (final Configuration configuration : _configurations) {
+      document.<Configuration>format(configuration);
     }
   }
   
@@ -60,28 +65,28 @@ public class CosaDslFormatter extends AbstractFormatter2 {
     }
   }
   
-  public void format(final Object component, final IFormattableDocument document) {
-    if (component instanceof XtextResource) {
-      _format((XtextResource)component, document);
+  public void format(final Object compositeConfiguration, final IFormattableDocument document) {
+    if (compositeConfiguration instanceof CompositeConfiguration) {
+      _format((CompositeConfiguration)compositeConfiguration, document);
       return;
-    } else if (component instanceof Component) {
-      _format((Component)component, document);
+    } else if (compositeConfiguration instanceof XtextResource) {
+      _format((XtextResource)compositeConfiguration, document);
       return;
-    } else if (component instanceof Configuration) {
-      _format((Configuration)component, document);
+    } else if (compositeConfiguration instanceof Component) {
+      _format((Component)compositeConfiguration, document);
       return;
-    } else if (component instanceof EObject) {
-      _format((EObject)component, document);
+    } else if (compositeConfiguration instanceof EObject) {
+      _format((EObject)compositeConfiguration, document);
       return;
-    } else if (component == null) {
+    } else if (compositeConfiguration == null) {
       _format((Void)null, document);
       return;
-    } else if (component != null) {
-      _format(component, document);
+    } else if (compositeConfiguration != null) {
+      _format(compositeConfiguration, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(component, document).toString());
+        Arrays.<Object>asList(compositeConfiguration, document).toString());
     }
   }
 }

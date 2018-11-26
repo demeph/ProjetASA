@@ -10,7 +10,7 @@
       <!-- @generated cosa -->
       <package
             uri="cosa"
-            class="cosa.CosaPackage"
+            class="fr.univnantes.asa.cosa.CosaPackage"
             genModel="model/cosa.genmodel"/>
    </extension>
 

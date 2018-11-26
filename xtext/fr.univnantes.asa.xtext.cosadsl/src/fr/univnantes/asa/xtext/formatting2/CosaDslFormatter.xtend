@@ -4,8 +4,8 @@
 package fr.univnantes.asa.xtext.formatting2
 
 import com.google.inject.Inject
-import cosa.Component
-import cosa.Configuration
+import fr.univnantes.asa.cosa.Component
+import fr.univnantes.asa.cosa.CompositeConfiguration
 import fr.univnantes.asa.xtext.services.CosaDslGrammarAccess
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
@@ -14,22 +14,25 @@ class CosaDslFormatter extends AbstractFormatter2 {
 	
 	@Inject extension CosaDslGrammarAccess
 
-	def dispatch void format(Configuration configuration, extension IFormattableDocument document) {
+	def dispatch void format(CompositeConfiguration compositeConfiguration, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (component : configuration.components) {
+		for (component : compositeConfiguration.components) {
 			component.format
 		}
-		for (connector : configuration.connectors) {
+		for (connector : compositeConfiguration.connectors) {
 			connector.format
 		}
-		for (port : configuration.ports) {
+		for (port : compositeConfiguration.ports) {
 			port.format
 		}
-		for (binding : configuration.bindings) {
+		for (binding : compositeConfiguration.bindings) {
 			binding.format
 		}
-		for (attachement : configuration.attachements) {
+		for (attachement : compositeConfiguration.attachements) {
 			attachement.format
+		}
+		for (configuration : compositeConfiguration.configurations) {
+			configuration.format
 		}
 	}
 
@@ -43,5 +46,5 @@ class CosaDslFormatter extends AbstractFormatter2 {
 		}
 	}
 	
-	// TODO: implement for Connector, Binding, Attachement, SimpleConfiguration, CompositeConfiguration
+	// TODO: implement for Connector, Binding, Attachement, Configuration, SimpleConfiguration
 }

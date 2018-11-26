@@ -27,7 +27,7 @@ public class CosaDslParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "CompositeConfiguration";
+		return "Configuration";
 	}
 
 	public CosaDslGrammarAccess getGrammarAccess() {

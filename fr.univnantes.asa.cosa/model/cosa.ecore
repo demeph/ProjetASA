@@ -10,6 +10,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1" upperBound="-1"
         eType="#//Role" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="glue" eType="#//Glue" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//NamedElement"/>
@@ -52,4 +53,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="configurations" lowerBound="1"
         upperBound="-1" eType="#//Configuration" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Glue"/>
 </ecore:EPackage>

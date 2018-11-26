@@ -4,7 +4,7 @@
 package fr.univnantes.asa.xtext.tests;
 
 import com.google.inject.Inject;
-import cosa.Configuration;
+import fr.univnantes.asa.cosa.CompositeConfiguration;
 import fr.univnantes.asa.xtext.tests.CosaDslInjectorProvider;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -23,7 +23,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @SuppressWarnings("all")
 public class CosaDslParsingTest {
   @Inject
-  private ParseHelper<Configuration> parseHelper;
+  private ParseHelper<CompositeConfiguration> parseHelper;
   
   @Test
   public void loadModel() {
@@ -31,7 +31,7 @@ public class CosaDslParsingTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Hello Xtext!");
       _builder.newLine();
-      final Configuration result = this.parseHelper.parse(_builder);
+      final CompositeConfiguration result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();

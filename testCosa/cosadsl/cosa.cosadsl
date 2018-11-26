@@ -1,22 +1,30 @@
-CompositeConfiguration Simple_CS ={
-	Component Client ={
+CompositeConfiguration Simple_CS{
+	Component Client {
 		RequiredPort Send_Request_In,
 		ProvidedPort Send_Request_out
 		ProvidedService Send_Request	
 	},
-	Component Serveur ={
+	Component Serveur {
 		RequiredPort Receive_Request_In,
 		ProvidedPort Recieve_request_Out
 		RequiredService Receive_Request
 	}
-	Connector RPC ={
+	Connector RPC {
 		Roles{ 
 			Role caller,
 			Role called
 		}
 	}
-	Configuration ServeurDetails ={
-		Component ConnectionManager ={
+	Port test
+	Binding(
+		Client.Send_Request_In, Serveur.Receive_Request_In				
+	)
+	Attachement{
+		Client.Send_Request to RPC.caller,
+		Serveur.Recieve_Request to RPC.called
+	}
+	CompositeConfiguration ServeurDetails {
+		Component ConnectionManager {
 			RequiredPort ExternalSocket_In,
 			ProvidedPort ExternalSocket_Out,
 			RequiredPort DBQuery_In,
@@ -24,9 +32,9 @@ CompositeConfiguration Simple_CS ={
 			RequiredPort SecurityCheck_In,
 			ProvidedPort SecurityCheck_Out
 			ProvidedService DBQuery,
-			ProvidedService SecurityCheck	
+			ProvidedService SecurityCheck			
 		},
-		Component SecurityManager ={
+		Component SecurityManager {
 			RequiredPort SecurityCheck_In,
 			ProvidedPort SecurityCheck_Out,
 			RequiredPort SecurityQuery_In,
@@ -34,10 +42,14 @@ CompositeConfiguration Simple_CS ={
 			RequiredService SecurityCheck,
 			ProvidedService SecurityQuery			
 		}
+		Connector test {
+			Roles{
+				Role test1,
+				Role test2
+			}
+		}
 		RequiredPort ExternalSocket_In,
 		ProvidedPort ExternalSocket_Out
 		
 	}	
-	
-	
 }

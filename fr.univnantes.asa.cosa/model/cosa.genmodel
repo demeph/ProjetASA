@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/COSA/src" modelPluginID="COSA" modelName="Cosa"
-    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/fr.univnantes.asa.cosa/src-gen" creationIcons="false"
+    editDirectory="/fr.univnantes.asa.cosa.edit/src-gen" editorDirectory="/fr.univnantes.asa.cosa.editor/src-gen"
+    modelPluginID="fr.univnantes.asa.cosa" modelName="Cosa" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>cosa.ecore</foreignModel>
-  <genPackages prefix="Cosa" disposableProviderFactory="true" ecorePackage="cosa.ecore#/">
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Cosa" basePackage="fr.univnantes.asa" disposableProviderFactory="true"
+      ecorePackage="cosa.ecore#/">
     <genClasses ecoreClass="cosa.ecore#//Component">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Component/ports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Component/services"/>
     </genClasses>
     <genClasses ecoreClass="cosa.ecore#//Connector">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Connector/roles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Connector/glue"/>
     </genClasses>
     <genClasses ecoreClass="cosa.ecore#//Port"/>
     <genClasses ecoreClass="cosa.ecore#//Role"/>
@@ -43,5 +49,6 @@
     <genClasses ecoreClass="cosa.ecore#//CompositeConfiguration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//CompositeConfiguration/configurations"/>
     </genClasses>
+    <genClasses ecoreClass="cosa.ecore#//Glue"/>
   </genPackages>
 </genmodel:GenModel>

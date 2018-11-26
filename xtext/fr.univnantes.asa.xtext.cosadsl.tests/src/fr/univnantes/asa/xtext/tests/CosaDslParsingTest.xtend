@@ -4,7 +4,7 @@
 package fr.univnantes.asa.xtext.tests
 
 import com.google.inject.Inject
-import cosa.Configuration
+import fr.univnantes.asa.cosa.CompositeConfiguration
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 @InjectWith(CosaDslInjectorProvider)
 class CosaDslParsingTest {
 	@Inject
-	ParseHelper<Configuration> parseHelper
+	ParseHelper<CompositeConfiguration> parseHelper
 	
 	@Test
 	def void loadModel() {

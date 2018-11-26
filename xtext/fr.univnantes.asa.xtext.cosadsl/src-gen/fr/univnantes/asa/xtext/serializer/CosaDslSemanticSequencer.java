@@ -4,23 +4,24 @@
 package fr.univnantes.asa.xtext.serializer;
 
 import com.google.inject.Inject;
-import cosa.Attachement;
-import cosa.Binding;
-import cosa.Component;
-import cosa.CompositeConfiguration;
-import cosa.Configuration;
-import cosa.Connector;
-import cosa.CosaPackage;
-import cosa.Port;
-import cosa.ProvidedPort;
-import cosa.ProvidedRole;
-import cosa.ProvidedService;
-import cosa.RequiredPort;
-import cosa.RequiredRole;
-import cosa.RequiredService;
-import cosa.Role;
-import cosa.Service;
-import cosa.SimpleConfiguration;
+import fr.univnantes.asa.cosa.Attachement;
+import fr.univnantes.asa.cosa.Binding;
+import fr.univnantes.asa.cosa.Component;
+import fr.univnantes.asa.cosa.CompositeConfiguration;
+import fr.univnantes.asa.cosa.Configuration;
+import fr.univnantes.asa.cosa.Connector;
+import fr.univnantes.asa.cosa.CosaPackage;
+import fr.univnantes.asa.cosa.Glue;
+import fr.univnantes.asa.cosa.Port;
+import fr.univnantes.asa.cosa.ProvidedPort;
+import fr.univnantes.asa.cosa.ProvidedRole;
+import fr.univnantes.asa.cosa.ProvidedService;
+import fr.univnantes.asa.cosa.RequiredPort;
+import fr.univnantes.asa.cosa.RequiredRole;
+import fr.univnantes.asa.cosa.RequiredService;
+import fr.univnantes.asa.cosa.Role;
+import fr.univnantes.asa.cosa.Service;
+import fr.univnantes.asa.cosa.SimpleConfiguration;
 import fr.univnantes.asa.xtext.services.CosaDslGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -60,10 +61,13 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_CompositeConfiguration(context, (CompositeConfiguration) semanticObject); 
 				return; 
 			case CosaPackage.CONFIGURATION:
-				sequence_Configuration(context, (Configuration) semanticObject); 
+				sequence_Configuration_Impl(context, (Configuration) semanticObject); 
 				return; 
 			case CosaPackage.CONNECTOR:
 				sequence_Connector(context, (Connector) semanticObject); 
+				return; 
+			case CosaPackage.GLUE:
+				sequence_Glue(context, (Glue) semanticObject); 
 				return; 
 			case CosaPackage.PORT:
 				sequence_Port_Impl(context, (Port) semanticObject); 
@@ -105,19 +109,10 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Attachement returns Attachement
 	 *
 	 * Constraint:
-	 *     (role=Role port=Port)
+	 *     (port=Port role=Role port=Port role=Role)
 	 */
 	protected void sequence_Attachement(ISerializationContext context, Attachement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__ROLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__ROLE));
-			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__PORT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__PORT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAttachementAccess().getRoleRoleParserRuleCall_2_0(), semanticObject.getRole());
-		feeder.accept(grammarAccess.getAttachementAccess().getPortPortParserRuleCall_4_0(), semanticObject.getPort());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -137,7 +132,7 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBindingAccess().getPortProvidedPortParserRuleCall_2_0(), semanticObject.getPortProvided());
-		feeder.accept(grammarAccess.getBindingAccess().getPortRequiredPortParserRuleCall_3_0(), semanticObject.getPortRequired());
+		feeder.accept(grammarAccess.getBindingAccess().getPortRequiredPortParserRuleCall_4_0(), semanticObject.getPortRequired());
 		feeder.finish();
 	}
 	
@@ -156,6 +151,7 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Configuration returns CompositeConfiguration
 	 *     CompositeConfiguration returns CompositeConfiguration
 	 *
 	 * Constraint:
@@ -167,10 +163,12 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         connectors+=Connector* 
 	 *         ports+=Port 
 	 *         ports+=Port* 
-	 *         (bindings+=Binding bindings+=Binding*)* 
+	 *         bindings+=Binding 
+	 *         bindings+=Binding* 
 	 *         attachements+=Attachement 
 	 *         attachements+=Attachement* 
-	 *         (configurations+=Configuration configurations+=Configuration*)*
+	 *         configurations+=Configuration 
+	 *         configurations+=Configuration*
 	 *     )
 	 */
 	protected void sequence_CompositeConfiguration(ISerializationContext context, CompositeConfiguration semanticObject) {
@@ -181,6 +179,7 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     Configuration returns Configuration
+	 *     Configuration_Impl returns Configuration
 	 *
 	 * Constraint:
 	 *     (
@@ -191,12 +190,13 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         connectors+=Connector* 
 	 *         ports+=Port 
 	 *         ports+=Port* 
-	 *         (bindings+=Binding bindings+=Binding*)* 
+	 *         bindings+=Binding 
+	 *         bindings+=Binding* 
 	 *         attachements+=Attachement 
 	 *         attachements+=Attachement*
 	 *     )
 	 */
-	protected void sequence_Configuration(ISerializationContext context, Configuration semanticObject) {
+	protected void sequence_Configuration_Impl(ISerializationContext context, Configuration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -206,9 +206,21 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Connector returns Connector
 	 *
 	 * Constraint:
-	 *     (name=EString roles+=Role roles+=Role)
+	 *     (name=EString roles+=Role roles+=Role glue=Glue?)
 	 */
 	protected void sequence_Connector(ISerializationContext context, Connector semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Glue returns Glue
+	 *
+	 * Constraint:
+	 *     {Glue}
+	 */
+	protected void sequence_Glue(ISerializationContext context, Glue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -386,6 +398,7 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Configuration returns SimpleConfiguration
 	 *     SimpleConfiguration returns SimpleConfiguration
 	 *
 	 * Constraint:
@@ -397,7 +410,8 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         connectors+=Connector* 
 	 *         ports+=Port 
 	 *         ports+=Port* 
-	 *         (bindings+=Binding bindings+=Binding*)* 
+	 *         bindings+=Binding 
+	 *         bindings+=Binding* 
 	 *         attachements+=Attachement 
 	 *         attachements+=Attachement*
 	 *     )

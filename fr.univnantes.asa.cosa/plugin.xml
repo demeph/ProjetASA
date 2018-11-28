@@ -14,4 +14,19 @@
             genModel="model/cosa.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ecoreM1 -->
+      <package
+            uri="simpleCS"
+            class="simpleCS.SimpleCSPackage"
+            genModel="model/ecoreM1.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ecoreM1 -->
+      <package
+            uri="cosa"
+            class="cosa.CosaPackage"
+            genModel="model/ecoreM1.genmodel"/>
+   </extension>
 </plugin>

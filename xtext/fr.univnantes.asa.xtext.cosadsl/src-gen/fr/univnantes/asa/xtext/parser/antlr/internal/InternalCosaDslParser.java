@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalCosaDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'CompositeConfiguration'", "'{'", "','", "'}'", "'Component'", "'Connector'", "'glue'", "'Port'", "'Binding'", "'('", "'.'", "')'", "'Attachement'", "'to'", "'Configuration'", "'Service'", "'RequiredService'", "'ProvidedService'", "'Role'", "'Glue'", "'RequiredRole'", "'ProvidedRole'", "'RequiredPort'", "'ProvidedPort'", "'SimpleConfiguration'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'CompositeConfiguration'", "'{'", "','", "'}'", "'Component'", "'Connector'", "'glue'", "'Port'", "'Binding'", "'('", "'.'", "')'", "'Attachement'", "'to'", "'Configuration'", "'Service'", "'RequiredService'", "'ProvidedService'", "'Role'", "'RequiredRole'", "'ProvidedRole'", "'Glue'", "'RequiredPort'", "'ProvidedPort'", "'SimpleConfiguration'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -630,12 +630,12 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
                 alt4=1;
                 }
                 break;
-            case 31:
+            case 30:
                 {
                 alt4=2;
                 }
                 break;
-            case 32:
+            case 31:
                 {
                 alt4=3;
                 }
@@ -2640,7 +2640,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             				
             otherlv_2=(Token)match(input,RULE_ID,FOLLOW_24); 
 
-            					newLeafNode(otherlv_2, grammarAccess.getAttachementAccess().getConnectorConnectorCrossReference_2_0());
+            					newLeafNode(otherlv_2, grammarAccess.getAttachementAccess().getComponentComponentCrossReference_2_0());
             				
 
             }
@@ -2665,7 +2665,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             				
             otherlv_4=(Token)match(input,RULE_ID,FOLLOW_27); 
 
-            					newLeafNode(otherlv_4, grammarAccess.getAttachementAccess().getRoleRoleCrossReference_4_0());
+            					newLeafNode(otherlv_4, grammarAccess.getAttachementAccess().getPortPortCrossReference_4_0());
             				
 
             }
@@ -2690,7 +2690,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             				
             otherlv_6=(Token)match(input,RULE_ID,FOLLOW_24); 
 
-            					newLeafNode(otherlv_6, grammarAccess.getAttachementAccess().getComponentComponentCrossReference_6_0());
+            					newLeafNode(otherlv_6, grammarAccess.getAttachementAccess().getConnectorConnectorCrossReference_6_0());
             				
 
             }
@@ -2715,7 +2715,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
             				
             otherlv_8=(Token)match(input,RULE_ID,FOLLOW_21); 
 
-            					newLeafNode(otherlv_8, grammarAccess.getAttachementAccess().getPortPortCrossReference_8_0());
+            					newLeafNode(otherlv_8, grammarAccess.getAttachementAccess().getRoleRoleCrossReference_8_0());
             				
 
             }
@@ -3797,98 +3797,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleRole_Impl"
 
 
-    // $ANTLR start "entryRuleGlue"
-    // InternalCosaDsl.g:1528:1: entryRuleGlue returns [EObject current=null] : iv_ruleGlue= ruleGlue EOF ;
-    public final EObject entryRuleGlue() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleGlue = null;
-
-
-        try {
-            // InternalCosaDsl.g:1528:45: (iv_ruleGlue= ruleGlue EOF )
-            // InternalCosaDsl.g:1529:2: iv_ruleGlue= ruleGlue EOF
-            {
-             newCompositeNode(grammarAccess.getGlueRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleGlue=ruleGlue();
-
-            state._fsp--;
-
-             current =iv_ruleGlue; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleGlue"
-
-
-    // $ANTLR start "ruleGlue"
-    // InternalCosaDsl.g:1535:1: ruleGlue returns [EObject current=null] : ( () otherlv_1= 'Glue' ) ;
-    public final EObject ruleGlue() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalCosaDsl.g:1541:2: ( ( () otherlv_1= 'Glue' ) )
-            // InternalCosaDsl.g:1542:2: ( () otherlv_1= 'Glue' )
-            {
-            // InternalCosaDsl.g:1542:2: ( () otherlv_1= 'Glue' )
-            // InternalCosaDsl.g:1543:3: () otherlv_1= 'Glue'
-            {
-            // InternalCosaDsl.g:1543:3: ()
-            // InternalCosaDsl.g:1544:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getGlueAccess().getGlueAction_0(),
-            					current);
-            			
-
-            }
-
-            otherlv_1=(Token)match(input,30,FOLLOW_2); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getGlueAccess().getGlueKeyword_1());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleGlue"
-
-
     // $ANTLR start "entryRuleRequiredRole"
-    // InternalCosaDsl.g:1558:1: entryRuleRequiredRole returns [EObject current=null] : iv_ruleRequiredRole= ruleRequiredRole EOF ;
+    // InternalCosaDsl.g:1528:1: entryRuleRequiredRole returns [EObject current=null] : iv_ruleRequiredRole= ruleRequiredRole EOF ;
     public final EObject entryRuleRequiredRole() throws RecognitionException {
         EObject current = null;
 
@@ -3896,8 +3806,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1558:53: (iv_ruleRequiredRole= ruleRequiredRole EOF )
-            // InternalCosaDsl.g:1559:2: iv_ruleRequiredRole= ruleRequiredRole EOF
+            // InternalCosaDsl.g:1528:53: (iv_ruleRequiredRole= ruleRequiredRole EOF )
+            // InternalCosaDsl.g:1529:2: iv_ruleRequiredRole= ruleRequiredRole EOF
             {
              newCompositeNode(grammarAccess.getRequiredRoleRule()); 
             pushFollow(FOLLOW_1);
@@ -3924,7 +3834,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRequiredRole"
-    // InternalCosaDsl.g:1565:1: ruleRequiredRole returns [EObject current=null] : ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:1535:1: ruleRequiredRole returns [EObject current=null] : ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleRequiredRole() throws RecognitionException {
         EObject current = null;
 
@@ -3936,14 +3846,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1571:2: ( ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:1572:2: ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1541:2: ( ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:1542:2: ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:1572:2: ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:1573:3: () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1542:2: ( () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1543:3: () otherlv_1= 'RequiredRole' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:1573:3: ()
-            // InternalCosaDsl.g:1574:4: 
+            // InternalCosaDsl.g:1543:3: ()
+            // InternalCosaDsl.g:1544:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3953,15 +3863,15 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,31,FOLLOW_3); 
+            otherlv_1=(Token)match(input,30,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRequiredRoleAccess().getRequiredRoleKeyword_1());
             		
-            // InternalCosaDsl.g:1584:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:1585:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1554:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1555:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:1585:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:1586:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:1555:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1556:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRequiredRoleAccess().getNameEStringParserRuleCall_2_0());
@@ -4011,7 +3921,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProvidedRole"
-    // InternalCosaDsl.g:1607:1: entryRuleProvidedRole returns [EObject current=null] : iv_ruleProvidedRole= ruleProvidedRole EOF ;
+    // InternalCosaDsl.g:1577:1: entryRuleProvidedRole returns [EObject current=null] : iv_ruleProvidedRole= ruleProvidedRole EOF ;
     public final EObject entryRuleProvidedRole() throws RecognitionException {
         EObject current = null;
 
@@ -4019,8 +3929,8 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCosaDsl.g:1607:53: (iv_ruleProvidedRole= ruleProvidedRole EOF )
-            // InternalCosaDsl.g:1608:2: iv_ruleProvidedRole= ruleProvidedRole EOF
+            // InternalCosaDsl.g:1577:53: (iv_ruleProvidedRole= ruleProvidedRole EOF )
+            // InternalCosaDsl.g:1578:2: iv_ruleProvidedRole= ruleProvidedRole EOF
             {
              newCompositeNode(grammarAccess.getProvidedRoleRule()); 
             pushFollow(FOLLOW_1);
@@ -4047,7 +3957,7 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProvidedRole"
-    // InternalCosaDsl.g:1614:1: ruleProvidedRole returns [EObject current=null] : ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) ) ;
+    // InternalCosaDsl.g:1584:1: ruleProvidedRole returns [EObject current=null] : ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) ) ;
     public final EObject ruleProvidedRole() throws RecognitionException {
         EObject current = null;
 
@@ -4059,14 +3969,14 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCosaDsl.g:1620:2: ( ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) ) )
-            // InternalCosaDsl.g:1621:2: ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1590:2: ( ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalCosaDsl.g:1591:2: ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) )
             {
-            // InternalCosaDsl.g:1621:2: ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) )
-            // InternalCosaDsl.g:1622:3: () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1591:2: ( () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalCosaDsl.g:1592:3: () otherlv_1= 'ProvidedRole' ( (lv_name_2_0= ruleEString ) )
             {
-            // InternalCosaDsl.g:1622:3: ()
-            // InternalCosaDsl.g:1623:4: 
+            // InternalCosaDsl.g:1592:3: ()
+            // InternalCosaDsl.g:1593:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4076,15 +3986,15 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,32,FOLLOW_3); 
+            otherlv_1=(Token)match(input,31,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getProvidedRoleAccess().getProvidedRoleKeyword_1());
             		
-            // InternalCosaDsl.g:1633:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalCosaDsl.g:1634:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1603:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalCosaDsl.g:1604:4: (lv_name_2_0= ruleEString )
             {
-            // InternalCosaDsl.g:1634:4: (lv_name_2_0= ruleEString )
-            // InternalCosaDsl.g:1635:5: lv_name_2_0= ruleEString
+            // InternalCosaDsl.g:1604:4: (lv_name_2_0= ruleEString )
+            // InternalCosaDsl.g:1605:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getProvidedRoleAccess().getNameEStringParserRuleCall_2_0());
@@ -4131,6 +4041,96 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
         return current;
     }
     // $ANTLR end "ruleProvidedRole"
+
+
+    // $ANTLR start "entryRuleGlue"
+    // InternalCosaDsl.g:1626:1: entryRuleGlue returns [EObject current=null] : iv_ruleGlue= ruleGlue EOF ;
+    public final EObject entryRuleGlue() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleGlue = null;
+
+
+        try {
+            // InternalCosaDsl.g:1626:45: (iv_ruleGlue= ruleGlue EOF )
+            // InternalCosaDsl.g:1627:2: iv_ruleGlue= ruleGlue EOF
+            {
+             newCompositeNode(grammarAccess.getGlueRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleGlue=ruleGlue();
+
+            state._fsp--;
+
+             current =iv_ruleGlue; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleGlue"
+
+
+    // $ANTLR start "ruleGlue"
+    // InternalCosaDsl.g:1633:1: ruleGlue returns [EObject current=null] : ( () otherlv_1= 'Glue' ) ;
+    public final EObject ruleGlue() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalCosaDsl.g:1639:2: ( ( () otherlv_1= 'Glue' ) )
+            // InternalCosaDsl.g:1640:2: ( () otherlv_1= 'Glue' )
+            {
+            // InternalCosaDsl.g:1640:2: ( () otherlv_1= 'Glue' )
+            // InternalCosaDsl.g:1641:3: () otherlv_1= 'Glue'
+            {
+            // InternalCosaDsl.g:1641:3: ()
+            // InternalCosaDsl.g:1642:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getGlueAccess().getGlueAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,32,FOLLOW_2); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getGlueAccess().getGlueKeyword_1());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleGlue"
 
 
     // $ANTLR start "entryRuleRequiredPort"
@@ -4974,9 +4974,9 @@ public class InternalCosaDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000802000800L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x000000001C002000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00000001A0000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00000000E0000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000026000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000020L});

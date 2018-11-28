@@ -3,8 +3,6 @@
 package fr.univnantes.asa.cosa.impl;
 
 import fr.univnantes.asa.cosa.Attachement;
-import fr.univnantes.asa.cosa.Component;
-import fr.univnantes.asa.cosa.Connector;
 import fr.univnantes.asa.cosa.CosaPackage;
 import fr.univnantes.asa.cosa.Port;
 import fr.univnantes.asa.cosa.Role;
@@ -27,8 +25,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link fr.univnantes.asa.cosa.impl.AttachementImpl#getRole <em>Role</em>}</li>
  *   <li>{@link fr.univnantes.asa.cosa.impl.AttachementImpl#getPort <em>Port</em>}</li>
- *   <li>{@link fr.univnantes.asa.cosa.impl.AttachementImpl#getConnector <em>Connector</em>}</li>
- *   <li>{@link fr.univnantes.asa.cosa.impl.AttachementImpl#getComponent <em>Component</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,26 +49,6 @@ public class AttachementImpl extends MinimalEObjectImpl.Container implements Att
 	 * @ordered
 	 */
 	protected Port port;
-
-	/**
-	 * The cached value of the '{@link #getConnector() <em>Connector</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConnector()
-	 * @generated
-	 * @ordered
-	 */
-	protected Connector connector;
-
-	/**
-	 * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponent()
-	 * @generated
-	 * @ordered
-	 */
-	protected Component component;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,86 +152,6 @@ public class AttachementImpl extends MinimalEObjectImpl.Container implements Att
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Connector getConnector() {
-		if (connector != null && connector.eIsProxy()) {
-			InternalEObject oldConnector = (InternalEObject) connector;
-			connector = (Connector) eResolveProxy(oldConnector);
-			if (connector != oldConnector) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CosaPackage.ATTACHEMENT__CONNECTOR,
-							oldConnector, connector));
-			}
-		}
-		return connector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Connector basicGetConnector() {
-		return connector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConnector(Connector newConnector) {
-		Connector oldConnector = connector;
-		connector = newConnector;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CosaPackage.ATTACHEMENT__CONNECTOR, oldConnector,
-					connector));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Component getComponent() {
-		if (component != null && component.eIsProxy()) {
-			InternalEObject oldComponent = (InternalEObject) component;
-			component = (Component) eResolveProxy(oldComponent);
-			if (component != oldComponent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CosaPackage.ATTACHEMENT__COMPONENT,
-							oldComponent, component));
-			}
-		}
-		return component;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Component basicGetComponent() {
-		return component;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComponent(Component newComponent) {
-		Component oldComponent = component;
-		component = newComponent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CosaPackage.ATTACHEMENT__COMPONENT, oldComponent,
-					component));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -267,14 +163,6 @@ public class AttachementImpl extends MinimalEObjectImpl.Container implements Att
 			if (resolve)
 				return getPort();
 			return basicGetPort();
-		case CosaPackage.ATTACHEMENT__CONNECTOR:
-			if (resolve)
-				return getConnector();
-			return basicGetConnector();
-		case CosaPackage.ATTACHEMENT__COMPONENT:
-			if (resolve)
-				return getComponent();
-			return basicGetComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,12 +180,6 @@ public class AttachementImpl extends MinimalEObjectImpl.Container implements Att
 			return;
 		case CosaPackage.ATTACHEMENT__PORT:
 			setPort((Port) newValue);
-			return;
-		case CosaPackage.ATTACHEMENT__CONNECTOR:
-			setConnector((Connector) newValue);
-			return;
-		case CosaPackage.ATTACHEMENT__COMPONENT:
-			setComponent((Component) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -317,12 +199,6 @@ public class AttachementImpl extends MinimalEObjectImpl.Container implements Att
 		case CosaPackage.ATTACHEMENT__PORT:
 			setPort((Port) null);
 			return;
-		case CosaPackage.ATTACHEMENT__CONNECTOR:
-			setConnector((Connector) null);
-			return;
-		case CosaPackage.ATTACHEMENT__COMPONENT:
-			setComponent((Component) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -339,10 +215,6 @@ public class AttachementImpl extends MinimalEObjectImpl.Container implements Att
 			return role != null;
 		case CosaPackage.ATTACHEMENT__PORT:
 			return port != null;
-		case CosaPackage.ATTACHEMENT__CONNECTOR:
-			return connector != null;
-		case CosaPackage.ATTACHEMENT__COMPONENT:
-			return component != null;
 		}
 		return super.eIsSet(featureID);
 	}

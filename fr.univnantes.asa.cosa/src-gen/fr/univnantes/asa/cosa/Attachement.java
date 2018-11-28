@@ -15,8 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fr.univnantes.asa.cosa.Attachement#getRole <em>Role</em>}</li>
  *   <li>{@link fr.univnantes.asa.cosa.Attachement#getPort <em>Port</em>}</li>
- *   <li>{@link fr.univnantes.asa.cosa.Attachement#getConnector <em>Connector</em>}</li>
- *   <li>{@link fr.univnantes.asa.cosa.Attachement#getComponent <em>Component</em>}</li>
  * </ul>
  *
  * @see fr.univnantes.asa.cosa.CosaPackage#getAttachement()
@@ -75,57 +73,5 @@ public interface Attachement extends EObject {
 	 * @generated
 	 */
 	void setPort(Port value);
-
-	/**
-	 * Returns the value of the '<em><b>Connector</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Connector</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connector</em>' reference.
-	 * @see #setConnector(Connector)
-	 * @see fr.univnantes.asa.cosa.CosaPackage#getAttachement_Connector()
-	 * @model required="true"
-	 * @generated
-	 */
-	Connector getConnector();
-
-	/**
-	 * Sets the value of the '{@link fr.univnantes.asa.cosa.Attachement#getConnector <em>Connector</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connector</em>' reference.
-	 * @see #getConnector()
-	 * @generated
-	 */
-	void setConnector(Connector value);
-
-	/**
-	 * Returns the value of the '<em><b>Component</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Component</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component</em>' reference.
-	 * @see #setComponent(Component)
-	 * @see fr.univnantes.asa.cosa.CosaPackage#getAttachement_Component()
-	 * @model required="true"
-	 * @generated
-	 */
-	Component getComponent();
-
-	/**
-	 * Sets the value of the '{@link fr.univnantes.asa.cosa.Attachement#getComponent <em>Component</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component</em>' reference.
-	 * @see #getComponent()
-	 * @generated
-	 */
-	void setComponent(Component value);
 
 } // Attachement

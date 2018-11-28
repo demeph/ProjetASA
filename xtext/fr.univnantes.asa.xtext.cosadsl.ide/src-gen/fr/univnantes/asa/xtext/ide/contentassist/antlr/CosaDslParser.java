@@ -70,9 +70,9 @@ public class CosaDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRequiredServiceAccess().getGroup(), "rule__RequiredService__Group__0");
 			builder.put(grammarAccess.getProvidedServiceAccess().getGroup(), "rule__ProvidedService__Group__0");
 			builder.put(grammarAccess.getRole_ImplAccess().getGroup(), "rule__Role_Impl__Group__0");
-			builder.put(grammarAccess.getGlueAccess().getGroup(), "rule__Glue__Group__0");
 			builder.put(grammarAccess.getRequiredRoleAccess().getGroup(), "rule__RequiredRole__Group__0");
 			builder.put(grammarAccess.getProvidedRoleAccess().getGroup(), "rule__ProvidedRole__Group__0");
+			builder.put(grammarAccess.getGlueAccess().getGroup(), "rule__Glue__Group__0");
 			builder.put(grammarAccess.getRequiredPortAccess().getGroup(), "rule__RequiredPort__Group__0");
 			builder.put(grammarAccess.getProvidedPortAccess().getGroup(), "rule__ProvidedPort__Group__0");
 			builder.put(grammarAccess.getSimpleConfigurationAccess().getGroup(), "rule__SimpleConfiguration__Group__0");
@@ -110,10 +110,10 @@ public class CosaDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBindingAccess().getPortProvidedAssignment_4(), "rule__Binding__PortProvidedAssignment_4");
 			builder.put(grammarAccess.getBindingAccess().getComponentSubscriberAssignment_6(), "rule__Binding__ComponentSubscriberAssignment_6");
 			builder.put(grammarAccess.getBindingAccess().getPortRequiredAssignment_8(), "rule__Binding__PortRequiredAssignment_8");
-			builder.put(grammarAccess.getAttachementAccess().getConnectorAssignment_2(), "rule__Attachement__ConnectorAssignment_2");
-			builder.put(grammarAccess.getAttachementAccess().getRoleAssignment_4(), "rule__Attachement__RoleAssignment_4");
-			builder.put(grammarAccess.getAttachementAccess().getComponentAssignment_6(), "rule__Attachement__ComponentAssignment_6");
-			builder.put(grammarAccess.getAttachementAccess().getPortAssignment_8(), "rule__Attachement__PortAssignment_8");
+			builder.put(grammarAccess.getAttachementAccess().getComponentAssignment_2(), "rule__Attachement__ComponentAssignment_2");
+			builder.put(grammarAccess.getAttachementAccess().getPortAssignment_4(), "rule__Attachement__PortAssignment_4");
+			builder.put(grammarAccess.getAttachementAccess().getConnectorAssignment_6(), "rule__Attachement__ConnectorAssignment_6");
+			builder.put(grammarAccess.getAttachementAccess().getRoleAssignment_8(), "rule__Attachement__RoleAssignment_8");
 			builder.put(grammarAccess.getConfiguration_ImplAccess().getNameAssignment_1(), "rule__Configuration_Impl__NameAssignment_1");
 			builder.put(grammarAccess.getConfiguration_ImplAccess().getComponentsAssignment_3(), "rule__Configuration_Impl__ComponentsAssignment_3");
 			builder.put(grammarAccess.getConfiguration_ImplAccess().getComponentsAssignment_4_1(), "rule__Configuration_Impl__ComponentsAssignment_4_1");

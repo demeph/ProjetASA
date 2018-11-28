@@ -1,6 +1,14 @@
 package fr.univnantes.asa.cosadsl.codegen
 
-import fr.univnantes.asa.cosa.*
+import fr.univnantes.asa.cosa.Component
+import fr.univnantes.asa.cosa.CompositeConfiguration
+import fr.univnantes.asa.cosa.Connector
+import fr.univnantes.asa.cosa.Port
+import fr.univnantes.asa.cosa.ProvidedPort
+import fr.univnantes.asa.cosa.ProvidedService
+import fr.univnantes.asa.cosa.RequiredPort
+import fr.univnantes.asa.cosa.RequiredService
+import fr.univnantes.asa.cosa.Service
 
 class CosaDSLCodeGenerator {
 
@@ -48,29 +56,20 @@ class CosaDSLCodeGenerator {
 		'''
 	}
 	
-	def static String generateCode(RequiredPort rp) {
-		return '''
-			
-		'''
-	}
-	
 		
-	def static String generateCode(ProvidedPort pp) {
+	def static String generateCode(Port pp) {
 		return '''
 			
 		'''
 	}
 	
-	def static String generateCode(RequiredService rs) {
+	def static String generateCode(Service rs) {
 		return '''
 			
 		'''
 	}
 	
-	def static String generateCode(ProvidedService ps) {
-		return '''
-			
-		'''
-	}
+
+
 		
 }

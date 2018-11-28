@@ -26,10 +26,10 @@ public class CosaDslScopeProvider extends AbstractCosaDslScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
     if ((context instanceof Binding)) {
-      this.binding(((Binding)context), reference);
+      return this.binding(((Binding)context), reference);
     } else {
       if ((context instanceof Attachement)) {
-        this.attachement(((Attachement)context), reference);
+        return this.attachement(((Attachement)context), reference);
       }
     }
     return super.getScope(context, reference);
@@ -49,7 +49,7 @@ public class CosaDslScopeProvider extends AbstractCosaDslScopeProvider {
         return Scopes.scopeFor(availablePorts_1);
       }
     }
-    return null;
+    return super.getScope(context, reference);
   }
   
   public IScope attachement(final Attachement context, final EReference reference) {
@@ -57,17 +57,15 @@ public class CosaDslScopeProvider extends AbstractCosaDslScopeProvider {
     boolean _equals = Objects.equal(_name, "port");
     if (_equals) {
       final EList<Port> availablePorts = context.getComponent().getPorts();
-      System.out.println(availablePorts);
       return Scopes.scopeFor(availablePorts);
     } else {
       String _name_1 = reference.getName();
       boolean _equals_1 = Objects.equal(_name_1, "role");
       if (_equals_1) {
         final EList<Role> availableRoles = context.getConnector().getRoles();
-        System.out.println(availableRoles);
         return Scopes.scopeFor(availableRoles);
       }
     }
-    return null;
+    return super.getScope(context, reference);
   }
 }

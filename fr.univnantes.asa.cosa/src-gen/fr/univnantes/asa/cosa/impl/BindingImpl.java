@@ -3,8 +3,6 @@
 package fr.univnantes.asa.cosa.impl;
 
 import fr.univnantes.asa.cosa.Binding;
-import fr.univnantes.asa.cosa.Component;
-import fr.univnantes.asa.cosa.Configuration;
 import fr.univnantes.asa.cosa.CosaPackage;
 import fr.univnantes.asa.cosa.Port;
 
@@ -26,8 +24,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link fr.univnantes.asa.cosa.impl.BindingImpl#getPortRequired <em>Port Required</em>}</li>
  *   <li>{@link fr.univnantes.asa.cosa.impl.BindingImpl#getPortProvided <em>Port Provided</em>}</li>
- *   <li>{@link fr.univnantes.asa.cosa.impl.BindingImpl#getConfigurationProvider <em>Configuration Provider</em>}</li>
- *   <li>{@link fr.univnantes.asa.cosa.impl.BindingImpl#getComponentSubscriber <em>Component Subscriber</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,26 +48,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	 * @ordered
 	 */
 	protected Port portProvided;
-
-	/**
-	 * The cached value of the '{@link #getConfigurationProvider() <em>Configuration Provider</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConfigurationProvider()
-	 * @generated
-	 * @ordered
-	 */
-	protected Configuration configurationProvider;
-
-	/**
-	 * The cached value of the '{@link #getComponentSubscriber() <em>Component Subscriber</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentSubscriber()
-	 * @generated
-	 * @ordered
-	 */
-	protected Component componentSubscriber;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,87 +153,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Configuration getConfigurationProvider() {
-		if (configurationProvider != null && configurationProvider.eIsProxy()) {
-			InternalEObject oldConfigurationProvider = (InternalEObject) configurationProvider;
-			configurationProvider = (Configuration) eResolveProxy(oldConfigurationProvider);
-			if (configurationProvider != oldConfigurationProvider) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							CosaPackage.BINDING__CONFIGURATION_PROVIDER, oldConfigurationProvider,
-							configurationProvider));
-			}
-		}
-		return configurationProvider;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Configuration basicGetConfigurationProvider() {
-		return configurationProvider;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConfigurationProvider(Configuration newConfigurationProvider) {
-		Configuration oldConfigurationProvider = configurationProvider;
-		configurationProvider = newConfigurationProvider;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CosaPackage.BINDING__CONFIGURATION_PROVIDER,
-					oldConfigurationProvider, configurationProvider));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Component getComponentSubscriber() {
-		if (componentSubscriber != null && componentSubscriber.eIsProxy()) {
-			InternalEObject oldComponentSubscriber = (InternalEObject) componentSubscriber;
-			componentSubscriber = (Component) eResolveProxy(oldComponentSubscriber);
-			if (componentSubscriber != oldComponentSubscriber) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CosaPackage.BINDING__COMPONENT_SUBSCRIBER,
-							oldComponentSubscriber, componentSubscriber));
-			}
-		}
-		return componentSubscriber;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Component basicGetComponentSubscriber() {
-		return componentSubscriber;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComponentSubscriber(Component newComponentSubscriber) {
-		Component oldComponentSubscriber = componentSubscriber;
-		componentSubscriber = newComponentSubscriber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CosaPackage.BINDING__COMPONENT_SUBSCRIBER,
-					oldComponentSubscriber, componentSubscriber));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -269,14 +164,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 			if (resolve)
 				return getPortProvided();
 			return basicGetPortProvided();
-		case CosaPackage.BINDING__CONFIGURATION_PROVIDER:
-			if (resolve)
-				return getConfigurationProvider();
-			return basicGetConfigurationProvider();
-		case CosaPackage.BINDING__COMPONENT_SUBSCRIBER:
-			if (resolve)
-				return getComponentSubscriber();
-			return basicGetComponentSubscriber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -294,12 +181,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 			return;
 		case CosaPackage.BINDING__PORT_PROVIDED:
 			setPortProvided((Port) newValue);
-			return;
-		case CosaPackage.BINDING__CONFIGURATION_PROVIDER:
-			setConfigurationProvider((Configuration) newValue);
-			return;
-		case CosaPackage.BINDING__COMPONENT_SUBSCRIBER:
-			setComponentSubscriber((Component) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -319,12 +200,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 		case CosaPackage.BINDING__PORT_PROVIDED:
 			setPortProvided((Port) null);
 			return;
-		case CosaPackage.BINDING__CONFIGURATION_PROVIDER:
-			setConfigurationProvider((Configuration) null);
-			return;
-		case CosaPackage.BINDING__COMPONENT_SUBSCRIBER:
-			setComponentSubscriber((Component) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -341,10 +216,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 			return portRequired != null;
 		case CosaPackage.BINDING__PORT_PROVIDED:
 			return portProvided != null;
-		case CosaPackage.BINDING__CONFIGURATION_PROVIDER:
-			return configurationProvider != null;
-		case CosaPackage.BINDING__COMPONENT_SUBSCRIBER:
-			return componentSubscriber != null;
 		}
 		return super.eIsSet(featureID);
 	}

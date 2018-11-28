@@ -623,31 +623,31 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAttachementKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cConnectorAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cConnectorConnectorCrossReference_2_0 = (CrossReference)cConnectorAssignment_2.eContents().get(0);
-		private final RuleCall cConnectorConnectorIDTerminalRuleCall_2_0_1 = (RuleCall)cConnectorConnectorCrossReference_2_0.eContents().get(1);
+		private final Assignment cComponentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cComponentComponentCrossReference_2_0 = (CrossReference)cComponentAssignment_2.eContents().get(0);
+		private final RuleCall cComponentComponentIDTerminalRuleCall_2_0_1 = (RuleCall)cComponentComponentCrossReference_2_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cRoleAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cRoleRoleCrossReference_4_0 = (CrossReference)cRoleAssignment_4.eContents().get(0);
-		private final RuleCall cRoleRoleIDTerminalRuleCall_4_0_1 = (RuleCall)cRoleRoleCrossReference_4_0.eContents().get(1);
+		private final Assignment cPortAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cPortPortCrossReference_4_0 = (CrossReference)cPortAssignment_4.eContents().get(0);
+		private final RuleCall cPortPortIDTerminalRuleCall_4_0_1 = (RuleCall)cPortPortCrossReference_4_0.eContents().get(1);
 		private final Keyword cToKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cComponentAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cComponentComponentCrossReference_6_0 = (CrossReference)cComponentAssignment_6.eContents().get(0);
-		private final RuleCall cComponentComponentIDTerminalRuleCall_6_0_1 = (RuleCall)cComponentComponentCrossReference_6_0.eContents().get(1);
+		private final Assignment cConnectorAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cConnectorConnectorCrossReference_6_0 = (CrossReference)cConnectorAssignment_6.eContents().get(0);
+		private final RuleCall cConnectorConnectorIDTerminalRuleCall_6_0_1 = (RuleCall)cConnectorConnectorCrossReference_6_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cPortAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cPortPortCrossReference_8_0 = (CrossReference)cPortAssignment_8.eContents().get(0);
-		private final RuleCall cPortPortIDTerminalRuleCall_8_0_1 = (RuleCall)cPortPortCrossReference_8_0.eContents().get(1);
+		private final Assignment cRoleAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cRoleRoleCrossReference_8_0 = (CrossReference)cRoleAssignment_8.eContents().get(0);
+		private final RuleCall cRoleRoleIDTerminalRuleCall_8_0_1 = (RuleCall)cRoleRoleCrossReference_8_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Attachement:
 		//	'Attachement'
 		//	'{'
-		//	connector=[Connector] '.' role=[Role] 'to' component=[Component] '.' port=[Port]
+		//	component=[Component] '.' port=[Port] 'to' connector=[Connector] '.' role=[Role]
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Attachement' '{' connector=[Connector] '.' role=[Role] 'to' component=[Component] '.' port=[Port] '}'
+		//'Attachement' '{' component=[Component] '.' port=[Port] 'to' connector=[Connector] '.' role=[Role] '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Attachement'
@@ -656,50 +656,50 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//connector=[Connector]
-		public Assignment getConnectorAssignment_2() { return cConnectorAssignment_2; }
+		//component=[Component]
+		public Assignment getComponentAssignment_2() { return cComponentAssignment_2; }
 		
-		//[Connector]
-		public CrossReference getConnectorConnectorCrossReference_2_0() { return cConnectorConnectorCrossReference_2_0; }
+		//[Component]
+		public CrossReference getComponentComponentCrossReference_2_0() { return cComponentComponentCrossReference_2_0; }
 		
 		//ID
-		public RuleCall getConnectorConnectorIDTerminalRuleCall_2_0_1() { return cConnectorConnectorIDTerminalRuleCall_2_0_1; }
+		public RuleCall getComponentComponentIDTerminalRuleCall_2_0_1() { return cComponentComponentIDTerminalRuleCall_2_0_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_3() { return cFullStopKeyword_3; }
 		
-		//role=[Role]
-		public Assignment getRoleAssignment_4() { return cRoleAssignment_4; }
+		//port=[Port]
+		public Assignment getPortAssignment_4() { return cPortAssignment_4; }
 		
-		//[Role]
-		public CrossReference getRoleRoleCrossReference_4_0() { return cRoleRoleCrossReference_4_0; }
+		//[Port]
+		public CrossReference getPortPortCrossReference_4_0() { return cPortPortCrossReference_4_0; }
 		
 		//ID
-		public RuleCall getRoleRoleIDTerminalRuleCall_4_0_1() { return cRoleRoleIDTerminalRuleCall_4_0_1; }
+		public RuleCall getPortPortIDTerminalRuleCall_4_0_1() { return cPortPortIDTerminalRuleCall_4_0_1; }
 		
 		//'to'
 		public Keyword getToKeyword_5() { return cToKeyword_5; }
 		
-		//component=[Component]
-		public Assignment getComponentAssignment_6() { return cComponentAssignment_6; }
+		//connector=[Connector]
+		public Assignment getConnectorAssignment_6() { return cConnectorAssignment_6; }
 		
-		//[Component]
-		public CrossReference getComponentComponentCrossReference_6_0() { return cComponentComponentCrossReference_6_0; }
+		//[Connector]
+		public CrossReference getConnectorConnectorCrossReference_6_0() { return cConnectorConnectorCrossReference_6_0; }
 		
 		//ID
-		public RuleCall getComponentComponentIDTerminalRuleCall_6_0_1() { return cComponentComponentIDTerminalRuleCall_6_0_1; }
+		public RuleCall getConnectorConnectorIDTerminalRuleCall_6_0_1() { return cConnectorConnectorIDTerminalRuleCall_6_0_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_7() { return cFullStopKeyword_7; }
 		
-		//port=[Port]
-		public Assignment getPortAssignment_8() { return cPortAssignment_8; }
+		//role=[Role]
+		public Assignment getRoleAssignment_8() { return cRoleAssignment_8; }
 		
-		//[Port]
-		public CrossReference getPortPortCrossReference_8_0() { return cPortPortCrossReference_8_0; }
+		//[Role]
+		public CrossReference getRoleRoleCrossReference_8_0() { return cRoleRoleCrossReference_8_0; }
 		
 		//ID
-		public RuleCall getPortPortIDTerminalRuleCall_8_0_1() { return cPortPortIDTerminalRuleCall_8_0_1; }
+		public RuleCall getRoleRoleIDTerminalRuleCall_8_0_1() { return cRoleRoleIDTerminalRuleCall_8_0_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
@@ -968,26 +968,6 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 	}
-	public class GlueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univnantes.asa.xtext.CosaDsl.Glue");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cGlueAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cGlueKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		
-		//Glue:
-		//	{Glue}
-		//	'Glue';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{Glue} 'Glue'
-		public Group getGroup() { return cGroup; }
-		
-		//{Glue}
-		public Action getGlueAction_0() { return cGlueAction_0; }
-		
-		//'Glue'
-		public Keyword getGlueKeyword_1() { return cGlueKeyword_1; }
-	}
 	public class RequiredRoleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univnantes.asa.xtext.CosaDsl.RequiredRole");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1045,6 +1025,26 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+	}
+	public class GlueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univnantes.asa.xtext.CosaDsl.Glue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cGlueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cGlueKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//Glue:
+		//	{Glue}
+		//	'Glue';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Glue} 'Glue'
+		public Group getGroup() { return cGroup; }
+		
+		//{Glue}
+		public Action getGlueAction_0() { return cGlueAction_0; }
+		
+		//'Glue'
+		public Keyword getGlueKeyword_1() { return cGlueKeyword_1; }
 	}
 	public class RequiredPortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univnantes.asa.xtext.CosaDsl.RequiredPort");
@@ -1270,9 +1270,9 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final RequiredServiceElements pRequiredService;
 	private final ProvidedServiceElements pProvidedService;
 	private final Role_ImplElements pRole_Impl;
-	private final GlueElements pGlue;
 	private final RequiredRoleElements pRequiredRole;
 	private final ProvidedRoleElements pProvidedRole;
+	private final GlueElements pGlue;
 	private final RequiredPortElements pRequiredPort;
 	private final ProvidedPortElements pProvidedPort;
 	private final SimpleConfigurationElements pSimpleConfiguration;
@@ -1302,9 +1302,9 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRequiredService = new RequiredServiceElements();
 		this.pProvidedService = new ProvidedServiceElements();
 		this.pRole_Impl = new Role_ImplElements();
-		this.pGlue = new GlueElements();
 		this.pRequiredRole = new RequiredRoleElements();
 		this.pProvidedRole = new ProvidedRoleElements();
+		this.pGlue = new GlueElements();
 		this.pRequiredPort = new RequiredPortElements();
 		this.pProvidedPort = new ProvidedPortElements();
 		this.pSimpleConfiguration = new SimpleConfigurationElements();
@@ -1460,7 +1460,7 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Attachement:
 	//	'Attachement'
 	//	'{'
-	//	connector=[Connector] '.' role=[Role] 'to' component=[Component] '.' port=[Port]
+	//	component=[Component] '.' port=[Port] 'to' connector=[Connector] '.' role=[Role]
 	//	'}';
 	public AttachementElements getAttachementAccess() {
 		return pAttachement;
@@ -1534,17 +1534,6 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getRole_ImplAccess().getRule();
 	}
 	
-	//Glue:
-	//	{Glue}
-	//	'Glue';
-	public GlueElements getGlueAccess() {
-		return pGlue;
-	}
-	
-	public ParserRule getGlueRule() {
-		return getGlueAccess().getRule();
-	}
-	
 	//RequiredRole:
 	//	{RequiredRole}
 	//	'RequiredRole'
@@ -1567,6 +1556,17 @@ public class CosaDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getProvidedRoleRule() {
 		return getProvidedRoleAccess().getRule();
+	}
+	
+	//Glue:
+	//	{Glue}
+	//	'Glue';
+	public GlueElements getGlueAccess() {
+		return pGlue;
+	}
+	
+	public ParserRule getGlueRule() {
+		return getGlueAccess().getRule();
 	}
 	
 	//RequiredPort:

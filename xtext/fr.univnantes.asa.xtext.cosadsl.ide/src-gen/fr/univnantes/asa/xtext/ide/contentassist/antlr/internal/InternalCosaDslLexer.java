@@ -457,10 +457,10 @@ public class InternalCosaDslLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCosaDsl.g:30:7: ( 'Glue' )
-            // InternalCosaDsl.g:30:9: 'Glue'
+            // InternalCosaDsl.g:30:7: ( 'RequiredRole' )
+            // InternalCosaDsl.g:30:9: 'RequiredRole'
             {
-            match("Glue"); 
+            match("RequiredRole"); 
 
 
             }
@@ -478,10 +478,10 @@ public class InternalCosaDslLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCosaDsl.g:31:7: ( 'RequiredRole' )
-            // InternalCosaDsl.g:31:9: 'RequiredRole'
+            // InternalCosaDsl.g:31:7: ( 'ProvidedRole' )
+            // InternalCosaDsl.g:31:9: 'ProvidedRole'
             {
-            match("RequiredRole"); 
+            match("ProvidedRole"); 
 
 
             }
@@ -499,10 +499,10 @@ public class InternalCosaDslLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCosaDsl.g:32:7: ( 'ProvidedRole' )
-            // InternalCosaDsl.g:32:9: 'ProvidedRole'
+            // InternalCosaDsl.g:32:7: ( 'Glue' )
+            // InternalCosaDsl.g:32:9: 'Glue'
             {
-            match("ProvidedRole"); 
+            match("Glue"); 
 
 
             }
@@ -1321,7 +1321,7 @@ public class InternalCosaDslLexer extends Lexer {
     static final String DFA12_maxS =
         "\1\uffff\1\157\3\uffff\1\154\1\162\1\151\3\uffff\1\164\1\157\1\151\1\157\1\154\1\172\2\uffff\2\uffff\1\57\2\uffff\1\156\4\uffff\1\165\1\162\1\157\1\156\3\uffff\1\164\1\172\1\162\1\155\1\161\1\154\1\165\5\uffff\1\160\1\156\1\145\1\164\1\166\1\144\1\141\1\uffff\1\166\1\160\1\165\2\145\1\157\1\145\1\151\2\172\2\151\1\143\1\151\1\154\1\151\2\172\1\163\1\143\1\147\2\uffff\1\144\1\156\1\150\1\143\1\145\1\162\2\uffff\1\151\1\145\1\164\1\165\1\145\1\147\2\145\1\103\1\145\1\164\1\156\1\157\1\162\1\144\1\172\1\155\1\172\1\157\1\144\1\145\1\164\1\162\1\141\1\123\1\uffff\1\145\1\uffff\1\156\1\123\1\103\2\172\1\164\1\145\2\157\1\156\1\146\1\145\3\157\2\uffff\1\151\1\162\1\154\1\162\1\164\1\151\1\162\1\154\1\162\1\156\1\157\1\166\1\145\1\164\1\172\1\147\1\166\1\145\1\164\1\146\1\156\1\151\2\172\1\uffff\1\165\1\151\2\172\1\151\1\172\1\143\2\uffff\1\162\1\143\2\uffff\1\147\1\uffff\1\145\1\141\1\145\1\165\1\172\1\164\1\172\1\162\1\uffff\1\151\1\uffff\1\141\1\157\1\164\1\156\1\151\1\172\1\157\1\uffff\1\156\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\3\1\4\3\uffff\1\12\1\13\1\14\6\uffff\1\32\1\33\3\uffff\1\37\1\40\1\uffff\1\32\1\2\1\3\1\4\4\uffff\1\12\1\13\1\14\7\uffff\1\33\1\34\1\35\1\36\1\37\7\uffff\1\16\25\uffff\1\7\1\10\6\uffff\1\23\1\24\31\uffff\1\11\1\uffff\1\20\17\uffff\1\5\1\6\30\uffff\1\15\7\uffff\1\26\1\30\2\uffff\1\25\1\27\1\uffff\1\17\10\uffff\1\22\1\uffff\1\21\7\uffff\1\31\2\uffff\1\1";
+        "\2\uffff\1\2\1\3\1\4\3\uffff\1\12\1\13\1\14\6\uffff\1\32\1\33\3\uffff\1\37\1\40\1\uffff\1\32\1\2\1\3\1\4\4\uffff\1\12\1\13\1\14\7\uffff\1\33\1\34\1\35\1\36\1\37\7\uffff\1\16\25\uffff\1\7\1\10\6\uffff\1\23\1\26\31\uffff\1\11\1\uffff\1\20\17\uffff\1\5\1\6\30\uffff\1\15\7\uffff\1\25\1\30\2\uffff\1\24\1\27\1\uffff\1\17\10\uffff\1\22\1\uffff\1\21\7\uffff\1\31\2\uffff\1\1";
     static final String DFA12_specialS =
         "\1\1\22\uffff\1\0\1\2\u00ad\uffff}>";
     static final String[] DFA12_transitionS = {

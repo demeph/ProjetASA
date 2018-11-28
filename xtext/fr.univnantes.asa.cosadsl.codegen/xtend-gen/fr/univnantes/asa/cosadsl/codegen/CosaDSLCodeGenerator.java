@@ -108,28 +108,14 @@ public class CosaDSLCodeGenerator {
     return _builder.toString();
   }
   
-  public static String generateCode(final RequiredPort rp) {
+  public static String generateCode(final Port pp) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\t\t\t");
     _builder.newLine();
     return _builder.toString();
   }
   
-  public static String generateCode(final ProvidedPort pp) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t\t\t");
-    _builder.newLine();
-    return _builder.toString();
-  }
-  
-  public static String generateCode(final RequiredService rs) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t\t\t");
-    _builder.newLine();
-    return _builder.toString();
-  }
-  
-  public static String generateCode(final ProvidedService ps) {
+  public static String generateCode(final Service rs) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\t\t\t");
     _builder.newLine();

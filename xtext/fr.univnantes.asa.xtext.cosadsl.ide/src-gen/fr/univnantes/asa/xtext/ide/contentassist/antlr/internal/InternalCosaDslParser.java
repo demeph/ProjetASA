@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'CompositeConfiguration'", "'{'", "'}'", "','", "'Component'", "'Connector'", "'glue'", "'Port'", "'Binding'", "'('", "'.'", "')'", "'Attachement'", "'to'", "'Configuration'", "'Service'", "'RequiredService'", "'ProvidedService'", "'Role'", "'Glue'", "'RequiredRole'", "'ProvidedRole'", "'RequiredPort'", "'ProvidedPort'", "'SimpleConfiguration'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'CompositeConfiguration'", "'{'", "'}'", "','", "'Component'", "'Connector'", "'glue'", "'Port'", "'Binding'", "'('", "'.'", "')'", "'Attachement'", "'to'", "'Configuration'", "'Service'", "'RequiredService'", "'ProvidedService'", "'Role'", "'RequiredRole'", "'ProvidedRole'", "'Glue'", "'RequiredPort'", "'ProvidedPort'", "'SimpleConfiguration'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -1325,89 +1325,12 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleRole_Impl"
 
 
-    // $ANTLR start "entryRuleGlue"
-    // InternalCosaDsl.g:453:1: entryRuleGlue : ruleGlue EOF ;
-    public final void entryRuleGlue() throws RecognitionException {
-        try {
-            // InternalCosaDsl.g:454:1: ( ruleGlue EOF )
-            // InternalCosaDsl.g:455:1: ruleGlue EOF
-            {
-             before(grammarAccess.getGlueRule()); 
-            pushFollow(FOLLOW_1);
-            ruleGlue();
-
-            state._fsp--;
-
-             after(grammarAccess.getGlueRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleGlue"
-
-
-    // $ANTLR start "ruleGlue"
-    // InternalCosaDsl.g:462:1: ruleGlue : ( ( rule__Glue__Group__0 ) ) ;
-    public final void ruleGlue() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCosaDsl.g:466:2: ( ( ( rule__Glue__Group__0 ) ) )
-            // InternalCosaDsl.g:467:2: ( ( rule__Glue__Group__0 ) )
-            {
-            // InternalCosaDsl.g:467:2: ( ( rule__Glue__Group__0 ) )
-            // InternalCosaDsl.g:468:3: ( rule__Glue__Group__0 )
-            {
-             before(grammarAccess.getGlueAccess().getGroup()); 
-            // InternalCosaDsl.g:469:3: ( rule__Glue__Group__0 )
-            // InternalCosaDsl.g:469:4: rule__Glue__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Glue__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getGlueAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleGlue"
-
-
     // $ANTLR start "entryRuleRequiredRole"
-    // InternalCosaDsl.g:478:1: entryRuleRequiredRole : ruleRequiredRole EOF ;
+    // InternalCosaDsl.g:453:1: entryRuleRequiredRole : ruleRequiredRole EOF ;
     public final void entryRuleRequiredRole() throws RecognitionException {
         try {
-            // InternalCosaDsl.g:479:1: ( ruleRequiredRole EOF )
-            // InternalCosaDsl.g:480:1: ruleRequiredRole EOF
+            // InternalCosaDsl.g:454:1: ( ruleRequiredRole EOF )
+            // InternalCosaDsl.g:455:1: ruleRequiredRole EOF
             {
              before(grammarAccess.getRequiredRoleRule()); 
             pushFollow(FOLLOW_1);
@@ -1433,21 +1356,21 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleRequiredRole"
-    // InternalCosaDsl.g:487:1: ruleRequiredRole : ( ( rule__RequiredRole__Group__0 ) ) ;
+    // InternalCosaDsl.g:462:1: ruleRequiredRole : ( ( rule__RequiredRole__Group__0 ) ) ;
     public final void ruleRequiredRole() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:491:2: ( ( ( rule__RequiredRole__Group__0 ) ) )
-            // InternalCosaDsl.g:492:2: ( ( rule__RequiredRole__Group__0 ) )
+            // InternalCosaDsl.g:466:2: ( ( ( rule__RequiredRole__Group__0 ) ) )
+            // InternalCosaDsl.g:467:2: ( ( rule__RequiredRole__Group__0 ) )
             {
-            // InternalCosaDsl.g:492:2: ( ( rule__RequiredRole__Group__0 ) )
-            // InternalCosaDsl.g:493:3: ( rule__RequiredRole__Group__0 )
+            // InternalCosaDsl.g:467:2: ( ( rule__RequiredRole__Group__0 ) )
+            // InternalCosaDsl.g:468:3: ( rule__RequiredRole__Group__0 )
             {
              before(grammarAccess.getRequiredRoleAccess().getGroup()); 
-            // InternalCosaDsl.g:494:3: ( rule__RequiredRole__Group__0 )
-            // InternalCosaDsl.g:494:4: rule__RequiredRole__Group__0
+            // InternalCosaDsl.g:469:3: ( rule__RequiredRole__Group__0 )
+            // InternalCosaDsl.g:469:4: rule__RequiredRole__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__RequiredRole__Group__0();
@@ -1480,11 +1403,11 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleProvidedRole"
-    // InternalCosaDsl.g:503:1: entryRuleProvidedRole : ruleProvidedRole EOF ;
+    // InternalCosaDsl.g:478:1: entryRuleProvidedRole : ruleProvidedRole EOF ;
     public final void entryRuleProvidedRole() throws RecognitionException {
         try {
-            // InternalCosaDsl.g:504:1: ( ruleProvidedRole EOF )
-            // InternalCosaDsl.g:505:1: ruleProvidedRole EOF
+            // InternalCosaDsl.g:479:1: ( ruleProvidedRole EOF )
+            // InternalCosaDsl.g:480:1: ruleProvidedRole EOF
             {
              before(grammarAccess.getProvidedRoleRule()); 
             pushFollow(FOLLOW_1);
@@ -1510,21 +1433,21 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleProvidedRole"
-    // InternalCosaDsl.g:512:1: ruleProvidedRole : ( ( rule__ProvidedRole__Group__0 ) ) ;
+    // InternalCosaDsl.g:487:1: ruleProvidedRole : ( ( rule__ProvidedRole__Group__0 ) ) ;
     public final void ruleProvidedRole() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:516:2: ( ( ( rule__ProvidedRole__Group__0 ) ) )
-            // InternalCosaDsl.g:517:2: ( ( rule__ProvidedRole__Group__0 ) )
+            // InternalCosaDsl.g:491:2: ( ( ( rule__ProvidedRole__Group__0 ) ) )
+            // InternalCosaDsl.g:492:2: ( ( rule__ProvidedRole__Group__0 ) )
             {
-            // InternalCosaDsl.g:517:2: ( ( rule__ProvidedRole__Group__0 ) )
-            // InternalCosaDsl.g:518:3: ( rule__ProvidedRole__Group__0 )
+            // InternalCosaDsl.g:492:2: ( ( rule__ProvidedRole__Group__0 ) )
+            // InternalCosaDsl.g:493:3: ( rule__ProvidedRole__Group__0 )
             {
              before(grammarAccess.getProvidedRoleAccess().getGroup()); 
-            // InternalCosaDsl.g:519:3: ( rule__ProvidedRole__Group__0 )
-            // InternalCosaDsl.g:519:4: rule__ProvidedRole__Group__0
+            // InternalCosaDsl.g:494:3: ( rule__ProvidedRole__Group__0 )
+            // InternalCosaDsl.g:494:4: rule__ProvidedRole__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ProvidedRole__Group__0();
@@ -1554,6 +1477,83 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "ruleProvidedRole"
+
+
+    // $ANTLR start "entryRuleGlue"
+    // InternalCosaDsl.g:503:1: entryRuleGlue : ruleGlue EOF ;
+    public final void entryRuleGlue() throws RecognitionException {
+        try {
+            // InternalCosaDsl.g:504:1: ( ruleGlue EOF )
+            // InternalCosaDsl.g:505:1: ruleGlue EOF
+            {
+             before(grammarAccess.getGlueRule()); 
+            pushFollow(FOLLOW_1);
+            ruleGlue();
+
+            state._fsp--;
+
+             after(grammarAccess.getGlueRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleGlue"
+
+
+    // $ANTLR start "ruleGlue"
+    // InternalCosaDsl.g:512:1: ruleGlue : ( ( rule__Glue__Group__0 ) ) ;
+    public final void ruleGlue() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCosaDsl.g:516:2: ( ( ( rule__Glue__Group__0 ) ) )
+            // InternalCosaDsl.g:517:2: ( ( rule__Glue__Group__0 ) )
+            {
+            // InternalCosaDsl.g:517:2: ( ( rule__Glue__Group__0 ) )
+            // InternalCosaDsl.g:518:3: ( rule__Glue__Group__0 )
+            {
+             before(grammarAccess.getGlueAccess().getGroup()); 
+            // InternalCosaDsl.g:519:3: ( rule__Glue__Group__0 )
+            // InternalCosaDsl.g:519:4: rule__Glue__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Glue__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getGlueAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleGlue"
 
 
     // $ANTLR start "entryRuleRequiredPort"
@@ -2123,12 +2123,12 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
                 alt4=1;
                 }
                 break;
-            case 31:
+            case 30:
                 {
                 alt4=2;
                 }
                 break;
-            case 32:
+            case 31:
                 {
                 alt4=3;
                 }
@@ -8313,31 +8313,31 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attachement__Group__2__Impl"
-    // InternalCosaDsl.g:2687:1: rule__Attachement__Group__2__Impl : ( ( rule__Attachement__ConnectorAssignment_2 ) ) ;
+    // InternalCosaDsl.g:2687:1: rule__Attachement__Group__2__Impl : ( ( rule__Attachement__ComponentAssignment_2 ) ) ;
     public final void rule__Attachement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:2691:1: ( ( ( rule__Attachement__ConnectorAssignment_2 ) ) )
-            // InternalCosaDsl.g:2692:1: ( ( rule__Attachement__ConnectorAssignment_2 ) )
+            // InternalCosaDsl.g:2691:1: ( ( ( rule__Attachement__ComponentAssignment_2 ) ) )
+            // InternalCosaDsl.g:2692:1: ( ( rule__Attachement__ComponentAssignment_2 ) )
             {
-            // InternalCosaDsl.g:2692:1: ( ( rule__Attachement__ConnectorAssignment_2 ) )
-            // InternalCosaDsl.g:2693:2: ( rule__Attachement__ConnectorAssignment_2 )
+            // InternalCosaDsl.g:2692:1: ( ( rule__Attachement__ComponentAssignment_2 ) )
+            // InternalCosaDsl.g:2693:2: ( rule__Attachement__ComponentAssignment_2 )
             {
-             before(grammarAccess.getAttachementAccess().getConnectorAssignment_2()); 
-            // InternalCosaDsl.g:2694:2: ( rule__Attachement__ConnectorAssignment_2 )
-            // InternalCosaDsl.g:2694:3: rule__Attachement__ConnectorAssignment_2
+             before(grammarAccess.getAttachementAccess().getComponentAssignment_2()); 
+            // InternalCosaDsl.g:2694:2: ( rule__Attachement__ComponentAssignment_2 )
+            // InternalCosaDsl.g:2694:3: rule__Attachement__ComponentAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__Attachement__ConnectorAssignment_2();
+            rule__Attachement__ComponentAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAttachementAccess().getConnectorAssignment_2()); 
+             after(grammarAccess.getAttachementAccess().getComponentAssignment_2()); 
 
             }
 
@@ -8473,31 +8473,31 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attachement__Group__4__Impl"
-    // InternalCosaDsl.g:2741:1: rule__Attachement__Group__4__Impl : ( ( rule__Attachement__RoleAssignment_4 ) ) ;
+    // InternalCosaDsl.g:2741:1: rule__Attachement__Group__4__Impl : ( ( rule__Attachement__PortAssignment_4 ) ) ;
     public final void rule__Attachement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:2745:1: ( ( ( rule__Attachement__RoleAssignment_4 ) ) )
-            // InternalCosaDsl.g:2746:1: ( ( rule__Attachement__RoleAssignment_4 ) )
+            // InternalCosaDsl.g:2745:1: ( ( ( rule__Attachement__PortAssignment_4 ) ) )
+            // InternalCosaDsl.g:2746:1: ( ( rule__Attachement__PortAssignment_4 ) )
             {
-            // InternalCosaDsl.g:2746:1: ( ( rule__Attachement__RoleAssignment_4 ) )
-            // InternalCosaDsl.g:2747:2: ( rule__Attachement__RoleAssignment_4 )
+            // InternalCosaDsl.g:2746:1: ( ( rule__Attachement__PortAssignment_4 ) )
+            // InternalCosaDsl.g:2747:2: ( rule__Attachement__PortAssignment_4 )
             {
-             before(grammarAccess.getAttachementAccess().getRoleAssignment_4()); 
-            // InternalCosaDsl.g:2748:2: ( rule__Attachement__RoleAssignment_4 )
-            // InternalCosaDsl.g:2748:3: rule__Attachement__RoleAssignment_4
+             before(grammarAccess.getAttachementAccess().getPortAssignment_4()); 
+            // InternalCosaDsl.g:2748:2: ( rule__Attachement__PortAssignment_4 )
+            // InternalCosaDsl.g:2748:3: rule__Attachement__PortAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__Attachement__RoleAssignment_4();
+            rule__Attachement__PortAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAttachementAccess().getRoleAssignment_4()); 
+             after(grammarAccess.getAttachementAccess().getPortAssignment_4()); 
 
             }
 
@@ -8633,31 +8633,31 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attachement__Group__6__Impl"
-    // InternalCosaDsl.g:2795:1: rule__Attachement__Group__6__Impl : ( ( rule__Attachement__ComponentAssignment_6 ) ) ;
+    // InternalCosaDsl.g:2795:1: rule__Attachement__Group__6__Impl : ( ( rule__Attachement__ConnectorAssignment_6 ) ) ;
     public final void rule__Attachement__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:2799:1: ( ( ( rule__Attachement__ComponentAssignment_6 ) ) )
-            // InternalCosaDsl.g:2800:1: ( ( rule__Attachement__ComponentAssignment_6 ) )
+            // InternalCosaDsl.g:2799:1: ( ( ( rule__Attachement__ConnectorAssignment_6 ) ) )
+            // InternalCosaDsl.g:2800:1: ( ( rule__Attachement__ConnectorAssignment_6 ) )
             {
-            // InternalCosaDsl.g:2800:1: ( ( rule__Attachement__ComponentAssignment_6 ) )
-            // InternalCosaDsl.g:2801:2: ( rule__Attachement__ComponentAssignment_6 )
+            // InternalCosaDsl.g:2800:1: ( ( rule__Attachement__ConnectorAssignment_6 ) )
+            // InternalCosaDsl.g:2801:2: ( rule__Attachement__ConnectorAssignment_6 )
             {
-             before(grammarAccess.getAttachementAccess().getComponentAssignment_6()); 
-            // InternalCosaDsl.g:2802:2: ( rule__Attachement__ComponentAssignment_6 )
-            // InternalCosaDsl.g:2802:3: rule__Attachement__ComponentAssignment_6
+             before(grammarAccess.getAttachementAccess().getConnectorAssignment_6()); 
+            // InternalCosaDsl.g:2802:2: ( rule__Attachement__ConnectorAssignment_6 )
+            // InternalCosaDsl.g:2802:3: rule__Attachement__ConnectorAssignment_6
             {
             pushFollow(FOLLOW_2);
-            rule__Attachement__ComponentAssignment_6();
+            rule__Attachement__ConnectorAssignment_6();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAttachementAccess().getComponentAssignment_6()); 
+             after(grammarAccess.getAttachementAccess().getConnectorAssignment_6()); 
 
             }
 
@@ -8793,31 +8793,31 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attachement__Group__8__Impl"
-    // InternalCosaDsl.g:2849:1: rule__Attachement__Group__8__Impl : ( ( rule__Attachement__PortAssignment_8 ) ) ;
+    // InternalCosaDsl.g:2849:1: rule__Attachement__Group__8__Impl : ( ( rule__Attachement__RoleAssignment_8 ) ) ;
     public final void rule__Attachement__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:2853:1: ( ( ( rule__Attachement__PortAssignment_8 ) ) )
-            // InternalCosaDsl.g:2854:1: ( ( rule__Attachement__PortAssignment_8 ) )
+            // InternalCosaDsl.g:2853:1: ( ( ( rule__Attachement__RoleAssignment_8 ) ) )
+            // InternalCosaDsl.g:2854:1: ( ( rule__Attachement__RoleAssignment_8 ) )
             {
-            // InternalCosaDsl.g:2854:1: ( ( rule__Attachement__PortAssignment_8 ) )
-            // InternalCosaDsl.g:2855:2: ( rule__Attachement__PortAssignment_8 )
+            // InternalCosaDsl.g:2854:1: ( ( rule__Attachement__RoleAssignment_8 ) )
+            // InternalCosaDsl.g:2855:2: ( rule__Attachement__RoleAssignment_8 )
             {
-             before(grammarAccess.getAttachementAccess().getPortAssignment_8()); 
-            // InternalCosaDsl.g:2856:2: ( rule__Attachement__PortAssignment_8 )
-            // InternalCosaDsl.g:2856:3: rule__Attachement__PortAssignment_8
+             before(grammarAccess.getAttachementAccess().getRoleAssignment_8()); 
+            // InternalCosaDsl.g:2856:2: ( rule__Attachement__RoleAssignment_8 )
+            // InternalCosaDsl.g:2856:3: rule__Attachement__RoleAssignment_8
             {
             pushFollow(FOLLOW_2);
-            rule__Attachement__PortAssignment_8();
+            rule__Attachement__RoleAssignment_8();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAttachementAccess().getPortAssignment_8()); 
+             after(grammarAccess.getAttachementAccess().getRoleAssignment_8()); 
 
             }
 
@@ -11782,160 +11782,15 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Role_Impl__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Glue__Group__0"
-    // InternalCosaDsl.g:3836:1: rule__Glue__Group__0 : rule__Glue__Group__0__Impl rule__Glue__Group__1 ;
-    public final void rule__Glue__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCosaDsl.g:3840:1: ( rule__Glue__Group__0__Impl rule__Glue__Group__1 )
-            // InternalCosaDsl.g:3841:2: rule__Glue__Group__0__Impl rule__Glue__Group__1
-            {
-            pushFollow(FOLLOW_23);
-            rule__Glue__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Glue__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Glue__Group__0"
-
-
-    // $ANTLR start "rule__Glue__Group__0__Impl"
-    // InternalCosaDsl.g:3848:1: rule__Glue__Group__0__Impl : ( () ) ;
-    public final void rule__Glue__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCosaDsl.g:3852:1: ( ( () ) )
-            // InternalCosaDsl.g:3853:1: ( () )
-            {
-            // InternalCosaDsl.g:3853:1: ( () )
-            // InternalCosaDsl.g:3854:2: ()
-            {
-             before(grammarAccess.getGlueAccess().getGlueAction_0()); 
-            // InternalCosaDsl.g:3855:2: ()
-            // InternalCosaDsl.g:3855:3: 
-            {
-            }
-
-             after(grammarAccess.getGlueAccess().getGlueAction_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Glue__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Glue__Group__1"
-    // InternalCosaDsl.g:3863:1: rule__Glue__Group__1 : rule__Glue__Group__1__Impl ;
-    public final void rule__Glue__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCosaDsl.g:3867:1: ( rule__Glue__Group__1__Impl )
-            // InternalCosaDsl.g:3868:2: rule__Glue__Group__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Glue__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Glue__Group__1"
-
-
-    // $ANTLR start "rule__Glue__Group__1__Impl"
-    // InternalCosaDsl.g:3874:1: rule__Glue__Group__1__Impl : ( 'Glue' ) ;
-    public final void rule__Glue__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCosaDsl.g:3878:1: ( ( 'Glue' ) )
-            // InternalCosaDsl.g:3879:1: ( 'Glue' )
-            {
-            // InternalCosaDsl.g:3879:1: ( 'Glue' )
-            // InternalCosaDsl.g:3880:2: 'Glue'
-            {
-             before(grammarAccess.getGlueAccess().getGlueKeyword_1()); 
-            match(input,30,FOLLOW_2); 
-             after(grammarAccess.getGlueAccess().getGlueKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Glue__Group__1__Impl"
-
-
     // $ANTLR start "rule__RequiredRole__Group__0"
-    // InternalCosaDsl.g:3890:1: rule__RequiredRole__Group__0 : rule__RequiredRole__Group__0__Impl rule__RequiredRole__Group__1 ;
+    // InternalCosaDsl.g:3836:1: rule__RequiredRole__Group__0 : rule__RequiredRole__Group__0__Impl rule__RequiredRole__Group__1 ;
     public final void rule__RequiredRole__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:3894:1: ( rule__RequiredRole__Group__0__Impl rule__RequiredRole__Group__1 )
-            // InternalCosaDsl.g:3895:2: rule__RequiredRole__Group__0__Impl rule__RequiredRole__Group__1
+            // InternalCosaDsl.g:3840:1: ( rule__RequiredRole__Group__0__Impl rule__RequiredRole__Group__1 )
+            // InternalCosaDsl.g:3841:2: rule__RequiredRole__Group__0__Impl rule__RequiredRole__Group__1
             {
             pushFollow(FOLLOW_36);
             rule__RequiredRole__Group__0__Impl();
@@ -11966,21 +11821,21 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RequiredRole__Group__0__Impl"
-    // InternalCosaDsl.g:3902:1: rule__RequiredRole__Group__0__Impl : ( () ) ;
+    // InternalCosaDsl.g:3848:1: rule__RequiredRole__Group__0__Impl : ( () ) ;
     public final void rule__RequiredRole__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:3906:1: ( ( () ) )
-            // InternalCosaDsl.g:3907:1: ( () )
+            // InternalCosaDsl.g:3852:1: ( ( () ) )
+            // InternalCosaDsl.g:3853:1: ( () )
             {
-            // InternalCosaDsl.g:3907:1: ( () )
-            // InternalCosaDsl.g:3908:2: ()
+            // InternalCosaDsl.g:3853:1: ( () )
+            // InternalCosaDsl.g:3854:2: ()
             {
              before(grammarAccess.getRequiredRoleAccess().getRequiredRoleAction_0()); 
-            // InternalCosaDsl.g:3909:2: ()
-            // InternalCosaDsl.g:3909:3: 
+            // InternalCosaDsl.g:3855:2: ()
+            // InternalCosaDsl.g:3855:3: 
             {
             }
 
@@ -12003,14 +11858,14 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RequiredRole__Group__1"
-    // InternalCosaDsl.g:3917:1: rule__RequiredRole__Group__1 : rule__RequiredRole__Group__1__Impl rule__RequiredRole__Group__2 ;
+    // InternalCosaDsl.g:3863:1: rule__RequiredRole__Group__1 : rule__RequiredRole__Group__1__Impl rule__RequiredRole__Group__2 ;
     public final void rule__RequiredRole__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:3921:1: ( rule__RequiredRole__Group__1__Impl rule__RequiredRole__Group__2 )
-            // InternalCosaDsl.g:3922:2: rule__RequiredRole__Group__1__Impl rule__RequiredRole__Group__2
+            // InternalCosaDsl.g:3867:1: ( rule__RequiredRole__Group__1__Impl rule__RequiredRole__Group__2 )
+            // InternalCosaDsl.g:3868:2: rule__RequiredRole__Group__1__Impl rule__RequiredRole__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__RequiredRole__Group__1__Impl();
@@ -12041,20 +11896,20 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RequiredRole__Group__1__Impl"
-    // InternalCosaDsl.g:3929:1: rule__RequiredRole__Group__1__Impl : ( 'RequiredRole' ) ;
+    // InternalCosaDsl.g:3875:1: rule__RequiredRole__Group__1__Impl : ( 'RequiredRole' ) ;
     public final void rule__RequiredRole__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:3933:1: ( ( 'RequiredRole' ) )
-            // InternalCosaDsl.g:3934:1: ( 'RequiredRole' )
+            // InternalCosaDsl.g:3879:1: ( ( 'RequiredRole' ) )
+            // InternalCosaDsl.g:3880:1: ( 'RequiredRole' )
             {
-            // InternalCosaDsl.g:3934:1: ( 'RequiredRole' )
-            // InternalCosaDsl.g:3935:2: 'RequiredRole'
+            // InternalCosaDsl.g:3880:1: ( 'RequiredRole' )
+            // InternalCosaDsl.g:3881:2: 'RequiredRole'
             {
              before(grammarAccess.getRequiredRoleAccess().getRequiredRoleKeyword_1()); 
-            match(input,31,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getRequiredRoleAccess().getRequiredRoleKeyword_1()); 
 
             }
@@ -12078,14 +11933,14 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RequiredRole__Group__2"
-    // InternalCosaDsl.g:3944:1: rule__RequiredRole__Group__2 : rule__RequiredRole__Group__2__Impl ;
+    // InternalCosaDsl.g:3890:1: rule__RequiredRole__Group__2 : rule__RequiredRole__Group__2__Impl ;
     public final void rule__RequiredRole__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:3948:1: ( rule__RequiredRole__Group__2__Impl )
-            // InternalCosaDsl.g:3949:2: rule__RequiredRole__Group__2__Impl
+            // InternalCosaDsl.g:3894:1: ( rule__RequiredRole__Group__2__Impl )
+            // InternalCosaDsl.g:3895:2: rule__RequiredRole__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RequiredRole__Group__2__Impl();
@@ -12111,21 +11966,21 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RequiredRole__Group__2__Impl"
-    // InternalCosaDsl.g:3955:1: rule__RequiredRole__Group__2__Impl : ( ( rule__RequiredRole__NameAssignment_2 ) ) ;
+    // InternalCosaDsl.g:3901:1: rule__RequiredRole__Group__2__Impl : ( ( rule__RequiredRole__NameAssignment_2 ) ) ;
     public final void rule__RequiredRole__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:3959:1: ( ( ( rule__RequiredRole__NameAssignment_2 ) ) )
-            // InternalCosaDsl.g:3960:1: ( ( rule__RequiredRole__NameAssignment_2 ) )
+            // InternalCosaDsl.g:3905:1: ( ( ( rule__RequiredRole__NameAssignment_2 ) ) )
+            // InternalCosaDsl.g:3906:1: ( ( rule__RequiredRole__NameAssignment_2 ) )
             {
-            // InternalCosaDsl.g:3960:1: ( ( rule__RequiredRole__NameAssignment_2 ) )
-            // InternalCosaDsl.g:3961:2: ( rule__RequiredRole__NameAssignment_2 )
+            // InternalCosaDsl.g:3906:1: ( ( rule__RequiredRole__NameAssignment_2 ) )
+            // InternalCosaDsl.g:3907:2: ( rule__RequiredRole__NameAssignment_2 )
             {
              before(grammarAccess.getRequiredRoleAccess().getNameAssignment_2()); 
-            // InternalCosaDsl.g:3962:2: ( rule__RequiredRole__NameAssignment_2 )
-            // InternalCosaDsl.g:3962:3: rule__RequiredRole__NameAssignment_2
+            // InternalCosaDsl.g:3908:2: ( rule__RequiredRole__NameAssignment_2 )
+            // InternalCosaDsl.g:3908:3: rule__RequiredRole__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__RequiredRole__NameAssignment_2();
@@ -12158,14 +12013,14 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProvidedRole__Group__0"
-    // InternalCosaDsl.g:3971:1: rule__ProvidedRole__Group__0 : rule__ProvidedRole__Group__0__Impl rule__ProvidedRole__Group__1 ;
+    // InternalCosaDsl.g:3917:1: rule__ProvidedRole__Group__0 : rule__ProvidedRole__Group__0__Impl rule__ProvidedRole__Group__1 ;
     public final void rule__ProvidedRole__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:3975:1: ( rule__ProvidedRole__Group__0__Impl rule__ProvidedRole__Group__1 )
-            // InternalCosaDsl.g:3976:2: rule__ProvidedRole__Group__0__Impl rule__ProvidedRole__Group__1
+            // InternalCosaDsl.g:3921:1: ( rule__ProvidedRole__Group__0__Impl rule__ProvidedRole__Group__1 )
+            // InternalCosaDsl.g:3922:2: rule__ProvidedRole__Group__0__Impl rule__ProvidedRole__Group__1
             {
             pushFollow(FOLLOW_21);
             rule__ProvidedRole__Group__0__Impl();
@@ -12196,21 +12051,21 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProvidedRole__Group__0__Impl"
-    // InternalCosaDsl.g:3983:1: rule__ProvidedRole__Group__0__Impl : ( () ) ;
+    // InternalCosaDsl.g:3929:1: rule__ProvidedRole__Group__0__Impl : ( () ) ;
     public final void rule__ProvidedRole__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:3987:1: ( ( () ) )
-            // InternalCosaDsl.g:3988:1: ( () )
+            // InternalCosaDsl.g:3933:1: ( ( () ) )
+            // InternalCosaDsl.g:3934:1: ( () )
             {
-            // InternalCosaDsl.g:3988:1: ( () )
-            // InternalCosaDsl.g:3989:2: ()
+            // InternalCosaDsl.g:3934:1: ( () )
+            // InternalCosaDsl.g:3935:2: ()
             {
              before(grammarAccess.getProvidedRoleAccess().getProvidedRoleAction_0()); 
-            // InternalCosaDsl.g:3990:2: ()
-            // InternalCosaDsl.g:3990:3: 
+            // InternalCosaDsl.g:3936:2: ()
+            // InternalCosaDsl.g:3936:3: 
             {
             }
 
@@ -12233,14 +12088,14 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProvidedRole__Group__1"
-    // InternalCosaDsl.g:3998:1: rule__ProvidedRole__Group__1 : rule__ProvidedRole__Group__1__Impl rule__ProvidedRole__Group__2 ;
+    // InternalCosaDsl.g:3944:1: rule__ProvidedRole__Group__1 : rule__ProvidedRole__Group__1__Impl rule__ProvidedRole__Group__2 ;
     public final void rule__ProvidedRole__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:4002:1: ( rule__ProvidedRole__Group__1__Impl rule__ProvidedRole__Group__2 )
-            // InternalCosaDsl.g:4003:2: rule__ProvidedRole__Group__1__Impl rule__ProvidedRole__Group__2
+            // InternalCosaDsl.g:3948:1: ( rule__ProvidedRole__Group__1__Impl rule__ProvidedRole__Group__2 )
+            // InternalCosaDsl.g:3949:2: rule__ProvidedRole__Group__1__Impl rule__ProvidedRole__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__ProvidedRole__Group__1__Impl();
@@ -12271,20 +12126,20 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProvidedRole__Group__1__Impl"
-    // InternalCosaDsl.g:4010:1: rule__ProvidedRole__Group__1__Impl : ( 'ProvidedRole' ) ;
+    // InternalCosaDsl.g:3956:1: rule__ProvidedRole__Group__1__Impl : ( 'ProvidedRole' ) ;
     public final void rule__ProvidedRole__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:4014:1: ( ( 'ProvidedRole' ) )
-            // InternalCosaDsl.g:4015:1: ( 'ProvidedRole' )
+            // InternalCosaDsl.g:3960:1: ( ( 'ProvidedRole' ) )
+            // InternalCosaDsl.g:3961:1: ( 'ProvidedRole' )
             {
-            // InternalCosaDsl.g:4015:1: ( 'ProvidedRole' )
-            // InternalCosaDsl.g:4016:2: 'ProvidedRole'
+            // InternalCosaDsl.g:3961:1: ( 'ProvidedRole' )
+            // InternalCosaDsl.g:3962:2: 'ProvidedRole'
             {
              before(grammarAccess.getProvidedRoleAccess().getProvidedRoleKeyword_1()); 
-            match(input,32,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getProvidedRoleAccess().getProvidedRoleKeyword_1()); 
 
             }
@@ -12308,14 +12163,14 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProvidedRole__Group__2"
-    // InternalCosaDsl.g:4025:1: rule__ProvidedRole__Group__2 : rule__ProvidedRole__Group__2__Impl ;
+    // InternalCosaDsl.g:3971:1: rule__ProvidedRole__Group__2 : rule__ProvidedRole__Group__2__Impl ;
     public final void rule__ProvidedRole__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:4029:1: ( rule__ProvidedRole__Group__2__Impl )
-            // InternalCosaDsl.g:4030:2: rule__ProvidedRole__Group__2__Impl
+            // InternalCosaDsl.g:3975:1: ( rule__ProvidedRole__Group__2__Impl )
+            // InternalCosaDsl.g:3976:2: rule__ProvidedRole__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ProvidedRole__Group__2__Impl();
@@ -12341,21 +12196,21 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProvidedRole__Group__2__Impl"
-    // InternalCosaDsl.g:4036:1: rule__ProvidedRole__Group__2__Impl : ( ( rule__ProvidedRole__NameAssignment_2 ) ) ;
+    // InternalCosaDsl.g:3982:1: rule__ProvidedRole__Group__2__Impl : ( ( rule__ProvidedRole__NameAssignment_2 ) ) ;
     public final void rule__ProvidedRole__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCosaDsl.g:4040:1: ( ( ( rule__ProvidedRole__NameAssignment_2 ) ) )
-            // InternalCosaDsl.g:4041:1: ( ( rule__ProvidedRole__NameAssignment_2 ) )
+            // InternalCosaDsl.g:3986:1: ( ( ( rule__ProvidedRole__NameAssignment_2 ) ) )
+            // InternalCosaDsl.g:3987:1: ( ( rule__ProvidedRole__NameAssignment_2 ) )
             {
-            // InternalCosaDsl.g:4041:1: ( ( rule__ProvidedRole__NameAssignment_2 ) )
-            // InternalCosaDsl.g:4042:2: ( rule__ProvidedRole__NameAssignment_2 )
+            // InternalCosaDsl.g:3987:1: ( ( rule__ProvidedRole__NameAssignment_2 ) )
+            // InternalCosaDsl.g:3988:2: ( rule__ProvidedRole__NameAssignment_2 )
             {
              before(grammarAccess.getProvidedRoleAccess().getNameAssignment_2()); 
-            // InternalCosaDsl.g:4043:2: ( rule__ProvidedRole__NameAssignment_2 )
-            // InternalCosaDsl.g:4043:3: rule__ProvidedRole__NameAssignment_2
+            // InternalCosaDsl.g:3989:2: ( rule__ProvidedRole__NameAssignment_2 )
+            // InternalCosaDsl.g:3989:3: rule__ProvidedRole__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ProvidedRole__NameAssignment_2();
@@ -12385,6 +12240,151 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__ProvidedRole__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Glue__Group__0"
+    // InternalCosaDsl.g:3998:1: rule__Glue__Group__0 : rule__Glue__Group__0__Impl rule__Glue__Group__1 ;
+    public final void rule__Glue__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCosaDsl.g:4002:1: ( rule__Glue__Group__0__Impl rule__Glue__Group__1 )
+            // InternalCosaDsl.g:4003:2: rule__Glue__Group__0__Impl rule__Glue__Group__1
+            {
+            pushFollow(FOLLOW_23);
+            rule__Glue__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Glue__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Glue__Group__0"
+
+
+    // $ANTLR start "rule__Glue__Group__0__Impl"
+    // InternalCosaDsl.g:4010:1: rule__Glue__Group__0__Impl : ( () ) ;
+    public final void rule__Glue__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCosaDsl.g:4014:1: ( ( () ) )
+            // InternalCosaDsl.g:4015:1: ( () )
+            {
+            // InternalCosaDsl.g:4015:1: ( () )
+            // InternalCosaDsl.g:4016:2: ()
+            {
+             before(grammarAccess.getGlueAccess().getGlueAction_0()); 
+            // InternalCosaDsl.g:4017:2: ()
+            // InternalCosaDsl.g:4017:3: 
+            {
+            }
+
+             after(grammarAccess.getGlueAccess().getGlueAction_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Glue__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Glue__Group__1"
+    // InternalCosaDsl.g:4025:1: rule__Glue__Group__1 : rule__Glue__Group__1__Impl ;
+    public final void rule__Glue__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCosaDsl.g:4029:1: ( rule__Glue__Group__1__Impl )
+            // InternalCosaDsl.g:4030:2: rule__Glue__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Glue__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Glue__Group__1"
+
+
+    // $ANTLR start "rule__Glue__Group__1__Impl"
+    // InternalCosaDsl.g:4036:1: rule__Glue__Group__1__Impl : ( 'Glue' ) ;
+    public final void rule__Glue__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCosaDsl.g:4040:1: ( ( 'Glue' ) )
+            // InternalCosaDsl.g:4041:1: ( 'Glue' )
+            {
+            // InternalCosaDsl.g:4041:1: ( 'Glue' )
+            // InternalCosaDsl.g:4042:2: 'Glue'
+            {
+             before(grammarAccess.getGlueAccess().getGlueKeyword_1()); 
+            match(input,32,FOLLOW_2); 
+             after(grammarAccess.getGlueAccess().getGlueKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Glue__Group__1__Impl"
 
 
     // $ANTLR start "rule__RequiredPort__Group__0"
@@ -15941,9 +15941,9 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Binding__PortRequiredAssignment_8"
 
 
-    // $ANTLR start "rule__Attachement__ConnectorAssignment_2"
-    // InternalCosaDsl.g:5256:1: rule__Attachement__ConnectorAssignment_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Attachement__ConnectorAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Attachement__ComponentAssignment_2"
+    // InternalCosaDsl.g:5256:1: rule__Attachement__ComponentAssignment_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Attachement__ComponentAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -15954,17 +15954,17 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
             // InternalCosaDsl.g:5261:2: ( ( RULE_ID ) )
             // InternalCosaDsl.g:5262:3: ( RULE_ID )
             {
-             before(grammarAccess.getAttachementAccess().getConnectorConnectorCrossReference_2_0()); 
+             before(grammarAccess.getAttachementAccess().getComponentComponentCrossReference_2_0()); 
             // InternalCosaDsl.g:5263:3: ( RULE_ID )
             // InternalCosaDsl.g:5264:4: RULE_ID
             {
-             before(grammarAccess.getAttachementAccess().getConnectorConnectorIDTerminalRuleCall_2_0_1()); 
+             before(grammarAccess.getAttachementAccess().getComponentComponentIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAttachementAccess().getConnectorConnectorIDTerminalRuleCall_2_0_1()); 
+             after(grammarAccess.getAttachementAccess().getComponentComponentIDTerminalRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getAttachementAccess().getConnectorConnectorCrossReference_2_0()); 
+             after(grammarAccess.getAttachementAccess().getComponentComponentCrossReference_2_0()); 
 
             }
 
@@ -15983,12 +15983,12 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Attachement__ConnectorAssignment_2"
+    // $ANTLR end "rule__Attachement__ComponentAssignment_2"
 
 
-    // $ANTLR start "rule__Attachement__RoleAssignment_4"
-    // InternalCosaDsl.g:5275:1: rule__Attachement__RoleAssignment_4 : ( ( RULE_ID ) ) ;
-    public final void rule__Attachement__RoleAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Attachement__PortAssignment_4"
+    // InternalCosaDsl.g:5275:1: rule__Attachement__PortAssignment_4 : ( ( RULE_ID ) ) ;
+    public final void rule__Attachement__PortAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -15999,17 +15999,17 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
             // InternalCosaDsl.g:5280:2: ( ( RULE_ID ) )
             // InternalCosaDsl.g:5281:3: ( RULE_ID )
             {
-             before(grammarAccess.getAttachementAccess().getRoleRoleCrossReference_4_0()); 
+             before(grammarAccess.getAttachementAccess().getPortPortCrossReference_4_0()); 
             // InternalCosaDsl.g:5282:3: ( RULE_ID )
             // InternalCosaDsl.g:5283:4: RULE_ID
             {
-             before(grammarAccess.getAttachementAccess().getRoleRoleIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getAttachementAccess().getPortPortIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAttachementAccess().getRoleRoleIDTerminalRuleCall_4_0_1()); 
+             after(grammarAccess.getAttachementAccess().getPortPortIDTerminalRuleCall_4_0_1()); 
 
             }
 
-             after(grammarAccess.getAttachementAccess().getRoleRoleCrossReference_4_0()); 
+             after(grammarAccess.getAttachementAccess().getPortPortCrossReference_4_0()); 
 
             }
 
@@ -16028,12 +16028,12 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Attachement__RoleAssignment_4"
+    // $ANTLR end "rule__Attachement__PortAssignment_4"
 
 
-    // $ANTLR start "rule__Attachement__ComponentAssignment_6"
-    // InternalCosaDsl.g:5294:1: rule__Attachement__ComponentAssignment_6 : ( ( RULE_ID ) ) ;
-    public final void rule__Attachement__ComponentAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__Attachement__ConnectorAssignment_6"
+    // InternalCosaDsl.g:5294:1: rule__Attachement__ConnectorAssignment_6 : ( ( RULE_ID ) ) ;
+    public final void rule__Attachement__ConnectorAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -16044,17 +16044,17 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
             // InternalCosaDsl.g:5299:2: ( ( RULE_ID ) )
             // InternalCosaDsl.g:5300:3: ( RULE_ID )
             {
-             before(grammarAccess.getAttachementAccess().getComponentComponentCrossReference_6_0()); 
+             before(grammarAccess.getAttachementAccess().getConnectorConnectorCrossReference_6_0()); 
             // InternalCosaDsl.g:5301:3: ( RULE_ID )
             // InternalCosaDsl.g:5302:4: RULE_ID
             {
-             before(grammarAccess.getAttachementAccess().getComponentComponentIDTerminalRuleCall_6_0_1()); 
+             before(grammarAccess.getAttachementAccess().getConnectorConnectorIDTerminalRuleCall_6_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAttachementAccess().getComponentComponentIDTerminalRuleCall_6_0_1()); 
+             after(grammarAccess.getAttachementAccess().getConnectorConnectorIDTerminalRuleCall_6_0_1()); 
 
             }
 
-             after(grammarAccess.getAttachementAccess().getComponentComponentCrossReference_6_0()); 
+             after(grammarAccess.getAttachementAccess().getConnectorConnectorCrossReference_6_0()); 
 
             }
 
@@ -16073,12 +16073,12 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Attachement__ComponentAssignment_6"
+    // $ANTLR end "rule__Attachement__ConnectorAssignment_6"
 
 
-    // $ANTLR start "rule__Attachement__PortAssignment_8"
-    // InternalCosaDsl.g:5313:1: rule__Attachement__PortAssignment_8 : ( ( RULE_ID ) ) ;
-    public final void rule__Attachement__PortAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__Attachement__RoleAssignment_8"
+    // InternalCosaDsl.g:5313:1: rule__Attachement__RoleAssignment_8 : ( ( RULE_ID ) ) ;
+    public final void rule__Attachement__RoleAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -16089,17 +16089,17 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
             // InternalCosaDsl.g:5318:2: ( ( RULE_ID ) )
             // InternalCosaDsl.g:5319:3: ( RULE_ID )
             {
-             before(grammarAccess.getAttachementAccess().getPortPortCrossReference_8_0()); 
+             before(grammarAccess.getAttachementAccess().getRoleRoleCrossReference_8_0()); 
             // InternalCosaDsl.g:5320:3: ( RULE_ID )
             // InternalCosaDsl.g:5321:4: RULE_ID
             {
-             before(grammarAccess.getAttachementAccess().getPortPortIDTerminalRuleCall_8_0_1()); 
+             before(grammarAccess.getAttachementAccess().getRoleRoleIDTerminalRuleCall_8_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAttachementAccess().getPortPortIDTerminalRuleCall_8_0_1()); 
+             after(grammarAccess.getAttachementAccess().getRoleRoleIDTerminalRuleCall_8_0_1()); 
 
             }
 
-             after(grammarAccess.getAttachementAccess().getPortPortCrossReference_8_0()); 
+             after(grammarAccess.getAttachementAccess().getRoleRoleCrossReference_8_0()); 
 
             }
 
@@ -16118,7 +16118,7 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Attachement__PortAssignment_8"
+    // $ANTLR end "rule__Attachement__RoleAssignment_8"
 
 
     // $ANTLR start "rule__Configuration_Impl__NameAssignment_1"
@@ -17211,9 +17211,9 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000802000800L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x000000001C004000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x00000001A0000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x00000000E0000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000026000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000020L});
@@ -17226,7 +17226,7 @@ public class InternalCosaDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x00000006000D6000L});
 

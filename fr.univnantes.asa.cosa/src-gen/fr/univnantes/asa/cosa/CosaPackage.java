@@ -647,31 +647,13 @@ public interface CosaPackage extends EPackage {
 	int ATTACHEMENT__PORT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Connector</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACHEMENT__CONNECTOR = 2;
-
-	/**
-	 * The feature id for the '<em><b>Component</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTACHEMENT__COMPONENT = 3;
-
-	/**
 	 * The number of structural features of the '<em>Attachement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTACHEMENT_FEATURE_COUNT = 4;
+	int ATTACHEMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Attachement</em>' class.
@@ -711,31 +693,13 @@ public interface CosaPackage extends EPackage {
 	int BINDING__PORT_PROVIDED = 1;
 
 	/**
-	 * The feature id for the '<em><b>Configuration Provider</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINDING__CONFIGURATION_PROVIDER = 2;
-
-	/**
-	 * The feature id for the '<em><b>Component Subscriber</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINDING__COMPONENT_SUBSCRIBER = 3;
-
-	/**
 	 * The number of structural features of the '<em>Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINDING_FEATURE_COUNT = 4;
+	int BINDING_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Binding</em>' class.
@@ -1199,28 +1163,6 @@ public interface CosaPackage extends EPackage {
 	EReference getAttachement_Port();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Attachement#getConnector <em>Connector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Connector</em>'.
-	 * @see fr.univnantes.asa.cosa.Attachement#getConnector()
-	 * @see #getAttachement()
-	 * @generated
-	 */
-	EReference getAttachement_Connector();
-
-	/**
-	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Attachement#getComponent <em>Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component</em>'.
-	 * @see fr.univnantes.asa.cosa.Attachement#getComponent()
-	 * @see #getAttachement()
-	 * @generated
-	 */
-	EReference getAttachement_Component();
-
-	/**
 	 * Returns the meta object for class '{@link fr.univnantes.asa.cosa.Binding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1251,28 +1193,6 @@ public interface CosaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBinding_PortProvided();
-
-	/**
-	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Binding#getConfigurationProvider <em>Configuration Provider</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Configuration Provider</em>'.
-	 * @see fr.univnantes.asa.cosa.Binding#getConfigurationProvider()
-	 * @see #getBinding()
-	 * @generated
-	 */
-	EReference getBinding_ConfigurationProvider();
-
-	/**
-	 * Returns the meta object for the reference '{@link fr.univnantes.asa.cosa.Binding#getComponentSubscriber <em>Component Subscriber</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component Subscriber</em>'.
-	 * @see fr.univnantes.asa.cosa.Binding#getComponentSubscriber()
-	 * @see #getBinding()
-	 * @generated
-	 */
-	EReference getBinding_ComponentSubscriber();
 
 	/**
 	 * Returns the meta object for class '{@link fr.univnantes.asa.cosa.NamedElement <em>Named Element</em>}'.
@@ -1578,22 +1498,6 @@ public interface CosaPackage extends EPackage {
 		EReference ATTACHEMENT__PORT = eINSTANCE.getAttachement_Port();
 
 		/**
-		 * The meta object literal for the '<em><b>Connector</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTACHEMENT__CONNECTOR = eINSTANCE.getAttachement_Connector();
-
-		/**
-		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTACHEMENT__COMPONENT = eINSTANCE.getAttachement_Component();
-
-		/**
 		 * The meta object literal for the '{@link fr.univnantes.asa.cosa.impl.BindingImpl <em>Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1618,22 +1522,6 @@ public interface CosaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BINDING__PORT_PROVIDED = eINSTANCE.getBinding_PortProvided();
-
-		/**
-		 * The meta object literal for the '<em><b>Configuration Provider</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINDING__CONFIGURATION_PROVIDER = eINSTANCE.getBinding_ConfigurationProvider();
-
-		/**
-		 * The meta object literal for the '<em><b>Component Subscriber</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BINDING__COMPONENT_SUBSCRIBER = eINSTANCE.getBinding_ComponentSubscriber();
 
 		/**
 		 * The meta object literal for the '{@link fr.univnantes.asa.cosa.impl.NamedElementImpl <em>Named Element</em>}' class.

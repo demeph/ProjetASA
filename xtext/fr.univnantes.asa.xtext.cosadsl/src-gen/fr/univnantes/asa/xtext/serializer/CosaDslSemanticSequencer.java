@@ -109,24 +109,24 @@ public class CosaDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Attachement returns Attachement
 	 *
 	 * Constraint:
-	 *     (connector=[Connector|ID] role=[Role|ID] component=[Component|ID] port=[Port|ID])
+	 *     (component=[Component|ID] port=[Port|ID] connector=[Connector|ID] role=[Role|ID])
 	 */
 	protected void sequence_Attachement(ISerializationContext context, Attachement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__CONNECTOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__CONNECTOR));
-			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__ROLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__ROLE));
 			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__COMPONENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__COMPONENT));
 			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__PORT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__PORT));
+			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__CONNECTOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__CONNECTOR));
+			if (transientValues.isValueTransient(semanticObject, CosaPackage.Literals.ATTACHEMENT__ROLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CosaPackage.Literals.ATTACHEMENT__ROLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAttachementAccess().getConnectorConnectorIDTerminalRuleCall_2_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__CONNECTOR, false));
-		feeder.accept(grammarAccess.getAttachementAccess().getRoleRoleIDTerminalRuleCall_4_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__ROLE, false));
-		feeder.accept(grammarAccess.getAttachementAccess().getComponentComponentIDTerminalRuleCall_6_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__COMPONENT, false));
-		feeder.accept(grammarAccess.getAttachementAccess().getPortPortIDTerminalRuleCall_8_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__PORT, false));
+		feeder.accept(grammarAccess.getAttachementAccess().getComponentComponentIDTerminalRuleCall_2_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__COMPONENT, false));
+		feeder.accept(grammarAccess.getAttachementAccess().getPortPortIDTerminalRuleCall_4_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__PORT, false));
+		feeder.accept(grammarAccess.getAttachementAccess().getConnectorConnectorIDTerminalRuleCall_6_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__CONNECTOR, false));
+		feeder.accept(grammarAccess.getAttachementAccess().getRoleRoleIDTerminalRuleCall_8_0_1(), semanticObject.eGet(CosaPackage.Literals.ATTACHEMENT__ROLE, false));
 		feeder.finish();
 	}
 	

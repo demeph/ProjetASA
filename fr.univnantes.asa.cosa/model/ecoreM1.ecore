@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="simpleCS" nsURI="simpleCS" nsPrefix="simpleCS">
+  <eClassifiers xsi:type="ecore:EClass" name="Client" eSuperTypes="cosa.ecore#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="send_request_in" lowerBound="1"
+        eType="#//Send_Request_In" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="send_request" lowerBound="1"
+        eType="#//Send_Request" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="send_request_out" lowerBound="1"
+        eType="#//Send_Request_Out" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Simple_CS" eSuperTypes="cosa.ecore#//CompositeConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="client" eType="#//Client"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serveur" lowerBound="1"
+        eType="#//Serveur" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rpc" lowerBound="1" eType="#//RPC"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Serveur" eSuperTypes="cosa.ecore#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_Request_In" eSuperTypes="cosa.ecore#//RequiredPort">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_Request" eSuperTypes="cosa.ecore#//ProvidedService">
+    <eOperations name="sendRequest"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Send_Request_Out" eSuperTypes="cosa.ecore#//RequiredPort">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RPC" eSuperTypes="cosa.ecore#//Connector">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="called" lowerBound="1"
+        eType="#//called" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caller" lowerBound="1"
+        eType="#//caller" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="caller" eSuperTypes="cosa.ecore#//ProvidedRole"/>
+  <eClassifiers xsi:type="ecore:EClass" name="called" eSuperTypes="cosa.ecore#//RequiredRole"/>
+</ecore:EPackage>

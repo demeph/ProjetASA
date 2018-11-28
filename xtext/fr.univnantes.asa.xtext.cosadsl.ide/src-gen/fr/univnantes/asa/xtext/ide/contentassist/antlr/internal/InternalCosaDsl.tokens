@@ -8,13 +8,13 @@
 'CompositeConfiguration'=11
 'Configuration'=25
 'Connector'=16
-'Glue'=30
+'Glue'=32
 'Port'=18
 'ProvidedPort'=34
-'ProvidedRole'=32
+'ProvidedRole'=31
 'ProvidedService'=28
 'RequiredPort'=33
-'RequiredRole'=31
+'RequiredRole'=30
 'RequiredService'=27
 'Role'=29
 'Service'=26

@@ -1034,7 +1034,7 @@ ruleAttachement returns [EObject current=null]
 				}
 				otherlv_2=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getAttachementAccess().getConnectorConnectorCrossReference_2_0());
+					newLeafNode(otherlv_2, grammarAccess.getAttachementAccess().getComponentComponentCrossReference_2_0());
 				}
 			)
 		)
@@ -1051,7 +1051,7 @@ ruleAttachement returns [EObject current=null]
 				}
 				otherlv_4=RULE_ID
 				{
-					newLeafNode(otherlv_4, grammarAccess.getAttachementAccess().getRoleRoleCrossReference_4_0());
+					newLeafNode(otherlv_4, grammarAccess.getAttachementAccess().getPortPortCrossReference_4_0());
 				}
 			)
 		)
@@ -1068,7 +1068,7 @@ ruleAttachement returns [EObject current=null]
 				}
 				otherlv_6=RULE_ID
 				{
-					newLeafNode(otherlv_6, grammarAccess.getAttachementAccess().getComponentComponentCrossReference_6_0());
+					newLeafNode(otherlv_6, grammarAccess.getAttachementAccess().getConnectorConnectorCrossReference_6_0());
 				}
 			)
 		)
@@ -1085,7 +1085,7 @@ ruleAttachement returns [EObject current=null]
 				}
 				otherlv_8=RULE_ID
 				{
-					newLeafNode(otherlv_8, grammarAccess.getAttachementAccess().getPortPortCrossReference_8_0());
+					newLeafNode(otherlv_8, grammarAccess.getAttachementAccess().getRoleRoleCrossReference_8_0());
 				}
 			)
 		)
@@ -1524,36 +1524,6 @@ ruleRole_Impl returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleGlue
-entryRuleGlue returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getGlueRule()); }
-	iv_ruleGlue=ruleGlue
-	{ $current=$iv_ruleGlue.current; }
-	EOF;
-
-// Rule Glue
-ruleGlue returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getGlueAccess().getGlueAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='Glue'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getGlueAccess().getGlueKeyword_1());
-		}
-	)
-;
-
 // Entry rule entryRuleRequiredRole
 entryRuleRequiredRole returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getRequiredRoleRule()); }
@@ -1649,6 +1619,36 @@ ruleProvidedRole returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleGlue
+entryRuleGlue returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGlueRule()); }
+	iv_ruleGlue=ruleGlue
+	{ $current=$iv_ruleGlue.current; }
+	EOF;
+
+// Rule Glue
+ruleGlue returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getGlueAccess().getGlueAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='Glue'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGlueAccess().getGlueKeyword_1());
+		}
 	)
 ;
 

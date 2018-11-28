@@ -11,12 +11,13 @@ CompositeConfiguration Simple_CS{
 	}
 	Connector RPC {
 		ProvidedRole caller,
-		RequiredRole called		
+		RequiredRole called
 	}
-	RequiredPort Send_Request_In,
-	ProvidedPort Send_Request_out
+	Attachement {
+		Client.Send_Request_In to RPC.caller
+	}
 	Attachement{
-	
+		Serveur.Receive_Request_In to RPC.caller
 	}
 	SimpleConfiguration ServeurDetails {
 		Component ConnectionManager {

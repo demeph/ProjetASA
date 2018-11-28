@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cosa:CompositeConfiguration
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cosa="cosa"
+    xsi:schemaLocation="cosa cosa.ecore"
+    name="Simple_CS">
+  <components
+      name="Client">
+    <ports xsi:type="cosa:RequiredPort"
+        name="Send_Request_In"/>
+    <ports xsi:type="cosa:ProvidedPort"
+        name="Send_Request_Out"/>
+    <services
+        xsi:type="cosa:ProvidedService"
+        name="Send_Request"/>
+  </components>
+  <components
+      name="Serveur">
+    <ports xsi:type="cosa:RequiredPort"
+        name="Receive_request_In"/>
+    <ports xsi:type="cosa:ProvidedPort"
+        name="Recieve_request_Out"/>
+    <services
+        xsi:type="cosa:RequiredService"
+        name="Receive_Request"/>
+  </components>
+  <connectors
+      name="RPC">
+    <roles xsi:type="cosa:ProvidedRole"
+        name="Caller"/>
+    <roles xsi:type="cosa:RequiredRole"
+        name="Called"/>
+  </connectors>
+  <attachements
+      role="//@connectors.0/@roles.0"
+      port="//@components.0/@ports.0"/>
+  <attachements
+      role="//@connectors.0/@roles.1"
+      port="//@components.1/@ports.0"/>
+  <configurations
+      xsi:type="cosa:SimpleConfiguration"
+      name="ServeurDetail">
+    <components
+        name="ConnectionManager">
+      <ports
+          xsi:type="cosa:RequiredPort"
+          name="ExternalSocket_In"/>
+      <ports
+          xsi:type="cosa:ProvidedPort"
+          name="ExternalSocket_Out"/>
+      <ports
+          xsi:type="cosa:ProvidedPort"
+          name="DBQuery_Out"/>
+      <ports
+          xsi:type="cosa:RequiredPort"
+          name="DBQuery_In"/>
+      <ports
+          xsi:type="cosa:ProvidedPort"
+          name="SecurityCheck_Out"/>
+      <ports
+          xsi:type="cosa:RequiredPort"
+          name="SecurityCheck_In"/>
+      <services
+          xsi:type="cosa:ProvidedService"
+          name="DBQuery"/>
+      <services
+          xsi:type="cosa:ProvidedService"
+          name="SecurityCheck"/>
+    </components>
+    <components
+        name="SecurityManager">
+      <ports
+          xsi:type="cosa:RequiredPort"
+          name="SecurityCheck_In"/>
+      <ports
+          xsi:type="cosa:ProvidedPort"
+          name="SecurityCheck_Out"/>
+      <ports
+          xsi:type="cosa:RequiredPort"
+          name="SecurityQuery_In"/>
+      <ports
+          xsi:type="cosa:ProvidedPort"
+          name="SecurityQuery_Out"/>
+      <services
+          xsi:type="cosa:RequiredService"
+          name="SecurityCheck"/>
+      <services
+          xsi:type="cosa:ProvidedService"
+          name="SecurityQuery"/>
+    </components>
+    <components
+        name="DataBase">
+      <ports
+          xsi:type="cosa:RequiredPort"
+          name="SecurityQuery_In"/>
+      <ports
+          xsi:type="cosa:ProvidedPort"
+          name="SecurityQuery_Out"/>
+      <ports
+          xsi:type="cosa:ProvidedPort"
+          name="DBQuery_Out"/>
+      <ports
+          xsi:type="cosa:RequiredPort"
+          name="DBQuery_In"/>
+      <services
+          xsi:type="cosa:RequiredService"
+          name="DBQuery"/>
+      <services
+          xsi:type="cosa:RequiredService"
+          name="SecurityQuery"/>
+    </components>
+    <connectors
+        name="RPC">
+      <roles
+          xsi:type="cosa:RequiredRole"
+          name="caller"/>
+      <roles
+          xsi:type="cosa:ProvidedRole"
+          name="called"/>
+    </connectors>
+    <ports xsi:type="cosa:RequiredPort"
+        name="ExternalSocket_In"/>
+    <ports xsi:type="cosa:ProvidedPort"
+        name="ExternalSocket_Out"/>
+    <bindings
+        portRequired="//@configurations.0/@components.0/@ports.0"
+        portProvided="//@configurations.0/@ports.0"/>
+  </configurations>
+</cosa:CompositeConfiguration>
+

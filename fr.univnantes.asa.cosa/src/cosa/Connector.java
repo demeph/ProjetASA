@@ -4,6 +4,8 @@ package cosa;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Connector</b></em>'.
@@ -13,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link cosa.Connector#getRoles <em>Roles</em>}</li>
+ *   <li>{@link cosa.Connector#getConnectorinterface <em>Connectorinterface</em>}</li>
  *   <li>{@link cosa.Connector#getGlue <em>Glue</em>}</li>
  * </ul>
  *
@@ -21,22 +23,22 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Connector extends NamedElement {
+public interface Connector extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
-	 * The list contents are of type {@link cosa.Role}.
+	 * Returns the value of the '<em><b>Connectorinterface</b></em>' reference list.
+	 * The list contents are of type {@link cosa.ConnectorInterface}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Roles</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Connectorinterface</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Roles</em>' containment reference list.
-	 * @see cosa.CosaPackage#getConnector_Roles()
-	 * @model containment="true" required="true"
+	 * @return the value of the '<em>Connectorinterface</em>' reference list.
+	 * @see cosa.CosaPackage#getConnector_Connectorinterface()
+	 * @model
 	 * @generated
 	 */
-	EList<Role> getRoles();
+	EList<ConnectorInterface> getConnectorinterface();
 
 	/**
 	 * Returns the value of the '<em><b>Glue</b></em>' containment reference.

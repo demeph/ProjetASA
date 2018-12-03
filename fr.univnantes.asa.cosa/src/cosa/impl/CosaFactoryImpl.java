@@ -56,27 +56,37 @@ public class CosaFactoryImpl extends EFactoryImpl implements CosaFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CosaPackage.COMPONENT: return createComponent();
-			case CosaPackage.CONNECTOR: return createConnector();
-			case CosaPackage.PORT: return createPort();
-			case CosaPackage.ROLE: return createRole();
-			case CosaPackage.SERVICE: return createService();
 			case CosaPackage.CONFIGURATION: return createConfiguration();
+			case CosaPackage.COMPONENT: return createComponent();
+			case CosaPackage.COMPONENT_INTERFACE: return createComponentInterface();
+			case CosaPackage.PORT: return createPort();
+			case CosaPackage.SERVICE: return createService();
 			case CosaPackage.REQUIRED_PORT: return createRequiredPort();
 			case CosaPackage.PROVIDED_PORT: return createProvidedPort();
-			case CosaPackage.REQUIRED_ROLE: return createRequiredRole();
-			case CosaPackage.PROVIDED_ROLE: return createProvidedRole();
 			case CosaPackage.REQUIRED_SERVICE: return createRequiredService();
 			case CosaPackage.PROVIDED_SERVICE: return createProvidedService();
-			case CosaPackage.ATTACHEMENT: return createAttachement();
-			case CosaPackage.BINDING: return createBinding();
-			case CosaPackage.NAMED_ELEMENT: return createNamedElement();
-			case CosaPackage.SIMPLE_CONFIGURATION: return createSimpleConfiguration();
-			case CosaPackage.COMPOSITE_CONFIGURATION: return createCompositeConfiguration();
+			case CosaPackage.CONNECTOR: return createConnector();
+			case CosaPackage.CONNECTOR_INTERFACE: return createConnectorInterface();
+			case CosaPackage.ROLE: return createRole();
+			case CosaPackage.REQUIRED_ROLE: return createRequiredRole();
+			case CosaPackage.PROVIDED_ROLE: return createProvidedRole();
 			case CosaPackage.GLUE: return createGlue();
+			case CosaPackage.INTERFACE: return createInterface();
+			case CosaPackage.BINDING: return createBinding();
+			case CosaPackage.ATTACHEMENT: return createAttachement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Configuration createConfiguration() {
+		ConfigurationImpl configuration = new ConfigurationImpl();
+		return configuration;
 	}
 
 	/**
@@ -94,9 +104,9 @@ public class CosaFactoryImpl extends EFactoryImpl implements CosaFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Connector createConnector() {
-		ConnectorImpl connector = new ConnectorImpl();
-		return connector;
+	public ComponentInterface createComponentInterface() {
+		ComponentInterfaceImpl componentInterface = new ComponentInterfaceImpl();
+		return componentInterface;
 	}
 
 	/**
@@ -114,29 +124,9 @@ public class CosaFactoryImpl extends EFactoryImpl implements CosaFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Role createRole() {
-		RoleImpl role = new RoleImpl();
-		return role;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Service createService() {
 		ServiceImpl service = new ServiceImpl();
 		return service;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Configuration createConfiguration() {
-		ConfigurationImpl configuration = new ConfigurationImpl();
-		return configuration;
 	}
 
 	/**
@@ -164,26 +154,6 @@ public class CosaFactoryImpl extends EFactoryImpl implements CosaFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RequiredRole createRequiredRole() {
-		RequiredRoleImpl requiredRole = new RequiredRoleImpl();
-		return requiredRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProvidedRole createProvidedRole() {
-		ProvidedRoleImpl providedRole = new ProvidedRoleImpl();
-		return providedRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public RequiredService createRequiredService() {
 		RequiredServiceImpl requiredService = new RequiredServiceImpl();
 		return requiredService;
@@ -204,9 +174,69 @@ public class CosaFactoryImpl extends EFactoryImpl implements CosaFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attachement createAttachement() {
-		AttachementImpl attachement = new AttachementImpl();
-		return attachement;
+	public Connector createConnector() {
+		ConnectorImpl connector = new ConnectorImpl();
+		return connector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConnectorInterface createConnectorInterface() {
+		ConnectorInterfaceImpl connectorInterface = new ConnectorInterfaceImpl();
+		return connectorInterface;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role createRole() {
+		RoleImpl role = new RoleImpl();
+		return role;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RequiredRole createRequiredRole() {
+		RequiredRoleImpl requiredRole = new RequiredRoleImpl();
+		return requiredRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProvidedRole createProvidedRole() {
+		ProvidedRoleImpl providedRole = new ProvidedRoleImpl();
+		return providedRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Glue createGlue() {
+		GlueImpl glue = new GlueImpl();
+		return glue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Interface createInterface() {
+		InterfaceImpl interface_ = new InterfaceImpl();
+		return interface_;
 	}
 
 	/**
@@ -224,39 +254,9 @@ public class CosaFactoryImpl extends EFactoryImpl implements CosaFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NamedElement createNamedElement() {
-		NamedElementImpl namedElement = new NamedElementImpl();
-		return namedElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SimpleConfiguration createSimpleConfiguration() {
-		SimpleConfigurationImpl simpleConfiguration = new SimpleConfigurationImpl();
-		return simpleConfiguration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CompositeConfiguration createCompositeConfiguration() {
-		CompositeConfigurationImpl compositeConfiguration = new CompositeConfigurationImpl();
-		return compositeConfiguration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Glue createGlue() {
-		GlueImpl glue = new GlueImpl();
-		return glue;
+	public Attachement createAttachement() {
+		AttachementImpl attachement = new AttachementImpl();
+		return attachement;
 	}
 
 	/**

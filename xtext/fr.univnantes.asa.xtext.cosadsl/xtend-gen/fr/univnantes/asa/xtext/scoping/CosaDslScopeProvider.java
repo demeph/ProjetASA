@@ -3,17 +3,12 @@
  */
 package fr.univnantes.asa.xtext.scoping;
 
-import com.google.common.base.Objects;
 import fr.univnantes.asa.cosa.Attachement;
 import fr.univnantes.asa.cosa.Binding;
-import fr.univnantes.asa.cosa.Port;
-import fr.univnantes.asa.cosa.Role;
 import fr.univnantes.asa.xtext.scoping.AbstractCosaDslScopeProvider;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
-import org.eclipse.xtext.scoping.Scopes;
 
 /**
  * This class contains custom scoping description.
@@ -36,36 +31,18 @@ public class CosaDslScopeProvider extends AbstractCosaDslScopeProvider {
   }
   
   public IScope binding(final Binding context, final EReference reference) {
-    String _name = reference.getName();
-    boolean _equals = Objects.equal(_name, "portProvided");
-    if (_equals) {
-      final EList<Port> availablePorts = context.getConfigurationProvider().getPorts();
-      return Scopes.scopeFor(availablePorts);
-    } else {
-      String _name_1 = reference.getName();
-      boolean _equals_1 = Objects.equal(_name_1, "portRequired");
-      if (_equals_1) {
-        final EList<Port> availablePorts_1 = context.getComponentSubscriber().getPorts();
-        return Scopes.scopeFor(availablePorts_1);
-      }
-    }
-    return super.getScope(context, reference);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field configurationProvider is undefined for the type Binding"
+      + "\nThe method or field componentSubscriber is undefined for the type Binding"
+      + "\nports cannot be resolved"
+      + "\nports cannot be resolved");
   }
   
   public IScope attachement(final Attachement context, final EReference reference) {
-    String _name = reference.getName();
-    boolean _equals = Objects.equal(_name, "port");
-    if (_equals) {
-      final EList<Port> availablePorts = context.getComponent().getPorts();
-      return Scopes.scopeFor(availablePorts);
-    } else {
-      String _name_1 = reference.getName();
-      boolean _equals_1 = Objects.equal(_name_1, "role");
-      if (_equals_1) {
-        final EList<Role> availableRoles = context.getConnector().getRoles();
-        return Scopes.scopeFor(availableRoles);
-      }
-    }
-    return super.getScope(context, reference);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field component is undefined for the type Attachement"
+      + "\nThe method or field connector is undefined for the type Attachement"
+      + "\nports cannot be resolved"
+      + "\nroles cannot be resolved");
   }
 }

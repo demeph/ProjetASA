@@ -3,9 +3,8 @@
 package cosa.impl;
 
 import cosa.Component;
+import cosa.ComponentInterface;
 import cosa.CosaPackage;
-import cosa.Port;
-import cosa.Service;
 
 import java.util.Collection;
 
@@ -27,32 +26,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cosa.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
- *   <li>{@link cosa.impl.ComponentImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link cosa.impl.ComponentImpl#getComponentinterface <em>Componentinterface</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ComponentImpl extends NamedElementImpl implements Component {
 	/**
-	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
+	 * The cached value of the '{@link #getComponentinterface() <em>Componentinterface</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPorts()
+	 * @see #getComponentinterface()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Port> ports;
-
-	/**
-	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServices()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Service> services;
+	protected EList<ComponentInterface> componentinterface;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,23 +66,11 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Port> getPorts() {
-		if (ports == null) {
-			ports = new EObjectContainmentEList<Port>(Port.class, this, CosaPackage.COMPONENT__PORTS);
+	public EList<ComponentInterface> getComponentinterface() {
+		if (componentinterface == null) {
+			componentinterface = new EObjectContainmentEList<ComponentInterface>(ComponentInterface.class, this, CosaPackage.COMPONENT__COMPONENTINTERFACE);
 		}
-		return ports;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Service> getServices() {
-		if (services == null) {
-			services = new EObjectContainmentEList<Service>(Service.class, this, CosaPackage.COMPONENT__SERVICES);
-		}
-		return services;
+		return componentinterface;
 	}
 
 	/**
@@ -105,10 +81,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CosaPackage.COMPONENT__PORTS:
-				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
-			case CosaPackage.COMPONENT__SERVICES:
-				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
+			case CosaPackage.COMPONENT__COMPONENTINTERFACE:
+				return ((InternalEList<?>)getComponentinterface()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -121,10 +95,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CosaPackage.COMPONENT__PORTS:
-				return getPorts();
-			case CosaPackage.COMPONENT__SERVICES:
-				return getServices();
+			case CosaPackage.COMPONENT__COMPONENTINTERFACE:
+				return getComponentinterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,13 +110,9 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CosaPackage.COMPONENT__PORTS:
-				getPorts().clear();
-				getPorts().addAll((Collection<? extends Port>)newValue);
-				return;
-			case CosaPackage.COMPONENT__SERVICES:
-				getServices().clear();
-				getServices().addAll((Collection<? extends Service>)newValue);
+			case CosaPackage.COMPONENT__COMPONENTINTERFACE:
+				getComponentinterface().clear();
+				getComponentinterface().addAll((Collection<? extends ComponentInterface>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -158,11 +126,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CosaPackage.COMPONENT__PORTS:
-				getPorts().clear();
-				return;
-			case CosaPackage.COMPONENT__SERVICES:
-				getServices().clear();
+			case CosaPackage.COMPONENT__COMPONENTINTERFACE:
+				getComponentinterface().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,10 +141,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CosaPackage.COMPONENT__PORTS:
-				return ports != null && !ports.isEmpty();
-			case CosaPackage.COMPONENT__SERVICES:
-				return services != null && !services.isEmpty();
+			case CosaPackage.COMPONENT__COMPONENTINTERFACE:
+				return componentinterface != null && !componentinterface.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

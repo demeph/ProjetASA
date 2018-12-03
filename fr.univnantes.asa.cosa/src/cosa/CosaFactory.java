@@ -22,6 +22,15 @@ public interface CosaFactory extends EFactory {
 	CosaFactory eINSTANCE = cosa.impl.CosaFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Configuration</em>'.
+	 * @generated
+	 */
+	Configuration createConfiguration();
+
+	/**
 	 * Returns a new object of class '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,13 +40,13 @@ public interface CosaFactory extends EFactory {
 	Component createComponent();
 
 	/**
-	 * Returns a new object of class '<em>Connector</em>'.
+	 * Returns a new object of class '<em>Component Interface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Connector</em>'.
+	 * @return a new object of class '<em>Component Interface</em>'.
 	 * @generated
 	 */
-	Connector createConnector();
+	ComponentInterface createComponentInterface();
 
 	/**
 	 * Returns a new object of class '<em>Port</em>'.
@@ -49,15 +58,6 @@ public interface CosaFactory extends EFactory {
 	Port createPort();
 
 	/**
-	 * Returns a new object of class '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Role</em>'.
-	 * @generated
-	 */
-	Role createRole();
-
-	/**
 	 * Returns a new object of class '<em>Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,15 +65,6 @@ public interface CosaFactory extends EFactory {
 	 * @generated
 	 */
 	Service createService();
-
-	/**
-	 * Returns a new object of class '<em>Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Configuration</em>'.
-	 * @generated
-	 */
-	Configuration createConfiguration();
 
 	/**
 	 * Returns a new object of class '<em>Required Port</em>'.
@@ -94,24 +85,6 @@ public interface CosaFactory extends EFactory {
 	ProvidedPort createProvidedPort();
 
 	/**
-	 * Returns a new object of class '<em>Required Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Required Role</em>'.
-	 * @generated
-	 */
-	RequiredRole createRequiredRole();
-
-	/**
-	 * Returns a new object of class '<em>Provided Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Provided Role</em>'.
-	 * @generated
-	 */
-	ProvidedRole createProvidedRole();
-
-	/**
 	 * Returns a new object of class '<em>Required Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,13 +103,67 @@ public interface CosaFactory extends EFactory {
 	ProvidedService createProvidedService();
 
 	/**
-	 * Returns a new object of class '<em>Attachement</em>'.
+	 * Returns a new object of class '<em>Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attachement</em>'.
+	 * @return a new object of class '<em>Connector</em>'.
 	 * @generated
 	 */
-	Attachement createAttachement();
+	Connector createConnector();
+
+	/**
+	 * Returns a new object of class '<em>Connector Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Connector Interface</em>'.
+	 * @generated
+	 */
+	ConnectorInterface createConnectorInterface();
+
+	/**
+	 * Returns a new object of class '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Role</em>'.
+	 * @generated
+	 */
+	Role createRole();
+
+	/**
+	 * Returns a new object of class '<em>Required Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Required Role</em>'.
+	 * @generated
+	 */
+	RequiredRole createRequiredRole();
+
+	/**
+	 * Returns a new object of class '<em>Provided Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Provided Role</em>'.
+	 * @generated
+	 */
+	ProvidedRole createProvidedRole();
+
+	/**
+	 * Returns a new object of class '<em>Glue</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Glue</em>'.
+	 * @generated
+	 */
+	Glue createGlue();
+
+	/**
+	 * Returns a new object of class '<em>Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Interface</em>'.
+	 * @generated
+	 */
+	Interface createInterface();
 
 	/**
 	 * Returns a new object of class '<em>Binding</em>'.
@@ -148,40 +175,13 @@ public interface CosaFactory extends EFactory {
 	Binding createBinding();
 
 	/**
-	 * Returns a new object of class '<em>Named Element</em>'.
+	 * Returns a new object of class '<em>Attachement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Named Element</em>'.
+	 * @return a new object of class '<em>Attachement</em>'.
 	 * @generated
 	 */
-	NamedElement createNamedElement();
-
-	/**
-	 * Returns a new object of class '<em>Simple Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Simple Configuration</em>'.
-	 * @generated
-	 */
-	SimpleConfiguration createSimpleConfiguration();
-
-	/**
-	 * Returns a new object of class '<em>Composite Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Composite Configuration</em>'.
-	 * @generated
-	 */
-	CompositeConfiguration createCompositeConfiguration();
-
-	/**
-	 * Returns a new object of class '<em>Glue</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Glue</em>'.
-	 * @generated
-	 */
-	Glue createGlue();
+	Attachement createAttachement();
 
 	/**
 	 * Returns the package supported by this factory.

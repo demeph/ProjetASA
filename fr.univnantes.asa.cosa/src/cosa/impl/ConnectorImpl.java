@@ -3,9 +3,9 @@
 package cosa.impl;
 
 import cosa.Connector;
+import cosa.ConnectorInterface;
 import cosa.CosaPackage;
 import cosa.Glue;
-import cosa.Role;
 
 import java.util.Collection;
 
@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,22 +30,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cosa.impl.ConnectorImpl#getRoles <em>Roles</em>}</li>
+ *   <li>{@link cosa.impl.ConnectorImpl#getConnectorinterface <em>Connectorinterface</em>}</li>
  *   <li>{@link cosa.impl.ConnectorImpl#getGlue <em>Glue</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConnectorImpl extends NamedElementImpl implements Connector {
+public class ConnectorImpl extends MinimalEObjectImpl.Container implements Connector {
 	/**
-	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
+	 * The cached value of the '{@link #getConnectorinterface() <em>Connectorinterface</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoles()
+	 * @see #getConnectorinterface()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Role> roles;
+	protected EList<ConnectorInterface> connectorinterface;
 
 	/**
 	 * The cached value of the '{@link #getGlue() <em>Glue</em>}' containment reference.
@@ -81,11 +81,11 @@ public class ConnectorImpl extends NamedElementImpl implements Connector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Role> getRoles() {
-		if (roles == null) {
-			roles = new EObjectContainmentEList<Role>(Role.class, this, CosaPackage.CONNECTOR__ROLES);
+	public EList<ConnectorInterface> getConnectorinterface() {
+		if (connectorinterface == null) {
+			connectorinterface = new EObjectResolvingEList<ConnectorInterface>(ConnectorInterface.class, this, CosaPackage.CONNECTOR__CONNECTORINTERFACE);
 		}
-		return roles;
+		return connectorinterface;
 	}
 
 	/**
@@ -139,8 +139,6 @@ public class ConnectorImpl extends NamedElementImpl implements Connector {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CosaPackage.CONNECTOR__ROLES:
-				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 			case CosaPackage.CONNECTOR__GLUE:
 				return basicSetGlue(null, msgs);
 		}
@@ -155,8 +153,8 @@ public class ConnectorImpl extends NamedElementImpl implements Connector {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CosaPackage.CONNECTOR__ROLES:
-				return getRoles();
+			case CosaPackage.CONNECTOR__CONNECTORINTERFACE:
+				return getConnectorinterface();
 			case CosaPackage.CONNECTOR__GLUE:
 				return getGlue();
 		}
@@ -172,9 +170,9 @@ public class ConnectorImpl extends NamedElementImpl implements Connector {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CosaPackage.CONNECTOR__ROLES:
-				getRoles().clear();
-				getRoles().addAll((Collection<? extends Role>)newValue);
+			case CosaPackage.CONNECTOR__CONNECTORINTERFACE:
+				getConnectorinterface().clear();
+				getConnectorinterface().addAll((Collection<? extends ConnectorInterface>)newValue);
 				return;
 			case CosaPackage.CONNECTOR__GLUE:
 				setGlue((Glue)newValue);
@@ -191,8 +189,8 @@ public class ConnectorImpl extends NamedElementImpl implements Connector {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CosaPackage.CONNECTOR__ROLES:
-				getRoles().clear();
+			case CosaPackage.CONNECTOR__CONNECTORINTERFACE:
+				getConnectorinterface().clear();
 				return;
 			case CosaPackage.CONNECTOR__GLUE:
 				setGlue((Glue)null);
@@ -209,8 +207,8 @@ public class ConnectorImpl extends NamedElementImpl implements Connector {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CosaPackage.CONNECTOR__ROLES:
-				return roles != null && !roles.isEmpty();
+			case CosaPackage.CONNECTOR__CONNECTORINTERFACE:
+				return connectorinterface != null && !connectorinterface.isEmpty();
 			case CosaPackage.CONNECTOR__GLUE:
 				return glue != null;
 		}

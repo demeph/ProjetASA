@@ -13,10 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link cosa.Attachement#getRole <em>Role</em>}</li>
- *   <li>{@link cosa.Attachement#getPort <em>Port</em>}</li>
- *   <li>{@link cosa.Attachement#getConnector <em>Connector</em>}</li>
- *   <li>{@link cosa.Attachement#getComponent <em>Component</em>}</li>
+ *   <li>{@link cosa.Attachement#getTarget <em>Target</em>}</li>
+ *   <li>{@link cosa.Attachement#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @see cosa.CosaPackage#getAttachement()
@@ -25,107 +23,55 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Attachement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Role</b></em>' reference.
+	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Role</em>' reference isn't clear,
+	 * If the meaning of the '<em>Target</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role</em>' reference.
-	 * @see #setRole(Role)
-	 * @see cosa.CosaPackage#getAttachement_Role()
+	 * @return the value of the '<em>Target</em>' reference.
+	 * @see #setTarget(Interface)
+	 * @see cosa.CosaPackage#getAttachement_Target()
 	 * @model required="true"
 	 * @generated
 	 */
-	Role getRole();
+	Interface getTarget();
 
 	/**
-	 * Sets the value of the '{@link cosa.Attachement#getRole <em>Role</em>}' reference.
+	 * Sets the value of the '{@link cosa.Attachement#getTarget <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role</em>' reference.
-	 * @see #getRole()
+	 * @param value the new value of the '<em>Target</em>' reference.
+	 * @see #getTarget()
 	 * @generated
 	 */
-	void setRole(Role value);
+	void setTarget(Interface value);
 
 	/**
-	 * Returns the value of the '<em><b>Port</b></em>' reference.
+	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Port</em>' reference isn't clear,
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Port</em>' reference.
-	 * @see #setPort(Port)
-	 * @see cosa.CosaPackage#getAttachement_Port()
+	 * @return the value of the '<em>Source</em>' reference.
+	 * @see #setSource(Interface)
+	 * @see cosa.CosaPackage#getAttachement_Source()
 	 * @model required="true"
 	 * @generated
 	 */
-	Port getPort();
+	Interface getSource();
 
 	/**
-	 * Sets the value of the '{@link cosa.Attachement#getPort <em>Port</em>}' reference.
+	 * Sets the value of the '{@link cosa.Attachement#getSource <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port</em>' reference.
-	 * @see #getPort()
+	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @see #getSource()
 	 * @generated
 	 */
-	void setPort(Port value);
-
-	/**
-	 * Returns the value of the '<em><b>Connector</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Connector</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connector</em>' reference.
-	 * @see #setConnector(Connector)
-	 * @see cosa.CosaPackage#getAttachement_Connector()
-	 * @model required="true"
-	 * @generated
-	 */
-	Connector getConnector();
-
-	/**
-	 * Sets the value of the '{@link cosa.Attachement#getConnector <em>Connector</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connector</em>' reference.
-	 * @see #getConnector()
-	 * @generated
-	 */
-	void setConnector(Connector value);
-
-	/**
-	 * Returns the value of the '<em><b>Component</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Component</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component</em>' reference.
-	 * @see #setComponent(Component)
-	 * @see cosa.CosaPackage#getAttachement_Component()
-	 * @model required="true"
-	 * @generated
-	 */
-	Component getComponent();
-
-	/**
-	 * Sets the value of the '{@link cosa.Attachement#getComponent <em>Component</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component</em>' reference.
-	 * @see #getComponent()
-	 * @generated
-	 */
-	void setComponent(Component value);
+	void setSource(Interface value);
 
 } // Attachement

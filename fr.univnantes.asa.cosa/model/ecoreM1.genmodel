@@ -5,74 +5,160 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>ecoreM1.ecore</foreignModel>
-  <genPackages prefix="SimpleCS" disposableProviderFactory="true" ecorePackage="ecoreM1.ecore#/">
-    <genClasses ecoreClass="ecoreM1.ecore#//Client">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Client/send_request_in"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Client/send_request"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Client/send_request_out"/>
-    </genClasses>
+  <genPackages prefix="CosaM1" disposableProviderFactory="true" ecorePackage="ecoreM1.ecore#/">
     <genClasses ecoreClass="ecoreM1.ecore#//Simple_CS">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/client"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/serveur"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/serveurdetail"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/bind2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/rpc"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//Serveur"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//Send_Request_In">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreM1.ecore#//Send_Request_In/port"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//Client">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Client/sendrequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Client/request"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//Send_Request">
-      <genOperations ecoreOperation="ecoreM1.ecore#//Send_Request/sendRequest"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//Serveur">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Serveur/recieverequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Serveur/provide"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//Send_Request_Out">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreM1.ecore#//Send_Request_Out/port"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//ServeurDetail">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/externalsocket"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/connectionmanager"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/securitymanager"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/database"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/sqlquery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/clerancerequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach6"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/bind1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/securityquery"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//RPC">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//RPC/called"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//RPC/caller"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//Request"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//SendRequest"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//Provide"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//RecieveRequest"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//ExternalSocket"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//ConnectionManager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ConnectionManager/externalsocket"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ConnectionManager/dbquery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ConnectionManager/securitycheck"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//caller"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//SecurityManger">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityManger/credentialquery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityManger/securityauth"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//Database">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Database/securitymanagement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Database/query"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//DBQuery"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//SecurityCheck"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//SecurityAuth"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//CredentialQuery"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//SQLQuery">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SQLQuery/caller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SQLQuery/called"/>
+    </genClasses>
     <genClasses ecoreClass="ecoreM1.ecore#//called"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//caller"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//CleranceRequest">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//CleranceRequest/caller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//CleranceRequest/called"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//SecurityQuery">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityQuery/caller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityQuery/called"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//attach1">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach1/securitycheck"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach1/caller"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//attach2">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach2/securityauth"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach2/called"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//attach3">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach3/dbquery"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach3/caller"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//attach4">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach4/query"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach4/caller"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//Query"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//SecurityManagement"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//RPC">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//RPC/caller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//RPC/called"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//attach5">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach5/credentialquery"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach5/called"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//attach6">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach6/securitymanagement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach6/called"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//bind1">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//bind1/externalsocket"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//bind1/ConnectionMangerexternalsocket"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//bind2">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//bind2/provide"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//bind2/externalsocket"/>
+    </genClasses>
   </genPackages>
-  <genPackages prefix="Cosa" disposableProviderFactory="true" ecorePackage="cosa.ecore#/">
-    <genClasses ecoreClass="cosa.ecore#//Component">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Component/ports"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Component/services"/>
+  <genPackages prefix="Cosa" ecorePackage="cosaV2.ecore#/">
+    <genClasses image="false" ecoreClass="cosaV2.ecore#//ComposedElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//ComposedElement/elements"/>
     </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//Connector">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Connector/roles"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Connector/glue"/>
+    <genClasses image="false" ecoreClass="cosaV2.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//NamedElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//Port"/>
-    <genClasses ecoreClass="cosa.ecore#//Role"/>
-    <genClasses ecoreClass="cosa.ecore#//Service"/>
-    <genClasses ecoreClass="cosa.ecore#//Configuration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/components"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/connectors"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/ports"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/bindings"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//Configuration/attachements"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Configuration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/cofigurationinterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/attachements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/bindings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/connectors"/>
     </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//RequiredPort"/>
-    <genClasses ecoreClass="cosa.ecore#//ProvidedPort"/>
-    <genClasses ecoreClass="cosa.ecore#//RequiredRole"/>
-    <genClasses ecoreClass="cosa.ecore#//ProvidedRole"/>
-    <genClasses ecoreClass="cosa.ecore#//RequiredService"/>
-    <genClasses ecoreClass="cosa.ecore#//ProvidedService"/>
-    <genClasses ecoreClass="cosa.ecore#//Attachement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachement/role"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Attachement/port"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Component/componentinterface"/>
     </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//Binding">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/portRequired"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosa.ecore#//Binding/portProvided"/>
+    <genClasses ecoreClass="cosaV2.ecore#//ComponentInterface"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//Port/type"/>
     </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//NamedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosa.ecore#//NamedElement/name"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//Service/returnType"/>
     </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//SimpleConfiguration"/>
-    <genClasses ecoreClass="cosa.ecore#//CompositeConfiguration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosa.ecore#//CompositeConfiguration/configurations"/>
+    <genClasses ecoreClass="cosaV2.ecore#//RequiredPort"/>
+    <genClasses ecoreClass="cosaV2.ecore#//ProvidedPort"/>
+    <genClasses ecoreClass="cosaV2.ecore#//RequiredService"/>
+    <genClasses ecoreClass="cosaV2.ecore#//ProvidedService"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Connector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Connector/connectorinterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Connector/glue"/>
     </genClasses>
-    <genClasses ecoreClass="cosa.ecore#//Glue"/>
+    <genClasses ecoreClass="cosaV2.ecore#//ConnectorInterface"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//Role/type"/>
+    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//RequiredRole"/>
+    <genClasses ecoreClass="cosaV2.ecore#//ProvidedRole"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Glue"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Interface"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Binding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Binding/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Binding/target"/>
+    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//Attachement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Attachement/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Attachement/source"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

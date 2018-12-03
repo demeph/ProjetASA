@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.univnantes.asa.cosa/src" modelPluginID="fr.univnantes.asa.cosa"
+    modelName="CosaV2" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>cosaV2.ecore</foreignModel>
+  <genPackages prefix="Cosa" disposableProviderFactory="true" ecorePackage="cosaV2.ecore#/">
+    <genClasses image="false" ecoreClass="cosaV2.ecore#//ComposedElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//ComposedElement/elements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cosaV2.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//Configuration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/cofigurationinterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/attachements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/bindings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/connectors"/>
+    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Component/componentinterface"/>
+    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//ComponentInterface"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//Port/type"/>
+    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//Service/returnType"/>
+    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//RequiredPort"/>
+    <genClasses ecoreClass="cosaV2.ecore#//ProvidedPort"/>
+    <genClasses ecoreClass="cosaV2.ecore#//RequiredService"/>
+    <genClasses ecoreClass="cosaV2.ecore#//ProvidedService"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Connector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Connector/connectorinterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Connector/glue"/>
+    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//ConnectorInterface"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//Role/type"/>
+    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//RequiredRole"/>
+    <genClasses ecoreClass="cosaV2.ecore#//ProvidedRole"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Glue"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Interface"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Binding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Binding/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Binding/target"/>
+    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//Attachement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Attachement/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Attachement/source"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

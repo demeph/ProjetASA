@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated cosa -->
       <package
-            uri="cosa"
+            uri="platform:/resource/fr.univnantes.asa.cosa/model/cosa.ecore"
             class="fr.univnantes.asa.cosa.CosaPackage"
             genModel="model/cosa.genmodel"/>
    </extension>
@@ -17,15 +17,15 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ecoreM1 -->
       <package
-            uri="simpleCS"
-            class="simpleCS.SimpleCSPackage"
+            uri="cosaM1"
+            class="cosaM1.CosaM1Package"
             genModel="model/ecoreM1.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ecoreM1 -->
       <package
-            uri="cosa"
+            uri="http://www.example.org/cosa"
             class="cosa.CosaPackage"
             genModel="model/ecoreM1.genmodel"/>
    </extension>

@@ -38,7 +38,7 @@ public interface CosaPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "cosa";
+	String eNS_URI = "platform:/resource/fr.univnantes.asa.cosa/model/cosa.ecore";
 
 	/**
 	 * The package namespace name.

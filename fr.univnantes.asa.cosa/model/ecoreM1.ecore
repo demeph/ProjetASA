@@ -1,38 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="simpleCS" nsURI="simpleCS" nsPrefix="simpleCS">
-  <eClassifiers xsi:type="ecore:EClass" name="Client" eSuperTypes="cosa.ecore#//Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="send_request_in" lowerBound="1"
-        eType="#//Send_Request_In" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="send_request" lowerBound="1"
-        eType="#//Send_Request" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="send_request_out" lowerBound="1"
-        eType="#//Send_Request_Out" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Simple_CS" eSuperTypes="cosa.ecore#//CompositeConfiguration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="client" eType="#//Client"
-        containment="true"/>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cosaM1" nsURI="cosaM1" nsPrefix="cosaM1">
+  <eClassifiers xsi:type="ecore:EClass" name="Simple_CS" eSuperTypes="cosaV2.ecore#//Configuration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="client" lowerBound="1"
+        eType="#//Client" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serveur" lowerBound="1"
         eType="#//Serveur" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serveurdetail" eType="#//ServeurDetail"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bind2" lowerBound="1" eType="#//bind2"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rpc" lowerBound="1" eType="#//RPC"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Serveur" eSuperTypes="cosa.ecore#//Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Send_Request_In" eSuperTypes="cosa.ecore#//RequiredPort">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Client" eSuperTypes="cosaV2.ecore#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendrequest" lowerBound="1"
+        eType="#//SendRequest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="request" lowerBound="1"
+        eType="#//Request" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Send_Request" eSuperTypes="cosa.ecore#//ProvidedService">
-    <eOperations name="sendRequest"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Serveur" eSuperTypes="cosaV2.ecore#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recieverequest" lowerBound="1"
+        eType="#//RecieveRequest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provide" lowerBound="1"
+        eType="#//Provide" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Send_Request_Out" eSuperTypes="cosa.ecore#//RequiredPort">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ServeurDetail" eSuperTypes="cosaV2.ecore#//Configuration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalsocket" lowerBound="1"
+        eType="#//ExternalSocket" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionmanager" lowerBound="1"
+        eType="#//ConnectionManager" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securitymanager" lowerBound="1"
+        eType="#//SecurityManger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="database" lowerBound="1"
+        eType="#//Database" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sqlquery" lowerBound="1"
+        eType="#//SQLQuery" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clerancerequest" lowerBound="1"
+        eType="#//CleranceRequest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attach1" lowerBound="1"
+        eType="#//attach1" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attach2" lowerBound="1"
+        eType="#//attach2" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attach3" lowerBound="1"
+        eType="#//attach3" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attach4" lowerBound="1"
+        eType="#//attach4" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attach5" lowerBound="1"
+        eType="#//attach5" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attach6" lowerBound="1"
+        eType="#//attach6" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bind1" lowerBound="1" eType="#//bind1"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securityquery" lowerBound="1"
+        eType="#//SecurityQuery" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RPC" eSuperTypes="cosa.ecore#//Connector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="called" lowerBound="1"
-        eType="#//called" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Request" eSuperTypes="cosaV2.ecore#//RequiredPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SendRequest" eSuperTypes="cosaV2.ecore#//RequiredService"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Provide" eSuperTypes="cosaV2.ecore#//ProvidedPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RecieveRequest" eSuperTypes="cosaV2.ecore#//ProvidedService"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalSocket" eSuperTypes="cosaV2.ecore#//ProvidedPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionManager" eSuperTypes="cosaV2.ecore#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalsocket" lowerBound="1"
+        eType="#//ExternalSocket" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dbquery" lowerBound="1"
+        eType="#//DBQuery" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securitycheck" lowerBound="1"
+        eType="#//SecurityCheck" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityManger" eSuperTypes="cosaV2.ecore#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="credentialquery" lowerBound="1"
+        eType="#//CredentialQuery" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securityauth" lowerBound="1"
+        eType="#//SecurityAuth" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Database" eSuperTypes="cosaV2.ecore#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securitymanagement" lowerBound="1"
+        eType="#//SecurityManagement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="query" lowerBound="1" eType="#//Query"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DBQuery" eSuperTypes="cosaV2.ecore#//ProvidedPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityCheck" eSuperTypes="cosaV2.ecore#//RequiredPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityAuth" eSuperTypes="cosaV2.ecore#//ProvidedPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CredentialQuery" eSuperTypes="cosaV2.ecore#//ProvidedPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SQLQuery" eSuperTypes="cosaV2.ecore#//Connector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="caller" lowerBound="1"
         eType="#//caller" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="called" lowerBound="1"
+        eType="#//called" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="caller" eSuperTypes="cosa.ecore#//ProvidedRole"/>
-  <eClassifiers xsi:type="ecore:EClass" name="called" eSuperTypes="cosa.ecore#//RequiredRole"/>
+  <eClassifiers xsi:type="ecore:EClass" name="called" eSuperTypes="cosaV2.ecore#//ProvidedRole"/>
+  <eClassifiers xsi:type="ecore:EClass" name="caller" eSuperTypes="cosaV2.ecore#//RequiredRole"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CleranceRequest" eSuperTypes="cosaV2.ecore#//Connector">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caller" lowerBound="1"
+        eType="#//caller" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="called" lowerBound="1"
+        eType="#//called" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityQuery" eSuperTypes="cosaV2.ecore#//Connector">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caller" lowerBound="1"
+        eType="#//caller" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="called" lowerBound="1"
+        eType="#//called" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="attach1" eSuperTypes="cosaV2.ecore#//Attachement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securitycheck" eType="#//SecurityCheck"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caller" eType="#//caller"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="attach2" eSuperTypes="cosaV2.ecore#//Attachement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securityauth" lowerBound="1"
+        eType="#//SecurityAuth"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="called" lowerBound="1"
+        eType="#//called"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="attach3" eSuperTypes="cosaV2.ecore#//Attachement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dbquery" lowerBound="1"
+        eType="#//DBQuery"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caller" eType="#//caller"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="attach4" eSuperTypes="cosaV2.ecore#//Attachement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="#//Query"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caller" eType="#//caller"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="cosaV2.ecore#//ProvidedPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityManagement" eSuperTypes="cosaV2.ecore#//RequiredPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RPC" eSuperTypes="cosaV2.ecore#//Connector">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caller" lowerBound="1"
+        eType="#//caller" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="called" lowerBound="1"
+        eType="#//called" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="attach5" eSuperTypes="cosaV2.ecore#//Attachement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="credentialquery" lowerBound="1"
+        eType="#//CredentialQuery"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="called" eType="#//called"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="attach6" eSuperTypes="cosaV2.ecore#//Attachement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securitymanagement" eType="#//SecurityManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="called" eType="#//called"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="bind1" eSuperTypes="cosaV2.ecore#//Binding">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalsocket" lowerBound="1"
+        eType="#//ExternalSocket"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConnectionMangerexternalsocket"
+        lowerBound="1" eType="#//ExternalSocket"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="bind2" eSuperTypes="cosaV2.ecore#//Binding">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provide" lowerBound="1"
+        eType="#//Provide"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalsocket" eType="#//ExternalSocket"/>
+  </eClassifiers>
 </ecore:EPackage>

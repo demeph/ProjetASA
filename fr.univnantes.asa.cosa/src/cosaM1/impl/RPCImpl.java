@@ -6,6 +6,7 @@ import cosa.impl.ConnectorImpl;
 
 import cosaM1.CosaM1Package;
 import cosaM1.RPC;
+import cosaM1.Simple_CS;
 import cosaM1.called;
 import cosaM1.caller;
 
@@ -32,6 +33,49 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class RPCImpl extends ConnectorImpl implements RPC {
+	
+	Simple_CS sc;
+	
+	private String callerRole;
+	private String calledRole;
+	
+	public String getCallerRole() {
+		return callerRole;
+	}
+
+	public void setCallerRole(String callerRole) {
+		this.callerRole = callerRole;
+	}
+
+	public String getCalledRole() {
+		return calledRole;
+	}
+
+	public void setCalledRole(String calledRole) {
+		this.calledRole = calledRole;
+	}
+	
+	@Override
+	public void requestFromClient(String request) {
+		this.callerRole = request;
+		this.glue.glue();
+		
+	}
+	
+	public void sendToConnector() {
+		this.sc.update(EnumAction.callServeur, this.calledRole);
+	}
+		
+
+	public Simple_CS getSc() {
+		return sc;
+	}
+
+	public void setSc(Simple_CS sc) {
+		this.sc = sc;
+	}
+
+	//---------------------------- NOT USED ------------------------------------------
 	/**
 	 * The cached value of the '{@link #getCaller() <em>Caller</em>}' containment reference.
 	 * <!-- begin-user-doc -->

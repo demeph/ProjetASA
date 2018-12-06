@@ -13,15 +13,15 @@ import cosa.Component;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link cosaM1.SecurityManger#getCredentialquery <em>Credentialquery</em>}</li>
- *   <li>{@link cosaM1.SecurityManger#getSecurityauth <em>Securityauth</em>}</li>
+ *   <li>{@link cosaM1.SecurityManager#getCredentialquery <em>Credentialquery</em>}</li>
+ *   <li>{@link cosaM1.SecurityManager#getSecurityauth <em>Securityauth</em>}</li>
  * </ul>
  *
  * @see cosaM1.CosaM1Package#getSecurityManger()
  * @model
  * @generated
  */
-public interface SecurityManger extends Component {
+public interface SecurityManager extends Component {
 	/**
 	 * Returns the value of the '<em><b>Credentialquery</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ public interface SecurityManger extends Component {
 	CredentialQuery getCredentialquery();
 
 	/**
-	 * Sets the value of the '{@link cosaM1.SecurityManger#getCredentialquery <em>Credentialquery</em>}' containment reference.
+	 * Sets the value of the '{@link cosaM1.SecurityManager#getCredentialquery <em>Credentialquery</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Credentialquery</em>' containment reference.
@@ -65,7 +65,7 @@ public interface SecurityManger extends Component {
 	SecurityAuth getSecurityauth();
 
 	/**
-	 * Sets the value of the '{@link cosaM1.SecurityManger#getSecurityauth <em>Securityauth</em>}' containment reference.
+	 * Sets the value of the '{@link cosaM1.SecurityManager#getSecurityauth <em>Securityauth</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Securityauth</em>' containment reference.
@@ -73,5 +73,15 @@ public interface SecurityManger extends Component {
 	 * @generated
 	 */
 	void setSecurityauth(SecurityAuth value);
+
+	void verifySecurity(String calledRole);
+	
+	ServeurDetail getSd();
+
+	void setSd(ServeurDetail sd);
+
+	String getSecurityauthStr();
+
+	void setSecurityauthStr(String securityauthStr);
 
 } // SecurityManger

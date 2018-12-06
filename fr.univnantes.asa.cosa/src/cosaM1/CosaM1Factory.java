@@ -118,7 +118,7 @@ public interface CosaM1Factory extends EFactory {
 	 * @return a new object of class '<em>Security Manger</em>'.
 	 * @generated
 	 */
-	SecurityManger createSecurityManger();
+	SecurityManager createSecurityManger();
 
 	/**
 	 * Returns a new object of class '<em>Database</em>'.

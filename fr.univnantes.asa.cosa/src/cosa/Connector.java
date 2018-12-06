@@ -65,5 +65,15 @@ public interface Connector extends EObject {
 	 * @generated
 	 */
 	void setGlue(Glue value);
+	
+	String getCallerRole();
+
+	void setCallerRole(String callerRole);
+
+	String getCalledRole();
+
+	void setCalledRole(String calledRole);
+
+	void sendToConnector();
 
 } // Connector

@@ -6,6 +6,7 @@ import cosa.impl.RequiredPortImpl;
 
 import cosaM1.CosaM1Package;
 import cosaM1.SecurityCheck;
+import cosaM1.ServeurDetail;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -17,6 +18,9 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class SecurityCheckImpl extends RequiredPortImpl implements SecurityCheck {
+	
+	private ServeurDetail sd;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -26,6 +30,23 @@ public class SecurityCheckImpl extends RequiredPortImpl implements SecurityCheck
 		super();
 	}
 
+
+	@Override
+	public ServeurDetail getSd() {
+		return sd;
+	}
+	
+	@Override
+	public void setSd(ServeurDetail sd) {
+		this.sd = sd;
+	}
+	
+	@Override
+	public void transferToDB(String securityauthStr) {
+		
+	}
+
+	//------------------------ NOT USED --------------------------------
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

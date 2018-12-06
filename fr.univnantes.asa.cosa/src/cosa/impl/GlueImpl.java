@@ -2,6 +2,7 @@
  */
 package cosa.impl;
 
+import cosa.Connector;
 import cosa.CosaPackage;
 import cosa.Glue;
 
@@ -17,6 +18,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class GlueImpl extends MinimalEObjectImpl.Container implements Glue {
+	
+	private Connector connector;
+	
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -25,6 +30,29 @@ public class GlueImpl extends MinimalEObjectImpl.Container implements Glue {
 	protected GlueImpl() {
 		super();
 	}
+	
+	
+	@Override
+	public void glue() {
+		this.connector.setCalledRole(this.connector.getCallerRole());
+		this.connector.sendToConnector();
+	}
+	
+	
+	public Connector getConnector() {
+		return connector;
+	}
+
+
+	public void setConnector(Connector connector) {
+		this.connector = connector;
+	}
+
+
+//------------------------------------- NOT USED --------------------------------------------
+	
+	
+
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -96,17 +96,7 @@ public class Simple_CSImpl extends ConfigurationImpl implements Simple_CS {
 	protected Simple_CSImpl() {
 		super();
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return CosaM1Package.Literals.SIMPLE_CS;
-	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,21 +104,6 @@ public class Simple_CSImpl extends ConfigurationImpl implements Simple_CS {
 	 */
 	public Client getClient() {
 		return client;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetClient(Client newClient, NotificationChain msgs) {
-		Client oldClient = client;
-		client = newClient;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CosaM1Package.SIMPLE_CS__CLIENT, oldClient, newClient);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
 	}
 
 	/**
@@ -164,21 +139,6 @@ public class Simple_CSImpl extends ConfigurationImpl implements Simple_CS {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetServeur(Serveur newServeur, NotificationChain msgs) {
-		Serveur oldServeur = serveur;
-		serveur = newServeur;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CosaM1Package.SIMPLE_CS__SERVEUR, oldServeur, newServeur);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public void setServeur(Serveur newServeur) {
 		if (newServeur != serveur) {
 			NotificationChain msgs = null;
@@ -200,6 +160,101 @@ public class Simple_CSImpl extends ConfigurationImpl implements Simple_CS {
 	 */
 	public ServeurDetail getServeurdetail() {
 		return serveurdetail;
+	}
+
+	
+/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RPC getRpc() {
+		return rpc;
+	}
+
+	/**
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public void setRpc(RPC newRpc) {
+	if (newRpc != rpc) {
+		NotificationChain msgs = null;
+		if (rpc != null)
+			msgs = ((InternalEObject)rpc).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CosaM1Package.SIMPLE_CS__RPC, null, msgs);
+		if (newRpc != null)
+			msgs = ((InternalEObject)newRpc).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CosaM1Package.SIMPLE_CS__RPC, null, msgs);
+		msgs = basicSetRpc(newRpc, msgs);
+		if (msgs != null) msgs.dispatch();
+	}
+	else if (eNotificationRequired())
+		eNotify(new ENotificationImpl(this, Notification.SET, CosaM1Package.SIMPLE_CS__RPC, newRpc, newRpc));
+}
+
+
+	@Override
+	public void update(EnumAction action,String request) {
+		switch (action) {
+		case callClient:
+			
+			break;
+		case callServeur:
+			this.serveur.RecieveRequest(request);
+			break;
+		case callRPC:
+			this.rpc.requestFromClient(request);
+			break;
+		case callServeurDetail:
+			this.serveurdetail.update(EnumAction.callConnectionManager, this.serveur.getProvideStr());
+			break;
+		default:
+			break;
+		}
+	}
+
+
+//--------------------------- NOT USED -------------------------------------------------------------------------
+
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return CosaM1Package.Literals.SIMPLE_CS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetClient(Client newClient, NotificationChain msgs) {
+		Client oldClient = client;
+		client = newClient;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CosaM1Package.SIMPLE_CS__CLIENT, oldClient, newClient);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetServeur(Serveur newServeur, NotificationChain msgs) {
+		Serveur oldServeur = serveur;
+		serveur = newServeur;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CosaM1Package.SIMPLE_CS__SERVEUR, oldServeur, newServeur);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -284,15 +339,6 @@ public class Simple_CSImpl extends ConfigurationImpl implements Simple_CS {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RPC getRpc() {
-		return rpc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public NotificationChain basicSetRpc(RPC newRpc, NotificationChain msgs) {
 		RPC oldRpc = rpc;
 		rpc = newRpc;
@@ -301,25 +347,6 @@ public class Simple_CSImpl extends ConfigurationImpl implements Simple_CS {
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRpc(RPC newRpc) {
-		if (newRpc != rpc) {
-			NotificationChain msgs = null;
-			if (rpc != null)
-				msgs = ((InternalEObject)rpc).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CosaM1Package.SIMPLE_CS__RPC, null, msgs);
-			if (newRpc != null)
-				msgs = ((InternalEObject)newRpc).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CosaM1Package.SIMPLE_CS__RPC, null, msgs);
-			msgs = basicSetRpc(newRpc, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CosaM1Package.SIMPLE_CS__RPC, newRpc, newRpc));
 	}
 
 	/**

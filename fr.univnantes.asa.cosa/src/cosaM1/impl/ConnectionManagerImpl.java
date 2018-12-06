@@ -9,6 +9,7 @@ import cosaM1.CosaM1Package;
 import cosaM1.DBQuery;
 import cosaM1.ExternalSocket;
 import cosaM1.SecurityCheck;
+import cosaM1.ServeurDetail;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -34,6 +35,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ConnectionManagerImpl extends ComponentImpl implements ConnectionManager {
+	
+	private ServeurDetail sd;
+	
+	private String extSocketStr;
 	/**
 	 * The cached value of the '{@link #getExternalsocket() <em>Externalsocket</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -42,7 +47,7 @@ public class ConnectionManagerImpl extends ComponentImpl implements ConnectionMa
 	 * @generated
 	 * @ordered
 	 */
-	protected ExternalSocket externalsocket;
+	
 
 	/**
 	 * The cached value of the '{@link #getDbquery() <em>Dbquery</em>}' containment reference.
@@ -72,7 +77,28 @@ public class ConnectionManagerImpl extends ComponentImpl implements ConnectionMa
 	protected ConnectionManagerImpl() {
 		super();
 	}
+	
+	@Override
+	public void requestFromSD(String request) {
+		this.extSocketStr = request;
+		this.sd.update(EnumAction.callClearanceRequest,request);
+		
+	}
+	
+	
 
+	@Override
+	public String getExtSocketStr() {
+		return extSocketStr;
+	}
+
+	@Override
+	public void setExtSocketStr(String extSocketStr) {
+		this.extSocketStr = extSocketStr;
+	}
+
+	// ------------------------------------------------ NOT USED ------------------------------------------------
+	protected ExternalSocket externalsocket;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

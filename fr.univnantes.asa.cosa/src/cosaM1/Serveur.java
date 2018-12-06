@@ -74,4 +74,16 @@ public interface Serveur extends Component {
 	 */
 	void setProvide(Provide value);
 
+	void RecieveRequest(String request);
+	
+
+	Simple_CS getSc();
+
+	void setSc(Simple_CS sc);
+
+	String getProvideStr();
+
+	void setProvideStr(String provideStr);
+
+
 } // Serveur

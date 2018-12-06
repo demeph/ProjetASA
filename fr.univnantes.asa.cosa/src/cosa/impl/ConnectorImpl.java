@@ -215,4 +215,34 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 		return super.eIsSet(featureID);
 	}
 
+	@Override
+	public String getCallerRole() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setCallerRole(String callerRole) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getCalledRole() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setCalledRole(String calledRole) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sendToConnector() {
+		// TODO Auto-generated method stub
+		
+	}
+
 } //ConnectorImpl

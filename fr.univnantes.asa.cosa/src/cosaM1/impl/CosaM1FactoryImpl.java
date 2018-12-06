@@ -3,6 +3,7 @@
 package cosaM1.impl;
 
 import cosaM1.*;
+import cosaM1.SecurityManager;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -198,7 +199,7 @@ public class CosaM1FactoryImpl extends EFactoryImpl implements CosaM1Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityManger createSecurityManger() {
+	public SecurityManager createSecurityManager() {
 		SecurityMangerImpl securityManger = new SecurityMangerImpl();
 		return securityManger;
 	}
@@ -431,6 +432,12 @@ public class CosaM1FactoryImpl extends EFactoryImpl implements CosaM1Factory {
 	@Deprecated
 	public static CosaM1Package getPackage() {
 		return CosaM1Package.eINSTANCE;
+	}
+
+	@Override
+	public SecurityManager createSecurityManger() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 } //CosaM1FactoryImpl

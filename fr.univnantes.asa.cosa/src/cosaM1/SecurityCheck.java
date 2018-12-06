@@ -15,4 +15,10 @@ import cosa.RequiredPort;
  * @generated
  */
 public interface SecurityCheck extends RequiredPort {
+
+	ServeurDetail getSd();
+
+	void setSd(ServeurDetail sd);
+
+	void transferToDB(String securityauthStr);
 } // SecurityCheck

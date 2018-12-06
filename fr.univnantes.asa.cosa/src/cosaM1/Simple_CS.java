@@ -3,6 +3,7 @@
 package cosaM1;
 
 import cosa.Configuration;
+import cosaM1.impl.EnumAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -154,5 +155,7 @@ public interface Simple_CS extends Configuration {
 	 * @generated
 	 */
 	void setRpc(RPC value);
+
+	void update(EnumAction action, String request);
 
 } // Simple_CS

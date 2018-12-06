@@ -15,4 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Glue extends EObject {
+
+	void glue();
 } // Glue

@@ -8,6 +8,7 @@ import cosaM1.CosaM1Package;
 import cosaM1.Provide;
 import cosaM1.RecieveRequest;
 import cosaM1.Serveur;
+import cosaM1.Simple_CS;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -32,6 +33,52 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ServeurImpl extends ComponentImpl implements Serveur {
+	
+	private Simple_CS sc;
+	
+	private String provideStr;
+	
+	
+/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServeurImpl() {
+		super();
+	}
+	
+	
+	public void RecieveRequest(String request) {
+		this.provideStr = request;
+		this.sc.update(EnumAction.callServeurDetail, this.provideStr);
+	}
+	
+
+	public Simple_CS getSc() {
+		return sc;
+	}
+
+	public void setSc(Simple_CS sc) {
+		this.sc = sc;
+	}
+
+	
+	
+	@Override
+	public String getProvideStr() {
+		return provideStr;
+	}
+
+	@Override
+	public void setProvideStr(String provideStr) {
+		this.provideStr = provideStr;
+	}
+
+
+
+
+	//--------------------------------- NOT USED ---------------------------------------------
 	/**
 	 * The cached value of the '{@link #getRecieverequest() <em>Recieverequest</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -51,15 +98,6 @@ public class ServeurImpl extends ComponentImpl implements Serveur {
 	 * @ordered
 	 */
 	protected Provide provide;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServeurImpl() {
-		super();
-	}
 
 	/**
 	 * <!-- begin-user-doc -->

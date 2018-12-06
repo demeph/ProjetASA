@@ -74,4 +74,21 @@ public interface RPC extends Connector {
 	 */
 	void setCalled(called value);
 
+	void requestFromClient(String request);
+	
+	
+	String getCallerRole();
+
+	void setCallerRole(String callerRole);
+
+	String getCalledRole();
+
+	void setCalledRole(String calledRole);
+	
+	void sendToConnector();
+	
+	Simple_CS getSc();
+	
+	void setSc(Simple_CS sc);
+
 } // RPC

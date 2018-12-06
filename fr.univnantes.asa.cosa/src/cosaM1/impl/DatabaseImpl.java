@@ -8,6 +8,7 @@ import cosaM1.CosaM1Package;
 import cosaM1.Database;
 import cosaM1.Query;
 import cosaM1.SecurityManagement;
+import cosaM1.ServeurDetail;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -32,6 +33,38 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class DatabaseImpl extends ComponentImpl implements Database {
+	
+	private String securManageStr;
+	
+	private ServeurDetail sd;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DatabaseImpl() {
+		super();
+	}
+
+	@Override
+	public void verifySecurityIDs(String called) {
+		// TODO Auto-generated method stub
+		this.securManageStr = called;
+		//this.sd.update(ca, request);
+		
+		
+	}
+
+	@Override
+	public String getSecurManageStr() {
+		return securManageStr;
+	}
+
+	@Override
+	public void setSecurManageStr(String securManageStr) {
+		this.securManageStr = securManageStr;
+	}
+
 	/**
 	 * The cached value of the '{@link #getSecuritymanagement() <em>Securitymanagement</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -57,18 +90,19 @@ public class DatabaseImpl extends ComponentImpl implements Database {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DatabaseImpl() {
-		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	protected EClass eStaticClass() {
 		return CosaM1Package.Literals.DATABASE;
+	}
+
+	@Override
+	public ServeurDetail getSd() {
+		return sd;
+	}
+
+	@Override
+	public void setSd(ServeurDetail sd) {
+		this.sd = sd;
 	}
 
 	/**

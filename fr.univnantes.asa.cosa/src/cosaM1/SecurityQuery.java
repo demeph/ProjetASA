@@ -74,4 +74,12 @@ public interface SecurityQuery extends Connector {
 	 */
 	void setCalled(called value);
 
+	void transferToDB(String securityauthStr);
+
+	ServeurDetail getSd();
+
+	void setSd(ServeurDetail sd);
+	
+	
+
 } // SecurityQuery

@@ -23,7 +23,7 @@ import cosaM1.SQLQuery;
 import cosaM1.SecurityAuth;
 import cosaM1.SecurityCheck;
 import cosaM1.SecurityManagement;
-import cosaM1.SecurityManger;
+import cosaM1.SecurityManager;
 import cosaM1.SecurityQuery;
 import cosaM1.SendRequest;
 import cosaM1.Serveur;
@@ -1375,9 +1375,9 @@ public class CosaM1PackageImpl extends EPackageImpl implements CosaM1Package {
 		initEReference(getConnectionManager_Dbquery(), this.getDBQuery(), null, "dbquery", null, 1, 1, ConnectionManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectionManager_Securitycheck(), this.getSecurityCheck(), null, "securitycheck", null, 1, 1, ConnectionManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(securityMangerEClass, SecurityManger.class, "SecurityManger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSecurityManger_Credentialquery(), this.getCredentialQuery(), null, "credentialquery", null, 1, 1, SecurityManger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSecurityManger_Securityauth(), this.getSecurityAuth(), null, "securityauth", null, 1, 1, SecurityManger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(securityMangerEClass, SecurityManager.class, "SecurityManger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSecurityManger_Credentialquery(), this.getCredentialQuery(), null, "credentialquery", null, 1, 1, SecurityManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurityManger_Securityauth(), this.getSecurityAuth(), null, "securityauth", null, 1, 1, SecurityManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(databaseEClass, Database.class, "Database", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDatabase_Securitymanagement(), this.getSecurityManagement(), null, "securitymanagement", null, 1, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

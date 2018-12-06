@@ -74,4 +74,6 @@ public interface CleranceRequest extends Connector {
 	 */
 	void setCalled(called value);
 
+	void checkSecurity(String extSocketStr);
+
 } // CleranceRequest

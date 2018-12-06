@@ -74,4 +74,14 @@ public interface Database extends Component {
 	 */
 	void setQuery(Query value);
 
+	void verifySecurityIDs(String called);
+
+	String getSecurManageStr();
+
+	void setSecurManageStr(String securManageStr);
+
+	void setSd(ServeurDetail sd);
+
+	ServeurDetail getSd();
+
 } // Database

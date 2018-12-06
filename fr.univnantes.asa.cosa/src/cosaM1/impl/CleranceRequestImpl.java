@@ -6,6 +6,7 @@ import cosa.impl.ConnectorImpl;
 
 import cosaM1.CleranceRequest;
 import cosaM1.CosaM1Package;
+import cosaM1.ServeurDetail;
 import cosaM1.called;
 import cosaM1.caller;
 
@@ -32,6 +33,59 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class CleranceRequestImpl extends ConnectorImpl implements CleranceRequest {
+	
+	private String callerRole;
+	private String calledRole;
+	
+	private ServeurDetail sd;
+	
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CleranceRequestImpl() {
+		super();
+	}
+
+	
+	
+	@Override
+	public void checkSecurity(String extSocketStr) {
+		this.callerRole = extSocketStr;
+		this.glue.glue();
+	}
+
+
+
+	@Override
+	public String getCallerRole() {
+		return callerRole;
+	}
+
+	@Override
+	public void setCallerRole(String callerRole) {
+		this.callerRole = callerRole;
+	}
+
+	@Override
+	public String getCalledRole() {
+		return calledRole;
+	}
+
+	@Override
+	public void setCalledRole(String calledRole) {
+		this.calledRole = calledRole;
+	}
+
+	@Override
+	public void sendToConnector() {
+		this.sd.update(EnumAction.callSecurityQuery, this.calledRole);
+	}
+
+
+	//-------------------------------- NOT USED --------------------------------
 	/**
 	 * The cached value of the '{@link #getCaller() <em>Caller</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -52,14 +106,6 @@ public class CleranceRequestImpl extends ConnectorImpl implements CleranceReques
 	 */
 	protected called called;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CleranceRequestImpl() {
-		super();
-	}
 
 	/**
 	 * <!-- begin-user-doc -->

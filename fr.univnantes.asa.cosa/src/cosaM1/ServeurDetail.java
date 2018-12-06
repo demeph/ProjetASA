@@ -3,6 +3,7 @@
 package cosaM1;
 
 import cosa.Configuration;
+import cosaM1.impl.EnumAction;
 
 /**
  * <!-- begin-user-doc -->
@@ -100,7 +101,7 @@ public interface ServeurDetail extends Configuration {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	SecurityManger getSecuritymanager();
+	SecurityManager getSecuritymanager();
 
 	/**
 	 * Sets the value of the '{@link cosaM1.ServeurDetail#getSecuritymanager <em>Securitymanager</em>}' containment reference.
@@ -110,7 +111,7 @@ public interface ServeurDetail extends Configuration {
 	 * @see #getSecuritymanager()
 	 * @generated
 	 */
-	void setSecuritymanager(SecurityManger value);
+	void setSecuritymanager(SecurityManager value);
 
 	/**
 	 * Returns the value of the '<em><b>Database</b></em>' containment reference.
@@ -397,5 +398,7 @@ public interface ServeurDetail extends Configuration {
 	 * @generated
 	 */
 	void setSecurityquery(SecurityQuery value);
+
+	void update(EnumAction action, String request);
 
 } // ServeurDetail

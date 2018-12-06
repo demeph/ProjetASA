@@ -10,7 +10,7 @@ import cosaM1.CosaM1Package;
 import cosaM1.Database;
 import cosaM1.ExternalSocket;
 import cosaM1.SQLQuery;
-import cosaM1.SecurityManger;
+import cosaM1.SecurityManager;
 import cosaM1.SecurityQuery;
 import cosaM1.ServeurDetail;
 import cosaM1.attach1;
@@ -84,7 +84,7 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 	 * @generated
 	 * @ordered
 	 */
-	protected SecurityManger securitymanager;
+	protected SecurityManager securitymanager;
 
 	/**
 	 * The cached value of the '{@link #getDatabase() <em>Database</em>}' containment reference.
@@ -115,6 +115,33 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 	 * @ordered
 	 */
 	protected CleranceRequest clerancerequest;
+	
+	@Override
+	public void update(EnumAction action,String request) {
+		switch (action) {
+		case callConnectionManager:
+			this.connectionmanager.requestFromSD(request);
+			break;
+		case callClearanceRequest:
+			this.clerancerequest.checkSecurity(this.connectionmanager.getExtSocketStr());
+			break;
+		case callSecurityManager:
+			this.securitymanager.verifySecurity(this.clerancerequest.getCalledRole());
+			break;
+		case callSecurityQuery:
+			this.securityquery.transferToDB(this.securitymanager.getSecurityauthStr());
+			break;
+		case callDatabase:
+			this.database.verifySecurityIDs(this.securityquery.getCalledRole());
+			break;
+		default:
+			break;
+		}
+		
+	}
+	
+//---------------------------- NOT USED ----------------------------------------------------
+	
 
 	/**
 	 * The cached value of the '{@link #getAttach1() <em>Attach1</em>}' containment reference.
@@ -306,7 +333,7 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecurityManger getSecuritymanager() {
+	public SecurityManager getSecuritymanger() {
 		return securitymanager;
 	}
 
@@ -315,11 +342,11 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSecuritymanager(SecurityManger newSecuritymanager, NotificationChain msgs) {
-		SecurityManger oldSecuritymanager = securitymanager;
-		securitymanager = newSecuritymanager;
+	public NotificationChain basicSetSecuritymanger(SecurityManager newSecuritymanger, NotificationChain msgs) {
+		SecurityManager oldSecuritymanger = securitymanager;
+		securitymanager = newSecuritymanger;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CosaM1Package.SERVEUR_DETAIL__SECURITYMANAGER, oldSecuritymanager, newSecuritymanager);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CosaM1Package.SERVEUR_DETAIL__SECURITYMANAGER, oldSecuritymanger, newSecuritymanger);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -330,18 +357,18 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSecuritymanager(SecurityManger newSecuritymanager) {
-		if (newSecuritymanager != securitymanager) {
+	public void setSecuritymanager(SecurityManager newSecuritymanger) {
+		if (newSecuritymanger != securitymanager) {
 			NotificationChain msgs = null;
 			if (securitymanager != null)
 				msgs = ((InternalEObject)securitymanager).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CosaM1Package.SERVEUR_DETAIL__SECURITYMANAGER, null, msgs);
-			if (newSecuritymanager != null)
-				msgs = ((InternalEObject)newSecuritymanager).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CosaM1Package.SERVEUR_DETAIL__SECURITYMANAGER, null, msgs);
-			msgs = basicSetSecuritymanager(newSecuritymanager, msgs);
+			if (newSecuritymanger != null)
+				msgs = ((InternalEObject)newSecuritymanger).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CosaM1Package.SERVEUR_DETAIL__SECURITYMANAGER, null, msgs);
+			msgs = basicSetSecuritymanger(newSecuritymanger, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CosaM1Package.SERVEUR_DETAIL__SECURITYMANAGER, newSecuritymanager, newSecuritymanager));
+			eNotify(new ENotificationImpl(this, Notification.SET, CosaM1Package.SERVEUR_DETAIL__SECURITYMANAGER, newSecuritymanger, newSecuritymanger));
 	}
 
 	/**
@@ -830,7 +857,7 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 			case CosaM1Package.SERVEUR_DETAIL__CONNECTIONMANAGER:
 				return basicSetConnectionmanager(null, msgs);
 			case CosaM1Package.SERVEUR_DETAIL__SECURITYMANAGER:
-				return basicSetSecuritymanager(null, msgs);
+				return basicSetSecuritymanger(null, msgs);
 			case CosaM1Package.SERVEUR_DETAIL__DATABASE:
 				return basicSetDatabase(null, msgs);
 			case CosaM1Package.SERVEUR_DETAIL__SQLQUERY:
@@ -912,7 +939,7 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 				setConnectionmanager((ConnectionManager)newValue);
 				return;
 			case CosaM1Package.SERVEUR_DETAIL__SECURITYMANAGER:
-				setSecuritymanager((SecurityManger)newValue);
+				setSecuritymanager((SecurityManager)newValue);
 				return;
 			case CosaM1Package.SERVEUR_DETAIL__DATABASE:
 				setDatabase((Database)newValue);
@@ -966,7 +993,7 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 				setConnectionmanager((ConnectionManager)null);
 				return;
 			case CosaM1Package.SERVEUR_DETAIL__SECURITYMANAGER:
-				setSecuritymanager((SecurityManger)null);
+				setSecuritymanager((SecurityManager)null);
 				return;
 			case CosaM1Package.SERVEUR_DETAIL__DATABASE:
 				setDatabase((Database)null);
@@ -1044,5 +1071,12 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 		}
 		return super.eIsSet(featureID);
 	}
+
+	@Override
+	public SecurityManager getSecuritymanager() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 } //ServeurDetailImpl

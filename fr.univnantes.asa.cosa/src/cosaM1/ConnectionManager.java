@@ -100,5 +100,12 @@ public interface ConnectionManager extends Component {
 	 * @generated
 	 */
 	void setSecuritycheck(SecurityCheck value);
+	
+	
+	void requestFromSD(String request);
+
+	String getExtSocketStr();
+
+	void setExtSocketStr(String extSocketStr);
 
 } // ConnectionManager

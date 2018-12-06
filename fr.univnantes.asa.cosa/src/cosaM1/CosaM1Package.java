@@ -2493,32 +2493,32 @@ public interface CosaM1Package extends EPackage {
 	EReference getConnectionManager_Securitycheck();
 
 	/**
-	 * Returns the meta object for class '{@link cosaM1.SecurityManger <em>Security Manger</em>}'.
+	 * Returns the meta object for class '{@link cosaM1.SecurityManager <em>Security Manger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Security Manger</em>'.
-	 * @see cosaM1.SecurityManger
+	 * @see cosaM1.SecurityManager
 	 * @generated
 	 */
 	EClass getSecurityManger();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link cosaM1.SecurityManger#getCredentialquery <em>Credentialquery</em>}'.
+	 * Returns the meta object for the containment reference '{@link cosaM1.SecurityManager#getCredentialquery <em>Credentialquery</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Credentialquery</em>'.
-	 * @see cosaM1.SecurityManger#getCredentialquery()
+	 * @see cosaM1.SecurityManager#getCredentialquery()
 	 * @see #getSecurityManger()
 	 * @generated
 	 */
 	EReference getSecurityManger_Credentialquery();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link cosaM1.SecurityManger#getSecurityauth <em>Securityauth</em>}'.
+	 * Returns the meta object for the containment reference '{@link cosaM1.SecurityManager#getSecurityauth <em>Securityauth</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Securityauth</em>'.
-	 * @see cosaM1.SecurityManger#getSecurityauth()
+	 * @see cosaM1.SecurityManager#getSecurityauth()
 	 * @see #getSecurityManger()
 	 * @generated
 	 */

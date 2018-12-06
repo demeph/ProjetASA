@@ -23,6 +23,7 @@ import cosa.Role;
 import cosa.Service;
 
 import cosaM1.*;
+import cosaM1.SecurityManager;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -182,7 +183,7 @@ public class CosaM1Switch<T> extends Switch<T> {
 				return result;
 			}
 			case CosaM1Package.SECURITY_MANGER: {
-				SecurityManger securityManger = (SecurityManger)theEObject;
+				SecurityManager securityManger = (SecurityManager)theEObject;
 				T result = caseSecurityManger(securityManger);
 				if (result == null) result = caseComponent(securityManger);
 				if (result == null) result = caseNamedElement(securityManger);
@@ -534,7 +535,7 @@ public class CosaM1Switch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSecurityManger(SecurityManger object) {
+	public T caseSecurityManger(SecurityManager object) {
 		return null;
 	}
 

@@ -6,6 +6,7 @@ import cosa.impl.ConnectorImpl;
 
 import cosaM1.CosaM1Package;
 import cosaM1.SecurityQuery;
+import cosaM1.ServeurDetail;
 import cosaM1.called;
 import cosaM1.caller;
 
@@ -32,6 +33,64 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class SecurityQueryImpl extends ConnectorImpl implements SecurityQuery {
+	
+	private String callerRole;
+	private String calledRole;
+	
+	private ServeurDetail sd;
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SecurityQueryImpl() {
+		super();
+	}
+
+	@Override
+	public void transferToDB(String securityauthStr) {
+		// TODO Auto-generated method stub
+		this.callerRole = securityauthStr;
+		this.glue.glue();
+		
+	}
+	
+	public String getCallerRole() {
+		return callerRole;
+	}
+
+	public void setCallerRole(String callerRole) {
+		this.callerRole = callerRole;
+	}
+
+	public String getCalledRole() {
+		return calledRole;
+	}
+
+	public void setCalledRole(String calledRole) {
+		this.calledRole = calledRole;
+	}
+
+	@Override
+	public ServeurDetail getSd() {
+		return sd;
+	}
+
+	@Override
+	public void setSd(ServeurDetail sd) {
+		this.sd = sd;
+	}
+
+	@Override
+	public void sendToConnector() {
+		// TODO Auto-generated method stub
+		this.sd.update(EnumAction.callDatabase, this.calledRole);
+	}
+
+	
+	
+	//------------------------- NOT USED ------------------------------------------
 	/**
 	 * The cached value of the '{@link #getCaller() <em>Caller</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -51,15 +110,6 @@ public class SecurityQueryImpl extends ConnectorImpl implements SecurityQuery {
 	 * @ordered
 	 */
 	protected called called;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SecurityQueryImpl() {
-		super();
-	}
 
 	/**
 	 * <!-- begin-user-doc -->

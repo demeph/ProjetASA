@@ -7,7 +7,8 @@ import cosa.impl.ComponentImpl;
 import cosaM1.CosaM1Package;
 import cosaM1.CredentialQuery;
 import cosaM1.SecurityAuth;
-import cosaM1.SecurityManger;
+import cosaM1.SecurityManager;
+import cosaM1.ServeurDetail;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -31,7 +32,57 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SecurityMangerImpl extends ComponentImpl implements SecurityManger {
+public class SecurityMangerImpl extends ComponentImpl implements SecurityManager {
+
+	private ServeurDetail sd;
+	
+	private String securityauthStr;
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SecurityMangerImpl() {
+		super();
+	}
+
+
+	@Override
+	public void verifySecurity(String calledRole) {
+		// TODO Auto-generated method stub
+		this.securityauthStr = calledRole;
+		this.sd.update(EnumAction.callSecurityQuery, this.securityauthStr);
+	}
+
+
+	@Override
+	public ServeurDetail getSd() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setSd(ServeurDetail sd) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public String getSecurityauthStr() {
+		return securityauthStr;
+	}
+
+	@Override
+	public void setSecurityauthStr(String securityauthStr) {
+		this.securityauthStr = securityauthStr;
+	}
+
+
+// ------------------------------ NOT USED -------------------------------
+	
+
+
 	/**
 	 * The cached value of the '{@link #getCredentialquery() <em>Credentialquery</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -51,15 +102,6 @@ public class SecurityMangerImpl extends ComponentImpl implements SecurityManger 
 	 * @ordered
 	 */
 	protected SecurityAuth securityauth;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SecurityMangerImpl() {
-		super();
-	}
 
 	/**
 	 * <!-- begin-user-doc -->

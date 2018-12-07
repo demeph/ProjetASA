@@ -7,6 +7,7 @@ import enums.Action;
 import enums.Strategy;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.log4j.Logger;
 
 
 public class RPCImpl implements RPC {
@@ -24,6 +25,8 @@ public class RPCImpl implements RPC {
     private Configuration subject;
 
     private Glue glue;
+
+    private static Logger logger = Logger.getLogger(RPCImpl.class);
 
     public RPCImpl(Configuration subject) {
         this.subject = subject;
@@ -47,11 +50,11 @@ public class RPCImpl implements RPC {
     public void handleGlueDone() {
         switch (this.subject.getState().getAction()){
             case CLIENT_REQUEST:
-                System.out.println("RPCImpl Done caller: "+ this.caller+ " called: "+this.called);
+                logger.info("RPCImpl Done caller: "+ this.caller+ " called: "+this.called);
                 this.subject.handleRequest(Action.SERVER_REQUEST, this.called);
                 break;
             case BACK_SERVER_REQUEST:
-                System.out.println("RPCImpl Done called: "+ this.called+ " caller: "+this.caller);
+                logger.info("RPCImpl Done called: "+ this.called+ " caller: "+this.caller);
                 this.subject.handleRequest(Action.SERVER_RESPONSE, this.caller);
                 break;
         }

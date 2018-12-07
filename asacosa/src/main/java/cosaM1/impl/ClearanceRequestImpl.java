@@ -7,6 +7,7 @@ import enums.Action;
 import enums.Strategy;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.log4j.Logger;
 
 public class ClearanceRequestImpl implements ClearanceRequest {
     // Role called
@@ -22,6 +23,8 @@ public class ClearanceRequestImpl implements ClearanceRequest {
     private Configuration subject;
 
     private Glue glue;
+
+    private static Logger logger = Logger.getLogger(ClearanceRequestImpl.class);
 
     public ClearanceRequestImpl(Configuration subject) {
         this.subject = subject;
@@ -46,11 +49,11 @@ public class ClearanceRequestImpl implements ClearanceRequest {
     public void handleGlueDone() {
         switch (this.subject.getState().getAction()){
             case CLEARENCE_REQUEST:
-                System.out.println("ClearanceRequestImpl Done called: "+ this.called+ " caller: "+this.caller);
+                logger.info("ClearanceRequestImpl Done called: "+ this.called+ " caller: "+this.caller);
                 this.subject.handleRequest(Action.RESOLVE_CLEARENCE_REQUEST, this.called);
                 break;
             case BACK_SECURITY_QUERY:
-                System.out.println("ClearanceRequestImpl Done called: "+ this.called+ " caller: "+this.caller);
+                logger.info("ClearanceRequestImpl Done called: "+ this.called+ " caller: "+this.caller);
                 this.subject.handleRequest(Action.BACK_RESOLVE_CLEARENCE_REQUEST, this.caller);
                 break;
             default:

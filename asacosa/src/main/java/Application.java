@@ -30,6 +30,6 @@ public class Application {
 
         cs.attach(rpc);
 
-        client.sendRequest("Yollo client");
+        client.sendRequest("Get a data");
     }
 }

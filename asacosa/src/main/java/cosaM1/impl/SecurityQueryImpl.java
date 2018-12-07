@@ -7,6 +7,7 @@ import enums.Action;
 import enums.Strategy;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.log4j.Logger;
 
 public class SecurityQueryImpl implements SecurityQuery {
     // Role called
@@ -22,6 +23,8 @@ public class SecurityQueryImpl implements SecurityQuery {
     private Configuration subject;
 
     private Glue glue;
+
+    private static Logger logger = Logger.getLogger(SecurityManagerImpl.class);
 
     public SecurityQueryImpl(Configuration subject) {
         this.subject = subject;
@@ -44,11 +47,11 @@ public class SecurityQueryImpl implements SecurityQuery {
     public void handleGlueDone() {
         switch (this.subject.getState().getAction()){
             case SECURITY_QUERY:
-                System.out.println("SecurityQueryImpl Done called: "+ this.called+ " caller: "+this.caller);
+                logger.info("SecurityQueryImpl Done called: "+ this.called+ " caller: "+this.caller);
                 this.subject.handleRequest(Action.RESOLVE_SECURITY_QUERY, this.called);
                 break;
             case ACCESS_GRANTED:
-                System.out.println("SecurityQueryImpl Done caller: "+ this.caller+ " called: "+this.called);
+                logger.info("SecurityQueryImpl Done caller: "+ this.caller+ " called: "+this.called);
                 this.subject.handleRequest(Action.BACK_RESOLVE_SECURITY_QUERY, this.caller);
                 break;
         }

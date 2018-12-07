@@ -5,6 +5,7 @@ import enums.Action;
 import cosa.interfaces.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,8 @@ public class SimpleCSImpl implements SimpleCS {
 
     private ServerDetail serverDetail;
 
+    private static Logger logger = Logger.getLogger(SimpleCSImpl.class);
+
     public SimpleCSImpl(Client client, Server server, ServerDetail serverDetail) {
         this.state = new ConfigurationState();
         this.observers = new ArrayList<Observer>();
@@ -42,28 +45,28 @@ public class SimpleCSImpl implements SimpleCS {
 
         switch (this.state.getAction()){
             case CLIENT_REQUEST:
-                System.out.println("Attachement from client to rpc");
+                logger.info("Attachement from client to rpc");
                 this.notifyAllObserver();
                 break;
             case SERVER_REQUEST:
-                System.out.println("Attachement from rpc to server");
+                logger.info("Attachement from rpc to server");
                 this.server.reciveRequest(this.state.getPayload());
                 break;
             case RESOLVE_SERVER_REQUEST:
-                System.out.println("Binging from server to serverDetails");
+                logger.info("Binging from server to serverDetails");
                 this.serverDetail.setExternalSocket(this.server.getProvide());
                 this.serverDetail.handleRequest(Action.RESOLVE_SERVER_REQUEST, this.serverDetail.getExternalSocket());
                 break;
             case BACK_RESOLVE_SERVER_REQUEST:
-                System.out.println("Binging from serverDetails to server");
+                logger.info("Binging from serverDetails to server");
                 this.server.setProvide(this.serverDetail.getExternalSocket());
                 break;
             case BACK_SERVER_REQUEST:
-                System.out.println("Attachement from server to rpc");
+                logger.info("Attachement from server to rpc");
                 this.notifyAllObserver();
                 break;
             case SERVER_RESPONSE:
-                System.out.println("Attachement from rpc to client");
+                logger.info("Attachement from rpc to client");
                 this.client.sendResponse(this.getState().getPayload());
                 break;
             default:

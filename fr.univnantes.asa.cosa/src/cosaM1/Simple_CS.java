@@ -3,6 +3,7 @@
 package cosaM1;
 
 import cosa.Configuration;
+import cosa.Observer;
 import cosaM1.impl.EnumAction;
 
 /**
@@ -156,6 +157,21 @@ public interface Simple_CS extends Configuration {
 	 */
 	void setRpc(RPC value);
 
-	void update(EnumAction action, String request);
+	void handleRequest(EnumAction action, String request);
+
+	@Override
+	void register(Observer obs);
+
+	@Override
+	void removeObs(Observer obs);
+
+	@Override
+	void notifyObs();
+
+	void setAction(EnumAction action);
+
+	void handleResponse();
+	
+	
 
 } // Simple_CS

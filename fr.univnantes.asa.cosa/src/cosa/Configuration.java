@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Configuration extends ComposedElement {
+public interface Configuration extends ComposedElement, Subject {
 	/**
 	 * Returns the value of the '<em><b>Components</b></em>' containment reference list.
 	 * The list contents are of type {@link cosa.Component}.
@@ -104,5 +104,14 @@ public interface Configuration extends ComposedElement {
 	 * @generated
 	 */
 	EList<Connector> getConnectors();
+	
+	@Override
+	void register(Observer obs);
+	
+	@Override
+	void removeObs(Observer obs);
+	
+	@Override
+	void notifyObs();
 
 } // Configuration

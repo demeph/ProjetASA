@@ -36,7 +36,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ConnectionManagerImpl extends ComponentImpl implements ConnectionManager {
 	
+
 	private ServeurDetail sd;
+	
+	private String requestStr;
+	
+	public void sendRequest(String request) {
+		this.requestStr = request;
+		this.sd.handleRequest(EnumAction.callConnectionManager, requestStr);
+	}
+	
 	
 	private String extSocketStr;
 	/**
@@ -81,7 +90,7 @@ public class ConnectionManagerImpl extends ComponentImpl implements ConnectionMa
 	@Override
 	public void requestFromSD(String request) {
 		this.extSocketStr = request;
-		this.sd.update(EnumAction.callClearanceRequest,request);
+		this.sd.handleRequest(EnumAction.callConnectionManager,request);
 		
 	}
 	

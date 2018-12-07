@@ -130,12 +130,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Component/componentinterface"/>
     </genClasses>
     <genClasses ecoreClass="cosaV2.ecore#//ComponentInterface"/>
-    <genClasses ecoreClass="cosaV2.ecore#//Port">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//Port/type"/>
-    </genClasses>
-    <genClasses ecoreClass="cosaV2.ecore#//Service">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//Service/returnType"/>
-    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//Port"/>
+    <genClasses ecoreClass="cosaV2.ecore#//Service"/>
     <genClasses ecoreClass="cosaV2.ecore#//RequiredPort"/>
     <genClasses ecoreClass="cosaV2.ecore#//ProvidedPort"/>
     <genClasses ecoreClass="cosaV2.ecore#//RequiredService"/>

@@ -76,12 +76,10 @@ public interface SecurityManager extends Component {
 
 	void verifySecurity(String calledRole);
 	
-	ServeurDetail getSd();
-
-	void setSd(ServeurDetail sd);
-
 	String getSecurityauthStr();
 
 	void setSecurityauthStr(String securityauthStr);
+	
+	
 
 } // SecurityManger

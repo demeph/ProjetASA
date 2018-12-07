@@ -62,10 +62,24 @@ public class RPCImpl extends ConnectorImpl implements RPC {
 		
 	}
 	
-	public void sendToConnector() {
-		this.sc.update(EnumAction.callServeur, this.calledRole);
+	@Override
+	public void notifyConnector() {
+		this.sc.setAction(EnumAction.callServeur);
+		this.sc.setPayLoad(this.calledRole);
+		this.sc.handleResponse();
+		//this.sc.handleRequest(EnumAction.callServeur, this.calledRole);
 	}
 		
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		if (subject.getAction().equals(EnumAction.callRPC)) {
+			this.callerRole = subject.getPayLoad();
+			this.glue.glue();
+			
+		}
+	}
 
 	public Simple_CS getSc() {
 		return sc;

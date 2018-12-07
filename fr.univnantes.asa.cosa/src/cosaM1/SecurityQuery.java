@@ -80,6 +80,7 @@ public interface SecurityQuery extends Connector {
 
 	void setSd(ServeurDetail sd);
 	
-	
+	@Override
+	void update();
 
 } // SecurityQuery

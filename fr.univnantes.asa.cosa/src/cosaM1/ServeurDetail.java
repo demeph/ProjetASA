@@ -3,6 +3,7 @@
 package cosaM1;
 
 import cosa.Configuration;
+import cosa.Observer;
 import cosaM1.impl.EnumAction;
 
 /**
@@ -399,6 +400,16 @@ public interface ServeurDetail extends Configuration {
 	 */
 	void setSecurityquery(SecurityQuery value);
 
-	void update(EnumAction action, String request);
+	void handleRequest(EnumAction action, String request);
+	
+
+	@Override
+	void register(Observer obs);
+
+	@Override
+	void removeObs(Observer obs);
+
+	@Override
+	void notifyObs();
 
 } // ServeurDetail

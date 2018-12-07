@@ -74,4 +74,8 @@ public interface Client extends Component {
 	 */
 	void setRequest(Request value);
 
+	void setResponse(String payLoad);
+
+	void sendRequestStr(String request);
+
 } // Client

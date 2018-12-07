@@ -36,7 +36,11 @@ public class DatabaseImpl extends ComponentImpl implements Database {
 	
 	private String securManageStr;
 	
+
 	private ServeurDetail sd;
+	
+	private String requestStr;
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,6 +50,10 @@ public class DatabaseImpl extends ComponentImpl implements Database {
 		super();
 	}
 
+	public void sendRequest(String request) {
+		this.requestStr = request;
+		this.sd.handleRequest(EnumAction.callDatabase, requestStr);
+	}
 	@Override
 	public void verifySecurityIDs(String called) {
 		// TODO Auto-generated method stub

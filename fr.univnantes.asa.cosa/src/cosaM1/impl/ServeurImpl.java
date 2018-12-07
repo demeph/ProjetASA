@@ -51,7 +51,7 @@ public class ServeurImpl extends ComponentImpl implements Serveur {
 	
 	public void RecieveRequest(String request) {
 		this.provideStr = request;
-		this.sc.update(EnumAction.callServeurDetail, this.provideStr);
+		this.sc.handleRequest(EnumAction.callServeurDetail, this.provideStr);
 	}
 	
 

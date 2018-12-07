@@ -32,6 +32,40 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class SQLQueryImpl extends ConnectorImpl implements SQLQuery {
+	
+	private String callerRole;
+	
+	private String calledRole;
+	
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		if (subject.getAction().equals(EnumAction.callRPC)) {
+			this.callerRole = subject.getPayLoad();
+			this.glue.glue();
+		}
+	}
+	
+	@Override
+	public String getCallerRole() {
+		return callerRole;
+	}
+
+	@Override
+	public void setCallerRole(String callerRole) {
+		this.callerRole = callerRole;
+	}
+
+	@Override
+	public String getCalledRole() {
+		return calledRole;
+	}
+
+	@Override
+	public void setCalledRole(String calledRole) {
+		this.calledRole = calledRole;
+	}
+	// ----------------- NOT USED ---------------------------------
 	/**
 	 * The cached value of the '{@link #getCaller() <em>Caller</em>}' containment reference.
 	 * <!-- begin-user-doc -->

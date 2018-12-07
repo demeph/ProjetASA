@@ -6,6 +6,7 @@ import cosa.impl.RequiredPortImpl;
 
 import cosaM1.CosaM1Package;
 import cosaM1.SecurityManagement;
+import cosaM1.ServeurDetail;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -17,6 +18,16 @@ import org.eclipse.emf.ecore.EClass;
  * @generated
  */
 public class SecurityManagementImpl extends RequiredPortImpl implements SecurityManagement {
+	
+	private ServeurDetail sd;
+	
+	private String requestStr;
+	
+	public void sendRequest(String request) {
+		this.requestStr = request;
+		this.sd.handleRequest(EnumAction.callSecurityManager, requestStr);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -8,7 +8,6 @@ import cosaM1.CosaM1Package;
 import cosaM1.CredentialQuery;
 import cosaM1.SecurityAuth;
 import cosaM1.SecurityManager;
-import cosaM1.ServeurDetail;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -34,7 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class SecurityMangerImpl extends ComponentImpl implements SecurityManager {
 
-	private ServeurDetail sd;
 	
 	private String securityauthStr;
 	
@@ -52,21 +50,9 @@ public class SecurityMangerImpl extends ComponentImpl implements SecurityManager
 	public void verifySecurity(String calledRole) {
 		// TODO Auto-generated method stub
 		this.securityauthStr = calledRole;
-		this.sd.update(EnumAction.callSecurityQuery, this.securityauthStr);
+		//this.sd.update(EnumAction.callSecurityQuery, this.securityauthStr);
 	}
 
-
-	@Override
-	public ServeurDetail getSd() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setSd(ServeurDetail sd) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	@Override
 	public String getSecurityauthStr() {

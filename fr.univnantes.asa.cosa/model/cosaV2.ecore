@@ -24,13 +24,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentinterface" upperBound="-1"
         eType="#//ComponentInterface" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" eSuperTypes="#//Interface"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//ComponentInterface">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//Interface">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInterface" abstract="true"
+      interface="true" eSuperTypes="#//Interface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//ComponentInterface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//ComponentInterface"/>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredPort" eSuperTypes="#//Port"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedPort" eSuperTypes="#//Port"/>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredService" eSuperTypes="#//Service"/>
@@ -40,14 +37,16 @@
         eType="#//ConnectorInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="glue" eType="#//Glue" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectorInterface" eSuperTypes="#//Interface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectorInterface" abstract="true"
+      interface="true" eSuperTypes="#//Interface"/>
   <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//ConnectorInterface">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredRole" eSuperTypes="#//Role"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole" eSuperTypes="#//Role"/>
   <eClassifiers xsi:type="ecore:EClass" name="Glue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Interface" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface" abstract="true" interface="true"
+      eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Binding">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//Interface"/>

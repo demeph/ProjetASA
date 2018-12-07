@@ -6,7 +6,6 @@ import cosa.impl.ConnectorImpl;
 
 import cosaM1.CleranceRequest;
 import cosaM1.CosaM1Package;
-import cosaM1.ServeurDetail;
 import cosaM1.called;
 import cosaM1.caller;
 
@@ -36,10 +35,7 @@ public class CleranceRequestImpl extends ConnectorImpl implements CleranceReques
 	
 	private String callerRole;
 	private String calledRole;
-	
-	private ServeurDetail sd;
-	
-	
+		
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,8 +76,17 @@ public class CleranceRequestImpl extends ConnectorImpl implements CleranceReques
 	}
 
 	@Override
-	public void sendToConnector() {
-		this.sd.update(EnumAction.callSecurityQuery, this.calledRole);
+	public void notifyConnector() {
+		//this.sd.update();
+	}
+	
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		if (subject.getAction().equals(EnumAction.callClearanceRequest)) {
+			this.callerRole = subject.getPayLoad();
+			this.glue.glue();
+		}
 	}
 
 

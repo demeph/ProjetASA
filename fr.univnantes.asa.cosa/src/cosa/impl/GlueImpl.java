@@ -35,7 +35,7 @@ public class GlueImpl extends MinimalEObjectImpl.Container implements Glue {
 	@Override
 	public void glue() {
 		this.connector.setCalledRole(this.connector.getCallerRole());
-		this.connector.sendToConnector();
+		this.connector.notifyConnector();
 	}
 	
 	

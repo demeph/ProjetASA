@@ -6,6 +6,7 @@ import cosa.Connector;
 import cosa.ConnectorInterface;
 import cosa.CosaPackage;
 import cosa.Glue;
+import cosa.Subject;
 
 import java.util.Collection;
 
@@ -47,6 +48,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 */
 	protected EList<ConnectorInterface> connectorinterface;
 
+	protected Subject subject;
 	/**
 	 * The cached value of the '{@link #getGlue() <em>Glue</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -240,7 +242,13 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	@Override
-	public void sendToConnector() {
+	public void notifyConnector() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update() {
 		// TODO Auto-generated method stub
 		
 	}

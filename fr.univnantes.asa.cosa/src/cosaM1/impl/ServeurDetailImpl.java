@@ -2,6 +2,7 @@
  */
 package cosaM1.impl;
 
+import cosa.Observer;
 import cosa.impl.ConfigurationImpl;
 
 import cosaM1.CleranceRequest;
@@ -20,6 +21,8 @@ import cosaM1.attach4;
 import cosaM1.attach5;
 import cosaM1.attach6;
 import cosaM1.bind1;
+
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -56,6 +59,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetail {
+	
+	private EnumAction action;
+	
+	private String payLoad;
+	
 	/**
 	 * The cached value of the '{@link #getExternalsocket() <em>Externalsocket</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -115,21 +123,23 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 	 * @ordered
 	 */
 	protected CleranceRequest clerancerequest;
+
+	private List<Observer> lesObs;
 	
 	@Override
-	public void update(EnumAction action,String request) {
-		switch (action) {
-		case callConnectionManager:
+	public void handleRequest(EnumAction action,String request) {
+		this.action = action;
+		this.payLoad = request;
+		
+		switch (this.action) {
+		case callServeur:
 			this.connectionmanager.requestFromSD(request);
 			break;
-		case callClearanceRequest:
-			this.clerancerequest.checkSecurity(this.connectionmanager.getExtSocketStr());
+		case callConnectionManager:
+			this.notifyObs();
 			break;
 		case callSecurityManager:
 			this.securitymanager.verifySecurity(this.clerancerequest.getCalledRole());
-			break;
-		case callSecurityQuery:
-			this.securityquery.transferToDB(this.securitymanager.getSecurityauthStr());
 			break;
 		case callDatabase:
 			this.database.verifySecurityIDs(this.securityquery.getCalledRole());
@@ -139,6 +149,45 @@ public class ServeurDetailImpl extends ConfigurationImpl implements ServeurDetai
 		}
 		
 	}
+	
+	public void handleResponse() {
+		switch (this.action) {
+		case callConnectionManager:
+			
+			break;
+		case callDatabase:
+			
+			break;
+		case callSecurityManager:
+			
+			break;
+		default:
+			break;
+		}
+	}
+	
+	
+	@Override
+	public void register(Observer obs) {
+		// TODO Auto-generated method stub
+		this.lesObs.add(obs);
+	}
+
+	@Override
+	public void removeObs(Observer obs) {
+		// TODO Auto-generated method stub
+		this.lesObs.remove(obs);
+	}
+
+	@Override
+	public void notifyObs() {
+		// TODO Auto-generated method stub
+		for (Observer obs : lesObs) {
+			obs.update();
+		}
+	}
+	
+
 	
 //---------------------------- NOT USED ----------------------------------------------------
 	

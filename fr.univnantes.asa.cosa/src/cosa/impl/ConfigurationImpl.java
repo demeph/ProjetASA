@@ -8,7 +8,9 @@ import cosa.Component;
 import cosa.Configuration;
 import cosa.Connector;
 import cosa.CosaPackage;
+import cosa.Observer;
 import cosa.Port;
+import cosaM1.impl.EnumAction;
 
 import java.util.Collection;
 
@@ -293,6 +295,42 @@ public class ConfigurationImpl extends ComposedElementImpl implements Configurat
 				return connectors != null && !connectors.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	@Override
+	public void register(Observer obs) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeObs(Observer obs) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void notifyObs() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public EnumAction getAction() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getPayLoad() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setPayLoad(String payload) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } //ConfigurationImpl

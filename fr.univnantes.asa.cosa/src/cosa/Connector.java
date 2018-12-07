@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Connector extends EObject {
+public interface Connector extends EObject,Observer {
 	/**
 	 * Returns the value of the '<em><b>Connectorinterface</b></em>' reference list.
 	 * The list contents are of type {@link cosa.ConnectorInterface}.
@@ -74,6 +74,6 @@ public interface Connector extends EObject {
 
 	void setCalledRole(String calledRole);
 
-	void sendToConnector();
+	void notifyConnector();
 
 } // Connector

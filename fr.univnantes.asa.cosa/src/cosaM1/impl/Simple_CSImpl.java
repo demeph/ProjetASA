@@ -2,6 +2,7 @@
  */
 package cosaM1.impl;
 
+import cosa.Observer;
 import cosa.impl.ConfigurationImpl;
 
 import cosaM1.Client;
@@ -11,6 +12,8 @@ import cosaM1.Serveur;
 import cosaM1.ServeurDetail;
 import cosaM1.Simple_CS;
 import cosaM1.bind2;
+
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -47,6 +50,11 @@ public class Simple_CSImpl extends ConfigurationImpl implements Simple_CS {
 	 * @ordered
 	 */
 	protected Client client;
+	
+	private EnumAction action;
+	private String payLoad;
+	
+	private List<Observer> lesObs;
 
 	/**
 	 * The cached value of the '{@link #getServeur() <em>Serveur</em>}' containment reference.
@@ -97,6 +105,26 @@ public class Simple_CSImpl extends ConfigurationImpl implements Simple_CS {
 		super();
 	}
 	
+	@Override
+	public EnumAction getAction() {
+		return action;
+	}
+
+	@Override
+	public void setAction(EnumAction action) {
+		this.action = action;
+	}
+
+	@Override
+	public String getPayLoad() {
+		return payLoad;
+	}
+
+	@Override
+	public void setPayLoad(String payLoad) {
+		this.payLoad = payLoad;
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,25 +221,62 @@ public void setRpc(RPC newRpc) {
 
 
 	@Override
-	public void update(EnumAction action,String request) {
+	public void handleRequest(EnumAction action,String payLoad) {
+		this.action = action;
+		this.payLoad = payLoad;		
 		switch (action) {
+			case callClient:
+				this.notifyObs();
+				break;
+			case callServeur:
+				this.serveur.RecieveRequest(this.payLoad);
+				break;
+			case callServeurDetail:
+				//this.serveurdetail.update(EnumAction.callConnectionManager, this.serveur.getProvideStr());
+				this.serveurdetail.handleRequest(EnumAction.callConnectionManager, this.payLoad);
+				break;
+			default:
+				break;
+		}
+	}
+
+	@Override
+	public void handleResponse() {
+		switch (this.action) {
 		case callClient:
-			
+			client.setResponse(this.payLoad);
 			break;
 		case callServeur:
-			this.serveur.RecieveRequest(request);
-			break;
-		case callRPC:
-			this.rpc.requestFromClient(request);
+			this.serveur.RecieveRequest(this.payLoad);
 			break;
 		case callServeurDetail:
-			this.serveurdetail.update(EnumAction.callConnectionManager, this.serveur.getProvideStr());
+			this.serveur.RecieveRequest(this.payLoad);
 			break;
+		
 		default:
 			break;
 		}
 	}
 
+	@Override
+	public void register(Observer obs) {
+		// TODO Auto-generated method stub
+		this.lesObs.add(obs);
+	}
+
+	@Override
+	public void removeObs(Observer obs) {
+		// TODO Auto-generated method stub
+		this.lesObs.remove(obs);
+	}
+
+	@Override
+	public void notifyObs() {
+		// TODO Auto-generated method stub
+		for (Observer obs : lesObs) {
+			obs.update();
+		}
+	}
 
 //--------------------------- NOT USED -------------------------------------------------------------------------
 

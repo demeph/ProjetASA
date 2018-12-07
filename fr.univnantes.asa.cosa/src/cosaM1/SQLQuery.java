@@ -73,5 +73,8 @@ public interface SQLQuery extends Connector {
 	 * @generated
 	 */
 	void setCalled(called value);
+	
+	@Override
+	void update();
 
 } // SQLQuery

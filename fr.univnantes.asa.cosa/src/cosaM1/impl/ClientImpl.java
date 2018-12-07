@@ -8,6 +8,7 @@ import cosaM1.Client;
 import cosaM1.CosaM1Package;
 import cosaM1.Request;
 import cosaM1.SendRequest;
+import cosaM1.Simple_CS;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -32,6 +33,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class ClientImpl extends ComponentImpl implements Client {
+	
+	private Simple_CS sc;
+	
+	private String requestStr;
+	
+	@Override
+	public void sendRequestStr(String request) {
+		this.requestStr = request;
+		this.sc.handleRequest(EnumAction.callClient, requestStr);
+	}
+
+	@Override
+	public void setResponse(String payLoad) {
+		// TODO Auto-generated method stub
+		this.response = payLoad;
+		
+	}
+	
 	/**
 	 * The cached value of the '{@link #getSendrequest() <em>Sendrequest</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -51,6 +70,8 @@ public class ClientImpl extends ComponentImpl implements Client {
 	 * @ordered
 	 */
 	protected Request request;
+
+	private String response;
 
 	/**
 	 * <!-- begin-user-doc -->

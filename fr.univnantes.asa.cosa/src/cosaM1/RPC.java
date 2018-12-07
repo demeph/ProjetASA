@@ -85,10 +85,13 @@ public interface RPC extends Connector {
 
 	void setCalledRole(String calledRole);
 	
-	void sendToConnector();
+	void notifyConnector();
 	
 	Simple_CS getSc();
 	
 	void setSc(Simple_CS sc);
+	
+	@Override
+	void update();
 
 } // RPC

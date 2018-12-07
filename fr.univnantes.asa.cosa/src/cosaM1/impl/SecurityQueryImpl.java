@@ -83,9 +83,18 @@ public class SecurityQueryImpl extends ConnectorImpl implements SecurityQuery {
 	}
 
 	@Override
-	public void sendToConnector() {
+	public void notifyConnector() {
 		// TODO Auto-generated method stub
-		this.sd.update(EnumAction.callDatabase, this.calledRole);
+		//this.sd.update(EnumAction.callDatabase, this.calledRole);
+	}
+	
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		if (subject.getAction().equals(EnumAction.callSecurityQuery)) {
+			this.callerRole = subject.getPayLoad();
+			this.glue.glue();
+		}
 	}
 
 	

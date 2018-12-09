@@ -10,8 +10,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/client"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/serveur"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/serveurdetail"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/bind2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/rpc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/attachement2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Simple_CS/attachement1"/>
     </genClasses>
     <genClasses ecoreClass="ecoreM1.ecore#//Client">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Client/sendrequest"/>
@@ -22,94 +23,97 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Serveur/provide"/>
     </genClasses>
     <genClasses ecoreClass="ecoreM1.ecore#//ServeurDetail">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/externalsocket"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/connectionmanager"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/sqlquery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/securityquery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/clearancerequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/connectionmanger"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/securitymanager"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/database"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/sqlquery"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/clerancerequest"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach1"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach2"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach3"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach4"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach5"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attach6"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/bind1"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/securityquery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attachment1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attachment2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attachement3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attachment4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attachement6"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/attachment5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ServeurDetail/binding1"/>
     </genClasses>
     <genClasses ecoreClass="ecoreM1.ecore#//Request"/>
     <genClasses ecoreClass="ecoreM1.ecore#//SendRequest"/>
     <genClasses ecoreClass="ecoreM1.ecore#//Provide"/>
     <genClasses ecoreClass="ecoreM1.ecore#//RecieveRequest"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//ExternalSocket"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//ConnectionManager">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ConnectionManager/externalsocket"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ConnectionManager/dbquery"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ConnectionManager/securitycheck"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//SQLQuery">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SQLQuery/called"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SQLQuery/caller"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//SecurityManger">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityManger/credentialquery"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityManger/securityauth"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//RPC">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//RPC/caller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//RPC/called"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//bind2">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//bind2/provide"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//bind2/externalsocket"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//Caller"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//Called"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//ClearanceRequest">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ClearanceRequest/caller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ClearanceRequest/called"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//SecurityQuery">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityQuery/called"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityQuery/caller"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//ConnectionManger">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ConnectionManger/externalsocket"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ConnectionManger/dbqueryintf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//ConnectionManger/securitycheck"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//DBQueryIntf"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//securityCheck"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//externalSocket"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//attachment1">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachment1/securitycheck"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachment1/caller"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//attachment2">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachment2/dbqueryintf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachment2/caller"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//SecurityManager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityManager/securityauth"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityManager/credentialquery"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//securityAuth"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//credentialQuery"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//attachement3">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachement3/called"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachement3/securityauth"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreM1.ecore#//attachment4">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachment4/credentialquery"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachment4/caller"/>
     </genClasses>
     <genClasses ecoreClass="ecoreM1.ecore#//Database">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Database/securitymanagement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//Database/query"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//DBQuery"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//SecurityCheck"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//SecurityAuth"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//CredentialQuery"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//SQLQuery">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SQLQuery/caller"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SQLQuery/called"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//query"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//securityManagement"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//attachment5">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachment5/query"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachment5/called"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//called"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//caller"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//CleranceRequest">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//CleranceRequest/caller"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//CleranceRequest/called"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//attachement6">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachement6/securitymanagement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachement6/caller"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//SecurityQuery">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityQuery/caller"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//SecurityQuery/called"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//attachement1">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachement1/provide"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachement1/called"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//attach1">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach1/securitycheck"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach1/caller"/>
-    </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//attach2">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach2/securityauth"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach2/called"/>
-    </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//attach3">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach3/dbquery"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach3/caller"/>
-    </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//attach4">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach4/query"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach4/caller"/>
-    </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//Query"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//SecurityManagement"/>
-    <genClasses ecoreClass="ecoreM1.ecore#//RPC">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//RPC/caller"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//RPC/called"/>
-    </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//attach5">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach5/credentialquery"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach5/called"/>
-    </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//attach6">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach6/securitymanagement"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attach6/called"/>
-    </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//bind1">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//bind1/externalsocket"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//bind1/ConnectionMangerexternalsocket"/>
-    </genClasses>
-    <genClasses ecoreClass="ecoreM1.ecore#//bind2">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//bind2/provide"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//bind2/externalsocket"/>
+    <genClasses ecoreClass="ecoreM1.ecore#//attachement2">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachement2/request"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreM1.ecore#//attachement2/caller"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Cosa" ecorePackage="cosaV2.ecore#/">
@@ -126,9 +130,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/bindings"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Configuration/connectors"/>
     </genClasses>
-    <genClasses ecoreClass="cosaV2.ecore#//Component">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Component/componentinterface"/>
-    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//Component"/>
     <genClasses ecoreClass="cosaV2.ecore#//ComponentInterface"/>
     <genClasses ecoreClass="cosaV2.ecore#//Port"/>
     <genClasses ecoreClass="cosaV2.ecore#//Service"/>
@@ -136,10 +138,7 @@
     <genClasses ecoreClass="cosaV2.ecore#//ProvidedPort"/>
     <genClasses ecoreClass="cosaV2.ecore#//RequiredService"/>
     <genClasses ecoreClass="cosaV2.ecore#//ProvidedService"/>
-    <genClasses ecoreClass="cosaV2.ecore#//Connector">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Connector/connectorinterface"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Connector/glue"/>
-    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//Connector"/>
     <genClasses ecoreClass="cosaV2.ecore#//ConnectorInterface"/>
     <genClasses ecoreClass="cosaV2.ecore#//Role">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cosaV2.ecore#//Role/type"/>
@@ -149,12 +148,8 @@
     <genClasses ecoreClass="cosaV2.ecore#//Glue"/>
     <genClasses ecoreClass="cosaV2.ecore#//Interface"/>
     <genClasses ecoreClass="cosaV2.ecore#//Binding">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Binding/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Binding/target"/>
     </genClasses>
-    <genClasses ecoreClass="cosaV2.ecore#//Attachement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Attachement/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cosaV2.ecore#//Attachement/source"/>
-    </genClasses>
+    <genClasses ecoreClass="cosaV2.ecore#//Attachement"/>
   </genPackages>
 </genmodel:GenModel>

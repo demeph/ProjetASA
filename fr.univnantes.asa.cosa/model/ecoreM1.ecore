@@ -14,6 +14,10 @@
         eType="#//attachement2" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attachement1" lowerBound="1"
         eType="#//attachement1" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="binding2" lowerBound="1"
+        eType="#//binding3" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requestsimple_cs" lowerBound="1"
+        eType="#//requestSimple_CS" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Client" eSuperTypes="cosaV2.ecore#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sendrequest" lowerBound="1"
@@ -52,8 +56,8 @@
         eType="#//attachement6" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attachment5" lowerBound="1"
         eType="#//attachment5" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="binding1" lowerBound="1"
-        eType="#//bind2" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalsocketsd" lowerBound="1"
+        eType="#//externalSocketSD" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Request" eSuperTypes="cosaV2.ecore#//RequiredPort"/>
   <eClassifiers xsi:type="ecore:EClass" name="SendRequest" eSuperTypes="cosaV2.ecore#//RequiredService"/>
@@ -71,11 +75,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="called" lowerBound="1"
         eType="#//Called" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="bind2" eSuperTypes="cosaV2.ecore#//Binding">
+  <eClassifiers xsi:type="ecore:EClass" name="binding3" eSuperTypes="cosaV2.ecore#//Binding">
     <eStructuralFeatures xsi:type="ecore:EReference" name="provide" lowerBound="1"
         eType="#//Provide"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="externalsocket" lowerBound="1"
-        eType="#//externalSocket"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalsocketsd" lowerBound="1"
+        eType="#//externalSocketSD"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Caller" eSuperTypes="cosaV2.ecore#//RequiredRole"/>
   <eClassifiers xsi:type="ecore:EClass" name="Called" eSuperTypes="cosaV2.ecore#//ProvidedRole"/>
@@ -92,12 +96,12 @@
         eType="#//Caller" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectionManger" eSuperTypes="cosaV2.ecore#//Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="externalsocket" lowerBound="1"
-        eType="#//externalSocket" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dbqueryintf" lowerBound="1"
         eType="#//DBQueryIntf" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="securitycheck" lowerBound="1"
         eType="#//securityCheck" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalsocket" lowerBound="1"
+        eType="#//externalSocket" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DBQueryIntf" eSuperTypes="cosaV2.ecore#//ProvidedPort"/>
   <eClassifiers xsi:type="ecore:EClass" name="securityCheck" eSuperTypes="cosaV2.ecore#//RequiredPort"/>
@@ -160,9 +164,23 @@
         eType="#//Called"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="attachement2" eSuperTypes="cosaV2.ecore#//Attachement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="request" lowerBound="1"
-        eType="#//Request"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="caller" lowerBound="1"
         eType="#//Caller"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requestsimple_cs" lowerBound="1"
+        eType="#//requestSimple_CS"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="binding1" eSuperTypes="cosaV2.ecore#//Binding">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target1" lowerBound="1"
+        eType="#//externalSocket"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source1" lowerBound="1"
+        eType="#//externalSocketSD"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="binding2" eSuperTypes="cosaV2.ecore#//Binding">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source1" lowerBound="1"
+        eType="#//Request"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target1" lowerBound="1"
+        eType="#//requestSimple_CS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="requestSimple_CS" eSuperTypes="cosaV2.ecore#//RequiredPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="externalSocketSD" eSuperTypes="cosaV2.ecore#//ProvidedPort"/>
 </ecore:EPackage>
